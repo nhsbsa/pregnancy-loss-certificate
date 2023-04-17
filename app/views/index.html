@@ -7,14 +7,44 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
+   
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
+    <div class="payment-summary-wrap">
+      <div class="payment-summary">
+        <h1 class="govuk-heading-l">
+          Beta
+         </h1>
+          <p id="payment-description" class="govuk-body">
+          An example payment description
+          </p>
+          <p> <a href="">Baby loss journeys</a></p>
+          <p class="govuk-body hidden" id="payment-summary-breakdown">
+          </p>
+      </div>
+    </div>
+      <div class="payment-summary-wrap">
+        <div class="payment-summary">
+          <h1 class="govuk-heading-l">
+            Discovery/Alpha (April 2023)
+           </h1>
+            <p id="payment-description" class="govuk-body">
+            An example payment description
+            </p>
+            <p> <a href="discovery">Baby loss journeys</a></p>
+            <p class="govuk-body hidden" id="payment-summary-breakdown">
+            </p>
+        </div>
+      </div>
+       
+<style>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
-  </div>
-</div>
+.payment-summary {
+    border-top: 2px solid #1d70b8;
+    padding: 15px;
+    background-color: #fdfdfd
+}
+</style>
 
 {% endblock %}

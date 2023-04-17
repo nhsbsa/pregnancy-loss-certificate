@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBreadcrumbs({
+items: [
+{
+text: "Home",
+href: "#"
+},
+{
+text: "Section",
+href: "#"
+},
+{
+text: "Subsection"
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Order a pregnancy loss certificate
+    </h1>
+    <p>You can order a pregnancy loss certificate to recognise the life of your baby.</p>
+    <p>The certificate is free and will be sent by post.</p>
+    <p>You can use this service if you:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>are over [TBC] years old</li>
+      <li>have experienced a pregnancy loss in the last 5 years in England</li>
+      <li>live in England</li>
+    </ul>
+
+    <p>Registering takes around 5 minutes.</p>
+
+    {{ govukButton({
+    text: "Start now",
+    href: "enter-location",
+    isStartButton: true
+    }) }}
+
+    <h2 class="govuk-heading-m">
+      Support organisations
+    </h2>
+<p>
+  The following organisations give support and advice:
+</p>
+
+<ul>
+  <li><a href="">Sands</a></li>
+  <li><a href="">Tommy's</a></li>
+</ul>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        Subsection
+      </h2>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li>
+            <a href="#">
+              Maternity exemption (MATEX)
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              Healthy Start
+            </a>
+          </li>
+          <li>
+            <a href="#" class="govuk-!-font-weight-bold">
+              More <span class="govuk-visually-hidden">in Subsection</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+  </div>
+</div>
+
+{% endblock %}
