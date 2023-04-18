@@ -2,7 +2,6 @@
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-  
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,27 +27,31 @@
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    What is your name?
+    What was the sex of your baby?
     
   </h1>
 </legend>
 
-      <form class="form" action="add-parent" method="post">
+      <form class="form" action="/v1/babys-name" method="post">
         
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="one-third">
-            First name
-          </label>
-          <input class="govuk-input govuk-!-width-one-third" id="one-third" name="one-third" type="text">
+         
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="baby-gender" name="gender" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="yes">
+              Male
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="baby-gender" name="gender" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="no">
+              Female
+            </label>
+          </div>
         </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="one-third">
-            Last name
-          </label>
-          <input class="govuk-input govuk-!-width-one-third" id="one-third" name="one-third" type="text">
+            </div>
+          </fieldset>
         </div>
-        
-      </div>
 
         <button class="govuk-button" data-module="govuk-button">
           Continue
@@ -58,11 +61,5 @@
 
     </div>
   </div>
-  <style>
-    .govuk-fieldset__heading {
-      margin-bottom: 30px;
-    }
-    
-  </style>
 
 {% endblock %}
