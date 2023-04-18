@@ -20,11 +20,20 @@ router.get(/location-england/, function (req, res) {
    });
   
 
-   router.get(/baby-gender/, function (req, res) {
+   router.get(/baby-gender-version1/, function (req, res) {
     if (req.query.gender == 'yes') {
       res.redirect('enter-baby-gender');
     }
      else if (req.query.gender == 'no') {
      res.redirect('babys-name');;
+     }
+   });
+
+   router.get(/baby-name-version1/, function (req, res) {
+    if (req.query.babyname == 'yes') {
+      res.redirect('enter-baby-name');
+    }
+     else if (req.query.babyname == 'no') {
+     res.redirect('enter-address');;
      }
    });
