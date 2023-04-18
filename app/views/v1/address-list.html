@@ -34,19 +34,35 @@
       <div id="passport-issued-hint" class="govuk-hint">
         This will be where your certificate is sent to.
       </div>
-      
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="address-postcode">
-          Postcode
-        </label>
-        <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
-      </div>
-      <p><a href="">Enter address manually</a></p>
+     
+      <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
+        <option value="choose" selected>Select your address</option>
+        <option value="eastmidlands">East Midlands</option>
+        <option value="eastofengland">East of England</option>
+        <option value="london">London</option>
+        <option value="northeast">North East</option>
+        <option value="northwest">North West</option>
+        <option value="southeast">South East</option>
+        <option value="southwest">South West</option>
+        <option value="westmidlands">West Midlands</option>
+        <option value="yorkshire">Yorkshire and the Humber</option>
+      </select>
+    </div>
+      <p><a href="">My address isnt listed</a></p>
     </fieldset>
       </form>
     </div>
       <a class="govuk-button" href="v1/address-list">Find address</a>
     </div>
   </div>
+  <style>
+    .govuk-select {
+      box-sizing: border-box;
+height: 40px;
+max-width: 100%;
+padding: 4px;
+}
+    
+  </style>
 
 {% endblock %}
