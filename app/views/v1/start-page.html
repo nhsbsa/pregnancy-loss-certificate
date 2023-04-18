@@ -10,7 +10,6 @@ Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-width-container app-width-container">
   <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -53,6 +52,7 @@ text: "Subsection"
 
     <ul class="govuk-list govuk-list--bullet">
       <li>are over [TBC] years old</li>
+      <li>have experienced a pregnancy loss before 24 weeks</li>
       <li>have experienced a pregnancy loss in the last 5 years in England</li>
       <li>live in England</li>
     </ul>
@@ -72,7 +72,7 @@ text: "Subsection"
   The following organisations give support and advice:
 </p>
 
-<ul>
+<ul class="govuk-list govuk-list--bullet">
   <li><a href="">Sands</a></li>
   <li><a href="">Tommy's</a></li>
 </ul>
@@ -108,5 +108,6 @@ text: "Subsection"
 
   </div>
 </div>
+
 
 {% endblock %}
