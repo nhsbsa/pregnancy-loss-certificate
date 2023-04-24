@@ -20,6 +20,11 @@ Start page template – {{ serviceName }} – GOV.UK Prototype Kit
       </span>
     </p>
   </div>
+  <div class="govuk-hide-this-page" data-module="govuk-hide-this-page">
+    <a href="https://www.google.com/" role="button" draggable="false" class="govuk-button govuk-button--warning govuk-hide-this-page__button govuk-js-hide-this-page-button" data-module="govuk-button" data-new-tab-url="https://www.cgtn.com/nature/weathermap.html" data-fake-page-title="How to prevent the spread of Coronavirus - GOV.UK">
+      Hide this page
+    </a>
+  </div>
 {{ govukBreadcrumbs({
 items: [
 {
@@ -44,8 +49,9 @@ text: "Subsection"
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-xl">
-      You can request a pregnancy loss certificate in memory of your loss.
+      Request a pregnancy loss certificate
     </h1>
+    <p>You can request a pregnancy loss certificate in memory of your loss.</p>
     <p>The certificate recognises a pregnancy loss before 24 weeks.</p>
     <p>It is free and will be sent by post.</p>
     <p>The certificate will show:</p>
@@ -59,7 +65,8 @@ text: "Subsection"
       <li>place of loss</li>
     </ul>
 
-    <p>The certificate is not a legal document. You can use this service if you:</p>
+    <p>The certificate is not a legal document.</p>
+      <p>You can use this service if you:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li>are over [TBC] years old</li>
       <li>have experienced a pregnancy loss before 24 weeks</li>
@@ -73,7 +80,9 @@ text: "Subsection"
     </h2>
    
     <p>We’ll ask you:</p>
-    <p>to confirm you have received permission from any other parents you want to name on the certificate</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>to confirm you have received permission from any other parents you want to name on the certificate</li>
+    </ul>
     
 
     {{ govukButton({
