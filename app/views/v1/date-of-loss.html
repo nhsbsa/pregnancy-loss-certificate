@@ -34,14 +34,15 @@
         </legend>
         <form class="form" action="/v1/enter-date-of-birth" method="post">
         <div id="passport-issued-hint" class="govuk-hint">
-          For example, 3 2007
+          For example, 27 3 2007    
         </div>
+        <div id="passport-issued-hint" class="govuk-hint">If you don't know the day of your loss you can just enter the month and year</div>
         <div class="govuk-date-input" id="date-loss">
           <div class="govuk-date-input" id="passport-issued">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                  Day (optional)
+                  Day
                 </label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
               </div>
@@ -66,6 +67,16 @@
       </fieldset>
     </div>
   </div>
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Why we're asking you this question
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      We need to know if you have lost the baby in the past 5 years
+    </div>
+  </details>
         
 
         <button class="govuk-button" data-module="govuk-button">
