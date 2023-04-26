@@ -34,7 +34,7 @@ router.get(/location-england/, function (req, res) {
       res.redirect('enter-baby-name');
     }
      else if (req.query.babyname == 'no') {
-     res.redirect('check-your-details');;
+     res.redirect('check-your-answers');;
      }
    });
 
