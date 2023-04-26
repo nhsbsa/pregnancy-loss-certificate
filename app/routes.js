@@ -48,7 +48,14 @@ router.get(/nhs-number-action/, function (req, res) {
    res.redirect('check-your-details');;
    }
  });
-
+ router.get(/parent-add/, function (req, res) {
+  if (req.query.parent == 'yes') {
+    res.redirect('second-relation-to-baby');
+  }
+   else if (req.query.parent == 'no') {
+   res.redirect('sex-of-baby');;
+   }
+ });
  router.get(/address-postcode/, function (req, res) {
   if (req.query.postcodeinput == 'NE1 3JA') {
     res.redirect('nhs-number');
@@ -58,5 +65,4 @@ router.get(/nhs-number-action/, function (req, res) {
   else {
     res.redirect('address-list')
   }
-
 });

@@ -37,7 +37,11 @@
               Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-             27 March 2007
+                  {% if data['dob-day'] %}
+                    {{ data['dob-day'] }} <span class="cya-month">{{ data['dob-month'] }}</span> {{ data['dob-year'] }}
+                    {% else %}
+                  Example date of birth
+                  {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -50,7 +54,7 @@
               Address
             </dt>
             <dd class="govuk-summary-list__value">
-              NE1 OLD
+              NE1 3JA
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -63,7 +67,15 @@
              Name
             </dt>
             <dd class="govuk-summary-list__value">
-             Sarah Philips
+              {% if data['first-name'] %}
+
+                {{ data['first-name'] }} {{ data['last-name'] }}
+
+                {% else %}
+
+                Example name
+
+               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -96,4 +108,42 @@
     </div>
   </main>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+        $(document).ready(function() {
+            const months = {
+                "01": "January",
+                "02": "February",
+                "03": "March",
+                "04": "April",
+                "05": "May",
+                "06": "June",
+                "07": "July",
+                "08": "August",
+                "09": "September",
+                "10": "October",
+                "11": "November",
+                "12": "December",
+                "1": "January",
+                "2": "February",
+                "3": "March",
+                "4": "April",
+                "5": "May",
+                "6": "June",
+                "7": "July",
+                "8": "August",
+                "9": "September",   
+
+            };
+
+ 
+
+            $(".cya-month").text(function () {
+                const month = $(this).text();
+                console.log("month:", month);
+                console.log("months[month]:", months[month]);
+                return months[month];
+            });
+        });
+</script>
 {% endblock %}

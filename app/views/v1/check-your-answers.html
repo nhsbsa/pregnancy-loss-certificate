@@ -5,6 +5,17 @@
 {% endblock %}
 
 {% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -60,13 +71,18 @@
           </div>
           </dl>
         <h2 class="govuk-heading-m">Details on the certificate</h2>
+        <h3 class="govuk-heading-s">Parent 1</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              Sarah Philips
+              {% if data['first-name'] %}
+                 {{ data['last-name'] }}
+                {% else %}
+                Example name
+                {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -79,7 +95,7 @@
               Relationship to the baby
             </dt>
             <dd class="govuk-summary-list__value">
-              Biological mother
+         
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -87,12 +103,52 @@
               </a>
             </dd>
           </div>
+          </dl>
+          <h3 class="govuk-heading-s">Parent 2</h3>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['parent2-firstname'] %}
+                 {{ data['parent2-lastname'] }}
+                {% else %}
+                Example name
+                {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Relationship to the baby
+              </dt>
+              <dd class="govuk-summary-list__value">
+           
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
+            </dl>
+            <h3 class="govuk-heading-s">Baby's details</h3>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Baby's name
             </dt>
             <dd class="govuk-summary-list__value">
-              Thomas Philips
+              {% if data['baby-firstname'] %}
+               {{ data['baby-firstname'] }}
+              {% else %}
+              Example name
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -105,7 +161,11 @@
               Date of loss
             </dt>
             <dd class="govuk-summary-list__value">
-             January 2021
+              {% if data['dol-day'] %}
+                    {{ data['dol-day'] }} <span class="cya-month">{{ data['dol-month'] }}</span> {{ data['dol-year'] }}
+                    {% else %}
+                  Example date of loss
+                  {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -118,7 +178,7 @@
               Baby's sex
             </dt>
             <dd class="govuk-summary-list__value">
-             Male
+             (baby's sex)
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -126,9 +186,10 @@
               </a>
             </dd>
           </div>
+          </div>
           
           
-          
+          </div>
         </dl>
         
        
@@ -142,4 +203,42 @@
     </div>
   </main>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+        $(document).ready(function() {
+            const months = {
+                "01": "January",
+                "02": "February",
+                "03": "March",
+                "04": "April",
+                "05": "May",
+                "06": "June",
+                "07": "July",
+                "08": "August",
+                "09": "September",
+                "10": "October",
+                "11": "November",
+                "12": "December",
+                "1": "January",
+                "2": "February",
+                "3": "March",
+                "4": "April",
+                "5": "May",
+                "6": "June",
+                "7": "July",
+                "8": "August",
+                "9": "September",   
+
+            };
+
+ 
+
+            $(".cya-month").text(function () {
+                const month = $(this).text();
+                console.log("month:", month);
+                console.log("months[month]:", months[month]);
+                return months[month];
+            });
+        });
+</script>
 {% endblock %}

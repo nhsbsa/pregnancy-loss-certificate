@@ -24,7 +24,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
@@ -32,32 +32,22 @@
     
   </h1>
 </legend>
+<div class="govuk-grid-column-two-thirds">
 <div id="passport-issued-hint" class="govuk-hint">
   This is the name that will be printed on the certificate.
 </div>
 
       <form class="form" action="check-your-answers" method="post">
-        
+       
         <div class="govuk-form-group">
-          <label class="govuk-label" for="one-third">
-            First name
-          </label>
-          <input class="govuk-input govuk-!-width-one-third" id="one-third" name="one-third" type="text">
+          <input class="govuk-input" id="baby-name" name="baby-firstname" type="text">
         </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="one-third">
-            Last name (optional)
-          </label>
-          <input class="govuk-input govuk-!-width-one-third" id="one-third" name="one-third" type="text">
-        </div>
-        
-      </div>
 
         <button class="govuk-button" data-module="govuk-button">
           Continue
         </button>
-
-      </form>
+      </div>
+     
 
     </div>
   </div>
