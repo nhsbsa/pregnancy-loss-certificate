@@ -2,7 +2,6 @@
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-  
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,34 +27,21 @@
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    What is your name?
-    
+    Enter your security code
   </h1>
 </legend>
-<div id="passport-issued-hint" class="govuk-hint">
-  You must enter the names you registered with your GP surgery.
-</div>
-<div id="passport-issued-hint" class="govuk-hint">
-  This is the name that will be printed on the certificate.
-</div>
 
-      <form class="form" action="add-name" method="get">
-        
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="one-third">
-            First name
-          </label>
-          <input class="govuk-input govuk-!-width-one-third" id="add-name" name="firstname" type="text">
+      <form class="form" action="add-parent" method="post">
+        <div id="passport-issued-hint" class="govuk-hint">
+          We sent your security code by email to Sa********@gmail.com
         </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="one-third">
-            Last name
-          </label>
-          <input class="govuk-input govuk-!-width-one-third" id="one-third" name="one-third" type="text">
-        </div>
-        
+       
+        <input class="govuk-input govuk-input--width-10" id="nhs-number" name="nhs-number" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
       </div>
-      
+        
+            </div>
+          </fieldset>
+       
 
         <button class="govuk-button" data-module="govuk-button">
           Continue
@@ -71,5 +57,4 @@
     }
     
   </style>
-
 {% endblock %}

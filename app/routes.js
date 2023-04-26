@@ -34,6 +34,39 @@ router.get(/location-england/, function (req, res) {
       res.redirect('enter-baby-name');
     }
      else if (req.query.babyname == 'no') {
-     res.redirect('enter-address');;
+     res.redirect('check-your-details');;
      }
    });
+
+router.get(/add-name/, function (req, res) {
+  if (req.query.firstname == 'Jenny') {
+    res.redirect('nhs-number');
+  } else if (req.query.firstname == 'Sarah') {
+    res.redirect('add-parent');;
+  } 
+  else {
+    res.redirect('add-parent')
+  }
+
+});
+
+router.get(/nhs-number-action/, function (req, res) {
+  if (req.query.nhs == 'yes') {
+    res.redirect('enter-nhs-number');
+  }
+   else if (req.query.nhs == 'no') {
+   res.redirect('check-your-details');;
+   }
+ });
+
+ router.get(/address-postcode/, function (req, res) {
+  if (req.query.postcodeinput == 'NE1 3JA') {
+    res.redirect('check-your-details');
+  } else if (req.query.postcodeinput == 'NE2 4XL') {
+    res.redirect('address-list');;
+  } 
+  else {
+    res.redirect('add-parent')
+  }
+
+});

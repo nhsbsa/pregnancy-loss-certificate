@@ -27,40 +27,45 @@
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Did your pregnancy loss happen in England?
+   Do you know your NHS number?
+    
   </h1>
 </legend>
 
-      <form class="form" action="location-england" method="get">
-        
+      <form class="form" action="nhs-number-action" method="get">
+        <div id="passport-issued-hint" class="govuk-hint">
+          Your NHS number is a 10 digit number, like 485 777 3456.
+        </div>
+        <div id="passport-issued-hint" class="govuk-hint">
+          You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service.
+        </div>
          
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="location-england" name="location" type="radio" value="yes">
+            <input class="govuk-radios__input" id="nhs-number-action" name="nhs" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="yes">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="location-england" name="location" type="radio" value="no">
+            <input class="govuk-radios__input" id="nhs-number-action" name="nhs" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="no">
               No
             </label>
           </div>
         </div>
-           
+            </div>
           </fieldset>
-        </div>
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Why we're asking you this question
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            We're asking you this question because we need to check you're eligible.
-          </div>
-        </details>
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Why we're asking you this question
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              We need to confirm your identity.
+            </div>
+          </details>
 
         <button class="govuk-button" data-module="govuk-button">
           Continue
@@ -76,5 +81,4 @@
     }
     
   </style>
-
 {% endblock %}

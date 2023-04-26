@@ -28,20 +28,28 @@
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h1 class="govuk-fieldset__heading">
-          What is your address?
+          What is your postcode?
         </h1>
       </legend>
       <div id="passport-issued-hint" class="govuk-hint">
-        You must enter the home postcode you registered with your GP surgery. For example EN1 1BE.
-This is the address your certificate will be sent to.
+        You must enter the home postcode you registered with your GP surgery. 
+
 
       </div>
+      <div id="passport-issued-hint" class="govuk-hint">
+        This is the address your certificate will be sent to.
+      </div>
+      <div id="passport-issued-hint" class="govuk-hint">
+        For example, EN1 1BE
+      </div>
+      <form class="form" action="address-postcode" method="get">
+        
       
       <div class="govuk-form-group">
         <label class="govuk-label" for="address-postcode">
           Postcode
         </label>
-        <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+        <input class="govuk-input govuk-input--width-10" id="address-postcode" name="postcodeinput" type="text" autocomplete="postal-code">
       </div>
       
     </fieldset>
@@ -50,7 +58,10 @@ This is the address your certificate will be sent to.
       <p><a href="/v1/what-is-your-address">Enter address manually</a></p>
    
   </div>
-      <a class="govuk-button" href="/v1/address-list">Find address</a>
+
+  <button class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
     </div>
   </div>
 </form>
