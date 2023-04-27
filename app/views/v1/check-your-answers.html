@@ -61,7 +61,7 @@
               Address
             </dt>
             <dd class="govuk-summary-list__value">
-              1 Test Town<br>Town<br>NE1 OLD
+              1 Test Town<br>Town<br>NE1 3JA
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -79,6 +79,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
               {% if data['first-name'] %}
+              {{ data['first-name'] }}
                  {{ data['last-name'] }}
                 {% else %}
                 Example name
