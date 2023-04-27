@@ -95,7 +95,11 @@
               Relationship to the baby
             </dt>
             <dd class="govuk-summary-list__value">
-         
+              {% if data['relation-baby'] %}
+              {{ data['relation-baby'] }}
+             {% else %}
+             Example relation
+             {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -112,7 +116,7 @@
               </dt>
               <dd class="govuk-summary-list__value">
                 {% if data['parent2-firstname'] %}
-                 {{ data['parent2-lastname'] }}
+                 {{ data['parent2-firstname'] }}
                 {% else %}
                 Example name
                 {% endif %}
@@ -128,7 +132,11 @@
                 Relationship to the baby
               </dt>
               <dd class="govuk-summary-list__value">
-           
+                {% if data['relation'] %}
+                {{ data['relation'] }}
+               {% else %}
+               Example relation
+               {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="#">
@@ -178,7 +186,11 @@
               Baby's sex
             </dt>
             <dd class="govuk-summary-list__value">
-             (baby's sex)
+              {% if data['baby-gender'] %}
+              {{ data['baby-gender'] }}
+             {% else %}
+             Example gender
+             {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
