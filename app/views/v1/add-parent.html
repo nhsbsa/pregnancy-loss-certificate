@@ -35,7 +35,14 @@
 
       <form class="form" action="parent-add" method="get">
         
-         
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            You must have permission from the other parent to add them to the certificate.
+          </strong>
+        </div>
+
               
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
@@ -53,13 +60,7 @@
         </div>
           </fieldset>
         </div>
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            You must have permission from the other parent to add them to the certificate.
-          </strong>
-        </div>
+        
 
         <button class="govuk-button" data-module="govuk-button">
           Continue
