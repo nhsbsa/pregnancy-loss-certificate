@@ -24,62 +24,44 @@
 
 {% block content %}
 <div class="govuk-form-group">
-  <div class="govuk-grid-column-two-thirds">
-<div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you like to add another parent to the certificate? (optional)
+    Would you like to include your baby’s name on your certificate? (optional)
     
   </h1>
 </legend>
+<div id="passport-issued-hint" class="govuk-hint">
+  Providing the baby's name is optional.
+</div>
 
+      <form class="form" action="baby-name-version1" method="post">
 
-      <form class="form" action="parent-add" method="post">
-        
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            You must have permission from the other parent to add them to the certificate.
-          </strong>
-        </div>
-
-              
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="yes">
+            <input class="govuk-radios__input" id="baby-name-version1" name="babyname" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="yes">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="no">
+            <input class="govuk-radios__input" id="baby-name-version1" name="babyname" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="no">
               No
             </label>
           </div>
         </div>
+            </div>
           </fieldset>
-        </div>
-        
-      
+       
+       
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
 
       </form>
-</div>
-</div>
+
     </div>
   </div>
-  <style>
-    .govuk-fieldset__heading {
-      margin-bottom: 30px;
-    }
-    .govuk-radios {
-      margin-bottom: 20px;
-    }
-  </style>
 
 {% endblock %}

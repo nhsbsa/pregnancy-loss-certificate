@@ -2,6 +2,7 @@
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,32 +24,30 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Enter your security code
+    Baby's name
+    
   </h1>
 </legend>
+<div class="govuk-grid-column-two-thirds">
+<div id="passport-issued-hint" class="govuk-hint">
+  This is the name that will be printed on the certificate.
+</div>
 
-      <form class="form" action="add-parent" method="post">
-        <div id="passport-issued-hint" class="govuk-hint">
-          We sent your security code by email to Sa********@gmail.com
-        </div>
+      <form class="form" action="check-your-answers" method="post">
        
-        <input class="govuk-input govuk-input--width-10" id="nhs-number" name="nhs-number" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
-      </div>
-        
-            </div>
-          </fieldset>
-          <p>Didn't get your security code? <a href="">Resend code
-          </a></p>
+        <div class="govuk-form-group">
+          <input class="govuk-input" id="baby-name" name="baby-firstname" type="text">
+        </div>
 
         <button class="govuk-button" data-module="govuk-button">
           Continue
         </button>
-
-      </form>
+      </div>
+     
 
     </div>
   </div>
@@ -56,6 +55,10 @@
     .govuk-fieldset__heading {
       margin-bottom: 30px;
     }
+    .govuk-grid-column-two-thirds {
+      padding-left: 0px;
+    }
     
   </style>
+
 {% endblock %}
