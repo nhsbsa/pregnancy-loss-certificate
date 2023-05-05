@@ -18,9 +18,23 @@ router.post(/location-england/, (req, res) => {
   const lossInEngland = req.session.data['location']
 
   if (lossInEngland == 'yes') {
-    res.redirect('date-of-loss');
+    res.redirect('loss-in-5-years');
   } else {
     res.redirect('location-kickout');
+  }
+
+})
+
+router.post(/loss-5-years/, (req, res) => {
+
+  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
+  // lossInEngland = location (value)
+  const lossInYears = req.session.data['years']
+
+  if (lossInYears == 'yes') {
+    res.redirect('relation-to-baby');
+  } else {
+    res.redirect('date-of-loss-kickout');
   }
 
 })

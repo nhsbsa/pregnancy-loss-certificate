@@ -24,6 +24,9 @@
 
 {% block content %}
 <div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group">
+  <span class="govuk-caption-l">Confirm your eligibility</span>
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
@@ -36,53 +39,30 @@
         
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Biological mother" name="relation-baby" type="radio" value="Biological mother">
+            <input class="govuk-radios__input" id="Mother" name="relation-baby" type="radio" value="Mother">
             <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-              Biological mother
+             Mother
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Biological father" name="relation-baby" type="radio" value="Biological father">
-            <label class="govuk-label govuk-radios__label" for=" Biological father">
-              Biological father
+            <input class="govuk-radios__input" id="Biological father" name="relation-baby" type="radio" value="Father">
+            <label class="govuk-label govuk-radios__label" for="Father">
+              Father
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Non biological father" name="relation-baby" type="radio" value="Non biological father">
-            <label class="govuk-label govuk-radios__label" for="Non biological father">
-              Non biological father
+            <input class="govuk-radios__input" id="Non biological father" name="relation-baby" type="radio" value="Parent">
+            <label class="govuk-label govuk-radios__label" for="Parent">
+              Parent
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Non biological mother" name="relation-baby" type="radio" value="Non biological mother">
-            <label class="govuk-label govuk-radios__label" for="Non biological mother">
-              Non biological mother
+            <input class="govuk-radios__input" id="Non biological mother" name="relation-baby" type="radio" value="Surrogate">
+            <label class="govuk-label govuk-radios__label" for="Surrogate">
+              Surrogate
             </label>
           </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Non biological partner" name="relation-baby" type="radio" value="Non biological partner">
-            <label class="govuk-label govuk-radios__label" for="Non biological partner">
-              Non biological partner
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Intended parents" name="relation-baby" type="radio" value="Intended parents">
-            <label class="govuk-label govuk-radios__label" for="Intended parents">
-              Intended parents
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Surrogate mother" name="relation-baby" type="radio" value="Surrogate mother">
-            <label class="govuk-label govuk-radios__label" for="Surrogate mother">
-              Surrogate mother
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Non-binary non biological parent" name="relation-baby" type="radio" value="Non-binary non biological parent">
-            <label class="govuk-label govuk-radios__label" for="Non-binary non biological parent">
-              Non-binary non biological parent
-            </label>
-          </div>
+          
           <p>or</p>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="No, none of these" name="relation-baby" type="radio" value="no">
@@ -102,11 +82,11 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        We need to check you're eligible to use this service.
+        We need to check you're eligible to use this service. If you’re not on this list and you think you’re eligible, <a href="">contact us</a>.
       </div>
     </details>
                 
-                
+             
            
         
 
@@ -115,13 +95,18 @@
         </button>
 
       </form>
-
+    </div>
     </div>
   </div>
   <style>
-    .govuk-fieldset__heading {
+   .govuk-fieldset__heading {
       margin-bottom: 30px;
     }
-    
+    .govuk-fieldset__legend--l {
+      margin-bottom: 30px;
+    }
+    .govuk-radios {
+      margin-bottom: 30px;
+    }
   </style>
 {% endblock %}

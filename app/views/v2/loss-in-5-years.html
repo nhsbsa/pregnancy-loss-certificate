@@ -31,28 +31,34 @@
     
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Were you living in England at the time of your baby loss?
+    Did your baby loss happen in the last 5 years?
   </h1>
 </legend>
 
-      <form class="form" action="location-england" method="post">
+      <form class="form" action="loss-5-years" method="post">
         
-         
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="location-england-yes" name="location" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="location-england-yes">
+            <input class="govuk-radios__input" id="years-yes" name="years" type="radio" value="yes" data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="contact">
               Yes
             </label>
           </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-email">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" name="year-loss" type="yes" spellcheck="false" autocomplete="email">
+            </div>
+          </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="location-england-no" name="location" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="location-england-no">
+            <input class="govuk-radios__input" id="years-no" name="years" type="radio" value="no" data-aria-controls="conditional-contact-2">
+            <label class="govuk-label govuk-radios__label" for="contact-2">
               No
             </label>
           </div>
-        </div>
-           
+         
           </fieldset>
         </div>
         <details class="govuk-details" data-module="govuk-details">
@@ -81,7 +87,7 @@
     .govuk-fieldset__legend--l {
       margin-bottom: 30px;
     }
-    .govuk-radios--inline {
+    .govuk-radios {
       margin-bottom: 30px;
     }
   </style>
