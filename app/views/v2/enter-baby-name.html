@@ -24,7 +24,9 @@
 {% endblock %}
 
 {% block content %}
-
+<div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+  <span class="govuk-caption-l">Details on your certificate</span>
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
@@ -32,7 +34,8 @@
     
   </h1>
 </legend>
-<div class="govuk-grid-column-two-thirds">
+</fieldset>
+
 <div id="passport-issued-hint" class="govuk-hint">
   This is the name that will be printed on the certificate.
 </div>
@@ -42,7 +45,9 @@
         <div class="govuk-form-group">
           <input class="govuk-input" id="baby-name" name="baby-firstname" type="text">
         </div>
-
+</form>
+</div>
+</div>
         <button class="govuk-button" data-module="govuk-button">
           Continue
         </button>

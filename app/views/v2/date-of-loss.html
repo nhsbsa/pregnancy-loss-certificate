@@ -24,64 +24,79 @@
 
 {% block content %}
 <div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+  <span class="govuk-caption-l">Details on your certificate</span>
+
   <fieldset class="govuk-fieldset">
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            Date
+            Would you like to include the date of your baby loss on the certificate? (optional)
           </h1>
         </legend>
-        <form class="form" action="date-loss" method="post">
+        <form class="form" action="sex-of-baby" method="post">
        
-          <div id="passport-issued-hint" class="govuk-hint">The date will be included on the certificate.</div>
-          <div id="passport-issued-hint" class="govuk-hint">If you do not know the exact date of loss, you can enter a partial date such as month and year or year only.</div>
-          <div id="passport-issued-hint" class="govuk-hint">
-          For example, 27 3 2007    
-        </div>
-        <div class="govuk-date-input" id="date-loss">
-          <div class="govuk-date-input" id="date-loss">
-            <div class="govuk-date-input__item">
+          <p>If you do not know the exact date, you can enter a partial date, such as month and year, or year only.</p>
+          
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="loss-date-day">
-                  Day
+                <div id="passport-issued-hint" class="govuk-hint">
+                  For example, 27 3 2007    
+                </div>
+                  <div class="govuk-date-input" id="date-loss">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="loss-date-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="loss-date-day" name="dol-day" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="loss-date-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="loss-date-month" name="dol-month" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="loss-date-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="loss-date-year" name="dol-year" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="loss-date-day" name="dol-day" type="text" inputmode="numeric">
+                
               </div>
             </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="loss-date-month">
-                  Month
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="loss-date-month" name="dol-month" type="text" inputmode="numeric">
-              </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No
+              </label>
             </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="loss-date-year">
-                  Year
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="loss-date-year" name="dol-year" type="text" inputmode="numeric">
-              </div>
-            </div>
-          </div>
+        
+        
+          
       </fieldset>
     </div>
   </div>
-  <details class="govuk-details" data-module="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        Why we're asking you this question
-      </span>
-    </summary>
-    <div class="govuk-details__text">
-      We need to check you're eligible to use this service
-    </div>
-  </details>
-        
+ 
+        </div>
 
-        <button class="govuk-button" data-module="govuk-button" type="submit">
+        <button class="govuk-button" data-module="govuk-button">
           Continue
         </button>
 
@@ -93,6 +108,8 @@
     .govuk-fieldset__heading {
       margin-bottom: 30px;
     }
-    
+    .govuk-button {
+      margin-left: 15px;
+    }
   </style>
 {% endblock %}

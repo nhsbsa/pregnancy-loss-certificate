@@ -41,21 +41,21 @@ router.post(/loss-5-years/, (req, res) => {
 
 // Date of loss 
 
-router.post(/date-loss/, (req, res) => {
+// router.post(/date-loss/, (req, res) => {
 
-  const day = req.session.data['dol-day']
-  const month = req.session.data['dol-month']
-  const year = req.session.data['dol-year']
+//   const day = req.session.data['dol-day']
+//   const month = req.session.data['dol-month']
+//   const year = req.session.data['dol-year']
 
-  const dol = day + '/' + month + '/' + year
+//   const dol = day + '/' + month + '/' + year
 
-  if (dol == '27/3/2007') {
-    res.redirect('relation-to-baby');
-  } else {
-    res.redirect('date-of-loss-kickout');
-}
+//   if (dol == '27/3/2007') {
+//     res.redirect('relation-to-baby');
+//   } else {
+//     res.redirect('date-of-loss-kickout');
+// }
 
-})
+// })
 
 // Date of birth 
 
@@ -87,33 +87,18 @@ router.post(/relation-baby/, (req, res) => {
 
 })
 
-// router.post('relation-baby', (req, res) => {
+router.post(/added-parent/, (req, res) => {
 
-//   const ParentalRelationship = req.session.data['relation-baby']
+  const SecondParent = req.session.data['parent-2']
 
-//   if (ParentalRelationship === 'no') {
-//       res.redirect('relation-kickout')
-//   } else if (ParentalRelationship === 'Biological mother') {
-//       res.redirect('what-is-your-name')
-//   } else if (ParentalRelationship === 'Biological father') {
-//       res.redirect('what-is-your-name')
-//   } else if (ParentalRelationship === 'Non biological father') {
-//       res.redirect('what-is-your-name')
-//   } else if (ParentalRelationship === 'Non biological mother') {
-//       res.redirect('what-is-your-name')
-//   } else if (ParentalRelationship === 'Non biological partner') {
-//       res.redirect('what-is-your-name')
-//   } else if (ParentalRelationship === 'Intended parents') {
-//       res.redirect('what-is-your-name')
-//   } else if (ParentalRelationship === 'Surrogate mother') {
-//       res.redirect('what-is-your-name')
-//   } else if (ParentalRelationship === 'Non-binary non biological parent') {
-//       res.redirect('what-is-your-name')
-//   } else {
-//       res.redirect('what-is-your-name')
-//   }
+  if (SecondParent == 'no') {
+      res.redirect('second-parent-kickout')
+  } else {
+      res.redirect('second-parent')
+  }
 
-// })
+})
+
 
 
 router.post(/baby-gender-version1/, (req, res) => {
@@ -167,7 +152,7 @@ router.post(/parent-add/, (req, res) => {
   if (AddParent == 'yes') {
     res.redirect('second-relation-to-baby');
   } else {
-    res.redirect('sex-of-baby');
+    res.redirect('date-of-loss');
   }
 
 })
@@ -189,6 +174,19 @@ router.post(/address-postcode/, (req, res) => {
 
 
 
+router.post(/baby-loss-date/, (req, res) => {
+
+  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
+  // lossInEngland = location (value)
+  const BabyLossDate = req.session.data['date']
+
+  if (BabyLossDate == 'yes') {
+    res.redirect('relation-to-baby');
+  } else {
+    res.redirect('date-of-loss-kickout');
+  }
+
+})
 
 
 

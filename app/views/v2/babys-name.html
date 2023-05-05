@@ -24,6 +24,9 @@
 
 {% block content %}
 <div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+  <span class="govuk-caption-l">Details on your certificate</span>
+<div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
@@ -54,7 +57,8 @@
             </div>
           </fieldset>
        
-       
+       </div>
+       </div>
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
@@ -63,5 +67,10 @@
 
     </div>
   </div>
+  <style>
+    .govuk-button {
+      margin-left: 15px;
+    }
+  </style>
 
 {% endblock %}
