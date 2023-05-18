@@ -81,7 +81,7 @@ router.post(/date-of-birth/, (req, res) => {
   const dob = day + '/' + month + '/' + year
 
   if (dob == '27/3/2007') {
-    res.redirect('enter-location-uk');
+    res.redirect('add-parent');
   } else {
     res.redirect('date-of-birth-kickout');
 }
