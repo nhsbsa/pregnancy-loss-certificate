@@ -25,18 +25,24 @@
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
+  <span class="govuk-caption-l">Details on the certificate</span>
 <div class="govuk-form-group">
-  <span class="govuk-caption-l">Confirm your eligibility</span>
   <fieldset class="govuk-fieldset">
-    
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Did your baby loss happen in the last 5 years?
+    Would you like to include the place of your baby loss on the certificate? 
+    
   </h1>
 </legend>
+<p>You may not know the place of your baby loss.</p>
+<div id="passport-issued-hint" class="govuk-hint">
+  If you select no or I do not know the place of my baby loss, this will not be shown on the certificate.</div>
+  <div id="passport-issued-hint" class="govuk-hint">
+    For example, Canterbury, Kent   
+  </div>
 
-      <form class="form" action="loss-5-years" method="post">
-        
+      <form class="form" action="sex-of-baby" method="post">
+
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="years-yes" name="years" type="radio" value="yes" data-aria-controls="conditional-contact">
@@ -46,47 +52,42 @@
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="contact-by-email">
-                Year of baby loss
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" name="year-loss" type="yes" spellcheck="false" autocomplete="email">
+             
+             
+              <input class="govuk-input" id="baby-name" name="baby-firstname" type="text">
             </div>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="years-no" name="years" type="radio" value="no" data-aria-controls="conditional-contact-2">
+            <input class="govuk-radios__input" id="babys" name="years" type="radio" value="no" data-aria-controls="conditional-contact-2">
             <label class="govuk-label govuk-radios__label" for="contact-2">
               No
             </label>
           </div>
-         
-          </fieldset>
-        </div>
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Why we're asking you this question
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            We need to check you're eligible to use this service.
+          <div class="govuk-radios__divider">or</div>
+            </div>
+          
+          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="baby-gender-version1" name="years" type="radio" value="unknown">
+            <label class="govuk-label govuk-radios__label" for="unknown">
+              I do not know the place of my baby loss
+            </label>
           </div>
-        </details>
-
+          </fieldset>
+       </div>
+       </div>
+       </div>
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
 
       </form>
-    </div>
+
     </div>
   </div>
   <style>
-   
-    .govuk-fieldset__legend--l {
-      margin-bottom: 30px;
-    }
-    .govuk-radios {
-      margin-bottom: 30px;
+    .govuk-button {
+      margin-left: 15px;
     }
   </style>
 

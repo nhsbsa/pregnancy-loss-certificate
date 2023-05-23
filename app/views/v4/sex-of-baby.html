@@ -25,63 +25,62 @@
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
+  <span class="govuk-caption-l">Details on the certificate</span>
 <div class="govuk-form-group">
-  <span class="govuk-caption-l">Your details</span>
   <fieldset class="govuk-fieldset">
-    
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Do you live in the UK?
+    Would you like to include the sex of your baby on the certificate? 
+    
   </h1>
 </legend>
+<p>You may not know the sex of your baby.</p>
+<p></p>
+<div id="passport-issued-hint" class="govuk-hint">
+  If you select no or I do not know the sex of my baby, this will not be shown on the certificate. 
+</div>
 
-      <form class="form" action="location-uk" method="post">
+      <form class="form" action="baby-gender-version1" method="post">
         
          
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="location-uk-yes" name="location" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="location-england-yes">
+            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="yes">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="location-uk-no" name="location" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="location-england-no">
+            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="no">
               No
             </label>
           </div>
-        </div>
-           
-          </fieldset>
-        </div>
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Why we're asking you this question
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            We need to check you're eligible to use this service.
+          <p>or</p>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="unknown">
+            <label class="govuk-label govuk-radios__label" for="unknown">
+              I do not know the sex of my baby
+            </label>
           </div>
-        </details>
-
+        </div>
+            </div>
+          </fieldset>
+       
+</div>
+</div>
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
 
       </form>
-    </div>
+
     </div>
   </div>
   <style>
-    
-    .govuk-fieldset__legend--l {
-      margin-bottom: 30px;
-    }
-    .govuk-radios--inline {
-      margin-bottom: 30px;
+   
+    .govuk-button {
+      margin-left: 15px;
     }
   </style>
-
 {% endblock %}
