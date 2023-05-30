@@ -4,3 +4,42 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% block footer %}
+ {{ govukFooter({
+   meta: {
+     items: [
+     {
+        href: "https://www.gov.uk/help?ref=e03bb38e-d034-4188-ab77-d185da316158",
+        text: "Help"
+      },
+      {
+        href: "/cookies",
+        text: "Cookies"
+        
+      },
+      {
+        href: "/contact",
+        text: "Contact us"
+      },
+      {
+        href: "/accessibility",
+        text: "Accessibility statement"
+      },
+      {
+        href: "/termnsandconditions",
+        text: "Terms and conditions"
+      },
+       {
+         href: "/privacy",
+         text: "Privacy policy"
+       },
+       
+       {
+         href: "/manage-prototype/clear-data",
+         text: "Clear data"
+       }
+     ],
+     visuallyHiddenTitle: "Footer links"
+   }
+ }) }}
+{% endblock %}

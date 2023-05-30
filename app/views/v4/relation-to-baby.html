@@ -36,7 +36,9 @@
 </legend>
 
       <form class="form" action="relation-baby" method="post">
-        
+        <div id="passport-issued-hint" class="govuk-hint">
+          This will be shown on the certificate.
+        </div>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="Mother" name="relation-baby" type="radio" value="Mother">
@@ -82,7 +84,7 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        We need to check you're eligible to use this service. If you’re not on this list and you think you’re eligible, <a href="">contact us</a>.
+        We need to check you're eligible to use this service.
       </div>
     </details>
                 
@@ -100,9 +102,7 @@
   </div>
   <style>
   
-    .govuk-fieldset__legend--l {
-      margin-bottom: 30px;
-    }
+   
     .govuk-radios {
       margin-bottom: 30px;
     }
