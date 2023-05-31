@@ -167,7 +167,7 @@ router.post(/address-postcode/, (req, res) => {
   } else if (AddressPostcode == 'NE1 4XL') {
     res.redirect('address-list')
   } else {
-    res.redirect('postcode-kickout');
+    res.redirect('location-kickout-uk');
   }
 
 })
