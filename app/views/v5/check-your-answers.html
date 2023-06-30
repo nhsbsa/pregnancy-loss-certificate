@@ -28,37 +28,13 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
         <h1 class="govuk-heading-l">Check your answers</h1>
-        <h2 class="govuk-heading-m">Your details</h2>
+      
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
          
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-             27 March 2007
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-       
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Address
-            </dt>
-            <dd class="govuk-summary-list__value">
-              1 Test Town<br>Town<br>NE1 3JA
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-          </dl>
+
+
+
+
         <h2 class="govuk-heading-m">Details on the certificate</h2>
         <h3 class="govuk-heading-s">Parent 1</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -75,7 +51,7 @@
                 {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="what-is-your-name">
                 Change<span class="govuk-visually-hidden"> name</span>
               </a>
             </dd>
@@ -92,7 +68,7 @@
              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="relation-to-baby">
                 Change<span class="govuk-visually-hidden"> name</span>
               </a>
             </dd>
@@ -101,7 +77,19 @@
           <h3 class="govuk-heading-s">Parent 2</h3>
           
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Would you like to add another parent?
+              </dt>
+              <dd class="govuk-summary-list__value">
+            Yes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="add-parent">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </div>
             <div class="govuk-summary-list__row">
               
               <dt class="govuk-summary-list__key">
@@ -115,7 +103,7 @@
                 {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
+                <a class="govuk-link" href="second-parent">
                   Change<span class="govuk-visually-hidden"> name</span>
                 </a>
               </dd>
@@ -132,7 +120,7 @@
                {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="#">
+                <a class="govuk-link" href="second-relation-to-baby">
                   Change<span class="govuk-visually-hidden"> name</span>
                 </a>
               </dd>
@@ -152,7 +140,7 @@
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="babys-name">
                 Change<span class="govuk-visually-hidden"> name</span>
               </a>
             </dd>
@@ -166,11 +154,11 @@
               {% if data['baby-gender'] %}
               {{ data['baby-gender'] }}
              {% else %}
-             Example gender
+             Example sex
              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="sex-of-baby">
                 Change<span class="govuk-visually-hidden"> name</span>
               </a>
             </dd>
@@ -187,7 +175,7 @@
                   {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="date-of-loss">
                 Change<span class="govuk-visually-hidden"> name</span>
               </a>
             </dd>
@@ -200,7 +188,7 @@
              Example place
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+              <a class="govuk-link" href="place-of-loss">
                 Change<span class="govuk-visually-hidden"> name</span>
               </a>
             </dd>
