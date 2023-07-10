@@ -23,38 +23,42 @@
 {% endblock %}
 
 {% block content %}
-<span class="govuk-caption-l">Your details</span>
 <div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group">
+  <span class="govuk-caption-l">Your details</span>
   <fieldset class="govuk-fieldset">
+    
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Enter your security code
+    Check your address
   </h1>
 </legend>
 
-      <form class="form" action="security-code" method="post">
-        <div id="passport-issued-hint" class="govuk-hint">
-          We sent your security code by email to Sa********@gmail.com
-        </div>
-       
-        <input class="govuk-input govuk-input--width-10" id="security-code" name="entercode" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
-      </div>
+      <form class="form" action="" method="post">
         
-            </div>
-          </fieldset>
-          <p>Didn't get your security code? <a href="">Resend code
-          </a></p>
+        <div class="govuk-inset-text">
+         1 TEST TOWN <br>
+         NEWCASTLE<br>
+         NE1 3JA
+        </div>
 
-        <button class="govuk-button" data-module="govuk-button">
+        <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
-
+      </div>
       </form>
-
+    </div>
     </div>
   </div>
   <style>
    
-    
+    .govuk-fieldset__legend--l {
+      margin-bottom: 30px;
+    }
+    .govuk-radios {
+      margin-bottom: 30px;
+    }
   </style>
+
 {% endblock %}

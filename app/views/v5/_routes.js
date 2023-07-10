@@ -32,7 +32,7 @@ router.post(/location-uk/, (req, res) => {
   const lossInuk = req.session.data['location']
 
   if (lossInuk == 'yes') {
-    res.redirect('enter-address');
+    res.redirect('enter-location');
   } else {
     res.redirect('location-kickout-uk');
   }
@@ -81,7 +81,7 @@ router.post(/date-of-birth/, (req, res) => {
   const dob = day + '/' + month + '/' + year
 
   if (dob == '27/3/2007') {
-    res.redirect('enter-location-uk');
+    res.redirect('enter-address');
   } else {
     res.redirect('date-of-birth-kickout');
 }
@@ -95,7 +95,7 @@ router.post(/relation-baby/, (req, res) => {
   if (relationship == 'no') {
       res.redirect('relation-kickout')
   } else {
-      res.redirect('what-is-your-name')
+      res.redirect('nhs-number')
   }
 
 })
@@ -140,7 +140,7 @@ router.post(/nhs-number-action/, (req, res) => {
   if (NHSNumber == 'yes') {
     res.redirect('enter-nhs-number');
   } else {
-    res.redirect('check-your-details');
+    res.redirect('what-is-your-name');
   }
 
 })
@@ -163,11 +163,25 @@ router.post(/address-postcode/, (req, res) => {
   const AddressPostcode = req.session.data['postcodeinput']
 
   if (AddressPostcode == 'NE1 3JA') {
-    res.redirect('nhs-number');
+    res.redirect('check-your-details');
   } else if (AddressPostcode == 'NE1 4XL') {
     res.redirect('address-list')
   } else {
     res.redirect('location-kickout-uk');
+  }
+
+})
+
+router.post(/security-code/, (req, res) => {
+
+  const SecurityCode = req.session.data['entercode']
+
+  if (SecurityCode == '123') {
+    res.redirect('check-your-details-nhs');
+  } else if (SecurityCode == '1234') {
+    res.redirect('check-your-details-no-nhs')
+  } else {
+    res.redirect('check-your-details-copy');
   }
 
 })

@@ -45,9 +45,7 @@
                {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
+              
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -62,44 +60,52 @@
                   {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
+             
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Postcode
+              Address
             </dt>
             <dd class="govuk-summary-list__value">
-              NE1 3JA
+              72 Guild Street<br>London<br>SE23 6FH
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
+             
             </dd>
           </div>
-          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             NHS number
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['first-name'] %}
+
+                {{ data['first-name'] }} {{ data['last-name'] }}
+
+                {% else %}
+
+                Example NHS number
+
+               {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
           </dl>
         
           
           
           
         </dl>
-        <p>By continuing you agree to let us use your details to:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>check who you are</li>
-          <li>find your contact details from your NHS health records so we can send you a security code</li>
-         
-          
-        </ul>
+       
         
        
         <form action="/v5/get-security-code" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
           <button class="govuk-button" data-module="govuk-button">
-            Agree and continue
+          Continue
           </button>
         </form>
       </div>
