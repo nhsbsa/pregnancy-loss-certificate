@@ -104,9 +104,11 @@
        
         <form action="/v5/get-security-code" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
-          <button class="govuk-button" data-module="govuk-button">
-          Continue
-          </button>
+          {{ govukButton({
+            text: "Continue",
+            href: "add-parent",
+            isStartButton: false
+            }) }}
         </form>
       </div>
     </div>
