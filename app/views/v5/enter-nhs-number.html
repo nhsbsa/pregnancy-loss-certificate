@@ -50,9 +50,11 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
          
          </div>
 
-          <button class="govuk-button" data-module="govuk-button">
-         Continue
-     </button>
+         {{ govukButton({
+          text: "Agree and continue",
+          href: "check-your-details-copy",
+          isStartButton: false
+          }) }}
     </form>
    </div>
 
