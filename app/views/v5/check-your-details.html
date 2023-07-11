@@ -98,9 +98,11 @@
        
         <form action="/v5/get-security-code" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
-          <button class="govuk-button" data-module="govuk-button">
-            Agree and continue
-          </button>
+          {{ govukButton({
+            text: "Agree and continue",
+            href: "get-security-code",
+            isStartButton: false
+            }) }}
         </form>
       </div>
     </div>
