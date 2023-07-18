@@ -14,6 +14,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 //////////////////////////////
 ////////   Versions   ////////
 //////////////////////////////
+router.use('/v6', require('./views/v6/_routes'));
 router.use('/v5', require('./views/v5/_routes'));
 //router.use('/ccs', require('./views/css/_routes'));
 router.use('/v4', require('./views/v4/_routes'));
