@@ -82,6 +82,8 @@ router.post(/date-of-birth/, (req, res) => {
 
   if (dob == '27/3/2007') {
     res.redirect('enter-address');
+  } else if (dob== '27/03/2007') {
+    res.redirect('enter-address')
   } else {
     res.redirect('date-of-birth-kickout');
 }
@@ -164,8 +166,10 @@ router.post(/address-postcode/, (req, res) => {
 
   if (AddressPostcode == 'NE1 3JA') {
     res.redirect('check-your-details');
-  } else if (AddressPostcode == 'NE1 4XL') {
-    res.redirect('address-list')
+  } else if (AddressPostcode == 'ne1 3ja') {
+    res.redirect('check-your-details')
+  } else if (AddressPostcode == 'ne13ja') {
+    res.redirect('check-your-details')
   } else {
     res.redirect('location-kickout-uk');
   }

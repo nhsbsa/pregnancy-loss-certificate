@@ -48,12 +48,11 @@
               Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['first-name'] %}
-              {{ data['first-name'] }}
-                 {{ data['last-name'] }}
-                {% else %}
-                Example date
-                {% endif %}
+              {% if data['dob-day'] %}
+              {{ data['dob-day'] }} <span class="cya-month">{{ data['dob-month'] }}</span> {{ data['dob-year'] }}
+              {% else %}
+            Example date of birth
+            {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
              
@@ -64,12 +63,7 @@
               Address
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['first-name'] %}
-              {{ data['first-name'] }}
-                 {{ data['last-name'] }}
-                {% else %}
-                Example address
-                {% endif %}
+              4 Albert Road<br>Newcastle<br>NE1 3JA
             </dd>
             <dd class="govuk-summary-list__actions">
              
@@ -114,7 +108,7 @@
               </dt>
               <dd class="govuk-summary-list__value">
                 {% if data['parent2-firstname'] %}
-                 {{ data['parent2-firstname'] }}
+                 {{ data['parent2-lastname'] }}
                 {% else %}
                 Example name
                 {% endif %}
@@ -130,8 +124,8 @@
                 Their relationship to your baby
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if data['relation'] %}
-                {{ data['relation'] }}
+                {% if data['parent-2'] %}
+                {{ data['parent-2'] }}
                {% else %}
                Example relation
                {% endif %}
@@ -202,7 +196,11 @@
               Place of baby loss
             </dt>
             <dd class="govuk-summary-list__value">
+              {% if data['place'] %}
+              {{ data['place'] }}
+             {% else %}
              Example place
+             {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="place-of-loss">
