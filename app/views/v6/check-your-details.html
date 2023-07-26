@@ -31,12 +31,13 @@
              Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['first-name'] %}
-              {{ data['first-name'] }}
-                 {{ data['last-name'] }}
+             
+                {% if data['parent1-firstname'] %}
+                {{ data['parent1-firstname'] }} {{ data['parent1-lastname'] }}
                 {% else %}
                 Example name
                 {% endif %}
+           
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">

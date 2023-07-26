@@ -203,8 +203,18 @@ router.post(/check-details/, (req, res) => {
 
 })
 
+router.post(/enter-your-name/, (req, res) => {
+
+  res.redirect('enter-date-of-birth')
+
+})
 
 
+router.post(/enter-parent-name/, (req, res) => {
+
+  res.redirect('date-of-loss')
+
+})
 
 // router.post(/baby-loss-date/, (req, res) => {
 
