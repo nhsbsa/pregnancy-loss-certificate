@@ -149,8 +149,6 @@ router.post(/baby-gender-version1/, (req, res) => {
 })
 
 
-
-
 router.post(/nhs-number-action/, (req, res) => {
 
   // if user wants their baby gender included in the certificate they will select yes then it 
@@ -159,11 +157,14 @@ router.post(/nhs-number-action/, (req, res) => {
 
   if (NHSNumber == 'yes') {
     res.redirect('enter-nhs-number');
-  } else {
+   } else if (NHSNumber == 'idv') {
+      res.redirect('what-is-your-name-nonidv');
+  }   else if (NHSNumber == 'no') {
     res.redirect('what-is-your-name');
-  }
+  
 
 })
+
 
 
 router.post(/parent-add/, (req, res) => {
@@ -223,18 +224,18 @@ router.post(/check-details/, (req, res) => {
 
 })
 
-router.post(/enter-your-name/, (req, res) => {
+//router.post(/enter-your-name/, (req, res) => {
 
-  res.redirect('enter-date-of-birth')
+  //res.redirect('enter-date-of-birth') 
 
-})
+//})
 
 
-router.post(/enter-parent-name/, (req, res) => {
+//router.post(/enter-parent-name/, (req, res) => {
 
-  res.redirect('date-of-loss')
+ // res.redirect('date-of-loss')
 
-})
+//})
 //router.post(/enter-date-of-birth-nonidv/, (req, res) => {
 
   //res.redirect('enter-date-of-birth-nonidv')
