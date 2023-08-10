@@ -161,10 +161,9 @@ router.post(/nhs-number-action/, (req, res) => {
       res.redirect('what-is-your-name-nonidv');
   }   else if (NHSNumber == 'no') {
     res.redirect('what-is-your-name');
-  
+  }
 
 })
-
 
 
 router.post(/parent-add/, (req, res) => {
