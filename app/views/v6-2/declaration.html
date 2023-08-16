@@ -44,16 +44,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      alpha
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
+
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -69,7 +60,7 @@
           <h1 class="govuk-heading-l">Declaration</h1>
           <h2 class="govuk-heading-m">Applicant</h2>
           <p>Do you declare that the information you have provided is true and correct?</p>
-          <p>Do you certify that you have read and understand the <a href="">Terms of Use and Privacy Policy</a>?</p>
+         
          
           <p>Do you acknowledge the ‘Certificate of Baby Loss Before 24 Weeks of Pregnancy’ that you receive is not a legal document?</p>
          
@@ -90,7 +81,7 @@
           </div>
           <h2 class="govuk-heading-m">Second Parent</h2>
           <p>Do you declare that the information you have provided is true and correct. </p>
-          <p>Do you certify that you have read and understand the <a href="">Terms of Use and Privacy Policy</a>.</p>
+          
           <p>Do you consent for your name to be included as a parent of the baby on the Certificate of Baby Loss Before 24 Weeks of Pregnancy’ applied for through this application.</p>
           <p>Do you acknowledge the ‘Certificate of Baby Loss Before 24 Weeks of Pregnancy’ you will receive is not a legal document.</p>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">

@@ -1,9 +1,5 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
 {% block header %}
 <header role="banner">
   <div class="govuk-header hmrc-header  hmrc-header--with-additional-navigation" data-module="govuk-header">
@@ -52,45 +48,52 @@
 {% endblock %}
 
 {% block content %}
-<span class="govuk-caption-l">Applicants details</span>
 <div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group">
+  <span class="govuk-caption-l">Applicant's details</span>
   <fieldset class="govuk-fieldset">
+    
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Enter your security code
+    Does the applicant want the certificate to be sent to a different address?
   </h1>
 </legend>
 
-      <form class="form" action="security-code" method="post">
-   <p>
-          We sent your security code by email to Sa********@gmail.com
-        </p>
-        <div id="passport-issued-hint" class="govuk-hint">
-        If you do not receive the email within a few minutes, check your spam or junk mail folder.
-      </div>
-        <input class="govuk-input govuk-input--width-10" id="security-code" name="entercode" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
-      </div>
+      <form class="form" action="location-uk" method="post">
         
-        
-        
-          <p>Didn't get your security code? <a href="">Resend code
-          </a></p>
+         
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="location-uk-yes" name="location" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="location-england-yes">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="location-uk-no" name="location" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="location-england-no">
+              No
+            </label>
+          </div>
+        </div>
+           
+          </fieldset>
+        </div>
+     
 
-          {{ govukButton({
-            text: "continue",
-            href: "check-your-details-nhs",
-            isStartButton: false
-            }) }}
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
 
       </form>
-    </fieldset>
+    </div>
     </div>
   </div>
   <style>
-   
-    
-  </style>
-  <style>
+    .govuk-details {
+      margin-top: 20px;
+    }
     .govspeak .mc-chart .mc-td, .govspeak .mc-chart .mc-th, .gem-c-govspeak .mc-chart .mc-td, .gem-c-govspeak .mc-chart .mc-th {
         padding: 0;
         padding-right: 5px;
@@ -338,4 +341,5 @@
     }
     
     </style>
+
 {% endblock %}
