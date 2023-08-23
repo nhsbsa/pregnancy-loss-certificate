@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Request complete",
+        html: "Your reference number<br><strong>HDJ2123F</strong>"
+      }) }}
+
+   
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+      <p>You'll receive the certificate in the post in the next 14 days.</p>
+      <h3 class="govuk-heading-m">Support organisations</h3>
+      <p>The following organisations give support and advice:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href=''>Sands</a></li>
+        <li><a href=''>Tommy's</a></li>
+        <li><a href="">Antenatal Results and Choices (ARC)</a></li>
+        <li><a href="">Saying Goodbye</a></li>
+        <li><a href="">The Miscarriage Association</a></li>
+        <li><a href="">Petals</a></li>
+        <li><a href="">NHS How to access mental health services</a></li>
+      </ul>
+      
+
+<p>
+        <a href="#">
+          What did you think of this service?
+        </a> (takes 30 seconds)
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
