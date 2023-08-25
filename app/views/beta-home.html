@@ -7,28 +7,77 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-   
 
-   
-      <h1 class="govuk-heading-l">
-       Private beta (September 2023)
-      </h1>
-      
+    <h1 class="govuk-heading-l">
+      Public Beta (September 2023)
+    </h1>
 
-      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-        <div class="govuk-accordion__section ">
-          
-          <div class="govuk-accordion__section-header">
-            <h2 class="govuk-accordion__section-heading">
-              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                Version 6 - July 2023
-              </span>
-            </h2>
-          </div>
-          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-            <p class='govuk-body'>Use NE1 3JA to get throught the IDV route</p>
-              <p class='govuk-body'>Use date 27/3/2007 for date of birth, any other dates will guide you to the kickout screen</p>
-              
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+      <div class="govuk-accordion__section ">
+
+        <div class="govuk-accordion__section-header">
+          <h2 class="govuk-accordion__section-heading">
+            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+              Second parent IDV
+            </span>
+          </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+          aria-labelledby="accordion-default-heading-1">
+          <h2 class="govuk-heading-m">
+            Scenario 1
+          </h2>
+          <p class='govuk-body'>Main applicant does their own and second parents ID Verification, where a OTP is sent to second parent to
+            verify their details, implied consent given. (Both parents need to be together or on the phone (or other) to complete the single synchronous journey.)
+          </p>
+          <p class='govuk-body'>Use date 27/3/2007 for date of birth, any other dates will guide you to the kickout
+            screen</p>
+          <a class="govuk-button" href="beta/s1/start-page">Scenario 1 start</a>
+          <h2 class="govuk-heading-m">
+            Scenario 2
+          </h2>
+          <p class='govuk-body'>Main applicant does their own ID verification and NOT do second parents ID Verification. Second parent completes a prompted journey where they verify who they are, ultimately giving consent. This is an asynchronous journey! (2nd parent gets a notification via email or SMS that contains a link to start the journey.)</p>
+          <p class='govuk-body'>Use date 27/3/2007 for date of birth, any other dates will guide you to the kickout
+            screen</p>
+          <a class="govuk-button" href="beta/v6/start-page">Scenario 2 start</a>
+          <h2 class="govuk-heading-m">
+            Scenario 3
+          </h2>
+          <p class='govuk-body'>Main applicant provides second parent with a reference code to enter into second parent start page. The second parent completes the journey, proving their identity and gives explicit consent.
+            (The first parent receives a journey/reference code/identifier. They give that to the second parent to complete the consent journey via a new start page. This journey will validate the user’s name.) This is an asynchronous journey!</p>
+          <p class='govuk-body'>Use date 27/3/2007 for date of birth, any other dates will guide you to the kickout
+            screen</p>
+          <a class="govuk-button" href="beta/v6-2/start-page">Scenario 3 start</a>
+
+
+        </div>
+
+
+
+
+
+        <h1 class="govuk-heading-l">
+          Private beta (September 2023)
+        </h1>
+
+
+        <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="govuk-accordion__section ">
+
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  Version 6 - July 2023
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content"
+              aria-labelledby="accordion-default-heading-1">
+              <p class='govuk-body'>Use NE1 3JA to get throught the IDV route</p>
+              <p class='govuk-body'>Use date 27/3/2007 for date of birth, any other dates will guide you to the kickout
+                screen</p>
+
               <a class="govuk-button" href="beta/v6/start-page">V6 Start (with IDV)</a>
               <a class="govuk-button" href="beta/v6-2/start-page">CCS journey</a>
               <details class="govuk-details" data-module="govuk-details">
@@ -39,35 +88,35 @@
                 </summary>
                 <div class="govuk-details__text">
                   <p><a href="beta/v6/problem-with-service">Problem with the service screen</a></p>
-              <p><a href="beta/v6/cannot-request-code">Cannot request another access code screen</a></p>
-              <p><a href="beta/v6/cannot-find-contact-details">Cannot find phone or email screen</a></p>
-              <p><a href="beta/v6/cannot-find-address">Cannot find address screen</a></p>
-              <p><a href="beta/v6/start-again">Start again</a></p>
-              <p><a href="beta/v6/cannot-request-another-code">Cannot request another code screen</a></p>
-              <p><a href="beta/v6/new-code-sent">Your new code has been sent screen</a></p>
-              <p><a href="beta/v6/cannot-find-details-request">Cannot find details screen</a></p>
-              <p><a href="beta/v6/cannot-request-try-again">Cannot request try again</a></p>
+                  <p><a href="beta/v6/cannot-request-code">Cannot request another access code screen</a></p>
+                  <p><a href="beta/v6/cannot-find-contact-details">Cannot find phone or email screen</a></p>
+                  <p><a href="beta/v6/cannot-find-address">Cannot find address screen</a></p>
+                  <p><a href="beta/v6/start-again">Start again</a></p>
+                  <p><a href="beta/v6/cannot-request-another-code">Cannot request another code screen</a></p>
+                  <p><a href="beta/v6/new-code-sent">Your new code has been sent screen</a></p>
+                  <p><a href="beta/v6/cannot-find-details-request">Cannot find details screen</a></p>
+                  <p><a href="beta/v6/cannot-request-try-again">Cannot request try again</a></p>
                 </div>
               </details>
-             
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
           </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>
       </div>
-     
-  </div>
-</div>
 
 
-{% endblock %}
+      {% endblock %}

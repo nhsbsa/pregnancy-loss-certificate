@@ -14,6 +14,8 @@ const router = govukPrototypeKit.requests.setupRouter()
 //////////////////////////////
 ////////   Versions   ////////
 //////////////////////////////
+router.use('beta/s1', require('./views/beta/s1/_routes'));
+router.use('beta/v6', require('./views/beta/v6/_routes'));
 router.use('discovery-alpha/v6-2', require('./views/discovery-alpha/v6-2/_routes'));
 router.use('discovery-alpha/v6', require('./views/discovery-alpha/v6/_routes'));
 router.use('discovery-alpha/v5', require('./views/discovery-alpha/v5/_routes'));

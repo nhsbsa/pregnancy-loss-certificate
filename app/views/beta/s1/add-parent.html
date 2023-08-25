@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group">
+  <span class="govuk-caption-l">Details on the certificate</span>
+  <fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    What details would you like on the certificate?
+    
+  </h1>
+</legend>
+
+
+      <form class="form" action="parent-add" method="post">
+        <div class="govuk-form-group">
+
+        
+        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="details-1" name="details" type="checkbox" value="parent">
+            <label class="govuk-label govuk-checkboxes__label" for="details-1">
+              Other parent's name and relationship to baby
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="details-2" name="details" type="checkbox" value="date">
+            <label class="govuk-label govuk-checkboxes__label" for="details-2">
+              Date of baby loss
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="details-3" name="details" type="checkbox" value="place">
+            <label class="govuk-label govuk-checkboxes__label" for="details-3">
+              Place of baby loss
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="details-4" name="details" type="checkbox" value="sex">
+            <label class="govuk-label govuk-checkboxes__label" for="details-4">
+             Baby's sex
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="details-5" name="details" type="checkbox" value="name">
+            <label class="govuk-label govuk-checkboxes__label" for="details-5">
+              Baby's name
+            </label>
+          </div>
+        </div>
+      
+          </fieldset>
+        </div>
+      </form>
+      </div>
+      </div>
+      
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
+
+      
+</div>
+</div>
+    </div>
+  </div>
+  <style>
+    
+    .govuk-radios {
+      margin-bottom: 20px;
+    }
+  </style>
+
+{% endblock %}
