@@ -215,6 +215,17 @@ router.post(/enter-parent-name/, (req, res) => {
   res.redirect('date-of-loss')
 
 })
+router.post(/test-route/, (req, res) => {
+
+  const parentName = req.session.data['second-parent-firstname']
+
+  if (parentName == 'joe') {
+    res.redirect('access-code');
+  } else {
+    res.redirect('second-relation-to-baby');
+  }
+
+})
 
 // router.post(/baby-loss-date/, (req, res) => {
 

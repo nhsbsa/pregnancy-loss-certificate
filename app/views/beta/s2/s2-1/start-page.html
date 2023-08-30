@@ -21,25 +21,7 @@ Start page template – {{ serviceName }} – GOV.UK Prototype Kit
     </p>
   </div>
  
-{{ govukBreadcrumbs({
-items: [
-{
-text: "Home",
-href: "#"
-},
-{
-text: "Childcare and parenting",
-href: "#"
-},
-{
-  text: "Pregnancy and birth",
-href: "#"
-},
-{
-text: "Request a baby loss certificate"
-}
-]
-}) }}
+
 
 {% endblock %}
 
@@ -51,9 +33,13 @@ text: "Request a baby loss certificate"
     <h1 class="govuk-heading-xl">
      Request a baby loss certificate
     </h1>
+    
     <p>If your pregnancy ends before 24 weeks, you can get a certificate in memory of your baby.</p>
     <p>You do not have to request a certificate - it’s optional.</p>
-    
+    <p>You have been requested for your name and relation to your baby to be added to the certificate from the main applicant.</p>
+    <p>We will ask you some questions to confirm your details.</p>
+    <p>You can choose to not be added onto the certificate.</p>
+    <p>If you choose to not be added onto the certificate the main applicant can still get the certificate in their name if they have chosen to.</p>
     <div class="govuk-inset-text">The certificate is not a legal document. For example, you cannot use it to claim benefits.</div>
     <p>The certificate will not be added to your GP record.</p>
     <p>If your pregnancy ends from 24 weeks onwards, you need to <a href="https://www.gov.uk/register-stillbirth">register a stillbirth</a> instead.</p>
