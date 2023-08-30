@@ -24,20 +24,21 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
         <h1 class="govuk-heading-l">Check their details</h1>
-       
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Name
+              NHS number
             </dt>
             <dd class="govuk-summary-list__value">
-             
-                {% if data['parent2-firstname'] %}
-                {{ data['parent2-firstname'] }} {{ data['parent2-lastname'] }}
-                {% else %}
-                Example name
-                {% endif %}
-           
+              {% if data['first-name'] %}
+  
+               {{ data['first-name'] }} {{ data['last-name'] }}
+  
+              {% else %}
+  
+              485 777 3456
+  
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -45,21 +46,8 @@
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Contact details
-            </dt>
-            <dd class="govuk-summary-list__value">
-             
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-          
-          </dl>
+         
+        </dl>
         
           
           
@@ -78,7 +66,7 @@
           <input type="hidden" name="answers-checked" value="true">
           {{ govukButton({
             text: "Agree and continue",
-            href: "declaration",
+            href: "get-security-code-copy",
             isStartButton: false
             }) }}
         </form>

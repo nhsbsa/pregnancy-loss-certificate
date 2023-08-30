@@ -66,9 +66,12 @@
         </div>
         
       
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+         
+      {{ govukButton({
+        text: "Continue",
+        href: "second-parent-question",
+        isStartButton: false
+        }) }}
 
       </form>
 </div>

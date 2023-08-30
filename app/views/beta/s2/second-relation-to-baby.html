@@ -74,11 +74,11 @@
                 
                 
            
-        
-
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+    {{ govukButton({
+      text: "Continue",
+      href: "parent-contact",
+      isStartButton: false
+      }) }}
 
       </form>
 

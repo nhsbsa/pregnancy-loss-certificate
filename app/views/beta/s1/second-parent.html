@@ -62,9 +62,12 @@
       
 </div>
 </div>
-<button type="submit" class="govuk-button">
-  Continue
-</button>
+
+{{ govukButton({
+  text: "Continue",
+  href: "enter-date-of-birth-copy",
+  isStartButton: false
+  }) }}
 
       </form>
 

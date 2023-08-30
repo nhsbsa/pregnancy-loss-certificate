@@ -26,53 +26,57 @@
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
-  <span class="govuk-caption-l">Your details</span>
+  <span class="govuk-caption-l">Details on the certificate</span>
   <fieldset class="govuk-fieldset">
-    
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you like to continue?
+    Would you still like to receive the certificate if the other parent cannot confirm their details?
   </h1>
 </legend>
 
-      <form class="form" action="parent-continue" method="post">
-        <div class="govuk-body">By continuing you agree to let us use your details to check who you are,
-           and find your contact details from your NHS health records so we can send you a security code</div>
-         
+
+      <form class="form" action="parent-add" method="post">
+        
+        <div class="govuk-body">
+         The other parent may choose to not be on the certificate, you can still request a certificate without them on the certficate.
+        </div>
+        <div class="govuk-body">We'll let you know if the other parent gives permission for their name to be on the certificate.</div>
+       
+        
+              
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="continue-yes" name="continue" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="continue-yes">
+            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="yes">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="continue-no" name="continue" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="continue-no">
+            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="no">
               No
             </label>
           </div>
         </div>
-           
           </fieldset>
         </div>
         
-
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+      
+        {{ govukButton({
+          text: "Continue",
+          href: "what-is-their-name",
+          isStartButton: false
+          }) }}
 
       </form>
-    </div>
+</div>
+</div>
     </div>
   </div>
   <style>
     
-    .govuk-fieldset__legend--l {
-      margin-bottom: 30px;
-    }
-    .govuk-radios--inline {
-      margin-bottom: 30px;
+    .govuk-radios {
+      margin-bottom: 20px;
     }
   </style>
 

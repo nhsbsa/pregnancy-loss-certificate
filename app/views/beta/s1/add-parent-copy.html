@@ -59,9 +59,11 @@
         </div>
         
       
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+        {{ govukButton({
+          text: "Continue",
+          href: "nhs-number-copy",
+          isStartButton: false
+          }) }}
 
       </form>
 </div>

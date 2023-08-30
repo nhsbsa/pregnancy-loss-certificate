@@ -20,67 +20,19 @@
 
 {% block content %}
 
-<span class="govuk-caption-l">Your details</span>
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
-        <h1 class="govuk-heading-l">Check their details</h1>
+        <h1 class="govuk-heading-l">You request hasnt been cancelled</h1>
+        <div class="govuk-form-group">
        
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Name
-            </dt>
-            <dd class="govuk-summary-list__value">
-             
-                {% if data['parent2-firstname'] %}
-                {{ data['parent2-firstname'] }} {{ data['parent2-lastname'] }}
-                {% else %}
-                Example name
-                {% endif %}
-           
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Contact details
-            </dt>
-            <dd class="govuk-summary-list__value">
-             
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-          
-          </dl>
+        <form class="form" action="parental-kickout" method="post">
         
-          
-          
-          
-        </dl>
-        <p>By continuing you agree to let us use their details to:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>check who they are</li>
-          <li>find their contact details from their NHS health records so we can send them a security code</li>
+        
+      </div>
+
+       
          
-          
-        </ul>
-        
-       
-        <form action="/v6/get-security-code" method="post" novalidate>
-          <input type="hidden" name="answers-checked" value="true">
-          {{ govukButton({
-            text: "Agree and continue",
-            href: "declaration",
-            isStartButton: false
-            }) }}
         </form>
       </div>
     </div>

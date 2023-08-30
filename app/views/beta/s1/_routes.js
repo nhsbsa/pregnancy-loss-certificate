@@ -224,9 +224,9 @@ router.post(/parent-nhs-number/, (req, res) => {
 
   // if user wants their baby gender included in the certificate they will select yes then it 
   //will take them to enter baby gender name
-  const NHSNumber = req.session.data['nhs']
+  const parentNHSNumber = req.session.data['nhs']
 
-  if (NHSNumber == 'yes') {
+  if (parentNHSNumber == 'yes') {
     res.redirect('enter-nhs-number-copy');
   } else {
     res.redirect('second-parent');
@@ -262,7 +262,7 @@ router.post(/parental-kickout/, (req, res) => {
   if ( nosecondparent == 'yes') {
     res.redirect('check-your-answers-copy');
   } else {
-    res.redirect('parent-kickout');
+    res.redirect('parent-kickout-copy');
   }
 
 })
