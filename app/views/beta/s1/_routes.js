@@ -153,25 +153,25 @@ router.post(/parent-add/, (req, res) => {
   const AddParent = req.session.data['parent']
 
   if (AddParent == 'yes') {
-    res.redirect('second-relation-to-baby');
+    res.redirect('nhs-number-copy');
   } else {
-    res.redirect('date-of-loss');
+    res.redirect('check-your-answers');
   }
 
 })
 
-router.post(/address-postcode/, (req, res) => {
+router.post(/parent-postcode/, (req, res) => {
 
   const AddressPostcode = req.session.data['postcodeinput']
 
   if (AddressPostcode == 'NE1 3JA') {
-    res.redirect('check-your-details');
+    res.redirect('check-their-details');
   } else if (AddressPostcode == 'ne1 3ja') {
-    res.redirect('check-your-details')
+    res.redirect('check-their-details')
   } else if (AddressPostcode == 'ne13ja') {
-    res.redirect('check-your-details')
+    res.redirect('check-their-details')
   } else {
-    res.redirect('location-kickout-uk');
+    res.redirect('check-their-details-copy');
   }
 
 })
@@ -212,26 +212,58 @@ router.post(/enter-your-name/, (req, res) => {
 
 router.post(/enter-parent-name/, (req, res) => {
 
-  res.redirect('date-of-loss')
+  res.redirect('enter-date-of-birth-copy')
 
 })
 
-// router.post(/baby-loss-date/, (req, res) => {
-
-//   // creating a variable named lossInEngland, assigning the variable the value of the input (location)
-//   // lossInEngland = location (value)
-//   const BabyLossDate = req.session.data['date']
-
-//   if (BabyLossDate == 'yes') {
-//     res.redirect('relation-to-baby');
-//   } else {
-//     res.redirect('date-of-loss-kickout');
-//   }
-
-// })
+// second parent 
 
 
 
+router.post(/parent-nhs-number/, (req, res) => {
+
+  // if user wants their baby gender included in the certificate they will select yes then it 
+  //will take them to enter baby gender name
+  const NHSNumber = req.session.data['nhs']
+
+  if (NHSNumber == 'yes') {
+    res.redirect('enter-nhs-number-copy');
+  } else {
+    res.redirect('second-parent');
+  }
+
+})
+
+router.post(/parent-dob/, (req, res) => {
+
+  const day = req.session.data['dob-day']
+  const month = req.session.data['dob-month']
+  const year = req.session.data['dob-year']
+
+  const dob = day + '/' + month + '/' + year
+
+  if (dob == '27/3/2007') {
+    res.redirect('enter-address-copy');
+  } else if (dob== '27/03/2007') {
+    res.redirect('enter-address-copy')
+  } else {
+    res.redirect('date-of-birth-kickout');
+}
+
+})
 
 
+router.post(/parental-kickout/, (req, res) => {
+
+  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
+  // lossInEngland = location (value)
+  const nosecondparent = req.session.data['parentkickout']
+
+  if ( nosecondparent == 'yes') {
+    res.redirect('check-your-answers-copy');
+  } else {
+    res.redirect('parent-kickout');
+  }
+
+})
 module.exports = router;

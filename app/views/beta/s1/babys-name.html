@@ -68,9 +68,11 @@
        
        </div>
        </div>
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+       {{ govukButton({
+        text: "Continue",
+        href: "add-parent-copy",
+        isStartButton: false
+        }) }}
 
       </form>
 
