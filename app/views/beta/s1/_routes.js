@@ -196,7 +196,7 @@ router.post(/check-details/, (req, res) => {
   const checkDetails = req.session.data['details']
 
   if (checkDetails == 'yes') {
-    res.redirect('add-parent');
+    res.redirect('date-of-loss');
   } else {
     res.redirect('check-your-details-kickout');
   }

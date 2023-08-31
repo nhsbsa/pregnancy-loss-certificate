@@ -93,9 +93,11 @@
         
        
           <input type="hidden" name="answers-checked" value="true">
-          <button class="govuk-button" data-module="govuk-button" type="submit">
-            Continue
-          </button>
+          {{ govukButton({
+            text: "Continue",
+            href: "date-of-loss",
+            isStartButton: false
+            }) }}
         </form>
       </div>
     </div>
