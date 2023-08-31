@@ -20,55 +20,38 @@
 
 {% block content %}
 
-<span class="govuk-caption-l">Their details</span>
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
-        <h1 class="govuk-heading-l">Check their details</h1>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              NHS number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['first-name'] %}
-  
-               {{ data['first-name'] }} {{ data['last-name'] }}
-  
-              {% else %}
-  
-              485 777 3456
-  
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
+        <h1 class="govuk-heading-l">Are you sure you want to cancel your request?</h1>
+        <div class="govuk-form-group">
+        <div class="govuk-body">
+          If you choose to cancel your request you will not receive a certificate.
+        </div>
+        
+        <form class="form" action="test-kickout" method="post">
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="parent-kickout-yes" name="testkickout" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="parent-kickout-yes">
+              Yes
+            </label>
           </div>
-         
-        </dl>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="parent-kickout-no" name="testkickout" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="parent-kickout-no">
+              No
+            </label>
+          </div>
+        </div>
         
-          
-          
-          
-        </dl>
-        <p>By continuing you agree to let us use their details to:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>check who they are</li>
-          <li>find their contact details from their NHS health records so we can send them a security code</li>
-         
-          
-        </ul>
-        
+      </div>
+
        
-        <form action="/v6/get-security-code" method="post" novalidate>
-          <input type="hidden" name="answers-checked" value="true">
-          {{ govukButton({
-            text: "Agree and continue",
-            href: "get-security-code-copy",
-            isStartButton: false
-            }) }}
+         
+          <button class="govuk-button" data-module="govuk-button" type="submit">
+            Continue
+          </button>
         </form>
       </div>
     </div>

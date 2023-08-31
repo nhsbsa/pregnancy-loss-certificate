@@ -262,7 +262,20 @@ router.post(/parental-kickout/, (req, res) => {
   if ( nosecondparent == 'yes') {
     res.redirect('check-your-answers-copy');
   } else {
+    res.redirect('are-you-sure');
+  }
+
+})
+router.post(/test-kickout/, (req, res) => {
+
+  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
+  // lossInEngland = location (value)
+  const testparent = req.session.data['testkickout']
+
+  if ( testparent == 'yes') {
     res.redirect('parent-kickout-copy');
+  } else {
+    res.redirect('check-your-answers-copy');
   }
 
 })
