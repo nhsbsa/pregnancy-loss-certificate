@@ -54,66 +54,80 @@
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
-<div class="govuk-form-group">
-  <span class="govuk-caption-l">Confirm applicant's eligibility</span>
+    <div class="govuk-form-group">
+  <span class="govuk-caption-l">Applicant's details</span>
   <fieldset class="govuk-fieldset">
-    
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-    Did your baby loss happen on or after 1 September 2018?
-  </h1>
-</legend>
-
-      <form class="form" action="loss-5-years" method="post">
-       
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What is your date of birth?
+          </h1>
+        </legend>
+        <form class="form" action="nonidv-date" method="post">
+        <div id="dob-enter" class="govuk-hint">
+          For example, 27 3 2007
+        </div>
         
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="years-yes" name="years" type="radio" value="yes" data-aria-controls="conditional-contact">
-            <label class="govuk-label govuk-radios__label" for="contact">
-              Yes
-            </label>
-          </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+          <div class="govuk-date-input" id="nonidv-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="nonidv-date">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="nonidv-date" name="dob-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+          <div class="govuk-date-input__item">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="contact-by-email">
-                Enter year of baby loss
-                 <div class="govuk-hint"> For example, 2021</div>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" name="year-loss" type="yes" spellcheck="false" autocomplete="email">
+              <label class="govuk-label govuk-date-input__label" for="nonidv-date">
+                Month
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="nonidv-date" name="dob-month" type="text" inputmode="numeric">
             </div>
           </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="years-no" name="years" type="radio" value="no" data-aria-controls="conditional-contact-2">
-            <label class="govuk-label govuk-radios__label" for="contact-2">
-              No
-            </label>
+          <div class="govuk-date-input__item">
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-date-input__label" for="nonidv-date">
+                Year
+              </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="nonidv-date" name="dob-year" type="text" inputmode="numeric"> 1998
+            </div>
           </div>
-         
-          </fieldset>
         </div>
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Why we're asking you this question
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            You can only get a certificate if you lost your baby on or after 1 September 2018.
-          </div>
-        </details>
-
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
-
-      </form>
-    </div>
+      </fieldset>
     </div>
   </div>
+  
+
+ 
+
+
+      </form>
+</div>
+    </div>
+    {{ govukButton({
+      text: "Continue",
+      href: "enter-address-nonidv",
+      isStartButton: false
+      }) }}
+  </div>
+ 
   <style>
+  
+   
+    
     .govuk-details {
-      margin-top: 20px;
+      margin-top: 30px;
     }
+    .govuk-button {
+      margin-left: 10px;
+    }
+   
+    
+    
+  </style>
+  <style>
     .govspeak .mc-chart .mc-td, .govspeak .mc-chart .mc-th, .gem-c-govspeak .mc-chart .mc-td, .gem-c-govspeak .mc-chart .mc-th {
         padding: 0;
         padding-right: 5px;

@@ -62,24 +62,26 @@
 
 {% block content %}
 
-<span class="govuk-caption-l">Applicant's details</span>
+<span class="govuk-caption-l">Applicants details</span>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
-        <h1 class="govuk-heading-l">Confirm your postal address</h1>
+        <h1 class="govuk-heading-l">Check your details</h1>
         <p>This is the address your certificate will be sent to.</p>
-        <p>If this is not the correct address, you will need to contact your GP surgery.</p>
-        <form class="form" action="check-details" method="post">
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
              Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['parent1-firstname'] %}
-              {{ data['parent1-firstname'] }} {{ data['parent1-lastname'] }}
-              {% else %}
-              Example name
-              {% endif %}
+              {% if data['first-name'] %}
+
+                {{ data['first-name'] }} {{ data['last-name'] }}
+
+                {% else %}
+
+                Example name
+
+               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               
@@ -91,7 +93,7 @@
               Address
             </dt>
             <dd class="govuk-summary-list__value">
-              4 Albert Road<br>Newcastle<br>NE1 3JA
+              72 Guild Street<br>London<br>SE23 6FH
             </dd>
             <dd class="govuk-summary-list__actions">
              
@@ -104,37 +106,16 @@
           
           
         </dl>
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h2 class="govuk-heading-m">
-                Are these details correct?
-              </h2>
-            </legend>
-           
-      
-            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="check-details-yes" name="details" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="changed-name">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="check-details-no" name="details" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                  No
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+       
         
        
+        <form action="/v6-3/get-security-code" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
-          <button class="govuk-button" data-module="govuk-button" type="submit">
-            Continue
-          </button>
+          {{ govukButton({
+            text: "Continue",
+            href: "add-parent",
+            isStartButton: false
+            }) }}
         </form>
       </div>
     </div>
