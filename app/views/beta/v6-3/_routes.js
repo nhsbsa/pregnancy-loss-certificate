@@ -108,9 +108,9 @@ router.post(/nonidv-date/, (req, res) => {
 })
 
 
-router.post(/relation-baby/, (req, res) => {
+router.post(/backoffice-relation-baby/, (req, res) => {
 
-  const relationship = req.session.data['relation-baby']
+  const relationship = req.session.data['backoffice-relation-baby']
 
   if (relationship == 'no') {
       res.redirect('relation-kickout')
