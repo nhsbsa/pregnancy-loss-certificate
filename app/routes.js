@@ -26,7 +26,8 @@ router.use('beta/s2', require('./views/beta/s2/_routes'));
 router.use('beta/s1', require('./views/beta/s1/_routes'));
 router.use('beta/v6', require('./views/beta/v6/_routes'));
 router.use('beta/v6-2', require('./views/beta/v6-2/_routes'));
-router.use('beta/v6-3', require('./views/beta/v6-3/_routes'));
+router.use('beta/v6-4', require('./views/beta/v6-4/_routes'));
+
 //////////////////////////////
 ////////   discovery/alpha   ////////
 //////////////////////////////
@@ -40,6 +41,18 @@ router.use('discovery-alpha/v3', require('./views/discovery-alpha/v3/_routes'));
 router.use('discovery-alpha/v2', require('./views/discovery-alpha/v2/_routes'));
 router.use('discovery-alpha/v1', require('./views/discovery-alpha/v1/_routes'));
 
+
+router.post(/backoffice-relation-baby/, (req, res) => {
+
+    const relationship = req.session.data['backoffice-relation-baby']
+  
+    if (relationship == 'no') {
+        res.redirect('relation-kickout')
+    } else {
+        res.redirect('enter-date-of-birth-nonidv')
+    }
+  
+  })
 
 
 

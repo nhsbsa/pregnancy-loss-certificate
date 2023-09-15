@@ -52,46 +52,65 @@
 {% endblock %}
 
 {% block content %}
-<span class="govuk-caption-l">Details on the certificate</span>
 <div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group">
+  <span class="govuk-caption-l">Confirm applicant's eligibility</span>
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Baby's sex
+    
+    What type of identity verification has been provided?
     
   </h1>
 </legend>
+<div class="govuk-form-group">
+  <label class="govuk-label" for="subject">
+    Select one option
+  </label>
+  
+  <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
+    <option value="choose" selected>Current signed passport</option>
+    <option value="eastmidlands"> Original birth certificate (UK birth certificate issued within 12 months of the date of birth in full form, including those issued by UK authorities overseas such as Embassies High Commissions and HM Forces)</option>
+    <option value="eastofengland">EEA member state identity card</option>
+    <option value="london">Current UK or EEA photocard driving licence</option>
+    <option value="northeast">Full old-style driving licence</option>
+    <option value="northwest">Photographic registration cards for self-employed individuals in the construction industry – CIS4</option>
+    <option value="southeast">Benefit book or original notification letter from Benefits Agency</option>
+    <option value="southwest">Residence permit issued by the Home Office to EEA nationals on sight of own country passport</option>
+    <option value="westmidlands"> National identity card</option>
+    <option value="yorkshire">Yorkshire and the Humber</option>
+  </select>
+</div>
 
-      <form class="form" action="/v6-3/babys-name" method="post">
-        
-         
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender" name="baby-gender" type="radio" value="Male">
-            <label class="govuk-label govuk-radios__label" for="yes">
-              Male
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender" name="baby-gender" type="radio" value="Female">
-            <label class="govuk-label govuk-radios__label" for="no">
-              Female
-            </label>
-          </div>
+      <form class="form" action="backoffice-relation-baby" method="post">
+      
+      
+
+          
+          
+
         </div>
-            </div>
-          </fieldset>
+        </div>
+      </fieldset>
+    </div>
+   
+             
+           
         
 
-        <button class="govuk-button" data-module="govuk-button">
+        <button class="govuk-button" type="submit">
           Continue
         </button>
 
       </form>
-
+    </div>
     </div>
   </div>
   <style>
+    .govuk-details {
+      margin-top: 20px;
+    }
     .govspeak .mc-chart .mc-td, .govspeak .mc-chart .mc-th, .gem-c-govspeak .mc-chart .mc-td, .gem-c-govspeak .mc-chart .mc-th {
         padding: 0;
         padding-right: 5px;
@@ -339,5 +358,4 @@
     }
     
     </style>
-
 {% endblock %}

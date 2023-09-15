@@ -44,7 +44,16 @@
 {% endblock %}
 
 {% block beforeContent %}
-
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -53,59 +62,127 @@
 
 {% block content %}
 
- 
+<span class="govuk-caption-l">Applicants details</span>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
-        <div class="govuk-width-container">
-          <h1 class="govuk-heading-l">Declaration</h1>
-          <h2 class="govuk-heading-m">Applicant</h2>
-          <p>Do you declare that the information you have provided is true and correct?</p>
-         
-         
-          <p>Do you acknowledge the ‘Certificate of Baby Loss Before 24 Weeks of Pregnancy’ that you receive is not a legal document?</p>
+        <h1 class="govuk-heading-l">Check your details</h1>
+       
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['first-name'] %}
+
+                {{ data['first-name'] }} {{ data['last-name'] }}
+
+                {% else %}
+
+                Example name
+
+               {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+                  {% if data['dob-day'] %}
+                    {{ data['dob-day'] }} <span class="cya-month">{{ data['dob-month'] }}</span> {{ data['dob-year'] }}
+                    {% else %}
+                  Example date of birth
+                  {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Postcode
+            </dt>
+            <dd class="govuk-summary-list__value">
+              NE1 3JA
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          
+          </dl>
+        
+          
+          
+          
+        </dl>
+        <p>By continuing you agree to let us use your details to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>check who you are</li>
+          <li>find your contact details from your NHS health records so we can send you a security code</li>
          
           
-          <form action="/beta/v6-3/confirmation-page" method="post" novalidate>
-            <div class="govuk-form-group">
-             
-             
-  
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-              <label class="govuk-label govuk-checkboxes__label" for="waste">
-                The applicant agrees and confirms
-              </label>
-            </div>
-          </div>
-          </div>
-          <h2 class="govuk-heading-m">Second Parent</h2>
-          <p>Do you declare that the information you have provided is true and correct. </p>
-          
-          <p>Do you consent for your name to be included as a parent of the baby on the Certificate of Baby Loss Before 24 Weeks of Pregnancy’ applied for through this application.</p>
-          <p>Do you acknowledge the ‘Certificate of Baby Loss Before 24 Weeks of Pregnancy’ you will receive is not a legal document.</p>
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-              <label class="govuk-label govuk-checkboxes__label" for="waste">
-                The applicant agrees and confirms
-              </label>
-            </div>
-          </div>
-        </div>
+        </ul>
+        
+       
+        <form action="/v6-4/get-security-code" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
           <button class="govuk-button" data-module="govuk-button">
-            Send request
+            Agree and continue
           </button>
-          
         </form>
+      </div>
+    </div>
   </main>
 </div>
-<style>
-  .govuk-checkboxes {
-    margin-bottom: 20px;
-  }
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+        $(document).ready(function() {
+            const months = {
+                "01": "January",
+                "02": "February",
+                "03": "March",
+                "04": "April",
+                "05": "May",
+                "06": "June",
+                "07": "July",
+                "08": "August",
+                "09": "September",
+                "10": "October",
+                "11": "November",
+                "12": "December",
+                "1": "January",
+                "2": "February",
+                "3": "March",
+                "4": "April",
+                "5": "May",
+                "6": "June",
+                "7": "July",
+                "8": "August",
+                "9": "September",   
 
-</style>
+            };
+
+ 
+
+            $(".cya-month").text(function () {
+                const month = $(this).text();
+                console.log("month:", month);
+                console.log("months[month]:", months[month]);
+                return months[month];
+            });
+        });
+</script>
 <style>
   .govspeak .mc-chart .mc-td, .govspeak .mc-chart .mc-th, .gem-c-govspeak .mc-chart .mc-td, .gem-c-govspeak .mc-chart .mc-th {
       padding: 0;

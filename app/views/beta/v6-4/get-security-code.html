@@ -45,8 +45,6 @@
 
 {% block beforeContent %}
 
-  
-  </div>
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -55,61 +53,73 @@
 
 {% block content %}
 <div class="govuk-form-group">
-  <div class="govuk-grid-column-two-thirds">
-<div class="govuk-form-group">
-  <span class="govuk-caption-l">Applicant's details</span>
+<div class="govuk-grid-column-two-thirds">
+<span class="govuk-caption-l">Applicant's details</span>
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h1 class="govuk-fieldset__heading">
-          What is your address?
-        </h1>
-      </legend>
-      <label class="govuk-label" for="select-1">
-        Postcode
-      </label>
-      <p>NE1 OLD &nbsp; <a href="postcode">Change</a></p>
-      <div id="passport-issued-hint" class="govuk-hint">
-        This will be where your certificate is sent to.
-      </div>
-     
-      <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
-        <option value="choose" selected>Select your address</option>
-        
-          <option value="1">1 Test Road, Town, NE1 OLD</option>
-          <option value="2">2 Test Road, Town, NE1 OLD</option>
-          <option value="3">3 Test Road, Town, NE1 OLD</option>
-          <option value="4">4 Test Road, Town, NE1 OLD</option>
-          <option value="5">5 Test Road, Town, NE1 OLD</option>
-          <option value="6">6 Test Road, Town, NE1 OLD</option>
-          <option value="7">7 Test Road, Town, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, NE1 OLD</option>
-        </select>
-      </select>
-      <p><a href="/v6-3/what-is-your-address">My address isn't listed</a></p>
-    </div>
-    </div>
-    </div>
-    </div>
-      
-    </fieldset>
-      </form>
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    Get your security code
     
-      <a class="govuk-button" href="/v6-3/add-parent">Continue</a>
+  </h1>
+</legend>
+
+      <form class="form" action="/v6-4/enter-security-code" method="post">
+     
+        
+<p>With the details you gave us we think we've found your contact details from your health records</p>
+<p>We now need to send you a security code. After 30 minutes your security code will not work.</p>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+              By email to Sa********@gmail.com
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+              By text to ********009
+            </label>
+          </div>
+            </div>
+          </fieldset>
+          
+        
+</div>
+</div>
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What to do if you think these contact details are wrong
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    If these contact details are wrong contact your GP practice
+  </div>
+</details>
+
+{{ govukButton({
+  text: "Continue",
+  href: "enter-security-code",
+  isStartButton: false
+  }) }}
+
+      </form>
+
     </div>
+    
   </div>
   <style>
-    .govuk-select {
-      box-sizing: border-box;
-height: 40px;
-max-width: 100%;
-padding: 4px;
-margin-bottom: 30px;
-}
-.govuk-button {
-  margin-left: 15px;
-}
-    
+    .govuk-fieldset__heading {
+      margin-bottom: 30px;
+    }
+    .govuk-grid-column-two-thirds {
+      padding-left: 0px;
+    }
+    .govuk-details__summary {
+      margin-top: 30px;
+    }
   </style>
   <style>
     .govspeak .mc-chart .mc-td, .govspeak .mc-chart .mc-th, .gem-c-govspeak .mc-chart .mc-td, .gem-c-govspeak .mc-chart .mc-th {

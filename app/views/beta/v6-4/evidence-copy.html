@@ -54,80 +54,111 @@
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-form-group">
+<div class="govuk-form-group">
   <span class="govuk-caption-l">Applicant's details</span>
   <fieldset class="govuk-fieldset">
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            What is your date of birth?
-          </h1>
-        </legend>
-        <form class="form" action="nonidv-date" method="post">
-        <div id="dob-enter" class="govuk-hint">
-          For example, 27 3 2007
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    
+    What type of proof of address has been provided? 
+    
+  </h1>
+</legend>
+
+      <form class="form" action="backoffice-relation-baby" method="post">
+        <div id="passport-issued-hint" class="govuk-hint">
+          Select one option.
         </div>
-        
-          <div class="govuk-date-input" id="nonidv-date">
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="nonidv-date">
-                  Day
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="nonidv-date" name="dob-day" type="text" inputmode="numeric">
-              </div>
-            </div>
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="nonidv-date">
-                Month
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="nonidv-date" name="dob-month" type="text" inputmode="numeric">
-            </div>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="Mother" name="backoffice-relation-baby" type="radio" value="Mother">
+            <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+              Utility bill issued within the last three months
+            </label>
           </div>
-          <div class="govuk-date-input__item">
-            <div class="govuk-form-group">
-              <label class="govuk-label govuk-date-input__label" for="nonidv-date">
-                Year
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="nonidv-date" name="dob-year" type="text" inputmode="numeric"> 1998
-            </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="Biological father" name="backoffice-relation-baby" type="radio" value="Father">
+            <label class="govuk-label govuk-radios__label" for="Father">
+              Local authority council tax bill for the current council tax year
+            </label>
           </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="Non biological father" name="backoffice-relation-baby" type="radio" value="Parent">
+            <label class="govuk-label govuk-radios__label" for="Parent">
+              Current UK driving licence
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="Non biological mother" name="backoffice-relation-baby" type="radio" value="Surrogate">
+            <label class="govuk-label govuk-radios__label" for="Surrogate">
+              Bank, Building Society or Credit Union statement or passbook dated within the last three months
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="Non biological mother" name="backoffice-relation-baby" type="radio" value="Surrogate">
+            <label class="govuk-label govuk-radios__label" for="Surrogate">
+              Original mortgage statement from a recognised lender, issued for the last full year
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="Non biological mother" name="backoffice-relation-baby" type="radio" value="Surrogate">
+            <label class="govuk-label govuk-radios__label" for="Surrogate">
+              Solicitors letter within the last three months confirming recent house purchase or land registry confirmation of address
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="Non biological mother" name="backoffice-relation-baby" type="radio" value="Surrogate">
+            <label class="govuk-label govuk-radios__label" for="Surrogate">
+              Council or housing association rent card or tenancy agreement for the current year
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="Non biological mother" name="backoffice-relation-baby" type="radio" value="Surrogate">
+            <label class="govuk-label govuk-radios__label" for="Surrogate">
+              Benefit book or original notification letter from Benefits Agency
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="Non biological mother" name="backoffice-relation-baby" type="radio" value="Surrogate">
+            <label class="govuk-label govuk-radios__label" for="Surrogate">
+              HMRC self-assessment letters or tax demand dated within the current financial year
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="Non biological mother" name="backoffice-relation-baby" type="radio" value="Surrogate">
+            <label class="govuk-label govuk-radios__label" for="Surrogate">
+              Electoral Register entry
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="Non biological mother" name="backoffice-relation-baby" type="radio" value="Surrogate">
+            <label class="govuk-label govuk-radios__label" for="Surrogate">
+              NHS Medical card or letter of confirmation from GP’s practice of registration within the surgery
+            </label>
+          </div>
+          </div>
+        </div>
         </div>
       </fieldset>
     </div>
-  </div>
-  
-
- 
-
-
-      </form>
-</div>
-    </div>
+   
+             
+           
     {{ govukButton({
       text: "Continue",
       href: "enter-address-nonidv",
       isStartButton: false
       }) }}
+
+      </form>
+    </div>
+    </div>
   </div>
- 
   <style>
-  
-   
-    
     .govuk-details {
-      margin-top: 30px;
+      margin-top: 20px;
     }
-    .govuk-button {
-      margin-left: 10px;
-    }
-   
-    
-    
-  </style>
-  <style>
     .govspeak .mc-chart .mc-td, .govspeak .mc-chart .mc-th, .gem-c-govspeak .mc-chart .mc-td, .gem-c-govspeak .mc-chart .mc-th {
         padding: 0;
         padding-right: 5px;
@@ -375,5 +406,4 @@
     }
     
     </style>
-
 {% endblock %}

@@ -42,9 +42,9 @@
 
 
 {% endblock %}
-
 {% block beforeContent %}
 
+  
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -52,64 +52,63 @@
 {% endblock %}
 
 {% block content %}
-
- 
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
   <span class="govuk-caption-l">Applicant's details</span>
+<div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-      <h1 class="govuk-fieldset__heading">
-        What is your address?
-      </h1>
-    </legend>
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="address-line-1">
-        Address line 1
-      </label>
-      <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
-    </div>
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="address-line-2">
-        Address line 2 (optional)
-      </label>
-      <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
-    </div>
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="address-town">
-        Town or city
-      </label>
-      <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
-    </div>
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="address-county">
-        County (optional)
-      </label>
-      <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
-    </div>
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="address-postcode">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          What is your address?
+        </h1>
+      </legend>
+      <label class="govuk-label" for="select-1">
         Postcode
       </label>
-      <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
-    </div>
-  </fieldset>
-      
-   
+      <p>NE1 OLD &nbsp; <a href="postcode">Change</a></p>
+      <div id="passport-issued-hint" class="govuk-hint">
+        This will be where your certificate is sent to.
+      </div>
      
-   
-  </div>
-      <a class="govuk-button" href="/v6-3/add-parent">Continue</a>
+      <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
+        <option value="choose" selected>Select your address</option>
+        
+          <option value="1">1 Test Road, Town, NE1 OLD</option>
+          <option value="2">2 Test Road, Town, NE1 OLD</option>
+          <option value="3">3 Test Road, Town, NE1 OLD</option>
+          <option value="4">4 Test Road, Town, NE1 OLD</option>
+          <option value="5">5 Test Road, Town, NE1 OLD</option>
+          <option value="6">6 Test Road, Town, NE1 OLD</option>
+          <option value="7">7 Test Road, Town, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, NE1 OLD</option>
+        </select>
+      </select>
+      <p><a href="/v6/what-is-your-address">My address isn't listed</a></p>
+    </div>
+    </div>
+    </div>
+    </div>
+      
+    </fieldset>
+      </form>
+    
+      <a class="govuk-button" href="/beta/v6-4/add-parent">Continue</a>
     </div>
   </div>
-</form>
-</div>
-<style>
-  .govuk-input {
-    margin-bottom: 15px;
-  }
-</style>
+  <style>
+    .govuk-select {
+      box-sizing: border-box;
+height: 40px;
+max-width: 100%;
+padding: 4px;
+margin-bottom: 30px;
+}
+.govuk-button {
+  margin-left: 15px;
+}
+    
+  </style>
 <style>
   .govspeak .mc-chart .mc-td, .govspeak .mc-chart .mc-th, .gem-c-govspeak .mc-chart .mc-td, .gem-c-govspeak .mc-chart .mc-th {
       padding: 0;
