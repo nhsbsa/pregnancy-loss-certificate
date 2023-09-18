@@ -255,6 +255,20 @@ router.post(/check-details/, (req, res) => {
 
 // })
 
+router.post(/address-details/, (req, res) => {
+
+  const details = req.session.data['address-details']
+
+  if (details== 'yes') {
+      res.redirect('add-parent')
+  } else if (details== 'no') {
+      res.redirect('add-parent')
+  } else {
+    
+      res.redirect('check-your-details-kickout')
+  }
+
+})
 
 
 

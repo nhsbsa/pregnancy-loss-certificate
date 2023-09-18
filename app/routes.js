@@ -42,17 +42,7 @@ router.use('discovery-alpha/v2', require('./views/discovery-alpha/v2/_routes'));
 router.use('discovery-alpha/v1', require('./views/discovery-alpha/v1/_routes'));
 
 
-router.post(/backoffice-relation-baby/, (req, res) => {
 
-    const relationship = req.session.data['backoffice-relation-baby']
-  
-    if (relationship == 'no') {
-        res.redirect('relation-kickout')
-    } else {
-        res.redirect('enter-date-of-birth-nonidv')
-    }
-  
-  })
 
 
 
