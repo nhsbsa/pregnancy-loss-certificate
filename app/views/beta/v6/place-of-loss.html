@@ -35,11 +35,10 @@
   </h1>
 </legend>
 <p>You may not know the place of your baby loss.</p>
+<p>This does not need to be a full address. You can enter a town, city or a hospital.</p>
 <div id="passport-issued-hint" class="govuk-hint">
   If you select ‘No’ or ‘I do not know the place of my baby loss’, this will not be shown on the certificate.</div>
-  <div id="passport-issued-hint" class="govuk-hint">
-    For example, Canterbury, Kent   
-  </div>
+
 
       <form class="form" action="sex-of-baby" method="post">
 
@@ -53,7 +52,12 @@
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
             <div class="govuk-form-group">
              
-             
+              <div id="passport-issued-hint" class="govuk-hint">
+                For example, Canterbury, Kent  
+              </div>
+              <label class="govuk-label govuk-date-input__label" for="loss-date-day">
+              Place of loss
+              </label>
               <input class="govuk-input" id="baby-name" name="place" type="text">
             </div>
           </div>
