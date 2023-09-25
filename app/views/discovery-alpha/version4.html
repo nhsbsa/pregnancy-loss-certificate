@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+   Version 4 Miro 
+    
+  </h1>
+  <div class="govuk-inset-text">
+    password: version4
+  </div>
+  
+</legend>
+<iframe width="768" height="432" src="https://miro.com/app/live-embed/uXjVME7UeE8=/?moveToViewport=-3010,-10606,12998,7533&embedId=842409871311" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+     
+      </form>
+
+    </div>
+  </div>
+  <style>
+    .govuk-fieldset__heading {
+      margin-bottom: 30px;
+    }
+    
+  </style>
+
+{% endblock %}

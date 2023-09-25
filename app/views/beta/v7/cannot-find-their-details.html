@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      alpha
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+ 
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1 class="govuk-heading-l">We cannot confirm the other parents details, do you want to continue the application without the other parent?</h1>
+        <div class="govuk-form-group">
+        <div class="govuk-body">
+          They may need to check their details are up to date with the GP surgery.
+        </div>
+        <div class="govuk-hint">
+          If you choose to continue their name wont show on ther certificate.
+        </div>
+        <form class="form" action="parental-kickout" method="post">
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="parent-kickout-yes" name="parentkickout" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="parent-kickout-yes">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="parent-kickout-no" name="parentkickout" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="parent-kickout-no">
+              No
+            </label>
+          </div>
+        </div>
+        
+      </div>
+
+       
+         
+          <button class="govuk-button" data-module="govuk-button" type="submit">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+        $(document).ready(function() {
+            const months = {
+                "01": "January",
+                "02": "February",
+                "03": "March",
+                "04": "April",
+                "05": "May",
+                "06": "June",
+                "07": "July",
+                "08": "August",
+                "09": "September",
+                "10": "October",
+                "11": "November",
+                "12": "December",
+                "1": "January",
+                "2": "February",
+                "3": "March",
+                "4": "April",
+                "5": "May",
+                "6": "June",
+                "7": "July",
+                "8": "August",
+                "9": "September",   
+
+            };
+
+ 
+
+            $(".cya-month").text(function () {
+                const month = $(this).text();
+                console.log("month:", month);
+                console.log("months[month]:", months[month]);
+                return months[month];
+            });
+        });
+</script>
+{% endblock %}
