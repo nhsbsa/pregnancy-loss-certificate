@@ -31,7 +31,7 @@
     
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    What is your application reference number?
+    What is your reference number?
   </h1>
 </legend>
 
@@ -41,12 +41,14 @@
 
           <div class="govuk-form-group">
           
+          <p>The main applicant will need to give you the reference number.</p>
+         <p>Enter reference number</p>
           
-            
-            
+          
             <div id="csigAppReference-hint" class="govuk-hint">
-              For example 42A B34 5C6. This can be found on the confirmation email.
+              For example, J4R-8H5-2K9F1
             </div>
+           
           
           <input class="govuk-input govuk-!-width-one-half" id="csigAppReference" name="csigAppReference" type="text" aria-describedby="csigAppReference-hint" aria-required="true">
           
@@ -56,7 +58,7 @@
           <div class="govuk-form-group">
           
             
-      
+            
           
           
           </div>
@@ -65,11 +67,12 @@
               </form>
           </fieldset>
         </div>
-        
+        </div>
+        </div>
 
         {{ govukButton({
           text: "Continue",
-          href: "is-this-your-name",
+          href: "applicant-dob",
           isStartButton: false
           }) }}
 

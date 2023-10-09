@@ -54,9 +54,11 @@
           </fieldset>
         
 
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+          {{ govukButton({
+            text: "Continue",
+            href: "babys-name",
+            isStartButton: false
+            }) }}
 
       </form>
 
