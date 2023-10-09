@@ -146,16 +146,16 @@ router.post(/nhs-number-action/, (req, res) => {
   }
 
 })
-router.post(/second-add-parent/, (req, res) => {
+router.post(/parent-add/, (req, res) => {
 
   // if user wants their baby gender included in the certificate they will select yes then it 
   //will take them to enter baby gender name
-  const AddParent = req.session.data['parent']
+  const parentAddParent = req.session.data['parent']
 
-  if (AddParent == 'yes') {
-    res.redirect('what-happens-next');
+  if (parentAddParent == 'yes') {
+    res.redirect('second-parent-copy');
   } else {
-    res.redirect('date-of-loss');
+    res.redirect('check-your-answers');
   }
 
 })
@@ -193,10 +193,10 @@ router.post(/check-details/, (req, res) => {
 
   // creating a variable named lossInEngland, assigning the variable the value of the input (location)
   // lossInEngland = location (value)
-  const checkDetails = req.session.data['details']
+  const parentcheckDetails = req.session.data['details']
 
-  if (checkDetails == 'yes') {
-    res.redirect('add-parent');
+  if (parentcheckDetails == 'yes') {
+    res.redirect('add-parent-copy');
   } else {
     res.redirect('check-your-details-kickout');
   }
@@ -213,6 +213,17 @@ router.post(/enter-your-name/, (req, res) => {
 router.post(/enter-parent-name/, (req, res) => {
 
   res.redirect('date-of-loss')
+
+})
+router.post(/test-route/, (req, res) => {
+
+  const parentName = req.session.data['second-parent-firstname']
+
+  if (parentName == 'joe') {
+    res.redirect('access-code');
+  } else {
+    res.redirect('second-relation-to-baby');
+  }
 
 })
 

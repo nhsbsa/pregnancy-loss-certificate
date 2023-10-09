@@ -20,7 +20,7 @@
 
 {% block content %}
 
-<span class="govuk-caption-l">Their details</span>
+<span class="govuk-caption-l">Details on the certificate</span>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
         <h1 class="govuk-heading-l">Check their details</h1>
@@ -47,27 +47,10 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Date of birth
+             Email
             </dt>
             <dd class="govuk-summary-list__value">
-                  {% if data['dob-day'] %}
-                    {{ data['dob-day'] }} <span class="cya-month">{{ data['dob-month'] }}</span> {{ data['dob-year'] }}
-                    {% else %}
-                  Example date of birth
-                  {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Postcode
-            </dt>
-            <dd class="govuk-summary-list__value">
-              NE1 3JA
+             
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -82,20 +65,14 @@
           
           
         </dl>
-        <p>By continuing you agree to let us use their details to:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>check who they are</li>
-          <li>find their contact details from their NHS health records so we can send them a security code</li>
-         
-          
-        </ul>
+       
         
        
         <form action="/v6/get-security-code" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
           {{ govukButton({
-            text: "Agree and continue",
-            href: "get-security-code-copy",
+            text: "Continue",
+            href: "date-of-loss",
             isStartButton: false
             }) }}
         </form>

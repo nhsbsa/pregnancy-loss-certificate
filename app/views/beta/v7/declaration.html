@@ -8,7 +8,7 @@
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
     <strong class="govuk-tag govuk-phase-banner__content__tag">
-      beta
+      alpha
     </strong>
     <span class="govuk-phase-banner__text">
       This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -35,7 +35,7 @@
           <p>I acknowledge the ‘Certificate of Baby Loss Before 24 Weeks of Pregnancy’ I receive is not a legal document.</p>
          
           
-          <form action="/beta/v7/confirmation-page" method="post" novalidate>
+          <form action="/v7/confirmation-page" method="post" novalidate>
             <div class="govuk-form-group">
              
              
@@ -49,23 +49,14 @@
             </div>
           </div>
           </div>
-          <h2 class="govuk-heading-m">Second Parent</h2>
-          <p>I declare that the information I have provided is true and correct. </p>
-          <p>I certify that I have read, understood and agree to the  <a href="">Terms of Use and Privacy Policy</a>.</p>
-          <p>I consent for my name to be included as a parent of the baby on the ‘Certificate of Baby Loss Before 24 Weeks of Pregnancy’ applied for through this application.</p>
-          <p>I acknowledge the ‘Certificate of Baby Loss Before 24 Weeks of Pregnancy’ I receive is not a legal document.</p>
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-              <label class="govuk-label govuk-checkboxes__label" for="waste">
-                I agree and confirm
-              </label>
-            </div>
-          </div>
+         
         </div>
-          <button class="govuk-button" data-module="govuk-button">
-          I agree - send my request
-          </button>
+        {{ govukButton({
+          text: "I agree and continue",
+          href: "check-your-answers",
+          isStartButton: false
+          }) }}
+      
           
         </form>
   </main>

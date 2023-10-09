@@ -2,6 +2,7 @@
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
 {% endblock %}
 
 {% block beforeContent %}
@@ -9,7 +10,7 @@
   <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-       beta
+        alpha
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -23,42 +24,44 @@
 {% endblock %}
 
 {% block content %}
-<span class="govuk-caption-l">Their details</span>
 <div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+  <span class="govuk-caption-l">Details on your certificate</span>
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Enter their security code
+    Baby's name
+    
   </h1>
 </legend>
+</fieldset>
 
-      <form class="form" action="security-code" method="post">
-   <p>
-          We sent your security code by email to Ma********@gmail.com
-        </p>
-        <div id="passport-issued-hint" class="govuk-hint">
-        If they do not receive the email within a few minutes, they will need to check their spam or junk mail folder.
+<div id="passport-issued-hint" class="govuk-hint">
+  This is the name that will be printed on the certificate.
+</div>
+
+      <form class="form" action="check-your-answers" method="post">
+       
+        <div class="govuk-form-group">
+          <input class="govuk-input" id="baby-name" name="baby-firstname" type="text">
+        </div>
+</form>
+</div>
+</div>
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
       </div>
-        <input class="govuk-input govuk-input--width-10" id="security-code" name="entercode" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
-      </div>
-        
-            </div>
-          </fieldset>
-          <p>Didn't get your security code? <a href="">Resend code
-          </a></p>
-
-          {{ govukButton({
-            text: "continue",
-            href: "second-relation-to-baby",
-            isStartButton: false
-            }) }}
-
-      </form>
+     
 
     </div>
   </div>
   <style>
-   
+    
+    .govuk-grid-column-two-thirds {
+      padding-left: 0px;
+    }
     
   </style>
+
 {% endblock %}

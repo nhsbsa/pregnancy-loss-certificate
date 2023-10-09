@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Request pending",
+        html: ""
+      }) }}
+
+   
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+ 
+      <div class="govuk-body">We've provided an access code for the other parent</div>
+        
+      <div class="govuk-body">You will need to give the other parent this access code so they can enter it to confirm their details</div>
+
+        <form class="form" action="get-security-code" method="post">
+         
+          <div class="govuk-inset-text">
+            12345678
+          </div>
+          </div>
+         
+         </div>
+<p>They will need to use this URL to confirm their details <a href="www.pregnancy-loss-certificate.herokuapp.com/beta/v7/s-1/enter-access-code">www.pregnancy-loss-certificate.herokuapp.com/beta/v7/s-1/enter-access-code</a>.</p>
+      <p>The other parent will need to confirm their details with the details you have provided.</p>
+      <p>If you have chosen to still recieve the certificate if the other parent fails to confirm their details it will be posted within 14 days.</p>
+      <p>If you have chosen to not recieve the certificate if the other parent fails to confirm their details the application will be cancelled.</p>
+      <h3 class="govuk-heading-m">Support organisations</h3>
+      <p>The following organisations give support and advice:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href=''>Sands</a></li>
+        <li><a href=''>Tommy's</a></li>
+        <li><a href="">Antenatal Results and Choices (ARC)</a></li>
+        <li><a href="">Saying Goodbye</a></li>
+        <li><a href="">The Miscarriage Association</a></li>
+        <li><a href="">Petals</a></li>
+        <li><a href="">NHS How to access mental health services</a></li>
+      </ul>
+      
+
+<p>
+        <a href="#">
+          What did you think of this service?
+        </a> (takes 30 seconds)
+      </p>
+
+      <p>
+        <a href="v7-1/start-page">
+          second scenario route
+        </a> 
+      </p>
+      <p>
+        <a href="v7-1/enter-access-code">
+          third scenario route
+        </a> 
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}
