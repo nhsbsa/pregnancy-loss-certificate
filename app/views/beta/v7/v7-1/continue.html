@@ -9,7 +9,7 @@
   <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
+        beta
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -26,67 +26,54 @@
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
-  <span class="govuk-caption-l">Your details</span>
+  <span class="govuk-caption-l">Details on the certificate</span>
   <fieldset class="govuk-fieldset">
-    
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    What is your reference number?
+   Do you want to continue 
+    
   </h1>
 </legend>
 
-      <form class="form" action="parent-continue" method="post">
-       
-        
 
-          <div class="govuk-form-group">
-          
-          <p>The main applicant will need to give you the reference number.</p>
-         <p>Enter reference number</p>
-          
-          
-            <div id="csigAppReference-hint" class="govuk-hint">
-              For example, J4R-8H5-2K9F1
-            </div>
-           
-          
-          <input class="govuk-input govuk-!-width-one-half" id="csigAppReference" name="csigAppReference" type="text" aria-describedby="csigAppReference-hint" aria-required="true">
-          
+      <form class="form" action="parent-add" method="post">
+        
+      <p>We'll need to find your contact details from your NHS record.</p>
+      <p>If you would like to continue, we'll need to find your GP record so we can..</p>
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="yes">
+              Yes
+            </label>
           </div>
-          
-          
-          <div class="govuk-form-group">
-          
-            
-            
-          
-          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="no">
+              No
+            </label>
           </div>
-             
-                      <input type="hidden" name="x-csrf-token" value="SHOjUB77-WLzE5cRajErkFL6DOk5Zv6R0L34">
-              </form>
+        </div>
           </fieldset>
         </div>
-        </div>
-        </div>
-
-        {{ govukButton({
-          text: "Continue",
-          href: "applicant-dob",
-          isStartButton: false
-          }) }}
+        
+      
+         
+      {{ govukButton({
+        text: "Continue",
+        href: "reference-number",
+        isStartButton: false
+        }) }}
 
       </form>
-    </div>
+</div>
+</div>
     </div>
   </div>
   <style>
     
-    .govuk-fieldset__legend--l {
-      margin-bottom: 30px;
-    }
-    .govuk-radios--inline {
-      margin-bottom: 30px;
+    .govuk-radios {
+      margin-bottom: 20px;
     }
   </style>
 

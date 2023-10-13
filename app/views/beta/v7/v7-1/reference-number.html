@@ -31,32 +31,61 @@
     
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Check your address
+    What is your reference number?
   </h1>
 </legend>
 
-      <form class="form" action="" method="post">
+      <form class="form" action="parent-continue" method="post">
+       
         
-        <div class="govuk-inset-text">
-         1 TEST TOWN <br>
-         NEWCASTLE<br>
-         NE1 3JA
+
+          <div class="govuk-form-group">
+          
+          <p>The main applicant will need to give you the reference number.</p>
+         <p>Enter reference number</p>
+          
+          
+            <div id="csigAppReference-hint" class="govuk-hint">
+              For example, J4R-8H5-2K9F1
+            </div>
+           
+          
+          <input class="govuk-input govuk-!-width-one-half" id="csigAppReference" name="csigAppReference" type="text" aria-describedby="csigAppReference-hint" aria-required="true">
+          
+          </div>
+          
+          
+          <div class="govuk-form-group">
+          
+            
+            
+          
+          
+          </div>
+             
+                      <input type="hidden" name="x-csrf-token" value="SHOjUB77-WLzE5cRajErkFL6DOk5Zv6R0L34">
+              </form>
+          </fieldset>
+        </div>
+        </div>
         </div>
 
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
-      </div>
+        {{ govukButton({
+          text: "Continue",
+          href: "nhs-number",
+          isStartButton: false
+          }) }}
+
       </form>
     </div>
     </div>
   </div>
   <style>
-   
+    
     .govuk-fieldset__legend--l {
       margin-bottom: 30px;
     }
-    .govuk-radios {
+    .govuk-radios--inline {
       margin-bottom: 30px;
     }
   </style>

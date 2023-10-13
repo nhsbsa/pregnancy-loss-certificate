@@ -9,7 +9,7 @@
   <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
+        beta
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -26,7 +26,7 @@
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
-  <span class="govuk-caption-l">Other parents details</span>
+  <span class="govuk-caption-l">Other parent's details</span>
   <fieldset class="govuk-fieldset">
     
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -36,9 +36,10 @@
 </legend>
 
       <form class="form" action="location-england" method="post">
+
         <div class="govuk-body">We'll send a link to the other parent by email.</div>
         <div class="govuk-body">We'll ask them if they give permission to be named on the certificate and to confirm their details.</div>
-        
+        <div class="govuk-body">If the other parent does not have an email address, you'll need to <a href="">contact us</a>.</div>
          
         
          
@@ -49,18 +50,23 @@
                 <input class="govuk-input govuk-!-width-one-half" id="one-half" name="oneHalf" type="text">
               </div>
          
-         </form>
-        
+         
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
+          <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+            I confirm I've told the other parent that they'll be contacted.
+          </label>
         </div>
         </div>
-           
+        </div>
+      </form>
           </fieldset>
         </div>
         
         </div>
         {{ govukButton({
           text: "Continue",
-          href: "check-their-details",
+          href: "enter-date-of-birth-parent",
           isStartButton: false
           }) }}
 

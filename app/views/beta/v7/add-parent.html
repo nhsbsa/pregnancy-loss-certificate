@@ -9,7 +9,7 @@
   <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
+        beta
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -38,8 +38,10 @@
 
       <form class="form" action="parent-add" method="post">
         
-      <p>We'll need to find the other parent's contact details from their NHS record.</p>
-      <p>They may choose not be named on the certificate.</p>
+        <div class="govuk-inset-text">
+          You'll need to contact the other parent to let them know you'd like to add their name to the certificate. 
+        </div>
+      <p>The other parent may choose not to be named on the certificate.</p>
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="yes">
@@ -61,7 +63,7 @@
          
       {{ govukButton({
         text: "Continue",
-        href: "add-parent-copy",
+        href: "parent-contact",
         isStartButton: false
         }) }}
 

@@ -9,7 +9,7 @@
   <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
+        beta
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -26,7 +26,7 @@
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
-  <span class="govuk-caption-l">Other parents details</span>
+  <span class="govuk-caption-l">Other parent's details</span>
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
@@ -42,9 +42,10 @@
         
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           
-       <p>We'll ask the other parent to enter the details they registered with their GP and they'll need to request a code.</p>
-       <p>The other parent will receive a message asking if they give permission to be named on the certificate.</p>
-       <p>You'll get a reference number which you'll need to give to the other parent.</p>
+       <p>You can choose to request a certificate with only yourself as a named parent. You'll receive it within 14 days.</p>
+       <p>You can also choose to add the other parent's name to the certificate. They'll have 7 days to confirm their details and give their permission.</p>
+      <p>If we get the other parent's permission, we'll send the certificate to you within 14 days.</p>
+      
         </div>
       
           </fieldset>
@@ -55,7 +56,7 @@
      
       {{ govukButton({
         text: "Continue",
-        href: "what-is-their-name",
+        href: "add-parent",
         isStartButton: false
         }) }}
     
@@ -66,11 +67,11 @@
     </div>
   </div>
   <style>
-    
-    .govuk-radios {
-      margin-bottom: 20px;
-    }
-    
+  .govukButton {
+    margin-left: 10px;
+  }
+   
+  
   </style>
 
 {% endblock %}
