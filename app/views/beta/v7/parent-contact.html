@@ -35,21 +35,44 @@
   </h1>
 </legend>
 
-      <form class="form" action="location-england" method="post">
+      
 
         <div class="govuk-body">We'll send a link to the other parent by email.</div>
         <div class="govuk-body">We'll ask them if they give permission to be named on the certificate and to confirm their details.</div>
         <div class="govuk-body">If the other parent does not have an email address, you'll need to <a href="">contact us</a>.</div>
          
-        
+        <form class="form" action="idv-other-email" method="post">
          
               <div class="govuk-form-group">
-                <label class="govuk-label" for="email">
-                  Email address
-                </label>
-                <input class="govuk-input govuk-!-width-one-half" id="one-half" name="oneHalf" type="text">
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="idv-other-email" name="contact" type="radio" value="yes" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-radios__label" for="contact">
+                    Yes
+                    </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="contact-by-email">
+                        Email address
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-third" id="idv-other-email" name="contact" type="email" spellcheck="false" autocomplete="email">
+                    </div>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="contact-by-email">
+                        Confirm email address
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-third" id="idv-other-email" name="contact" type="email" spellcheck="false" autocomplete="email">
+                    </div>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="idv-other-email" name="contact" type="radio" value="no" data-aria-controls="conditional-contact-2">
+                    <label class="govuk-label govuk-radios__label" for="contact-2">
+                      No
+                    </label>
+                  </div>
               </div>
-         
+         </div>
          
         <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
@@ -64,11 +87,9 @@
         </div>
         
         </div>
-        {{ govukButton({
-          text: "Continue",
-          href: "enter-date-of-birth-parent",
-          isStartButton: false
-          }) }}
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
 
       </form>
     </div>

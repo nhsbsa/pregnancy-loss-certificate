@@ -28,6 +28,7 @@ router.use('beta/v6', require('./views/beta/v6/_routes'));
 router.use('beta/v6-2', require('./views/beta/v6-2/_routes'));
 router.use('beta/v6-4', require('./views/beta/v6-4/_routes'));
 router.use('beta/v7', require('./views/beta/v7/_routes'));
+router.use('beta/v7/v7-1', require('./views/beta/v7/v7-1/_routes'));
 //////////////////////////////
 ////////   discovery/alpha   ////////
 //////////////////////////////

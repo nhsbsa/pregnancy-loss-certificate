@@ -24,36 +24,8 @@
  
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
-        <h1 class="govuk-heading-l">Check your answers</h1>
-        <h2 class="govuk-heading-m">Your postal address</h2>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['parent1-firstname'] %}
-              {{ data['parent1-firstname'] }} {{ data['parent1-lastname'] }}
-              {% else %}
-              Example name
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-             
-            </dd>
-          </div>
-         
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Address
-            </dt>
-            <dd class="govuk-summary-list__value">
-              4 Albert Road<br>Newcastle<br>NE1 3JA
-            </dd>
-            <dd class="govuk-summary-list__actions">
-             
-            </dd>
-          </div>
+        <h1 class="govuk-heading-l">Confirm the details</h1>
+        
           
         
 
@@ -172,15 +144,29 @@
           
           </div>
         </dl>
-        
+        <form class="form" action="details-correct" method="post">
+        <h2 class="govuk-heading-m">Are these details correct?</h2>
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="details-correct" name="check" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="changedName">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="details-correct" name="check" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="changedName-2">
+              No
+            </label>
+          </div>
+        </div>
+        </div>
        
-        <form action="beta/v7-1/declaration" method="post" novalidate>
+        
           <input type="hidden" name="answers-checked" value="true">
-          {{ govukButton({
-            text: "Accept and continue",
-            href: "declaration",
-            isStartButton: false
-            }) }}
+          <button class="govuk-button" data-module="govuk-button" type="submit">
+            Continue
+          </button>
         </form>
       </div>
     </div>

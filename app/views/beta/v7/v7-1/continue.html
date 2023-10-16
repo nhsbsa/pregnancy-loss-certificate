@@ -36,19 +36,19 @@
 </legend>
 
 
-      <form class="form" action="parent-add" method="post">
+      <form class="form" action="do-you-want-to-continue" method="post">
         
       <p>We'll need to find your contact details from your NHS record.</p>
      
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="yes">
+            <input class="govuk-radios__input" id="do-you-want-to-continue" name="continue" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="yes">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="no">
+            <input class="govuk-radios__input" id="do-you-want-to-continue" name="continue" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="no">
               No
             </label>
@@ -59,11 +59,9 @@
         
       
          
-      {{ govukButton({
-        text: "Continue",
-        href: "reference-number",
-        isStartButton: false
-        }) }}
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
 
       </form>
 </div>

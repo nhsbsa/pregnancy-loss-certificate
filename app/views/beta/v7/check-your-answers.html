@@ -25,7 +25,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
         <h1 class="govuk-heading-l">Check your answers</h1>
-        <h2 class="govuk-heading-m">Your postal address</h2>
+        <h2 class="govuk-heading-m">Your details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -43,6 +43,7 @@
             </dd>
           </div>
          
+          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Address
@@ -55,11 +56,59 @@
             </dd>
           </div>
           
-        
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Test@test.com
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
 
 
 
 </dl>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<h2 class="govuk-heading-m">Other parent's details</h2>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Email address
+  </dt>
+  <dd class="govuk-summary-list__value">
+   Test@test.com
+  </dd>
+  <dd class="govuk-summary-list__actions">
+   
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="relation-to-baby">
+      Change<span class="govuk-visually-hidden"> name</span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+   Date of birth
+  </dt>
+  <dd class="govuk-summary-list__value">
+   1 January 1998
+  </dd>
+  <dd class="govuk-summary-list__actions">
+   
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="relation-to-baby">
+      Change<span class="govuk-visually-hidden"> name</span>
+    </a>
+  </dd>
+</div>
+
+</dl>
+
         <h2 class="govuk-heading-m">Details on the certificate</h2>
         <h3 class="govuk-heading-s">Parent 1</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -86,26 +135,7 @@
           
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             
-            <div class="govuk-summary-list__row">
-              
-              <dt class="govuk-summary-list__key">
-                Name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                
-                  {% if data['parent2-firstname'] %}
-                  {{ data['parent2-firstname'] }} {{ data['parent2-lastname'] }}
-                  {% else %}
-                  Example name
-                  {% endif %}
-               
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="add-parent">
-                  Change<span class="govuk-visually-hidden"> name</span>
-                </a>
-              </dd>
-            </div>
+          
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Their relationship to your baby

@@ -189,14 +189,14 @@ router.post(/security-code/, (req, res) => {
   }
 
 })
-router.post(/version7-check-details/, (req, res) => {
+router.post(/check-details/, (req, res) => {
 
   // creating a variable named lossInEngland, assigning the variable the value of the input (location)
   // lossInEngland = location (value)
   const parentcheckDetails = req.session.data['details']
 
   if (parentcheckDetails == 'yes') {
-    res.redirect('what-happens-next');
+    res.redirect('add-parent-copy');
   } else {
     res.redirect('check-your-details-kickout');
   }
@@ -215,14 +215,16 @@ router.post(/enter-parent-name/, (req, res) => {
   res.redirect('date-of-loss')
 
 })
-router.post(/test-route/, (req, res) => {
 
-  const parentName = req.session.data['second-parent-firstname']
 
-  if (parentName == 'joe') {
-    res.redirect('access-code');
+router.post(/idv-other-email/, (req, res) => {
+
+  const parentContact = req.session.data['contact']
+
+  if (parentContact == 'yes') {
+    res.redirect('enter-date-of-birth-parent');
   } else {
-    res.redirect('second-relation-to-baby');
+    res.redirect('parent-contact-kickout');
   }
 
 })

@@ -16,7 +16,10 @@
       </span>
     </p>
   </div>
- 
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -25,11 +28,8 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      We cannot provide a baby loss certificate to the main applicant because you've told us the details are wrong
+      We cannot provide the main applicant with a baby loss certificate because you've chosen not to continue
     </h1>
-
-    
-    
     <h3 class="govuk-heading-m">Support organisations</h3>
     <p>The following organisations give support and advice:</p>
     <ul class="govuk-list govuk-list--bullet">
@@ -40,11 +40,16 @@
       <li><a href="">The Miscarriage Association</a></li>
       <li><a href="">Petals</a></li>
       <li><a href="">NHS How to access mental health services</a></li>
+      <li><a href="">Daddy's with angels</a></li>
     </ul>
+    
+   
    </div>
-
   </div>
 </div>
+ 
+  
+</form>
   <style>
     .govuk-fieldset__heading {
       margin-bottom: 30px;
