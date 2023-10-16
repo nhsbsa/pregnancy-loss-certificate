@@ -31,7 +31,8 @@
     
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you like to include the other parent's email address? 
+    Does the other parent have an email address?
+
   </h1>
 </legend>
 
@@ -39,41 +40,46 @@
 
         <div class="govuk-body">We'll send a link to the other parent by email.</div>
         <div class="govuk-body">We'll ask them if they give permission to be named on the certificate and to confirm their details.</div>
-        <div class="govuk-body">If the other parent does not have an email address, you'll need to <a href="">contact us</a>.</div>
+        
          
         <form class="form" action="idv-other-email" method="post">
          
-              <div class="govuk-form-group">
-                <div class="govuk-radios" data-module="govuk-radios">
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="idv-other-email" name="contact" type="radio" value="yes" data-aria-controls="conditional-contact">
-                    <label class="govuk-label govuk-radios__label" for="contact">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+              
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-radios__label" for="contact">
                     Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-email">
+                      Email address
                     </label>
+                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
                   </div>
-                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label" for="contact-by-email">
-                        Email address
-                      </label>
-                      <input class="govuk-input govuk-!-width-one-third" id="idv-other-email" name="email" type="email" spellcheck="false" autocomplete="email">
-                    </div>
-                    <div class="govuk-form-group">
-                      <label class="govuk-label" for="contact-by-email">
-                        Confirm email address
-                      </label>
-                      <input class="govuk-input govuk-!-width-one-third" id="idv-other-email" name="email-confirm" type="email" spellcheck="false" autocomplete="email">
-                    </div>
-                  </div>
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="idv-other-email" name="contact" type="radio" value="no" data-aria-controls="conditional-contact-2">
-                    <label class="govuk-label govuk-radios__label" for="contact-2">
-                      No
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                  <label class="govuk-label govuk-radios__label" for="contact-2">
+                    No
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="contact-by-phone">
+                      If the other parent does not have an email address, you'll need to <a href="">contact us</a>. 
                     </label>
+                   
                   </div>
+                </div>
+                </div>
               </div>
-         </div>
-         
+            </fieldset>
+          </div>
         <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
           <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
@@ -86,10 +92,12 @@
           </fieldset>
         </div>
         
-        </div>
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+  
+        {{ govukButton({
+          text: "Continue",
+          href: "enter-date-of-birth-parent",
+          isStartButton: false
+          }) }}
 
       </form>
     </div>
