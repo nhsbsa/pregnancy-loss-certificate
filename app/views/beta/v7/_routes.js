@@ -102,18 +102,6 @@ router.post(/relation-baby/, (req, res) => {
 
 })
 
-router.post(/added-parent/, (req, res) => {
-
-  const SecondParent = req.session.data['parent-2']
-
-  if (SecondParent == 'no') {
-      res.redirect('second-parent-kickout')
-  } else {
-      res.redirect('second-parent')
-  }
-
-})
-
 
 
 router.post(/baby-gender-version1/, (req, res) => {
@@ -146,16 +134,16 @@ router.post(/nhs-number-action/, (req, res) => {
   }
 
 })
-router.post(/parent-add/, (req, res) => {
+router.post(/second-parent-question/, (req, res) => {
 
   // if user wants their baby gender included in the certificate they will select yes then it 
   //will take them to enter baby gender name
   const parentAddParent = req.session.data['parent']
 
   if (parentAddParent == 'yes') {
-    res.redirect('second-parent-copy');
+    res.redirect('parent-contact');
   } else {
-    res.redirect('check-your-answers');
+    res.redirect('date-of-loss');
   }
 
 })
@@ -228,21 +216,6 @@ router.post(/idv-other-email/, (req, res) => {
   }
 
 })
-
-// router.post(/baby-loss-date/, (req, res) => {
-
-//   // creating a variable named lossInEngland, assigning the variable the value of the input (location)
-//   // lossInEngland = location (value)
-//   const BabyLossDate = req.session.data['date']
-
-//   if (BabyLossDate == 'yes') {
-//     res.redirect('relation-to-baby');
-//   } else {
-//     res.redirect('date-of-loss-kickout');
-//   }
-
-// })
-
 
 
 
