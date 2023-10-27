@@ -64,15 +64,36 @@
              Test@test.com
             </dd>
             <dd class="govuk-summary-list__actions">
-             
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact-email">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
             </dd>
           </div>
+          
 
 
 
 </dl>
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 <h2 class="govuk-heading-m">Other parent's details</h2>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Do you want to add another parent?
+  </dt>
+  <dd class="govuk-summary-list__value">
+  Yes
+  </dd>
+  <dd class="govuk-summary-list__actions">
+   
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="add-parent">
+      Change<span class="govuk-visually-hidden"> name</span>
+    </a>
+  </dd>
+</div>
 <div class="govuk-summary-list__row">
   <dt class="govuk-summary-list__key">
     Email address
@@ -84,7 +105,7 @@
    
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="relation-to-baby">
+    <a class="govuk-link" href="parent-contact">
       Change<span class="govuk-visually-hidden"> name</span>
     </a>
   </dd>
@@ -101,11 +122,12 @@
    
   </dd>
   <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="relation-to-baby">
+    <a class="govuk-link" href="enter-date-of-birth-parent">
       Change<span class="govuk-visually-hidden"> name</span>
     </a>
   </dd>
 </div>
+
 
 </dl>
 
@@ -130,10 +152,23 @@
               </a>
             </dd>
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your name
+            </dt>
+            <dd class="govuk-summary-list__value">
+             
+             Example name
+           
+            </dd>
+            
+          </div>
           </dl>
+        
           <h3 class="govuk-heading-s">Parent 2
             
           </h3>
+         
           
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             
@@ -150,11 +185,22 @@
                {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="add-parent">
+                <a class="govuk-link" href="second-relation-to-baby">
                   Change<span class="govuk-visually-hidden"> name</span>
                  
                 </a>
               </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Their name
+              </dt>
+              <dd class="govuk-summary-list__value">
+             
+                To be added once the other parent confirms their details
+              
+               </dd>
+              
             </div>
             </dl>
          

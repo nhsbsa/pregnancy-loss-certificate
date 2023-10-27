@@ -112,7 +112,23 @@
         <h2 class="govuk-heading-m">Details on the certificate</h2>
         <h3 class="govuk-heading-s">Parent 1</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['relation-baby'] %}
+              {{ data['relation-baby'] }}
+             {% else %}
+             Example name
+             {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="relation-to-baby">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Your relationship to your baby
@@ -130,29 +146,34 @@
               </a>
             </dd>
           </div>
+         
           </dl>
+        
           <h3 class="govuk-heading-s">Parent 2
             
           </h3>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['parent1-firstname'] %}
-              {{ data['parent1-firstname'] }} {{ data['parent1-lastname'] }}
-              {% else %}
-              To be confirmed by other parent
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-             
-            </dd>
-          </div>
+         
           
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
             
-          
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Their name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['parent-2'] %}
+                {{ data['parent-2'] }}
+               {% else %}
+               Example name
+               {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="add-parent">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                 
+                </a>
+              </dd>
+            </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Their relationship to your baby
@@ -171,6 +192,7 @@
                 </a>
               </dd>
             </div>
+            
             </dl>
          
             <h3 class="govuk-heading-s">Baby's details</h3>
