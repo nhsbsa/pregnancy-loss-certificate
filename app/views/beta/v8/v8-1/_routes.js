@@ -39,7 +39,7 @@ router.post(/date-of-birth/, (req, res) => {
 
 
 
-router.post(/nhs-number-action/, (req, res) => {
+router.post(/action-nhs-number/, (req, res) => {
 
   // if user wants their baby gender included in the certificate they will select yes then it 
   //will take them to enter baby gender name
@@ -48,7 +48,7 @@ router.post(/nhs-number-action/, (req, res) => {
   if (NHSNumber == 'yes') {
     res.redirect('enter-nhs-number');
   } else {
-    res.redirect('enter-date-of-birth');
+    res.redirect('what-is-your-name');
   }
 
 })
@@ -97,7 +97,7 @@ router.post(/is-this-correct/, (req, res) => {
   }
 
 })
-router.post(/details-correct/, (req, res) => {
+router.post(/cya-correct/, (req, res) => {
 
  
   const checkDetails = req.session.data['check']
@@ -105,7 +105,19 @@ router.post(/details-correct/, (req, res) => {
   if (checkDetails == 'yes') {
     res.redirect('declaration');
   } else {
+    res.redirect('check-answers-kickout-copy');
+  }
+
+})
+router.post(/cya-kickout/, (req, res) => {
+
+ 
+  const answerKickout = req.session.data['kickout']
+
+  if (answerKickout == 'yes') {
     res.redirect('check-answers-kickout');
+  } else {
+    res.redirect('check-your-answers');
   }
 
 })

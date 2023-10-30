@@ -35,7 +35,19 @@
       
         <h3 class="govuk-heading-s">Parent 1</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Their name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['first-name'] %}
+              {{ data['first-name'] }}
+             {% else %}
+             Example name
+             {% endif %}
+            </dd>
+            
+          </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Their relationship to your baby
@@ -57,7 +69,7 @@
             <div class="govuk-summary-list__row">
               
               <dt class="govuk-summary-list__key">
-                Name
+              Your name
               </dt>
               <dd class="govuk-summary-list__value">
                 
@@ -72,7 +84,7 @@
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Their relationship to your baby
+                Your relationship to your baby
               </dt>
               <dd class="govuk-summary-list__value">
                 {% if data['parent-2'] %}
@@ -144,17 +156,17 @@
           
           </div>
         </dl>
-        <form class="form" action="details-correct" method="post">
+        <form class="form" action="cya-correct" method="post">
         <h2 class="govuk-heading-m">Are these details correct?</h2>
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="details-correct" name="check" type="radio" value="yes">
+            <input class="govuk-radios__input" id="cya-correct" name="check" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="changedName">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="details-correct" name="check" type="radio" value="no">
+            <input class="govuk-radios__input" id="cya-correct" name="check" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="changedName-2">
               No
             </label>
@@ -163,7 +175,6 @@
         </div>
        
         
-          <input type="hidden" name="answers-checked" value="true">
           <button class="govuk-button" data-module="govuk-button" type="submit">
             Continue
           </button>
