@@ -30,6 +30,7 @@ router.use('beta/v6-4', require('./views/beta/v6-4/_routes'));
 router.use('beta/v7', require('./views/beta/v7/_routes'));
 router.use('beta/v7/v7-1', require('./views/beta/v7/v7-1/_routes'));
 router.use('beta/v8/v8-1', require('./views/beta/v8/v8-1/_routes'));
+router.use('beta/no-second-parent', require('./views/beta/no-second-parent/_routes'));
 //////////////////////////////
 ////////   discovery/alpha   ////////
 //////////////////////////////
