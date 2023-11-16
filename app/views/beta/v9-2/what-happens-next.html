@@ -41,9 +41,9 @@
 
         
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-          
-       <p>If you choose to request a certificate that shows only yourself as a named parent, you'll receive it within 14 days.</p>
-       <p>Your request may take up to 21 days if you add the other parent's name to the certificate. This is because the other parent will have up to 7 days to give permission before the request is complete.</p>
+          <p>We'll ask you for the other parent's email address.</p>
+       <p>They'll receive a link by email. We'll ask them if they give permission to be named on the certificate and to confirm their details. They'll have up to 7 days to do this.</p>
+       <p>If we get their permission, you'll then receive the certificate within 14 days.</p>
 
       
         </div>
@@ -56,7 +56,7 @@
      
       {{ govukButton({
         text: "Continue",
-        href: "add-parent",
+        href: "parent-contact",
         isStartButton: false
         }) }}
     
@@ -68,7 +68,7 @@
   </div>
   <style>
   .govukButton {
-    margin-left: 10px;
+    margin-left: 15px;
   }
    
   

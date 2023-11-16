@@ -121,7 +121,7 @@ router.post(/baby-gender-version1/, (req, res) => {
 
 
 
-router.post(/nhs-number-action/, (req, res) => {
+router.post(/option3-nhs/, (req, res) => {
 
   // if user wants their baby gender included in the certificate they will select yes then it 
   //will take them to enter baby gender name

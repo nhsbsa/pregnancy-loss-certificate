@@ -121,7 +121,7 @@ router.post(/baby-gender-version1/, (req, res) => {
 
 
 
-router.post(/nhs-number-action/, (req, res) => {
+router.post(/main-applicant-nhs/, (req, res) => {
 
   // if user wants their baby gender included in the certificate they will select yes then it 
   //will take them to enter baby gender name
@@ -141,7 +141,7 @@ router.post(/second-parent-question/, (req, res) => {
   const parentAddParent = req.session.data['parent']
 
   if (parentAddParent == 'yes') {
-    res.redirect('parent-contact');
+    res.redirect('what-happens-next');
   } else {
     res.redirect('date-of-loss');
   }
