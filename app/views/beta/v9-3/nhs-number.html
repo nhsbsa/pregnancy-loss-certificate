@@ -43,7 +43,27 @@
         <div id="passport-issued-hint" class="govuk-body">
           You do not need to know your NHS number to continue. If you do not know it, you can tell us your full name instead.  
         </div>
-         
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Where to find your NHS number
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            If you’re registered with a GP, you will have a 10 digit NHS number unique to you. 
+          </div>
+          <div class="govuk-details__text">
+            You can find it on the NHS app or <a href="">use our online NHS number finder (opens in a new tab)</a>. 
+          </div>
+          <div class="govuk-details__text">It is also on any letters or documents you receive from the NHS, such as:</div>
+          <div class="govuk-details__text">
+          <ul>
+            <li>prescriptions</li>
+            <li>test results</li>
+            <li>appointment letters</li>
+          </ul>
+        </div>
+        </details>
         
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="option3-nhs" name="nhs" type="radio" value="yes">
@@ -54,33 +74,15 @@
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="option3-nhs" name="nhs" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="no">
-              No, continue with my date of birth
+              No, continue with my full name
             </label>
           </div>
        
             </div>
           </fieldset>
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Where to find your NHS number
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              If you’re registered with a GP, you will have a 10 digit NHS number unique to you. 
-            </div>
-            <div class="govuk-details__text">
-              You can find it on the NHS app or <a href="">use our online NHS number finder (opens in a new tab)</a>. 
-            </div>
-            <div class="govuk-details__text">It is also on any letters or documents you receive from the NHS, such as:</div>
-            <div class="govuk-details__text">
-            <ul>
-              <li>prescriptions</li>
-              <li>test results</li>
-              <li>appointment letters</li>
-            </ul>
           </div>
-          </details>
+          </div>
+          
 
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
@@ -92,10 +94,7 @@
   </div>
   </div>
   <style>
-   
-    .govuk-details__summary {
-      margin-top: 10px;
-    }
+  
     
   </style>
 {% endblock %}

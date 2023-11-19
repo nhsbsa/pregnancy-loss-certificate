@@ -134,7 +134,7 @@ router.post(/main-applicant-nhs/, (req, res) => {
   }
 
 })
-router.post(/second-parent-question/, (req, res) => {
+router.post(/add-other-parent/, (req, res) => {
 
   // if user wants their baby gender included in the certificate they will select yes then it 
   //will take them to enter baby gender name
