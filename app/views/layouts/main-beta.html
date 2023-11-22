@@ -1,0 +1,22 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+
+  {{ govukHeader({
+    homepageUrl: "/index",
+    serviceName: serviceName,
+    serviceUrl: "start-page"
+  }) }}
+
+  {% if feedbackType %}
+    {% if servicePhase === 'beta' %}
+      {% include 'beta/v10/includes/phase-banner.html' %}
+    {% endif %}
+  {% endif %}
+
+{% endblock %}
+
+{% block footer %}
+
+
+{% endblock %}
