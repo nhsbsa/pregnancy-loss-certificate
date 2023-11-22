@@ -1,0 +1,13 @@
+{# grab section details and render out correct content #}
+
+{% if section === '1' %}
+  {% set text = 'Your details' %}
+{% elif section === '2' %}
+  {% set text = 'Your details' %}
+{% elif section === '3' %}
+  {% set text = 'Your details' %}
+{% endif %}
+
+{% if text %}
+<span class="govuk-caption-l">{{ text }}</span>
+{% endif %}
