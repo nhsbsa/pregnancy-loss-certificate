@@ -1,0 +1,302 @@
+{
+  "id": "blc",
+  "viewports": [
+    {
+      "label": "iPhone6/7/8",
+      "width": 375,
+      "height": 667
+    }
+  ],
+  "onBeforeScript": "puppet/onBefore.js",
+  "onReadyScript": "puppet/onReady.js",
+  "scenarios": [
+    {
+      "label": "access-code",
+      "url": "http://localhost:3000/beta/v10/access-code"
+    },
+    {
+      "label": "add-parent",
+      "url": "http://localhost:3000/beta/v10/add-parent"
+    },
+    {
+      "label": "address-list",
+      "url": "http://localhost:3000/beta/v10/address-list"
+    },
+    {
+      "label": "baby-loss-date",
+      "url": "http://localhost:3000/beta/v10/baby-loss-date"
+    },
+    {
+      "label": "babys-name",
+      "url": "http://localhost:3000/beta/v10/babys-name"
+    },
+    {
+      "label": "cannot-find-address",
+      "url": "http://localhost:3000/beta/v10/cannot-find-address"
+    },
+    {
+      "label": "cannot-find-address-details",
+      "url": "http://localhost:3000/beta/v10/cannot-find-address-details"
+    },
+    {
+      "label": "cannot-find-details-request",
+      "url": "http://localhost:3000/beta/v10/cannot-find-details-request"
+    },
+    {
+      "label": "cannot-request-another-code",
+      "url": "http://localhost:3000/beta/v10/cannot-request-another-code"
+    },
+    {
+      "label": "cannot-request-code",
+      "url": "http://localhost:3000/beta/v10/cannot-request-code"
+    },
+    {
+      "label": "cannot-request-try-again",
+      "url": "http://localhost:3000/beta/v10/cannot-request-try-again"
+    },
+    {
+      "label": "check-address",
+      "url": "http://localhost:3000/beta/v10/check-address"
+    },
+    {
+      "label": "check-their-details",
+      "url": "http://localhost:3000/beta/v10/check-their-details"
+    },
+    {
+      "label": "check-your-address",
+      "url": "http://localhost:3000/beta/v10/check-your-address"
+    },
+    {
+      "label": "check-your-answers",
+      "url": "http://localhost:3000/beta/v10/check-your-answers"
+    },
+    {
+      "label": "check-your-answers-remove",
+      "url": "http://localhost:3000/beta/v10/check-your-answers-remove"
+    },
+    {
+      "label": "check-your-details",
+      "url": "http://localhost:3000/beta/v10/check-your-details"
+    },
+    {
+      "label": "check-your-details-copy",
+      "url": "http://localhost:3000/beta/v10/check-your-details-copy"
+    },
+    {
+      "label": "check-your-details-kickout",
+      "url": "http://localhost:3000/beta/v10/check-your-details-kickout"
+    },
+    {
+      "label": "check-your-details-nhs",
+      "url": "http://localhost:3000/beta/v10/check-your-details-nhs"
+    },
+    {
+      "label": "check-your-details-no-nhs",
+      "url": "http://localhost:3000/beta/v10/check-your-details-no-nhs"
+    },
+    {
+      "label": "confirmation-page",
+      "url": "http://localhost:3000/beta/v10/confirmation-page"
+    },
+    {
+      "label": "confirmation-page-copy",
+      "url": "http://localhost:3000/beta/v10/confirmation-page-copy"
+    },
+    {
+      "label": "contact",
+      "url": "http://localhost:3000/beta/v10/contact"
+    },
+    {
+      "label": "contact-email",
+      "url": "http://localhost:3000/beta/v10/contact-email"
+    },
+    {
+      "label": "cookies",
+      "url": "http://localhost:3000/beta/v10/cookies"
+    },
+    {
+      "label": "date-of-birth-kickout",
+      "url": "http://localhost:3000/beta/v10/date-of-birth-kickout"
+    },
+    {
+      "label": "date-of-birth-parent-kickout",
+      "url": "http://localhost:3000/beta/v10/date-of-birth-parent-kickout"
+    },
+    {
+      "label": "date-of-loss",
+      "url": "http://localhost:3000/beta/v10/date-of-loss"
+    },
+    {
+      "label": "date-of-loss-kickoff",
+      "url": "http://localhost:3000/beta/v10/date-of-loss-kickoff"
+    },
+    {
+      "label": "declaration",
+      "url": "http://localhost:3000/beta/v10/declaration"
+    },
+    {
+      "label": "enter-address",
+      "url": "http://localhost:3000/beta/v10/enter-address"
+    },
+    {
+      "label": "enter-baby-gender",
+      "url": "http://localhost:3000/beta/v10/enter-baby-gender"
+    },
+    {
+      "label": "enter-baby-name",
+      "url": "http://localhost:3000/beta/v10/enter-baby-name"
+    },
+    {
+      "label": "enter-date-of-birth",
+      "url": "http://localhost:3000/beta/v10/enter-date-of-birth"
+    },
+    {
+      "label": "enter-date-of-birth-parent",
+      "url": "http://localhost:3000/beta/v10/enter-date-of-birth-parent"
+    },
+    {
+      "label": "enter-location",
+      "url": "http://localhost:3000/beta/v10/enter-location"
+    },
+    {
+      "label": "enter-location-uk",
+      "url": "http://localhost:3000/beta/v10/enter-location-uk"
+    },
+    {
+      "label": "enter-nhs-number",
+      "url": "http://localhost:3000/beta/v10/enter-nhs-number"
+    },
+    {
+      "label": "enter-security-code",
+      "url": "http://localhost:3000/beta/v10/enter-security-code"
+    },
+    {
+      "label": "enter-security-code-text",
+      "url": "http://localhost:3000/beta/v10/enter-security-code-text"
+    },
+    {
+      "label": "get-security-code",
+      "url": "http://localhost:3000/beta/v10/get-security-code"
+    },
+    {
+      "label": "location-kickout",
+      "url": "http://localhost:3000/beta/v10/location-kickout"
+    },
+    {
+      "label": "location-kickout-uk",
+      "url": "http://localhost:3000/beta/v10/location-kickout-uk"
+    },
+    {
+      "label": "loss-in-5-years",
+      "url": "http://localhost:3000/beta/v10/loss-in-5-years"
+    },
+    {
+      "label": "new-code-sent",
+      "url": "http://localhost:3000/beta/v10/new-code-sent"
+    },
+    {
+      "label": "nhs-number",
+      "url": "http://localhost:3000/beta/v10/nhs-number"
+    },
+    {
+      "label": "parent-contact",
+      "url": "http://localhost:3000/beta/v10/parent-contact"
+    },
+    {
+      "label": "parent-contact-kickout",
+      "url": "http://localhost:3000/beta/v10/parent-contact-kickout"
+    },
+    {
+      "label": "place-of-loss",
+      "url": "http://localhost:3000/beta/v10/place-of-loss"
+    },
+    {
+      "label": "postcode-kickout",
+      "url": "http://localhost:3000/beta/v10/postcode-kickout"
+    },
+    {
+      "label": "problem-with-service",
+      "url": "http://localhost:3000/beta/v10/problem-with-service"
+    },
+    {
+      "label": "relation-kickout",
+      "url": "http://localhost:3000/beta/v10/relation-kickout"
+    },
+    {
+      "label": "relation-to-baby",
+      "url": "http://localhost:3000/beta/v10/relation-to-baby"
+    },
+    {
+      "label": "second-parent",
+      "url": "http://localhost:3000/beta/v10/second-parent"
+    },
+    {
+      "label": "second-parent-copy",
+      "url": "http://localhost:3000/beta/v10/second-parent-copy"
+    },
+    {
+      "label": "second-parent-question",
+      "url": "http://localhost:3000/beta/v10/second-parent-question"
+    },
+    {
+      "label": "second-relation-to-baby",
+      "url": "http://localhost:3000/beta/v10/second-relation-to-baby"
+    },
+    {
+      "label": "sex-of-baby",
+      "url": "http://localhost:3000/beta/v10/sex-of-baby"
+    },
+    {
+      "label": "start-again",
+      "url": "http://localhost:3000/beta/v10/start-again"
+    },
+    {
+      "label": "start-page",
+      "url": "http://localhost:3000/beta/v10/start-page"
+    },
+    {
+      "label": "start-page-copy",
+      "url": "http://localhost:3000/beta/v10/start-page-copy"
+    },
+    {
+      "label": "terms-of-use",
+      "url": "http://localhost:3000/beta/v10/terms-of-use"
+    },
+    {
+      "label": "timeout",
+      "url": "http://localhost:3000/beta/v10/timeout"
+    },
+    {
+      "label": "what-happens-next",
+      "url": "http://localhost:3000/beta/v10/what-happens-next"
+    },
+    {
+      "label": "what-is-their-name",
+      "url": "http://localhost:3000/beta/v10/what-is-their-name"
+    },
+    {
+      "label": "what-is-your-address",
+      "url": "http://localhost:3000/beta/v10/what-is-your-address"
+    },
+    {
+      "label": "what-is-your-name",
+      "url": "http://localhost:3000/beta/v10/what-is-your-name"
+    }
+  ],
+  "paths": {
+    "bitmaps_reference": "backstop_data/bitmaps_reference",
+    "bitmaps_test": "backstop_data/bitmaps_test",
+    "engine_scripts": "backstop_data/engine_scripts",
+    "html_report": "backstop_data/html_report",
+    "ci_report": "backstop_data/ci_report"
+  },
+  "report": ["browser"],
+  "engine": "puppeteer",
+  "engineOptions": {
+    "args": ["--no-sandbox"]
+  },
+  "asyncCaptureLimit": 5,
+  "asyncCompareLimit": 50,
+  "debug": false,
+  "debugWindow": false
+}
