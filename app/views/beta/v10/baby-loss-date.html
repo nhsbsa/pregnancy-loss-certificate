@@ -1,21 +1,15 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "Did your pregnancy loss happen in England?" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-width-container app-width-container">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -23,58 +17,55 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-    Did your pregnancy loss happen in England?
-  </h1>
-</legend>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="location-england" method="post">
-        
-         
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="location-england-yes" name="location" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="location-england-yes">
-              Yes
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="location-england-no" name="location" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="location-england-no">
-              No
-            </label>
-          </div>
-        </div>
-           
-          </fieldset>
-        </div>
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Why we're asking you this question
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            We need to check you're eligible to use this service.
-          </div>
-        </details>
+    <form class="form" action="location-england" method="post">
 
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+      {% include 'beta/v10/includes/step.html' %}
 
-      </form>
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
 
-    </div>
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "loss-in-england",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("loss-in-england", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("loss-in-england", "Yes")
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+
+      {{ govukDetails({
+        summaryText: "Why we're asking you this question",
+        text: "We need to check you're eligible to use this service."
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
   </div>
-  <style>
-    .govuk-fieldset__heading {
-      margin-bottom: 30px;
-    }
-    
-  </style>
+</div>
 
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10/includes/footer.html' %}
 {% endblock %}
