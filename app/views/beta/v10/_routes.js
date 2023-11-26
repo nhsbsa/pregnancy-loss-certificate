@@ -1,6 +1,17 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+// add data to terminal output
+router.use((req, res, next) => {
+  const log = {
+    method: req.method,
+    url: req.originalUrl,
+    data: req.session.data
+  }
+  console.log(JSON.stringify(log, null, 2))
+  next()
+})
+
 // Add your routes here
 
 router.post("/location-england/", (req, res) => {
@@ -132,6 +143,11 @@ router.post(/security-code/, (req, res) => {
   } else {
     res.redirect('check-your-details-nhs-option-3');
   }
+})
+
+router.get('/check-details/', function (req, res) {
+  req.session.data['checkpage-reached'] === "true"
+  return res.render('gp/design/gp-branch')
 })
 
 router.post(/check-details/, (req, res) => {
