@@ -1,105 +1,89 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '1' %}
+
+{% set heading = "Would you like to add your email address?" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-width-container app-width-container">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
   {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<div class="govuk-form-group">
-  <span class="govuk-caption-l">Your details</span>
-  <fieldset class="govuk-fieldset">
-    
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-    Would you like to add your email address?
-  </h1>
-</legend>
+    <form class="form" action="check-your-answers" method="post">
 
-      <form class="form" action="location-england" method="post">
-        <div class="govuk-body">We'll send you updates about your request for a certificate.</div>
-       
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
-            <label class="govuk-label govuk-radios__label" for="contact">
-             Yes
-            </label>
-          </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="contact-by-email">
-                Email address
-              </label>
-              <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-            </div>
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="contact-by-email">
-                Confirm email address
-              </label>
-              <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-            </div>
-          </div>
-          
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-            <label class="govuk-label govuk-radios__label" for="contact-2">
-              No
-            </label>
-          </div>
-        
-         
-             </div>
-         
-         </form>
-        
-        </div>
-        </div>
-           
-          </fieldset>
-        </div>
-        
-        
-      </form>
-      
-     
-        {{ govukButton({
-          text: "Continue",
-          href: "check-your-answers",
-          isStartButton: false
-          }) }}
+    {% include 'beta/v10/includes/step.html' %}
 
-      
-    </div>
-    </div>
+      {% call govukFieldset({
+        legend: {
+          text: heading",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>We'll send you updates about your request for a certificate.</p>
+
+      {% set otherHtml %}
+        {{ govukInput({
+          id: "contactByEmail",
+          name: "contactByEmail",
+          classes: "nhsuk-u-width-two-thirds",
+          label: {
+            text: "Email address"
+          }
+        }) }}
+
+        {{ govukInput({
+          id: "contactByEmail2",
+          name: "contactByEmail2",
+          classes: "nhsuk-u-width-two-thirds",
+          label: {
+            text: "Confirm email address"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        name: "add-email-address",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            conditional: {
+              html: otherHtml
+            },
+            checked: checked("add-email-address", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("add-email-address", "No")
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
   </div>
-  <style>
-    
-    .govuk-fieldset__legend--l {
-      margin-bottom: 30px;
-    }
-    .govuk-radios--inline {
-      margin-bottom: 30px;
-    }
-  </style>
+</div>
 
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10/includes/footer.html' %}
 {% endblock %}

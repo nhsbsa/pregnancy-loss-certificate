@@ -37,7 +37,7 @@
       </div>
 
       {% set otherHtml %}
-        {{ input({
+        {{ govukInput({
           id: "baby-firstname",
           name: "baby-firstname",
           classes: "nhsuk-u-width-two-thirds",
@@ -55,7 +55,7 @@
             value: "Yes",
             text: "Yes",
             "conditional": {
-            "html": otherHtml
+              "html": otherHtml
             },
             checked: checked("add-name", "Yes")
           },
@@ -67,15 +67,15 @@
         ]
       }) }}
 
-  `   {% endcall %}
+     {% endcall %}
 
       {{ govukButton({
         text: "Continue"
-      }) }}`
+      }) }}
 
     </form>
   </div>
-</div>`
+</div>
 
 {% endblock %}
 

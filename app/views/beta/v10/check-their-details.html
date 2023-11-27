@@ -24,49 +24,46 @@
 
       {% include 'beta/v10/includes/step.html' %}
 
-      <h1 class="govuk-heading-l">
-        {{ heading }}
-      </h1>
+      <h1 class="govuk-heading-l">{{ heading }}</h1>
 
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{ data['parent2-firstname'] or 'Example' }} {{ data['parent2-lastname'] or 'name' }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Email
-            </dt>
-            <dd class="govuk-summary-list__value">
-             
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> email</span>
-              </a>
-            </dd>
-          </div>
-          
-        </dl>
-       
-        <div class="govuk-checkboxes__item govuk-!-margin-bottom-4">
-          <input class="govuk-checkboxes__input" id="informed-other" name="informed-other" type="checkbox" value="Yes">
-          <label class="govuk-label govuk-checkboxes__label" for="informed-other">
-            I confirm I've told the other parent that they'll be contacted.
-          </label>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['parent2-firstname'] or 'Example' }} {{ data['parent2-lastname'] or 'name' }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
         </div>
-      
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+           Email
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> email</span>
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+
+      <div class="govuk-checkboxes__item govuk-!-margin-bottom-4">
+        <input class="govuk-checkboxes__input" id="informed-other" name="informed-other" type="checkbox" value="Yes">
+        <label class="govuk-label govuk-checkboxes__label" for="informed-other">
+          I confirm I've told the other parent that they'll be contacted.
+        </label>
+      </div>
 
       <input type="hidden" name="answers-checked" value="true">
 
@@ -79,42 +76,6 @@
   </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
- $(document).ready(function() {
- const months = {
- "01": "January",
- "02": "February",
- "03": "March",
- "04": "April",
- "05": "May",
- "06": "June",
- "07": "July",
- "08": "August",
- "09": "September",
- "10": "October",
- "11": "November",
- "12": "December",
- "1": "January",
- "2": "February",
- "3": "March",
- "4": "April",
- "5": "May",
- "6": "June",
- "7": "July",
- "8": "August",
- "9": "September",
-
- };
-
- $(".cya-month").text(function () {
-   const month = $(this).text();
-   console.log("month:", month);
-   console.log("months[month]:", months[month]);
-   return months[month];
-   });
- });w
-</script>
 {% endblock %}
 
 {% block footer %}

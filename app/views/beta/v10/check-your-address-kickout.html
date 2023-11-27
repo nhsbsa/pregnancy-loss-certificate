@@ -1,27 +1,33 @@
 {% extends "layouts/main-beta.html" %}
 {% set servicePhase = 'beta' %}
 {% set feedbackType = 'step' %}
-{% set section = '' %}
+{% set section = '1' %}
 
-{% set heading = "You need to start again" %}
+{% set heading = "You have told us the address is wrong" %}
 
 {% block pageTitle %}
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
 
+{% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {% include 'beta/v10/includes/step.html' %}
+
     <h1 class="govuk-heading-l">{{ heading }}</h1>
 
-    <p>This is because you entered the wrong code too many times.</p>
-    <p>To request a baby loss certificate, you need to <a href="enter-location-uk">start again</a>.</p>
+    <p>You can contact your GP surgery to correct your address. </p>
 
   </div>
 </div>
-
 {% endblock %}
 
 {% block footer %}

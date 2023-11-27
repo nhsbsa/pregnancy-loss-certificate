@@ -67,24 +67,16 @@
       "url": "http://localhost:3000/beta/v10/check-your-address"
     },
     {
+      "label": "check-your-address-kickout",
+      "url": "http://localhost:3000/beta/v10/check-your-details-kickout"
+    },
+    {
       "label": "check-your-answers",
       "url": "http://localhost:3000/beta/v10/check-your-answers"
     },
     {
-      "label": "check-your-answers-remove",
-      "url": "http://localhost:3000/beta/v10/check-your-answers-remove"
-    },
-    {
       "label": "check-your-details",
       "url": "http://localhost:3000/beta/v10/check-your-details"
-    },
-    {
-      "label": "check-your-details-copy",
-      "url": "http://localhost:3000/beta/v10/check-your-details-copy"
-    },
-    {
-      "label": "check-your-details-kickout",
-      "url": "http://localhost:3000/beta/v10/check-your-details-kickout"
     },
     {
       "label": "check-your-details-nhs",
@@ -97,10 +89,6 @@
     {
       "label": "confirmation-page",
       "url": "http://localhost:3000/beta/v10/confirmation-page"
-    },
-    {
-      "label": "confirmation-page-copy",
-      "url": "http://localhost:3000/beta/v10/confirmation-page-copy"
     },
     {
       "label": "contact",
@@ -253,10 +241,6 @@
     {
       "label": "start-page",
       "url": "http://localhost:3000/beta/v10/start-page"
-    },
-    {
-      "label": "start-page-copy",
-      "url": "http://localhost:3000/beta/v10/start-page-copy"
     },
     {
       "label": "terms-of-use",

@@ -1,6 +1,8 @@
 {# grab section details and render out correct content #}
 
-{% if section === '1' %}
+{% if section === '0' %}
+  {% set text = 'Confirm your eligibility' %}
+{% elif section === '1' %}
   {% set text = 'Your details' %}
 {% elif section === '2' %}
   {% set text = 'Details on the certificate' %}
