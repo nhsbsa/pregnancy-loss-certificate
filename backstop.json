@@ -36,7 +36,7 @@
     },
     {
       "label": "cannot-find-address-details",
-      "url": "http://localhost:3000/beta/v10/cannot-find-address-details"
+      "url": "http://localhost:3000/beta/v10/cannot-find-contact-details"
     },
     {
       "label": "cannot-find-details-request",
@@ -68,7 +68,7 @@
     },
     {
       "label": "check-your-address-kickout",
-      "url": "http://localhost:3000/beta/v10/check-your-details-kickout"
+      "url": "http://localhost:3000/beta/v10/check-your-address-kickout"
     },
     {
       "label": "check-your-answers",
@@ -116,7 +116,7 @@
     },
     {
       "label": "date-of-loss-kickoff",
-      "url": "http://localhost:3000/beta/v10/date-of-loss-kickoff"
+      "url": "http://localhost:3000/beta/v10/date-of-loss-kickout"
     },
     {
       "label": "declaration",
