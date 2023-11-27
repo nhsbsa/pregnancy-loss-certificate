@@ -1,7 +1,7 @@
 {% extends "layouts/main-beta.html" %}
 {% set servicePhase = 'beta' %}
 {% set feedbackType = 'step' %}
-{% set section = '' %}
+{% set section = '3' %}
 
 {% set heading = "What happens next" %}
 
@@ -21,7 +21,9 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-fieldset__heading">{{ heading }}</h1>
+    {% include 'beta/v10/includes/step.html' %}
+
+    <h1 class="govuk-heading-l">{{ heading }}</h1>
 
     <p>If you choose to request a certificate that shows only yourself as a named parent, you'll receive it within 14 days.</p>
 
