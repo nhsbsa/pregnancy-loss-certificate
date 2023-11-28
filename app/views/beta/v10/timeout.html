@@ -9,13 +9,6 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
-{% endblock %}
-
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -27,7 +20,7 @@
 
     {{ govukButton({
       text: "Start now",
-      href: "enter-location",
+      href: "enter-location-ik",
       isStartButton: true
     }) }}
 
