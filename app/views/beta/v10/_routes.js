@@ -15,49 +15,38 @@ router.use((req, res, next) => {
 // Add your routes here
 
 router.post("/beta/v10/enter-location-uk-post/", (req, res) => {
-  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
-  // lossInEngland = location (value)
   const liveInEngland = req.session.data['location-england']
-  console.log(liveInEngland)
-  if (liveInEngland === 'Yes') {
-    res.redirect('baby-loss-in-england');
+  if (liveInEngland === 'No') {
+    res.redirect('location-kickout-uk');
   } else {
-    res.redirect('location-kickout-uk')
-    console.log('what!')
+    res.redirect('baby-loss-in-england')
   }
 })
 
 router.post("/beta/v10/baby-loss-in-england-post/", (req, res) => {
-  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
-  // lossInEngland = location (value)
   const lossInEngland = req.session.data['loss-in-england']
-  if (lossInEngland === 'Yes') {
-    res.redirect('living-in-england');
-  } else {
+  if (lossInEngland === 'No') {
     res.redirect('location-kickout');
+  } else {
+    res.redirect('living-in-england');
   }
 })
 
 router.post("/beta/v10/living-in-england-post/", (req, res) => {
-  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
-  // livingInEngland = location (value)
   const livingInEngland = req.session.data['living-in-england']
-  if (livingInEngland === 'Yes') {
-    res.redirect('loss-in-5-years');
-  } else {
+  if (livingInEngland === 'No') {
     res.redirect('living-in-england-kickout');
+  } else {
+    res.redirect('loss-in-5-years');
   }
 })
 
-
 router.post("/beta/v10/loss-in-5-years-post/", (req, res) => {
-  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
-  // lossInEngland = location (value)
   const lossInYears = req.session.data['over-5-years']
-  if (lossInYears === 'Yes') {
-    res.redirect('relation-to-baby');
-  } else {
+  if (lossInYears === 'No') {
     res.redirect('date-of-loss-kickout');
+  } else {
+    res.redirect('relation-to-baby');
   }
 })
 
@@ -72,10 +61,10 @@ router.post("/beta/v10/relation-to-baby-post/", (req, res) => {
 
 router.post("/beta/v10/nhs-number-post/", (req, res) => {
   const NHSNumber = req.session.data['knows-nhs-number']
-  if (NHSNumber === 'Yes') {
-    res.redirect('enter-nhs-number');
-  } else {
+  if (NHSNumber === 'No') {
     res.redirect('what-is-your-name');
+  } else {
+    res.redirect('enter-nhs-number');
   }
 })
 
@@ -91,10 +80,10 @@ router.post("/beta/v10/get-security-code-post/", (req, res) => {
 
 router.post("/beta/v10/confirm-postal-address-post/", (req, res) => {
   const address = req.session.data['address-ok']
-  if (address === 'Yes') {
-    res.redirect('what-happens-next');
+  if (address === 'No') {
+    res.redirect('check-your-address-kickout');
   } else {
-    res.redirect('what-is-your-name');
+    res.redirect('what-happens-next');
   }
 })
 
@@ -120,43 +109,6 @@ router.post("/beta/v10/sex-of-baby-post/", (req, res) => {
 router.get("/beta/v10/check-your-answers/", function (req, res) {
   req.session.data['answerpage-reached'] = "true"
   return res.render('beta/v10/check-your-answers')
-})
-
-router.post("/security-code/", (req, res) => {
-  const SecurityCode = req.session.data['entercode']
-  if (SecurityCode === '123') {
-    res.redirect('check-your-details-nhs');
-  } else if (SecurityCode === '1234') {
-    res.redirect('check-your-details-nhs-option-2')
-  } else {
-    res.redirect('check-your-details-nhs-option-3');
-  }
-})
-
-
-
-router.post("/check-details/", (req, res) => {
-  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
-  // lossInEngland = location (value)
-  const parentcheckDetails = req.session.data['details']
-  if (parentcheckDetails === 'yes') {
-    res.redirect('add-parent-copy');
-  } else {
-    res.redirect('check-your-details-kickout');
-  }
-})
-
-router.post("/enter-parent-name/", (req, res) => {
-  res.redirect('date-of-loss')
-})
-
-router.post("/idv-other-email/", (req, res) => {
-  const parentContact = req.session.data['contact']
-  if (parentContact === 'yes') {
-    res.redirect('enter-date-of-birth-parent');
-  } else {
-    res.redirect('parent-contact-kickout');
-  }
 })
 
 module.exports = router;
