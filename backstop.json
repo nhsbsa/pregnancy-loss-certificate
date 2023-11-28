@@ -140,7 +140,11 @@
     },
     {
       "label": "enter-security-code",
-      "url": "http://localhost:3000/beta/v10/enter-security-code"
+      "url": "http://localhost:3000/beta/v10/enter-security-code?otp-delivery=email"
+    },
+    {
+      "label": "enter-security-code",
+      "url": "http://localhost:3000/beta/v10/enter-security-code?otp-delivery=sms"
     },
     {
       "label": "get-security-code",
