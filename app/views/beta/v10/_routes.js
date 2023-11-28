@@ -122,6 +122,10 @@ router.post("/beta/v10/parent2/nhs-number-post/", (req, res) => {
   }
 })
 
+router.post("/beta/v10/parent2/enter-date-of-birth/", (req, res) => {
+  res.redirect('enter-date-of-birth');
+})
+
 // set a variable once all demographic questions are asked
 router.get("/beta/v10/parent2/check-your-details/", function (req, res) {
   req.session.data['checkpage-reached'] = "true"

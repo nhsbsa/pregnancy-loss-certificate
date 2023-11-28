@@ -249,6 +249,74 @@
     {
       "label": "what-is-your-name",
       "url": "http://localhost:3000/beta/v10/what-is-your-name"
+    },
+    {
+      "label": "p2-start-page",
+      "url": "http://localhost:3000/beta/v10/parent2/start-page"
+    },
+    {
+      "label": "p2-reference-number",
+      "url": "http://localhost:3000/beta/v10/parent2/reference-number"
+    },
+    {
+      "label": "p2-nhs-number",
+      "url": "http://localhost:3000/beta/v10/parent2/nhs-number"
+    },
+    {
+      "label": "p2-enter-nhs-number",
+      "url": "http://localhost:3000/beta/v10/parent2/enter-nhs-number"
+    },
+    {
+      "label": "p2-what-is-your-name",
+      "url": "http://localhost:3000/beta/v10/parent2/what-is-your-name"
+    },
+    {
+      "label": "p2-enter-date-of-birth",
+      "url": "http://localhost:3000/beta/v10/parent2/enter-date-of-birth"
+    },
+    {
+      "label": "p2-enter-address",
+      "url": "http://localhost:3000/beta/v10/parent2/enter-address"
+    },
+    {
+      "label": "p2-check-your-details-nhs",
+      "url": "http://localhost:3000/beta/v10/parent2/check-your-details?knows-nhs-number=Yes"
+    },
+    {
+      "label": "p2-check-your-details",
+      "url": "http://localhost:3000/beta/v10/parent2/check-your-details?knows-nhs-number=No"
+    },
+    {
+      "label": "p2-get-security-code",
+      "url": "http://localhost:3000/beta/v10/parent2/get-security-code?otp-delivery=sms"
+    },
+    {
+      "label": "p2-enter-security-code",
+      "url": "http://localhost:3000/beta/v10/parent2/enter-security-code?otp-delivery=email"
+    },
+    {
+      "label": "p2-enter-security-code",
+      "url": "http://localhost:3000/beta/v10/parent2/enter-security-code?otp-delivery=sms"
+    },
+    {
+      "label": "p2-check-your-answers",
+      "url": "http://localhost:3000/beta/v10/parent2/check-your-answers"
+    },
+    {
+      "label": "p2-declaration",
+      "url": "http://localhost:3000/beta/v10/parent2/declaration"
+    },
+    {
+      "label": "p2-confirmation-page",
+      "url": "http://localhost:3000/beta/v10/parent2/confirmation-page"
+    },
+    {
+      "label": "p2-check-answers-kickout-copy",
+      "url": "http://localhost:3000/beta/v10/parent2/check-answers-kickout-copy"
+    },
+    {
+      "label": "p2-check-answers-kickout",
+      "url": "http://localhost:3000/beta/v10/parent2/check-answers-kickout"
     }
   ],
   "paths": {

@@ -82,7 +82,7 @@
          Name
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['parent1-firstname'] or 'Jasmine' }} {{ data['parent1-lastname'] or 'Williams' }}
+          {{ data['parent2-firstname'] or 'Jason' }} {{ data['parent2-lastname'] or 'Williams' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="what-is-your-name">
@@ -96,7 +96,7 @@
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['dob'] or '1 January 1998' }}
+          {{ data['dob2']|govukDate or '1 January 1998' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="enter-date-of-birth">
@@ -110,7 +110,7 @@
           Postcode
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['postcode'] or 'NE1 3JA' }}
+          {{ data['postcodeinput2'] or 'NE1 3JA' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="enter-address">

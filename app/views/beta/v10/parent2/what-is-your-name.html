@@ -1,9 +1,9 @@
 {% extends "layouts/main-beta.html" %}
 {% set servicePhase = 'beta' %}
 {% set feedbackType = 'step' %}
-{% set section = '3' %}
+{% set section = '1' %}
 
-{% set heading = "What is their name?" %}
+{% set heading = "What is your name?" %}
 
 {% block pageTitle %}
   {{ heading }} – {{ serviceName }} – NHSBSA
@@ -12,7 +12,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "add-parent"
+    href: "nhs-number"
   }) }}
 {% endblock %}
 
@@ -20,7 +20,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="parent-contact" method="post">
+    <form class="form" action="enter-date-of-birth" method="post">
 
       {% include 'beta/v10/includes/step.html' %}
 

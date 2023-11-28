@@ -9,11 +9,7 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
-{% if data['checkpage-reached'] === 'true' %}
-  {% set action = 'check-your-details' %}
-{% else %}
-  {% set action = 'enter-address' %}
-{% endif %}
+{% set action = 'enter-address' %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -31,8 +27,8 @@
       {% include 'beta/v10/includes/step.html' %}
 
       {{ govukDateInput({
-        id: "dob",
-        namePrefix: "[dob]",
+        id: "dob2",
+        namePrefix: "[dob2]",
         fieldset: {
           legend: {
             text: heading,
@@ -40,7 +36,7 @@
             classes: "govuk-fieldset__legend--l"
           }
         },
-        value: data['dob'],
+        value: data['dob2'],
         hint: {
           text: "For example, 27 3 2007"
         }
