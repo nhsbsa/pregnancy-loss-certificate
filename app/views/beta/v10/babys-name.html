@@ -49,6 +49,7 @@
           id: "baby-firstname",
           name: "baby-firstname",
           classes: "nhsuk-u-width-two-thirds",
+          value: data['baby-firstname'],
           label: {
             text: "Baby's name"
           }
@@ -61,7 +62,7 @@
           {
             value: "Yes",
             text: "Yes",
-            "conditional": {
+            conditional: {
               "html": otherHtml
             },
             checked: checked("add-name", "Yes")
