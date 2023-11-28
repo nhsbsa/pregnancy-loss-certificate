@@ -23,10 +23,6 @@
       "url": "http://localhost:3000/beta/v10/address-list"
     },
     {
-      "label": "baby-loss-date",
-      "url": "http://localhost:3000/beta/v10/baby-loss-date"
-    },
-    {
       "label": "babys-name",
       "url": "http://localhost:3000/beta/v10/babys-name"
     },
@@ -55,40 +51,36 @@
       "url": "http://localhost:3000/beta/v10/cannot-request-try-again"
     },
     {
-      "label": "check-address",
-      "url": "http://localhost:3000/beta/v10/check-address"
-    },
-    {
-      "label": "check-their-details",
-      "url": "http://localhost:3000/beta/v10/check-their-details"
-    },
-    {
-      "label": "check-your-address",
-      "url": "http://localhost:3000/beta/v10/check-your-address"
+      "label": "confirm-postal-address",
+      "url": "http://localhost:3000/beta/v10/confirm-postal-address"
     },
     {
       "label": "check-your-address-kickout",
       "url": "http://localhost:3000/beta/v10/check-your-address-kickout"
     },
     {
-      "label": "check-your-answers",
-      "url": "http://localhost:3000/beta/v10/check-your-answers"
+      "label": "check-your-answers-2-parents",
+      "url": "http://localhost:3000/beta/v10/check-your-answers?add-other-parent=Yes"
     },
     {
-      "label": "check-your-details",
-      "url": "http://localhost:3000/beta/v10/check-your-details"
+      "label": "check-your-answers",
+      "url": "http://localhost:3000/beta/v10/check-your-answers?add-other-parent=No"
     },
     {
       "label": "check-your-details-nhs",
-      "url": "http://localhost:3000/beta/v10/check-your-details-nhs"
+      "url": "http://localhost:3000/beta/v10/check-your-details?knows-nhs-number=Yes"
     },
     {
-      "label": "check-your-details-no-nhs",
-      "url": "http://localhost:3000/beta/v10/check-your-details-no-nhs"
+      "label": "check-your-details",
+      "url": "http://localhost:3000/beta/v10/check-your-details?knows-nhs-number=No"
+    },
+    {
+      "label": "confirmation-page-2-parents",
+      "url": "http://localhost:3000/beta/v10/confirmation-page?add-other-parent=Yes"
     },
     {
       "label": "confirmation-page",
-      "url": "http://localhost:3000/beta/v10/confirmation-page"
+      "url": "http://localhost:3000/beta/v10/confirmation-page?add-other-parent=No"
     },
     {
       "label": "contact",
@@ -105,10 +97,6 @@
     {
       "label": "date-of-birth-kickout",
       "url": "http://localhost:3000/beta/v10/date-of-birth-kickout"
-    },
-    {
-      "label": "date-of-birth-parent-kickout",
-      "url": "http://localhost:3000/beta/v10/date-of-birth-parent-kickout"
     },
     {
       "label": "date-of-loss",
@@ -143,10 +131,6 @@
       "url": "http://localhost:3000/beta/v10/enter-date-of-birth-parent"
     },
     {
-      "label": "enter-location",
-      "url": "http://localhost:3000/beta/v10/enter-location"
-    },
-    {
       "label": "enter-location-uk",
       "url": "http://localhost:3000/beta/v10/enter-location-uk"
     },
@@ -157,10 +141,6 @@
     {
       "label": "enter-security-code",
       "url": "http://localhost:3000/beta/v10/enter-security-code"
-    },
-    {
-      "label": "enter-security-code-text",
-      "url": "http://localhost:3000/beta/v10/enter-security-code-text"
     },
     {
       "label": "get-security-code",
@@ -187,6 +167,10 @@
       "url": "http://localhost:3000/beta/v10/nhs-number"
     },
     {
+      "label": "living-in-england-kickout",
+      "url": "http://localhost:3000/beta/v10/living-in-england-kickout"
+    },
+    {
       "label": "parent-contact",
       "url": "http://localhost:3000/beta/v10/parent-contact"
     },
@@ -197,10 +181,6 @@
     {
       "label": "place-of-loss",
       "url": "http://localhost:3000/beta/v10/place-of-loss"
-    },
-    {
-      "label": "postcode-kickout",
-      "url": "http://localhost:3000/beta/v10/postcode-kickout"
     },
     {
       "label": "problem-with-service",
