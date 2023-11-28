@@ -111,4 +111,43 @@ router.get("/beta/v10/check-your-answers/", function (req, res) {
   return res.render('beta/v10/check-your-answers')
 })
 
+///// PARENT 2 /////
+
+router.post("/beta/v10/parent2/nhs-number-post/", (req, res) => {
+  const NHSNumber = req.session.data['knows-nhs-number']
+  if (NHSNumber === 'No') {
+    res.redirect('what-is-your-name');
+  } else {
+    res.redirect('enter-nhs-number');
+  }
+})
+
+// set a variable once all demographic questions are asked
+router.get("/beta/v10/parent2/check-your-details/", function (req, res) {
+  req.session.data['checkpage-reached'] = "true"
+  return res.render('beta/v10/parent2/check-your-details')
+})
+
+router.post("/beta/v10/parent2/get-security-code-post/", (req, res) => {
+  res.redirect('enter-security-code');
+})
+
+router.post("/beta/v10/parent2/check-your-answers-post/", (req, res) => {
+  const correct = req.session.data['cya-correct']
+  if (correct === 'No') {
+    res.redirect('check-answers-kickout-copy');
+  } else {
+    res.redirect('declaration');
+  }
+})
+
+router.post("/beta/v10/parent2/check-answers-kickout-post/", (req, res) => {
+  const sure = req.session.data['cya-kickout']
+  if (sure === 'No') {
+    res.redirect('check-your-answers');
+  } else {
+    res.redirect('check-answers-kickout');
+  }
+})
+
 module.exports = router;

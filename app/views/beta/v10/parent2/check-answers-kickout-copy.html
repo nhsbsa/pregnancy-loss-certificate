@@ -1,9 +1,9 @@
 {% extends "layouts/main-beta.html" %}
 {% set servicePhase = 'beta' %}
 {% set feedbackType = 'step' %}
-{% set section = '0' %}
+{% set section = '' %}
 
-{% set heading = "Do you live in England?" %}
+{% set heading = "Are you sure you want to cancel the request for a certificate?" %}
 
 {% block pageTitle %}
   {{ heading }} – {{ serviceName }} – NHSBSA
@@ -12,7 +12,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "start-page"
+    href: "check-your-answers"
   }) }}
 {% endblock %}
 
@@ -20,38 +20,38 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="enter-location-uk-post" method="post">
+    <form class="form" action="check-answers-kickout-post" method="post">
 
       {% include 'beta/v10/includes/step.html' %}
 
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>If the details are not correct, the request for a certificate will be cancelled and the main applicant will need to start a new request.</p>
+
       {{ govukRadios({
-        name: "location-england",
+        name: "cya-kickout",
         classes: "govuk-radios--inline",
-        fieldset: {
-          legend: {
-            text: heading,
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: checked("location-england", "Yes")
+            checked: checked("cya-kickout", "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: checked("location-england", "No")
+            checked: checked("cya-kickout", "No")
           }
         ]
       }) }}
 
-      {{ govukDetails({
-      summaryText: "Why we're asking you this question",
-      text: "You can only get a certificate if you live in England."
-    }) }}
+      {% endcall %}
 
       {{ govukButton({
       text: "Continue"
