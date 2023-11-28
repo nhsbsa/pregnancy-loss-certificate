@@ -9,10 +9,16 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
+{% if data['add-other-parent'] === 'No' %}
+  {% set backLink = 'add-parent' %}
+{% else %}
+  {% set backLink = 'second-relation-to-baby' %}
+{% endif %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: backLink
   }) }}
 {% endblock %}
 
@@ -46,7 +52,8 @@
           namePrefix: "[dol]",
           hint: {
             text: "For example, 27 3 2021"
-          }
+          },
+          value: data['dol']
         }) }}
       {% endset -%}
 
@@ -76,9 +83,9 @@
 
       {% endcall %}
 
-    {{ govukButton({
-      text: "Continue"
-    }) }}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
 
     </form>
   </div>

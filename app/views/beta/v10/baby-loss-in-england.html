@@ -12,7 +12,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "javascript:window.history.back()"
+  href: "enter-location-uk"
 }) }}
 {% endblock %}
 
@@ -20,7 +20,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="location-england" method="post">
+    <form class="form" action="baby-loss-in-england-post" method="post">
 
       {% include 'beta/v10/includes/step.html' %}
 
@@ -44,7 +44,7 @@
           {
             value: "No",
             text: "No",
-            checked: checked("loss-in-england", "Yes")
+            checked: checked("loss-in-england", "No")
           }
         ]
       }) }}

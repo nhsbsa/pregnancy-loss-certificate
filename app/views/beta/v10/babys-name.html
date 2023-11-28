@@ -9,10 +9,16 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
+{% if data['add-sex'] === 'No' %}
+  {% set backLink = 'sex-of-baby' %}
+{% else %}
+  {% set backLink = 'enter-baby-gender' %}
+{% endif %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: backLink
   }) }}
 {% endblock %}
 
@@ -50,7 +56,6 @@
       {% endset -%}
 
       {{ govukRadios({
-        classes: "govuk-radios--inline",
         name: "add-name",
         items: [
           {

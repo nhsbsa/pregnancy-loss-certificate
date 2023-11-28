@@ -14,7 +14,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "living-in-england"
   }) }}
 {% endblock %}
 
@@ -22,14 +22,14 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="loss-5-years" method="post">
+    <form class="form" action="loss-in-5-years-post" method="post">
 
       {% include 'beta/v10/includes/step.html' %}
 
       {% set otherHtml %}
         {{ govukInput({
-          id: "year-loss",
-          name: "year-loss",
+          id: "dol",
+          name: "[dol]",
           classes: "govuk-input--width-4",
           label: {
             text: "Enter year of baby loss"

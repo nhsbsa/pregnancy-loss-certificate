@@ -56,7 +56,7 @@
           Email address
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['email'] or 'jasmine.williams@example.com' }}
+          {{ data['contactByEmail'] or 'jasmine.williams@example.com' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="contact-email">
@@ -75,7 +75,7 @@
           Do you want to add another parent?
         </dt>
         <dd class="govuk-summary-list__value">
-        Yes
+          {{ data['add-other-parent'] or 'Yes' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="add-parent">
@@ -83,12 +83,29 @@
           </a>
         </dd>
       </div>
+
+      {% if data['add-other-parent'] === 'Yes' %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['parent2-firstname'] or 'Jason' }} {{ data['parent2-lastname'] or 'Williams' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="parent-contact">
+            Change<span class="govuk-visually-hidden"> other parent's email address</span>
+          </a>
+        </dd>
+      </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Email address
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['other-parent-email'] or 'jason.williams@inbox.com' }}
+          {{ data['parent2-email'] or 'jason.williams@inbox.com' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="parent-contact">
@@ -102,7 +119,7 @@
          Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['dob'] or '1 January 1998' }}
+          {{ data['dob2']|govukDate or '1 January 1998' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="enter-date-of-birth-parent">
@@ -110,6 +127,8 @@
           </a>
         </dd>
       </div>
+
+      {% endif %}
     </dl>
 
 
@@ -145,6 +164,8 @@
       </div>
     </dl>
 
+    {% if data['add-other-parent'] === 'Yes' %}
+
     <h3 class="govuk-heading-s">Parent 2</h3>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -174,9 +195,14 @@
       </div>
     </dl>
 
+    {% endif %}
+
     <h3 class="govuk-heading-s">Baby's details</h3>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      {% if data['add-name'] !== 'No' %}
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Baby's name
@@ -191,6 +217,10 @@
         </dd>
       </div>
 
+      {% endif %}
+
+      {% if data['add-name'] !== 'No' %}
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Baby's sex
@@ -204,6 +234,8 @@
           </a>
         </dd>
       </div>
+
+      {% endif %}
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -223,12 +255,14 @@
         </dd>
       </div>
 
+      {% if data['add-place-of-loss'] !== 'No' or data['add-place-of-loss'] !== 'Not Known' %}
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Place of baby loss
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['place'] or 'Newcastle' }}
+          {{ data['place-of-loss'] or 'Newcastle' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="place-of-loss">
@@ -236,6 +270,9 @@
           </a>
         </dd>
       </div>
+
+      {% endif %}
+
     </dl>
 
     <form action="declaration" method="post" novalidate>

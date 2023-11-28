@@ -9,10 +9,16 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
+{% if data['checkpage-reached'] === 'true' %}
+  {% set action = 'check-your-details' %}
+{% else %}
+  {% set action = 'enter-date-of-birth' %}
+{% endif %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "nhs-number"
   }) }}
 {% endblock %}
 
@@ -21,7 +27,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="enter-your-name" method="post">
+    <form class="form" action="{{ action }}" method="post">
 
       {% include 'beta/v10/includes/step.html' %}
 

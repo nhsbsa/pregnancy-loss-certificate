@@ -9,17 +9,10 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
-{% endblock %}
-
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="what-happens-next" method="post">
+    <form class="form" action="confirm-postal-address-post" method="post">
 
       {% include 'beta/v10/includes/step.html' %}
 
@@ -36,9 +29,6 @@
           <dd class="govuk-summary-list__value">
             {{ data['parent1-firstname'] or 'Jasmine' }} {{ data['parent1-lastname'] or 'Williams' }}
           </dd>
-          <dd class="govuk-summary-list__actions">
-            &nbsp;
-          </dd>
         </div>
 
         <div class="govuk-summary-list__row">
@@ -47,9 +37,6 @@
           </dt>
           <dd class="govuk-summary-list__value">
             4 Albert Road<br>Newcastle<br>NE1 3JA
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            &nbsp;
           </dd>
         </div>
       </dl>
@@ -64,17 +51,17 @@
 
       {{ govukRadios({
         classes: "govuk-radios--inline",
-        name: "details",
+        name: "address-ok",
         items: [
           {
             value: "Yes",
             text: "Yes",
-            checked: checked("details", "Yes")
+            checked: checked("address-ok", "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: checked("details", "Yes")
+            checked: checked("address-ok", "No")
           }
         ]
       }) }}

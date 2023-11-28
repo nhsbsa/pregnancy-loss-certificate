@@ -9,10 +9,16 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
+{% if data['otp-delivery'] === 'sms' %}
+  {% set hintText = "<p>We sent your security code by text to ********009</p>" %}
+{% else %}
+  {% set hintText = "<p>We sent your security code by email to Sa********@gmail.com</p><p class=\"govuk-hint\">If you do not receive the email within a few minutes, check your spam or junk mail folder.</p>" %}
+{% endif %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "get-security-code"
   }) }}
 {% endblock %}
 
@@ -20,26 +26,25 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="check-your-details-nhs" method="post">
+    <form class="form" action="confirm-postal-address" method="post">
 
       {% include 'beta/v10/includes/step.html' %}
 
       {{ govukInput({
-      id: "entercode",
-      name: "entercode",
-      classes: "govuk-input--width-4 govuk-input--extra-letter-spacing",
-      autocomplete: "one-time-code",
-      type: "text",
-      inputmode: "numeric",
-      label: {
-        text: heading,
-        classes: "govuk-label--l",
-        isPageHeading: true
-      },
-      hint: {
-        html: "<p>We sent your security code by email to Sa********@gmail.com</p><p class=\"govuk-hint\">If you do not receive the email within a few minutes, check your spam or junk mail folder.</p>"
-      }
-
+        id: "entercode",
+        name: "entercode",
+        classes: "govuk-input--width-4 govuk-input--extra-letter-spacing",
+        autocomplete: "one-time-code",
+        type: "text",
+        inputmode: "numeric",
+        label: {
+          text: heading,
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        hint: {
+          html: hintText
+        }
       }) }}
 
       <p>Didn't get your security code? <a href="">Resend code</a></p>

@@ -12,7 +12,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: "date-of-loss"
   }) }}
 {% endblock %}
 
@@ -26,8 +26,8 @@
 
       {% set otherHtml %}
         {{ govukInput({
-          id: "year-loss",
-          name: "year-loss",
+          id: "place-of-loss",
+          name: "place-of-loss",
           classes: "govuk-input--width-20",
           label: {
             text: "Place of your baby loss"

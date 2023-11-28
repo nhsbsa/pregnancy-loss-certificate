@@ -9,10 +9,16 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
+{% if data['knows-nhs-number'] === 'No' %}
+  {% set backLink = 'enter-address' %}
+{% else %}
+  {% set backLink = 'enter-nhs-number' %}
+{% endif %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:window.history.back()"
+    href: backLink
   }) }}
 {% endblock %}
 
@@ -29,13 +35,27 @@
       {% if data['knows-nhs-number'] === 'Yes' %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+          Do you know your NHS number?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['knows-nhs-number'] or 'No' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="nhs-number">
+            Change<span class="govuk-visually-hidden"> NHS number</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           NHS Number
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['nhs-number'] or '485 777 3456' }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="nhs-number">
+          <a class="govuk-link" href="enter-nhs-number">
             Change<span class="govuk-visually-hidden"> NHS number</span>
           </a>
         </dd>
@@ -65,7 +85,7 @@
           {{ data['parent1-firstname'] or 'Jasmine' }} {{ data['parent1-lastname'] or 'Williams' }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <a class="govuk-link" href="what-is-your-name">
             Change<span class="govuk-visually-hidden"> your name</span>
           </a>
         </dd>
@@ -79,7 +99,7 @@
           {{ data['dob'] or '1 January 1998' }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <a class="govuk-link" href="enter-date-of-birth">
             Change<span class="govuk-visually-hidden"> your date of birth</span>
           </a>
         </dd>
@@ -93,7 +113,7 @@
           {{ data['postcode'] or 'NE1 3JA' }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">
+          <a class="govuk-link" href="enter-address">
             Change<span class="govuk-visually-hidden"> your postcode</span>
           </a>
         </dd>

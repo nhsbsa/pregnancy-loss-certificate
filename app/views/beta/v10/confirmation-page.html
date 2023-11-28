@@ -3,7 +3,11 @@
 {% set feedbackType = 'step' %}
 {% set section = '1' %}
 
-{% set heading = "Request pending" %}
+{% if data['add-other-parent'] !== 'No' %}
+  {% set heading = "Request pending" %}
+{% else %}
+  {% set heading = "Request complete" %}
+{% endif %}
 
 {% block pageTitle %}
   {{ heading }} – {{ serviceName }} – NHSBSA
@@ -18,9 +22,9 @@
       html: "Your reference number<br><strong>J4R-8H5-2K9F1</strong>"
     }) }}
 
-    <h2 class="govuk-heading-m">What happens next</h2>
+    <h2 class="govuk-heading-m govuk-!-margin-top-6">What happens next</h2>
 
-    {% if data[''] === '' %}
+    {% if data['add-other-parent'] !== 'No' %}
       <p>The other parent will have 7 days to give permission and confirm their details.</p>
       <p>They may choose not to be named on the certificate. If you would like a certificate with only your name as a parent of your baby, you'll need to start again.</p>
       <p>If you've lost more than one pregnancy, you can <a href="">request another certificate</a>.</p>
@@ -29,7 +33,7 @@
       <p>If you’ve lost more than one pregnancy, you can <a href="">request another certificate</a>.</p>
     {% endif %}
 
-    <h3 class="govuk-heading-m">Support organisations</h3>
+    <h3 class="govuk-heading-m govuk-!-margin-top-6">Support organisations</h3>
 
     <p>The following organisations give support and advice:</p>
 
