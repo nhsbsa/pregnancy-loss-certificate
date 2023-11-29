@@ -46,7 +46,7 @@
           Your name
         </dt>
         <dd class="govuk-summary-list__value">
-          To be added once the other parent confirms their details
+          {{ data['parent2-firstname'] or 'Jason' }} {{ data['parent2-lastname'] or 'Williams' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           &nbsp;
@@ -58,7 +58,7 @@
           Your relationship to your baby
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['parent-2'] or 'Father' }}
+          {{ data['parent2-relationship'] or 'Father' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="second-relation-to-baby">
@@ -113,10 +113,10 @@
           Date of baby loss
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if data['dol'] %}
-          {{ data['dol']|govukDate }}
+          {% if data['dol-day'] or data['dol-month'] %}
+            {{ data | isoDateFromDateInput("dol") | govukDate or 'January 2022' }}
           {% else %}
-          2002
+            {{data['dol-year'] or '2022'}}
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">

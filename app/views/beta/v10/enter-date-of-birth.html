@@ -32,7 +32,7 @@
 
       {{ govukDateInput({
         id: "dob",
-        namePrefix: "[dob]",
+        namePrefix: "dob",
         fieldset: {
           legend: {
             text: heading,
@@ -43,7 +43,24 @@
         value: data['dob'],
         hint: {
           text: "For example, 27 3 2007"
-        }
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["dob-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["dob-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["dob-year"]
+          }
+        ]
       }) }}
 
       {{ govukDetails({

@@ -26,11 +26,12 @@
 
       {% include 'beta/v10/includes/step.html' %}
 
-      {% set otherHtml %}
+      {% set dateHtml %}
         {{ govukInput({
-          id: "dol",
-          name: "[dol]",
+          id: "dol-year",
+          name: "dol-year",
           classes: "govuk-input--width-4",
+          value: data['dol-year'],
           label: {
             text: "Enter year of baby loss"
           }
@@ -51,7 +52,7 @@
             value: "Yes",
             text: "Yes",
             conditional: {
-              html: otherHtml
+              html: dateHtml
             },
             checked: checked("over-5-years", "Yes")
           },

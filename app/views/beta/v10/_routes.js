@@ -68,6 +68,14 @@ router.post("/beta/v10/nhs-number-post/", (req, res) => {
   }
 })
 
+router.post("/beta/v10/enter-date-of-birth/", (req, res) => {
+  res.redirect('enter-date-of-birth');
+})
+
+router.post("/beta/v10/enter-date-of-birth-parent/", (req, res) => {
+  res.redirect('enter-date-of-birth-parent');
+})
+
 // set a variable once all demographic questions are asked
 router.get("/beta/v10/check-your-details/", function (req, res) {
   req.session.data['checkpage-reached'] = "true"
@@ -98,7 +106,7 @@ router.post("/beta/v10/add-parent-post/", (req, res) => {
 
 router.post("/beta/v10/sex-of-baby-post/", (req, res) => {
   const addSex = req.session.data['add-sex']
-  if (addSex === 'No') {
+  if (addSex === 'No' || addSex === 'I do not know the sex of my baby') {
     res.redirect('babys-name');
   } else {
     res.redirect('enter-baby-gender');

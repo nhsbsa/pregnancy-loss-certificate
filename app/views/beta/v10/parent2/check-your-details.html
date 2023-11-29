@@ -96,7 +96,7 @@
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['dob2']|govukDate or '1 January 1998' }}
+          {{ data | isoDateFromDateInput("dob2") | govukDate or '19 June 2000' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="enter-date-of-birth">
@@ -110,7 +110,7 @@
           Postcode
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['postcodeinput2'] or 'NE1 3JA' }}
+          {{ data['postcodeinput2'] | formatUKPostcode or 'NE1 3JA' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="enter-address">

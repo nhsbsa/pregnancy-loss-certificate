@@ -49,11 +49,27 @@
       {% set otherHtml %}
         {{ govukDateInput({
           id: "dol",
-          namePrefix: "[dol]",
+          namePrefix: "dol",
           hint: {
             text: "For example, 27 3 2021"
           },
-          value: data['dol']
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["dol-day"]
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["dol-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["dol-year"]
+            }
+          ]
         }) }}
       {% endset -%}
 

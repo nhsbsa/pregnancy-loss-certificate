@@ -119,7 +119,7 @@
          Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['dob2']|govukDate or '1 January 1998' }}
+          {{ data | isoDateFromDateInput("dob2") | govukDate or '1 January 1998'}}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="enter-date-of-birth-parent">
@@ -174,7 +174,7 @@
           Their relationship to your baby
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['parent-2'] or 'Father' }}
+          {{ data['parent2-relationship'] or 'Father' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="second-relation-to-baby">
@@ -201,14 +201,18 @@
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-      {% if data['add-name'] !== 'No' %}
+      {#    {% if data['add-name'] !== 'No' %} #}
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Baby's name
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['baby-firstname'] or 'Alfie' }}
+          {% if data['add-name'] !== 'No' %}
+            {{ data['baby-firstname'] or 'Alfie' }}
+          {% else %}
+            ---
+          {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="babys-name">
@@ -217,9 +221,9 @@
         </dd>
       </div>
 
-      {% endif %}
+      {#    {% endif %} #}
 
-      {% if data['add-name'] !== 'No' %}
+      {#     {% if data['add-name'] !== 'No' %} #}
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -235,17 +239,19 @@
         </dd>
       </div>
 
-      {% endif %}
+      {#    {% endif %} #}
+
+  {#    {% if data['dol-on-cert'] !== 'No' and data['dol-on-cert'] !== 'Not known' %} #}
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date of baby loss
         </dt>
         <dd class="govuk-summary-list__value">
-          {% if data['dol'] %}
-            {{ data['dol']|govukDate }}
+          {% if data['dol-day'] or data['dol-month'] %}
+            {{ data | isoDateFromDateInput("dol") | govukDate or 'January 2022' }}
           {% else %}
-          2002
+            {{data['dol-year'] or '2022'}}
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
@@ -255,7 +261,9 @@
         </dd>
       </div>
 
-      {% if data['add-place-of-loss'] !== 'No' or data['add-place-of-loss'] !== 'Not Known' %}
+      {#    {% endif %} #}
+
+      {#    {% if data['add-place-of-loss'] !== 'No' and data['add-place-of-loss'] !== 'Not Known' %} #}
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -271,7 +279,7 @@
         </dd>
       </div>
 
-      {% endif %}
+      {#    {% endif %} #}
 
     </dl>
 
