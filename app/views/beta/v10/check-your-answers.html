@@ -119,7 +119,11 @@
          Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data | isoDateFromDateInput("dob2") | govukDate or '1 January 1998'}}
+          {% if data['dob2-day'] or data['dob2-month'] %}
+            {{ data | isoDateFromDateInput("dob2") | govukDate or '19 June 2000' }}
+          {% else %}
+            19 June 2000
+          {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="enter-date-of-birth-parent">
