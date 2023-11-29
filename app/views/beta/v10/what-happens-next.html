@@ -1,77 +1,45 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '3' %}
+
+{% set heading = "What happens next" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-width-container app-width-container">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
   {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+    text: "Back",
+    href: "confirm-postal-address"
+  }) }}
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<div class="govuk-form-group">
 
-  <fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-    What happens next
-    
-  </h1>
-</legend>
+    {% include 'beta/v10/includes/step.html' %}
 
+    <h1 class="govuk-heading-l">{{ heading }}</h1>
 
-      <form class="form" action="parent-add" method="post">
-        <div class="govuk-form-group">
+    <p>If you choose to request a certificate that shows only yourself as a named parent, you'll receive it within 14 days.</p>
 
-        
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-          
-       <p>If you choose to request a certificate that shows only yourself as a named parent, you'll receive it within 14 days.</p>
-       <p>Your request may take up to 21 days if you add the other parent's name to the certificate. This is because the other parent will have up to 7 days to give permission before the request is complete.</p>
+    <p>Your request may take up to 21 days if you add the other parent's name to the certificate. This is because the other parent will have up to 7 days to give permission before the request is complete.</p>
 
-      
-        </div>
-      
-          </fieldset>
-        </div>
-      </form>
-      </div>
-      </div>
-     
-      {{ govukButton({
-        text: "Continue",
-        href: "add-parent",
-        isStartButton: false
-        }) }}
-    
+    {{ govukButton({
+      text: "Continue",
+      href: "add-parent",
+      isStartButton: false
+    }) }}
 
-      
-</div>
-</div>
-    </div>
   </div>
-  <style>
-  .govukButton {
-    margin-left: 10px;
-  }
-   
-  
-  </style>
+</div>
 
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10/includes/footer.html' %}
 {% endblock %}

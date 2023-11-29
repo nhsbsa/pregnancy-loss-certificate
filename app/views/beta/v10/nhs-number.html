@@ -1,90 +1,70 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '1' %}
+
+{% set heading = "Do you know your NHS number?" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-width-container app-width-container">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
   {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+    text: "Back",
+    href: "relation-to-baby"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<div class="govuk-form-group">
-  <span class="govuk-caption-l">Your details</span>
-  <fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-   Do you know your NHS number?
-    
-  </h1>
-</legend>
+    <form class="form" action="nhs-number-post" method="post">
 
-      <form class="form" action="nhs-number-action" method="post">
-        <div id="passport-issued-hint" class="govuk-hint">
-          Your NHS number is a 10 digit number, like 485 777 3456.
-        </div>
-        <div id="passport-issued-hint" class="govuk-hint">
-          You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service.
-        </div>
-         
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="nhs-number-action" name="nhs" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="yes">
-              Yes
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="nhs-number-action" name="nhs" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="no">
-              No
-            </label>
-          </div>
-        </div>
-            </div>
-          </fieldset>
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Why we're asking you this question
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              We need to find your NHS record.
-            </div>
-          </details>
+      {% include 'beta/v10/includes/step.html' %}
 
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+      {{ govukRadios({
+        name: "knows-nhs-number",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: "Your NHS number is a 10 digit number, like 485 777 3456.<br><br>You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service."
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes, I know my NHS number",
+            checked: checked("knows-nhs-number", "Yes")
+          },
+          {
+            value: "No",
+            text: "No, continue with my date of birth",
+            checked: checked("knows-nhs-number", "No")
+          }
+        ]
+      }) }}
 
-      </form>
+      {{ govukDetails({
+        summaryText: "Why we're asking you this question",
+        text: "We need to find your NHS record."
+      }) }}
 
-    </div>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
   </div>
-  </div>
-  <style>
-   
-    .govuk-details__summary {
-      margin-top: 10px;
-    }
-    
-  </style>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10/includes/footer.html' %}
 {% endblock %}

@@ -1,13 +1,13 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName="Home" %}
+{% block pageTitle %}
+{{ serviceName }} Prototypes
+{% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-   
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
@@ -53,5 +53,31 @@
     background-color: #fdfdfd
 }
 </style>
+
+{% endblock %}
+
+{% set footerItems = [
+  {
+    href: "/manage-prototype",
+    text: "Manage your prototype"
+  },
+  {
+    href: "/manage-prototype/clear-data",
+    text: "Clear data"
+  },
+  {
+    href: "?devMode=true",
+    text: "devMode"
+    }
+] %}
+
+
+{% block footer %}
+    {{ govukFooter({
+    meta: {
+      items: footerItems,
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
 
 {% endblock %}

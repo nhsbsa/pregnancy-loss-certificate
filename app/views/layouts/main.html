@@ -1,23 +1,29 @@
-{#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-#}
-
 {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+
+  {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "Request a baby loss certificate",
+    serviceUrl: "#"
+  }) }}
+
+  {% if feedbackType %}
+    {% if servicePhase === 'beta' %}
+      {% include 'beta/v10/includes/phase-banner.html' %}
+    {% endif %}
+  {% endif %}
+
+{% endblock %}
+
 {% block footer %}
- {{ govukFooter({
-   meta: {
-     items: [
-     {
-      
-      },
+
+  {{ govukFooter({
+    meta: {
+      items: [
       {
         href: "/cookies",
         text: "Cookies"
-        
-      },
-      {
-      
       },
       {
         href: "/accessibility",
@@ -27,16 +33,13 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
         href: "/termnsandconditions",
         text: "Terms and conditions"
       },
-       {
-         href: "/privacy",
-         text: "Privacy policy"
-       },
-       
-       {
-        
-       }
-     ],
-     visuallyHiddenTitle: "Footer links"
-   }
- }) }}
+      {
+        href: "/privacy",
+        text: "Privacy policy"
+      }
+    ],
+    visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+
 {% endblock %}

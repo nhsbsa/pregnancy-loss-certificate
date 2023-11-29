@@ -1,96 +1,74 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '3' %}
+
+{% set heading = "What is the other parent's relationship to your baby?" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-width-container app-width-container">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        beta
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
   {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+    text: "Back",
+    href: "enter-date-of-birth-parent"
+  }) }}
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-  <span class="govuk-caption-l">Other parent's details</span>
-  <fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-    What is the other parent's relationship to your baby?
-    
-  </h1>
-</legend>
+    <form class="form" action="date-of-loss" method="post">
 
-      <form class="form" action="added-parent" method="post">
-        <div id="passport-issued-hint" class="govuk-hint">
-          This will be shown on the certificate.
-        </div>
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Biological mother" name="parent-2" type="radio" value="Biological mother">
-            <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-              Mother
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Biological father" name="parent-2" type="radio" value="Biological father">
-            <label class="govuk-label govuk-radios__label" for="Biological father">
-              Father
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Non biological father" name="parent-2" type="radio" value="Non biological father">
-            <label class="govuk-label govuk-radios__label" for="Non biological father">
-              Parent
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Non biological mother" name="parent-2" type="radio" value="Non biological mother">
-            <label class="govuk-label govuk-radios__label" for="Non biological mother">
-              Surrogate
-            </label>
-          </div>
-          
-        
-          </div>
+      {% include 'beta/v10/includes/step.html' %}
 
-        </div>
-      </fieldset>
-    </div>
-   
-                
-                
-           
-    {{ govukButton({
-      text: "Continue",
-      href: "date-of-loss",
-      isStartButton: false
+      {{ govukRadios({
+        name: "parent2-relationship",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "This will be shown on the certificate."
+        },
+        items: [
+          {
+            value: "Mother",
+            text: "Mother",
+            checked: checked("parent2-relationship", "Mother")
+          },
+          {
+            value: "Father",
+            text: "Father",
+            checked: checked("parent2-relationship", "Father")
+          },
+          {
+            value: "Parent",
+            text: "Parent",
+            checked: checked("parent2-relationship", "Parent")
+          },
+          {
+            value: "Surrogate",
+            text: "Surrogate",
+            checked: checked("parent2-relationship", "Surrogate")
+          }
+        ]
       }) }}
 
-      </form>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
 
-    </div>
+    </form>
   </div>
-  <style>
-    
-    .govuk-button {
-      margin-left: 10px;
-    }
-    .govuk-details {
-      margin-left:10px;
-    }
-  </style>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10/includes/footer.html' %}
 {% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "Are you sure you want to cancel the request for a certificate?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "check-your-answers"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="check-answers-kickout-post" method="post">
+
+      {% include 'beta/v10/includes/step.html' %}
+
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>If the details are not correct, the request for a certificate will be cancelled and the main applicant will need to start a new request.</p>
+
+      {{ govukRadios({
+        name: "cya-kickout",
+        classes: "govuk-radios--inline",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("cya-kickout", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("cya-kickout", "No")
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+      text: "Continue"
+    }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10/includes/footer.html' %}
+{% endblock %}
