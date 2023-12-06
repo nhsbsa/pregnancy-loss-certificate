@@ -10,7 +10,7 @@
 
   {% if feedbackType %}
     {% if servicePhase === 'beta' %}
-      {% include 'beta/v10/includes/phase-banner.html' %}
+      {% include 'beta/v11/includes/phase-banner.html' %}
     {% endif %}
   {% endif %}
 
@@ -23,7 +23,7 @@
   {% endblock %}
 
 {% if data['devMode'] === 'true' %}
-{% include "includes/devmode.html" %}
+  {% include "includes/devmode.html" %}
 {% endif %}
 
 {% endblock %}

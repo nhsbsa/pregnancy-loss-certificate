@@ -1,0 +1,84 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '0' %}
+
+<!-- TODO: Dynamic date going back 5 years-->
+
+{% set heading = "Did your baby loss happen on or after 1 September 2018?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "living-in-england"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="loss-in-5-years-post" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {% set dateHtml %}
+        {{ govukInput({
+          id: "dol-year",
+          name: "dol-year",
+          classes: "govuk-input--width-4",
+          value: data['dol-year'],
+          label: {
+            text: "Enter year of baby loss"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        name: "over-5-years",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            conditional: {
+              html: dateHtml
+            },
+            checked: checked("over-5-years", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("over-5-years", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukDetails({
+        summaryText: "Why we're asking you this question",
+        text: "You can only get a certificate if you lost your baby on or after 1 September 2018."
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

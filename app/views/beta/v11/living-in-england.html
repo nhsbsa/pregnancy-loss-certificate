@@ -1,0 +1,67 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '0' %}
+
+{% set heading = "Were you living in England at the time of your baby loss?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "baby-loss-in-england"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="living-in-england-post" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {{ govukRadios({
+        name: "living-in-england",
+        classes: "govuk-radios--inline",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("living-in-england", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("living-in-england", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukDetails({
+        summaryText: "Why we're asking you this question",
+        text: "You can only get a certificate if you lived in England when you lost your baby."
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}
