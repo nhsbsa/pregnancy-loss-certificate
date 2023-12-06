@@ -1,0 +1,75 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '3' %}
+
+{% set heading = "What is their name?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "add-parent"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="parent-contact" method="post">
+
+      {% include 'beta/v10-copy/includes/step.html' %}
+
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>You must enter the names the other parent registered with their GP. If they've changed their name, they'll need to contact their GP.</p>
+
+      <div id="passport-issued-hint" class="govuk-hint">
+        This is the name that will be printed on the certificate.
+      </div>
+
+      {{ govukInput({
+        id: "parent2-firstname",
+        name: "parent2-firstname",
+        classes: "govuk-input--width-20",
+        value: data['parent2-firstname'],
+        label: {
+          text: "First name"
+        }
+      }) }}
+
+      {{ govukInput({
+        id: "parent2-lastname",
+        name: "parent2-lastname",
+        classes: "govuk-input--width-20",
+        value: data['parent2-lastname'],
+        label: {
+          text: "Last name"
+        }
+      }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10-copy/includes/footer.html' %}
+{% endblock %}

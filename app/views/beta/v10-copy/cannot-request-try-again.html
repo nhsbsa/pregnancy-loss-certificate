@@ -1,0 +1,36 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "Sorry, there is a problem with the service" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="enter-location-uk" method="post">
+
+      <h1 class="govuk-heading-l">
+        {{ heading }}
+      </h1>
+        
+      <p>Try again in a few minutes.</p>
+         
+      {{ govukButton({
+        text: "Try again"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10-copy/includes/footer.html' %}
+{% endblock %}

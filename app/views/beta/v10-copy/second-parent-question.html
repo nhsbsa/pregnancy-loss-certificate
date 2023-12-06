@@ -1,0 +1,65 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '3' %}
+
+{% set heading = "Would you still like to receive the certificate if the other parent cannot confirm their details?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="what-is-their-name" method="post">
+
+      {% include 'beta/v10-copy/includes/step.html' %}
+
+      {{ govukRadios({
+        name: "send-if-unverified",
+        classes: "govuk-radios--inline",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: "<p>The other parent may choose to not be on the certificate, you can still request a certificate without them on the certficate.</p><p>We'll let you know if the other parent gives permission for their name to be on the certificate.</p>"
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("send-if-unverified", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("send-if-unverified", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10-copy/includes/footer.html' %}
+{% endblock %}

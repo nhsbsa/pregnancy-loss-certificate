@@ -1,44 +1,47 @@
-{% extends "layouts/main-beta.html" %}
-{% set servicePhase = 'beta' %}
-{% set feedbackType = 'step' %}
-{% set section = '' %}
-
-{% set heading = "We cannot provide a baby loss certificate because you must be the baby’s parent or surrogate to use this service" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  {{ heading }} – {{ serviceName }} – NHSBSA
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "relation-to-baby"
-  }) }}
+
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">{{ heading }}</h1>
+      <h1 class="govuk-heading-l">
+        We cannot provide a baby loss certificate because you must be the baby’s parent or surrogate to use this service
+      </h1>
 
-    <h2 class="govuk-heading-m">Support organisations</h2>
-    <p>The following organisations give support and advice:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a href=''>Sands</a></li>
-      <li><a href=''>Tommy's</a></li>
-      <li><a href="">Antenatal Results and Choices (ARC)</a></li>
-      <li><a href="">Saying Goodbye</a></li>
-      <li><a href="">The Miscarriage Association</a></li>
-      <li><a href="">Petals</a></li>
-      <li><a href="">NHS How to access mental health services</a></li>
-    </ul>
+      
+    
+     
+      <h3 class="govuk-heading-m">Support organisations</h3>
+      <p>The following organisations give support and advice:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href=''>Sands</a></li>
+        <li><a href=''>Tommy's</a></li>
+        <li><a href="">Antenatal Results and Choices (ARC)</a></li>
+        <li><a href="">Saying Goodbye</a></li>
+        <li><a href="">The Miscarriage Association</a></li>
+        <li><a href="">Petals</a></li>
+        <li><a href="">NHS How to access mental health services</a></li>
+      </ul>
+    </div>
   </div>
-</div>
 
-{% endblock %}
-
-{% block footer %}
-  {% include 'beta/v10/includes/footer.html' %}
 {% endblock %}

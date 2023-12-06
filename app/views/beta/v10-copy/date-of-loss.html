@@ -1,0 +1,113 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '2' %}
+
+{% set heading = "Would you like the date of your baby loss on the certificate?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% if data['add-other-parent'] === 'No' %}
+  {% set backLink = 'add-parent' %}
+{% else %}
+  {% set backLink = 'second-relation-to-baby' %}
+{% endif %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: backLink
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="place-of-loss" method="post">
+
+    {% include 'beta/v10-copy/includes/step.html' %}
+
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <div class="govuk-inset-text">
+        You can enter a partial date, such as month and year, or year only, if you do not know the exact date.
+      </div>
+
+      <div class="govuk-hint">
+        If you select ‘No' or ‘I do not know the date of my baby loss’, this will not be shown on the certificate.
+      </div>
+
+      {% set otherHtml %}
+        {{ govukDateInput({
+          id: "dol",
+          namePrefix: "dol",
+          hint: {
+            text: "For example, 27 3 2021"
+          },
+          items: [
+            {
+              name: "day",
+              classes: "govuk-input--width-2",
+              value: data["dol-day"]
+            },
+            {
+              name: "month",
+              classes: "govuk-input--width-2",
+              value: data["dol-month"]
+            },
+            {
+              name: "year",
+              classes: "govuk-input--width-4",
+              value: data["dol-year"]
+            }
+          ]
+        }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        name: "dol-on-cert",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            "conditional": {
+              html: otherHtml
+            },
+            checked: checked("dol-on-cert", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("dol-on-cert", "No")
+          },
+          {
+            value: "Not known",
+            text: "I do not know the date of my baby loss",
+            checked: checked("dol-on-cert", "Not known")
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10-copy/includes/footer.html' %}
+{% endblock %}

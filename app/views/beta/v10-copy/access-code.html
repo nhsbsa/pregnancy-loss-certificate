@@ -1,0 +1,51 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '1' %}
+
+{% set heading = "We've provided an access code for the other parent" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include 'beta/v10-copy/includes/step.html' %}
+
+    <h1 class="govuk-heading-l">
+      {{ heading }}
+    </h1>
+
+    <p>You will need to give the other parent this access code so they can enter it to confirm their details</p>
+
+    <div class="govuk-inset-text">
+      12345678
+    </div>
+
+    <p>They will need to use this URL to confirm their details <a href="www.pregnancy-loss-certificate.herokuapp.com/beta/v10-copy/s-1/enter-access-code">www.pregnancy-loss-certificate.herokuapp.com/beta/v10-copy/s-1/enter-access-code</a>.</p>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "declaration",
+      isStartButton: false
+    }) }}
+
+   </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10-copy/includes/footer.html' %}
+{% endblock %}

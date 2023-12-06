@@ -1,62 +1,68 @@
-{% extends "layouts/main-beta.html" %}
-{% set servicePhase = 'beta' %}
-{% set feedbackType = 'step' %}
-{% set section = '2' %}
-
-{% set heading = "Baby's sex" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  {{ heading }} – {{ serviceName }} – NHSBSA
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
   {{ govukBackLink({
-    text: "Back",
-    href: "sex-of-baby"
-  }) }}
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
+<span class="govuk-caption-l">Details on the certificate</span>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    Baby's sex
+    
+  </h1>
+</legend>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="babys-name" method="post">
+      <form class="form" action="/v10/babys-name" method="post">
+        
+         
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="baby-gender" name="baby-gender" type="radio" value="Male">
+            <label class="govuk-label govuk-radios__label" for="yes">
+              Male
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="baby-gender" name="baby-gender" type="radio" value="Female">
+            <label class="govuk-label govuk-radios__label" for="no">
+              Female
+            </label>
+          </div>
+        </div>
+            </div>
+          </fieldset>
+        
 
-      {% include 'beta/v10/includes/step.html' %}
+          {{ govukButton({
+            text: "Continue",
+            href: "babys-name",
+            isStartButton: false
+            }) }}
 
-      {{ govukRadios({
-        name: "baby-sex",
-        fieldset: {
-          legend: {
-            text: heading,
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        items: [
-          {
-            value: "Male",
-            text: "Male",
-            checked: checked("baby-sex", "Male")
-          },
-          {
-            value: "Female",
-            text: "Female",
-            checked: checked("baby-sex", "Female")
-          }
-        ]
-      }) }}
+      </form>
 
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-
-    </form>
+    </div>
   </div>
-</div>
 
-{% endblock %}
-
-{% block footer %}
-  {% include 'beta/v10/includes/footer.html' %}
 {% endblock %}

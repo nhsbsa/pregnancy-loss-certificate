@@ -1,70 +1,103 @@
-{% extends "layouts/main-beta.html" %}
-{% set servicePhase = 'beta' %}
-{% set feedbackType = 'step' %}
-{% set section = '1' %}
-
-{% set heading = "Do you know your NHS number?" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  {{ heading }} – {{ serviceName }} – NHSBSA
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
   {{ govukBackLink({
-    text: "Back",
-    href: "relation-to-baby"
-  }) }}
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
+<div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="nhs-number-post" method="post">
+<div class="govuk-form-group">
+  <span class="govuk-caption-l">Your details</span>
+  <fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+   Do you know your NHS number?
+    
+  </h1>
+</legend>
 
-      {% include 'beta/v10/includes/step.html' %}
+      <form class="form" action="main-applicant-nhs" method="post">
+        <div id="passport-issued-hint" class="govuk-body">
+          Telling us your NHS number will give us the best chance of matching you to your NHS record.
+        </div>
+        <div id="passport-issued-hint" class="govuk-body">
+          You do not need to know your NHS number to continue. If you do not know it, you can tell us your full name instead.  
+        </div>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Where to find your NHS number
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            If you’re registered with a GP, you will have a 10 digit NHS number unique to you. 
+          </div>
+          <div class="govuk-details__text">
+            You can find it on the NHS app or <a href="">use our online NHS number finder (opens in a new tab)</a>. 
+          </div>
+          <div class="govuk-details__text">It is also on any letters or documents you receive from the NHS, such as:</div>
+          <div class="govuk-details__text">
+          <ul>
+            <li>prescriptions</li>
+            <li>test results</li>
+            <li>appointment letters</li>
+          </ul>
+        </div>
+        </details>
+         
+        
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="main-applicant-nhs" name="nhs" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="yes">
+              Yes, I know my NHS number
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="main-applicant-nhs" name="nhs" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="no">
+              No, continue with my full name
+            </label>
+          </div>
+       
+            </div>
+          </fieldset>
+         </div>
+         </div>
 
-      {{ govukRadios({
-        name: "knows-nhs-number",
-        fieldset: {
-          legend: {
-            text: heading,
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        hint: {
-          html: "Your NHS number is a 10 digit number, like 485 777 3456.<br><br>You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service."
-        },
-        items: [
-          {
-            value: "Yes",
-            text: "Yes, I know my NHS number",
-            checked: checked("knows-nhs-number", "Yes")
-          },
-          {
-            value: "No",
-            text: "No, continue with my date of birth",
-            checked: checked("knows-nhs-number", "No")
-          }
-        ]
-      }) }}
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
 
-      {{ govukDetails({
-        summaryText: "Why we're asking you this question",
-        text: "We need to find your NHS record."
-      }) }}
+      </form>
 
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-
-    </form>
+    </div>
   </div>
-</div>
-
-{% endblock %}
-
-{% block footer %}
-  {% include 'beta/v10/includes/footer.html' %}
+  </div>
+  <style>
+   
+    .govuk-details__summary {
+      margin-top: 10px;
+    }
+    
+  </style>
 {% endblock %}

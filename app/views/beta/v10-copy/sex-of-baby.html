@@ -1,0 +1,73 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '2' %}
+
+{% set heading = "Would you like the sex of your baby on the certificate?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "place-of-loss"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="sex-of-baby-post" method="post">
+
+      {% include 'beta/v10-copy/includes/step.html' %}
+
+      {{ govukRadios({
+        name: "add-sex",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: "<p>You may not know the sex of your baby</p><p class=\"govuk-hint\">If you select ‘No’ or ‘I do not know the sex of my baby’, this will not be shown on the certificate.</p>"
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("add-sex", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("add-sex", "No")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "I do not know the sex of my baby",
+            text: "I do not know the sex of my baby",
+            checked: checked("add-sex", "I do not know the sex of my baby")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10-copy/includes/footer.html' %}
+{% endblock %}

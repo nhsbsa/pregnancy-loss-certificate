@@ -1,88 +1,64 @@
-{% extends "layouts/main-beta.html" %}
-{% set servicePhase = 'beta' %}
-{% set feedbackType = 'step' %}
-{% set section = '1' %}
-
-{% set heading = "Enter your security code" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  {{ heading }} – {{ serviceName }} – NHSBSA
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% if data['otp-delivery'] === 'sms' %}
-  {% set hintText = "<p>We sent your security code by text to ********009</p>" %}
-{% else %}
-  {% set hintText = "<p>We sent your security code by email to Sa********@gmail.com</p><p class=\"govuk-hint\">If you do not receive the email within a few minutes, check your spam or junk mail folder.</p>" %}
-{% endif %}
-
 {% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
   {{ govukBackLink({
-    text: "Back",
-    href: "get-security-code"
-  }) }}
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
+<span class="govuk-caption-l">Your details</span>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    Enter your security code
+  </h1>
+</legend>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="confirm-postal-address" method="post">
+      <form class="form" action="security-code" method="post">
+   <p>
+          We sent your security code by email to Sa********@gmail.com
+        </p>
+        <div id="passport-issued-hint" class="govuk-hint">
+        If you do not receive the email within a few minutes, check your spam or junk mail folder.
+      </div>
+        <input class="govuk-input govuk-input--width-10" id="security-code" name="entercode" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
+      </div>
+        
+            </div>
+          </fieldset>
+          <p>Didn't get your security code? <a href="">Resend code
+          </a></p>
 
-      {% include 'beta/v10/includes/step.html' %}
+          {{ govukButton({
+            text: "continue",
+            href: "check-your-details-nhs",
+            isStartButton: false
+            }) }}
 
-      {{ govukInput({
-        id: "entercode",
-        name: "entercode",
-        classes: "govuk-input--width-4 govuk-input--extra-letter-spacing",
-        autocomplete: "one-time-code",
-        type: "text",
-        inputmode: "numeric",
-        label: {
-          text: heading,
-          classes: "govuk-label--l",
-          isPageHeading: true
-        },
-        spellcheck: false,
-        hint: {
-          html: hintText
-        }
-      }) }}
+      </form>
 
-      <p>Didn't get your security code? <a href="new-code-sent">Resend code</a></p>
-
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-
-      {% if data['devMode'] === 'true' %}
-      {# DEVMODE SCENARIOS #}
-      <br>
-      <details class="govuk-details dev-mode govuk-!-margin-bottom-5" role="group">
-        <summary class="govuk--details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
-        <span class="govuk--details__summary-text">
-          Continue with testing scenario
-        </span>
-        </summary>
-        <div class="govuk-details__text">
-          <h4>Service Errors</h4>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>
-              <a href="cannot-request-another-code">Too many (>3) OTPs requested</a>
-            </li>
-            <li>
-              <a href="cannot-find-address">No valid address details on record</a>
-            </li>
-          </ul>
-        </div>
-      </details>
-      {% endif %}
-
-    </form>
+    </div>
   </div>
-</div>
-
-{% endblock %}
-
-{% block footer %}
-  {% include 'beta/v10/includes/footer.html' %}
+  <style>
+   
+    
+  </style>
 {% endblock %}

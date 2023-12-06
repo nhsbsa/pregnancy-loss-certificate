@@ -1,0 +1,139 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '1' %}
+
+{% set heading = "Check your details" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/v10-copy/get-security-code" method="post" novalidate>
+
+      {% include 'beta/v10-copy/includes/step.html' %}
+
+        <h1 class="govuk-heading-l">{{ heading }}</h1>
+       
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Name
+            </dt>
+            <dd class="govuk-summary-list__value">
+               {{ data['first-name'] or 'Example' }} {{ data['last-name'] or 'name' }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="what-is-your-name">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+                  {% if data['dob-day'] %}
+                    {{ data['dob-day'] }} <span class="cya-month">{{ data['dob-month'] }}</span> {{ data['dob-year'] }}
+                    {% else %}
+                  Example date of birth
+                  {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> date of birth</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Postcode
+            </dt>
+            <dd class="govuk-summary-list__value">
+              NE1 3JA
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> postcode</span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+        <p>By continuing you agree to let us use your details to:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>check who you are</li>
+          <li>find your contact details from your NHS health records so we can send you a security code</li>
+        </ul>
+
+       <input type="hidden" name="answers-checked" value="true">
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+ $(document).ready(function() {
+
+const months = {
+  "01": "January",
+  "02": "February",
+  "03": "March",
+  "04": "April",
+  "05": "May",
+  "06": "June",
+  "07": "July",
+  "08": "August",
+  "09": "September",
+  "10": "October",
+  "11": "November",
+  "12": "December",
+  "1": "January",
+  "2": "February",
+  "3": "March",
+  "4": "April",
+  "5": "May",
+  "6": "June",
+  "7": "July",
+  "8": "August",
+  "9": "September",
+};
+
+ $(".cya-month").text(function () {
+   const month = $(this).text();
+   console.log("month:", month);
+   console.log("months[month]:", months[month]);
+   return months[month];
+   });
+ });
+</script>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10-copy/includes/footer.html' %}
+{% endblock %}

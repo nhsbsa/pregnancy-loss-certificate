@@ -1,0 +1,65 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '3' %}
+
+{% set heading = "Would you still like to request a certificate in your name only if the other parent chooses not to be shown on the certificate?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="second-parent" method="post">
+
+      {% include 'beta/v10-copy/includes/step.html' %}
+
+      {{ govukRadios({
+        name: "send-if-rejected",
+        classes: "govuk-radios--inline",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: "<p>We'll let you know if the other parent gives permission for their name to be on the certificate.</p><p>If the other parent does not want their name on the certificate, you can request a certificate in your name only.</p>"
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("send-if-rejected", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("send-if-rejected", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10-copy/includes/footer.html' %}
+{% endblock %}

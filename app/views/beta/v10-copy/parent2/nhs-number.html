@@ -1,0 +1,70 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '1' %}
+
+{% set heading = "Do you know your NHS number?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "reference-number"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="nhs-number-post" method="post">
+
+      {% include 'beta/v10-copy/includes/step.html' %}
+
+      {{ govukRadios({
+        name: "knows-nhs-number",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          html: "Your NHS number is a 10 digit number, like 485 777 3456.<br><br>You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service."
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes, I know my NHS number",
+            checked: checked("knows-nhs-number", "Yes")
+          },
+          {
+            value: "No",
+            text: "No, continue with my date of birth",
+            checked: checked("knows-nhs-number", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukDetails({
+        summaryText: "Why we're asking you this question",
+        text: "We need to find your NHS record."
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10-copy/includes/footer.html' %}
+{% endblock %}

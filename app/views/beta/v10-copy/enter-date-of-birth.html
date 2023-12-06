@@ -1,0 +1,103 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '1' %}
+
+{% set heading = "What is your date of birth?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% if data['checkpage-reached'] === 'true' %}
+  {% set action = 'check-your-details' %}
+{% else %}
+  {% set action = 'enter-address' %}
+{% endif %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "what-is-your-name"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="{{ action }}" method="post">
+
+      {% include 'beta/v10-copy/includes/step.html' %}
+
+      {{ govukDateInput({
+        id: "dob",
+        namePrefix: "dob",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        value: data['dob'],
+        hint: {
+          text: "For example, 27 3 2007"
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["dob-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["dob-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["dob-year"]
+          }
+        ]
+      }) }}
+
+      {{ govukDetails({
+        summaryText: "Why we're asking you this question",
+        text: "We need to find your NHS record and check you're 16 so you can use this service."
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      {% if data['devMode'] === 'true' %}
+      {# DEVMODE SCENARIOS #}
+      <br>
+      <details class="govuk-details dev-mode govuk-!-margin-bottom-5" role="group">
+        <summary class="govuk--details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+        <span class="govuk--details__summary-text">
+          Continue with testing scenario
+        </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h4>Eligibility</h4>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="date-of-birth-kickout">Under 16</a>
+            </li>
+          </ul>
+        </div>
+      </details>
+      {% endif %}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10-copy/includes/footer.html' %}
+{% endblock %}

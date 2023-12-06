@@ -1,0 +1,47 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '1' %}
+
+{% set heading = "Contact the Baby Loss Certificate Service" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{ heading }}</h1>
+
+    <h2 class="govuk-heading-m">Telephone</h2>
+
+    <p>You can contact us Monday to Friday, 9am to 5pm:</p>
+
+    <ul class="govuk-list">
+      <li>Telephone: 0300 330 9445</li>
+      <li>Outside UK: +44 191 267 0884</li>
+    </ul>
+
+    <p><a href="">Find out about call charges</a></p>
+
+    <h2 class="govuk-heading-m">Email</h2>
+
+    <p>Email: <a href="">nhsbsa.babylosscertificate@nhsbsa.nhs.uk</a></p>
+    <p>We will reply to your email within 2 working days.</p>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10-copy/includes/footer.html' %}
+{% endblock %}

@@ -1,72 +1,75 @@
-{% extends "layouts/main-beta.html" %}
-{% set servicePhase = 'beta' %}
-{% set feedbackType = 'step' %}
-{% set section = '3' %}
-
-{% set heading = "Would you like to add another parent to the certificate?" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  {{ heading }} – {{ serviceName }} – NHSBSA
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
   {{ govukBackLink({
-    text: "Back",
-    href: "what-happens-next"
-  }) }}
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
+<div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group">
+  <span class="govuk-caption-l">Details on the certificate</span>
+  <fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    Would you like to add another parent to the certificate? 
+    
+  </h1>
+</legend>
 
-    <form class="form" action="add-parent-post" method="post">
 
-      {% include 'beta/v10/includes/step.html' %}
+      <form class="form" action="add-other-parent" method="post">
+      
+       
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="add-other-parent" name="parent" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="yes">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="add-other-parent" name="parent" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="no">
+              No
+            </label>
+          </div>
+        </div>
+          </fieldset>
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
 
-      {% call govukFieldset({
-        legend: {
-          text: heading,
-          classes: "govuk-fieldset__legend--l",
-          isPageHeading: true
-        }
-      }) %}
-
-      <p>If the other parent chooses not to be named on the certificate, your request will be cancelled. You'll be able to start again and request a certificate that shows only your name as a parent of your baby.</p>
-
-      <div class="govuk-inset-text">
-        You'll need to contact the other parent to let them know you'd like to add their name to the certificate.
-      </div>
-
-      {{ govukRadios({
-        classes: "govuk-radios--inline",
-        name: "add-other-parent",
-        items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            checked: checked("add-other-parent", "Yes")
-          },
-          {
-            value: "No",
-            text: "No",
-            checked: checked("add-other-parent", "No")
-          }
-        ]
-      }) }}
-
-    {% endcall %}
-
-    {{ govukButton({
-      text: "Continue"
-    }) }}
-
-    </form>
-  </div>
+      </form>
 </div>
+</div>
+    </div>
+  </div>
+  <style>
+    
+    .govuk-radios {
+      margin-bottom: 20px;
+    }
+  </style>
 
-{% endblock %}
-
-{% block footer %}
-  {% include 'beta/v10/includes/footer.html' %}
 {% endblock %}

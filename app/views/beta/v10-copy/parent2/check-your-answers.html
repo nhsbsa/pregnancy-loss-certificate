@@ -1,0 +1,185 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '1' %}
+
+{% set heading = "Confirm the details on the certificate" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{ heading }}</h1>
+
+    <h2 class="govuk-heading-m">Parent 1</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Their name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['parent1-firstname'] or 'Jasmine' }} {{ data['parent1-lastname'] or 'Williams' }}
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Their relationship to your baby
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['relation-baby'] or 'Mother' }}
+        </dd>
+      </div>
+
+    </dl>
+
+    <h2 class="govuk-heading-m">Parent 2</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Your name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['parent2-firstname'] or 'Jason' }} {{ data['parent2-lastname'] or 'Williams' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          &nbsp;
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Your relationship to your baby
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['parent2-relationship'] or 'Father' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="second-relation-to-baby">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Baby's details</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      {% if data['add-name'] !== 'No' %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Baby's name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['baby-firstname'] or 'Alfie' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="babys-name">
+            Change<span class="govuk-visually-hidden"> baby's name</span>
+          </a>
+        </dd>
+      </div>
+
+      {% endif %}
+
+      {% if data['add-name'] !== 'No' %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Baby's sex
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['baby-gender'] or 'Male' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="sex-of-baby">
+            Change<span class="govuk-visually-hidden"> baby's sex</span>
+          </a>
+        </dd>
+      </div>
+
+      {% endif %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of baby loss
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['dol-day'] or data['dol-month'] %}
+            {{ data | isoDateFromDateInput("dol") | govukDate or 'January 2022' }}
+          {% else %}
+            {{data['dol-year'] or '2022'}}
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="date-of-loss">
+            Change<span class="govuk-visually-hidden"> date of baby loss</span>
+          </a>
+        </dd>
+      </div>
+
+      {% if data['add-place-of-loss'] !== 'No' or data['add-place-of-loss'] !== 'Not Known' %}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Place of baby loss
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['place-of-loss'] or 'Newcastle' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="place-of-loss">
+            Change<span class="govuk-visually-hidden"> place of baby loss</span>
+          </a>
+        </dd>
+      </div>
+
+      {% endif %}
+
+    </dl>
+
+    <form action="check-your-answers-post" method="post" novalidate>
+
+      {{ govukRadios({
+        name: "cya-correct",
+        classes: "govuk-radios--inline",
+        fieldset: {
+          legend: {
+            text: "Are these details correct?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            checked: checked("cya-correct", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("cya-correct", "No")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v10-copy/includes/footer.html' %}
+{% endblock %}
