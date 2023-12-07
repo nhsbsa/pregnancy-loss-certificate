@@ -15,8 +15,24 @@
       "url": "http://localhost:3000/beta/v11/access-code"
     },
     {
+      "label": "add-baby-details-1",
+      "url": "http://localhost:3000/beta/v11/add-baby-details?baby-details[]=Name"
+    },
+    {
+      "label": "add-baby-details-2",
+      "url": "http://localhost:3000/beta/v11/add-baby-details?baby-details[]=Name&baby-details[]=Sex"
+    },
+    {
+      "label": "add-baby-details-3",
+      "url": "http://localhost:3000/beta/v11/add-baby-details?baby-details[]=Name&baby-details[]=Date%20of%20loss"
+    },
+    {
+      "label": "add-baby-details-4",
+      "url": "http://localhost:3000/beta/v11/add-baby-details?baby-details[]=Name&baby-details[]=Date%20of%20loss&baby-details[]=Sex&baby-details[]=Place%20of%20loss"
+    },
+    {
       "label": "add-parent",
-      "url": "http://localhost:3000/beta/v11/add-parent"
+      "url": "http://localhost:3000/beta/v11/add-parent?baby-details[]=None"
     },
     {
       "label": "address-list",
