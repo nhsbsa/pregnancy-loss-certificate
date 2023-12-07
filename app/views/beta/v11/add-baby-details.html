@@ -1,0 +1,143 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '2' %}
+
+{% set heading = "Enter your baby's details" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "babys-details-2"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="babys-details-post" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      {% if 'Name' in data['baby-details'] %}
+
+      {{ govukInput({
+        label: {
+          text: "Name"
+        },
+        hint: {
+          text: "This is how it  will be printed on the certificate."
+        },
+        classes: "govuk-input--width-20",
+        id: "baby-firstname",
+        name: "baby-firstname"
+      }) }}
+
+      {% endif %}
+
+      {% if 'Sex' in data['baby-details'] %}
+
+      {{ govukRadios({
+        name: "baby-sex",
+        classes: "govuk-radios--inline",
+        fieldset: {
+          legend: {
+            text: "Sex",
+            isPageHeading: false
+          }
+        },
+        items: [
+          {
+            value: "Male",
+            text: "Male",
+            checked: checked("baby-sex", "Male")
+          },
+          {
+            value: "Female",
+            text: "Female",
+            checked: checked("baby-sex", "Female")
+          }
+        ]
+      }) }}
+
+      {% endif %}
+
+      {% if 'Place of loss' in data['baby-details'] %}
+
+      {{ govukInput({
+        id: "place-of-loss",
+        name: "place-of-loss",
+        classes: "govuk-input--width-20",
+        value: data['place-of-loss'],
+        label: {
+          text: "Place of your baby loss"
+        },
+        hint: {
+          text: "For example, Canterbury, Kent"
+        }
+      }) }}
+
+      {% endif %}
+
+      {% if 'Date of loss' in data['baby-details'] %}
+
+      {{ govukDateInput({
+        id: "dol",
+        namePrefix: "dol",
+        hint: {
+          text: "You can enter a partial date, such as month and year, or year only, if you do not know the exact date."
+        },
+        fieldset: {
+          legend: {
+            text: "Date of loss",
+            isPageHeading: false
+          }
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["dol-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["dol-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["dol-year"]
+          }
+        ]
+      }) }}
+
+      {% endif %}
+
+      {% endcall %}
+       
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}
