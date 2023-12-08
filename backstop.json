@@ -191,6 +191,14 @@
       "url": "http://localhost:3000/beta/v11/new-code-sent"
     },
     {
+      "label": "notification-email-otp",
+      "url": "http://localhost:3000/beta/v11/notification-email-otp"
+    },
+    {
+      "label": "notification-text-otp",
+      "url": "http://localhost:3000/beta/v11/notification-text-otp"
+    },
+    {
       "label": "nhs-number",
       "url": "http://localhost:3000/beta/v11/nhs-number"
     },
