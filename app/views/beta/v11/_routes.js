@@ -1,5 +1,12 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
+const obfuscatorEmail = require('obfuscator-email')
+
+
+// GOV Notify integration - ask Matt F for the API key if you need it
+var NotifyClient = require('notifications-node-client').NotifyClient,
+  notify = new NotifyClient(process.env.NOTIFYAPIKEY)
+
 
 // add data to terminal output
 router.use((req, res, next) => {
@@ -82,8 +89,95 @@ router.get("/beta/v11/check-your-details/", function (req, res) {
   return res.render('beta/v11/check-your-details')
 })
 
-router.post("/beta/v11/get-security-code-post/", (req, res) => {
-    res.redirect('enter-security-code');
+// Obfuscate the UR participants contact details for display on the page
+router.get('/beta/v11/get-security-code', function (req, res) {
+  console.log(process.env[req.session.data['ur']+'_EMAIL'])
+  if (req.session.data['ur']) {
+
+    let email = process.env[req.session.data['ur']+'_EMAIL']
+    console.log(email)
+    // create an obfuscated version of it
+    if (email ) {
+      emailObf = obfuscatorEmail(email)
+    } else {
+      // create a placeholder string as the field wasn't filled in properly
+      emailObf = '*******6789'
+    }
+
+    req.session.data['emailAddress'] = email
+    req.session.data['emailAddressObf'] = emailObf
+
+    // pull in mobile number from environmant variable and create an obsfucated version
+    let mobile = process.env[req.session.data['ur']+'_MOBILE']
+
+    // create an obfuscated version of it
+    if (mobile && mobile.length === 11 ) {
+      mobileObf = '*******' + mobile.substr(-4)
+    } else {
+      // create a placeholder string as the field wasn't filled in properly
+      mobileObf = '*******6789'
+    }
+    req.session.data['mobileNum'] = mobile
+    req.session.data['mobileNumObf'] = mobileObf
+
+    return res.render('beta/v11/get-security-code', {
+      'email': emailObf,
+      'mobile': mobileObf
+    })
+
+  } else {
+    // do nothing
+    return res.render('beta/v11/get-security-code')
+  }
+})
+
+router.post('/beta/v11/get-security-code-post', function (req, res) {
+
+  let contactMethod = req.session.data['otp-delivery']
+
+  // generate a random 6 digit number for the Email
+  var pinCode1 = Math.floor(100 + Math.random() * 900)
+  var pinCode2 = Math.floor(100 + Math.random() * 900)
+  var personalisation = {
+    'one-time-passcode': pinCode1 + "" + pinCode2
+  }
+
+  if (contactMethod === 'email'){
+    if (req.session.data['emailAddress'] !== '') {
+      notify.sendEmail(
+        '6c08059e-05b3-4ec1-b896-51236f9d3a4c',
+        req.session.data['emailAddress'],
+        { personalisation: personalisation }
+      ).catch(err => console.error(err))
+    }
+  } else {
+    if (req.session.data['mobileNum'] !== '') {
+      notify.sendSms(
+        '03839307-0359-4e34-9cea-6553a72f7ce9',
+        req.session.data['mobileNum'],
+        { personalisation: personalisation }
+      ).catch(err => console.error(err))
+    }
+  }
+  res.redirect('enter-security-code')
+})
+
+router.get('/beta/v11/confirm-postal-address', function (req, res) {
+  if (req.session.data['ur']) {
+
+    let name = process.env[req.session.data['ur']+'_NAME']
+    console.log(name)
+
+    req.session.data['fullName'] = name
+
+    return res.render('beta/v11/confirm-postal-address', {
+      'fullName': name
+    })
+
+  } else {
+    // do nothing
+    return res.render('beta/v11/confirm-postal-address')
+  }
 })
 
 router.post("/beta/v11/confirm-postal-address-post/", (req, res) => {
@@ -98,7 +192,7 @@ router.post("/beta/v11/confirm-postal-address-post/", (req, res) => {
 router.post("/beta/v11/babys-details-post/", (req, res) => {
   const details = req.session.data['baby-details']
   if (details.includes("None")) {
-    res.redirect('add-parent');
+    res.redirect('check-your-answers');
   } else {
     res.redirect('add-baby-details');
   }
@@ -107,7 +201,7 @@ router.post("/beta/v11/babys-details-post/", (req, res) => {
 router.post("/beta/v11/add-parent-post/", (req, res) => {
   const addOther = req.session.data['add-other-parent']
   if (addOther === 'No') {
-    res.redirect('date-of-loss');
+    res.redirect('babys-details-2');
   } else {
     res.redirect('what-happens-next');
   }
