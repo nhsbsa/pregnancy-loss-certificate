@@ -177,14 +177,14 @@ router.post(/security-code/, (req, res) => {
   }
 
 })
-router.post(/check-details/, (req, res) => {
+router.post(/confirm-post-address/, (req, res) => {
 
   // creating a variable named lossInEngland, assigning the variable the value of the input (location)
   // lossInEngland = location (value)
   const parentcheckDetails = req.session.data['details']
 
   if (parentcheckDetails == 'yes') {
-    res.redirect('add-parent-copy');
+    res.redirect('add-parent');
   } else {
     res.redirect('check-your-details-kickout');
   }

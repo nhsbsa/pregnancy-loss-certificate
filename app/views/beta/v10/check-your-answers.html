@@ -206,24 +206,40 @@
          
             <h3 class="govuk-heading-s">Baby's details</h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Baby's name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['baby-firstname'] %}
-               {{ data['baby-firstname'] }}
-              {% else %}
-              Example name
-              {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="babys-name">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-          
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of baby loss
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['dol-day'] %}
+                        {{ data['dol-day'] }} <span class="cya-month">{{ data['dol-month'] }}</span> {{ data['dol-year'] }}
+                        {% else %}
+                      Example date of loss
+                      {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="date-of-loss">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Place of baby loss
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['place'] %}
+                  {{ data['place'] }}
+                 {% else %}
+                 Example place
+                 {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="place-of-loss">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Baby's sex
@@ -241,36 +257,21 @@
               </a>
             </dd>
           </div>
+          
+         
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Date of baby loss
+              Baby's name
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['dol-day'] %}
-                    {{ data['dol-day'] }} <span class="cya-month">{{ data['dol-month'] }}</span> {{ data['dol-year'] }}
-                    {% else %}
-                  Example date of loss
-                  {% endif %}
+              {% if data['baby-firstname'] %}
+               {{ data['baby-firstname'] }}
+              {% else %}
+              Example name
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="date-of-loss">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Place of baby loss
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['place'] %}
-              {{ data['place'] }}
-             {% else %}
-             Example place
-             {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="place-of-loss">
+              <a class="govuk-link" href="babys-name">
                 Change<span class="govuk-visually-hidden"> name</span>
               </a>
             </dd>

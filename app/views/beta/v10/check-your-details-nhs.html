@@ -29,7 +29,7 @@
         <h1 class="govuk-heading-l">Confirm your postal address</h1>
         <p>This is the address your certificate will be sent to.</p>
         <p>If this is not the correct address, you will need to contact your GP surgery.</p>
-        <form class="form" action="version7-check-details" method="post">
+        <form class="form" action="confirm-post-address" method="post">
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -76,13 +76,13 @@
       
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="check-details-yes" name="details" type="radio" value="yes">
+                <input class="govuk-radios__input" id="confirm-post-address" name="details" type="radio" value="yes">
                 <label class="govuk-label govuk-radios__label" for="check-details-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="check-details-no" name="details" type="radio" value="no">
+                <input class="govuk-radios__input" id="confirm-post-address" name="details" type="radio" value="no">
                 <label class="govuk-label govuk-radios__label" for="check-details-no">
                   No
                 </label>
@@ -91,12 +91,9 @@
           </fieldset>
         </div>
         
-       
-        {{ govukButton({
-          text: "Continue",
-          href: "add-parent",
-          isStartButton: false
-          }) }}
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
         </form>
       </div>
     </div>
