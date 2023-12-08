@@ -226,20 +226,20 @@
             Don't add any details to the certificate
           {% else %}
 
-            {% if data['add-name'] !== 'No' %}
-              Name: {{ data['baby-firstname'] or 'Alfie' }} <br>
+            {% if 'Place of loss' in data['baby-details'] %}
+              <strong>Place of baby loss:</strong> <br>{{ data['place-of-loss'] or 'Newcastle' }} <br><br>
             {% endif %}
 
-            {% if data['baby-gender'] !== 'No' %}
-              Sex: {{ data['baby-gender'] or 'Male' }} <br>
+            {% if 'Date of loss' in data['baby-details'] %}
+              <strong>Date of baby loss:</strong> <br>{{ data | isoDateFromDateInput("dol") | govukDate or 'January 2022' }} <br><br>
             {% endif %}
 
-            {% if data['dol-day'] or data['dol-month'] %}
-              Date of loss: {{ data | isoDateFromDateInput("dol") | govukDate or 'January 2022' }} <br>
+            {% if 'Sex' in data['baby-details'] %}
+              <strong>Baby's sex:</strong> <br>{{ data['baby-gender'] or 'Male' }} <br><br>
             {% endif %}
 
-            {% if data['add-place-of-loss'] !== 'No' %}
-              Place of loss: {{ data['place-of-loss'] or 'Newcastle' }} <br>
+            {% if 'Name' in data['baby-details'] %}
+              <strong>Baby's name:</strong> <br>{{ data['baby-firstname'] or 'Alfie' }}
             {% endif %}
 
           {% endif %}
