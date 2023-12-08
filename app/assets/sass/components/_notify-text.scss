@@ -1,4 +1,4 @@
-body {
+body.notify-text {
   background-color: #f3f2f1 !important;
   -webkit-text-size-adjust: 100%;
   font-family: "Helvetica Neue", Helvetica, sans-serif;
@@ -10,7 +10,7 @@ body {
 }
 
 @media (min-width: 48.0625em) {
-  .nhsuk-width-container {
+  body.notify-email .govuk-width-container {
     margin: 0 auto;
   }
 }
