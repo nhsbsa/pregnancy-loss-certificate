@@ -1,0 +1,42 @@
+{% extends "layouts/main-beta.html" %}
+{% set heading = "Confirmation of updated NHS details?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block styles %}
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l govuk-!-margin-2">{{ pageTitle }}</h1>
+    <p><strong>Sender: </strong>GOVUK</p>
+
+    <div class="app-text-message">
+
+      <p class="app-text-message__text govuk-!-margin-top-2">
+
+        Baby Loss Certification: Your baby loss certificate one-time code is 488774.<br><br>
+
+        Enter this code to continue.<br><br>
+
+        It will expire after 30 minutes.
+
+      </p>
+
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
