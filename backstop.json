@@ -191,6 +191,22 @@
       "url": "http://localhost:3000/beta/v11/new-code-sent"
     },
     {
+      "label": "notification-email-confirmation",
+      "url": "http://localhost:3000/beta/v11/notification-email-confirmation"
+    },
+    {
+      "label": "notification-email-invite-p2",
+      "url": "http://localhost:3000/beta/v11/notification-email-invite-p2"
+    },
+    {
+      "label": "notification-email-rejected",
+      "url": "http://localhost:3000/beta/v11/notification-email-rejected"
+    },
+    {
+      "label": "notification-email-successful",
+      "url": "http://localhost:3000/beta/v11/notification-email-successful"
+    },
+    {
       "label": "notification-email-otp",
       "url": "http://localhost:3000/beta/v11/notification-email-otp"
     },

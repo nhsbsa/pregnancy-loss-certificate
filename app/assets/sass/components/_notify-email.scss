@@ -26,9 +26,8 @@ body.notify-email .govuk-heading-m {
 }
 
 .app-email-message__text {
-  max-width: 800px;
+  max-width: 500px;
   min-width: 220px;
-  min-height: 320px;
   word-wrap: break-word;
   margin-bottom: 12px;
   line-height: 24px;
@@ -42,8 +41,7 @@ body.notify-email .govuk-heading-m {
 @media (min-width: 40.0625em) {
   .app-email-message__text {
     max-width: 800px;
-    min-width: 820px;
-    min-height: 320px;
+    min-width: 700px;
   }
 }
 
@@ -65,4 +63,8 @@ body.notify-email hr {
   margin-bottom: 30px;
   margin-left: 30px;
   margin-right: 30px;
+}
+
+body.notify-email .govuk-inset-text {
+  margin-left: 30px;
 }
