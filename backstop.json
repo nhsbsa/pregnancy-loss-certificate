@@ -84,11 +84,11 @@
     },
     {
       "label": "check-your-answers-2-parents",
-      "url": "http://localhost:3000/beta/v11/check-your-answers?add-other-parent=Yes"
+      "url": "http://localhost:3000/beta/v11/check-your-answers?add-other-parent=Yes&baby-details[]=None"
     },
     {
       "label": "check-your-answers",
-      "url": "http://localhost:3000/beta/v11/check-your-answers?add-other-parent=No"
+      "url": "http://localhost:3000/beta/v11/check-your-answers?add-other-parent=No&baby-details[]=None"
     },
     {
       "label": "check-your-details-nhs",
