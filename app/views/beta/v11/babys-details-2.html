@@ -32,12 +32,10 @@
         }
       }) %}
 
-      <p>Select the details you want to add to the certificate.</p>
-
       {{ govukCheckboxes({
         name: "baby-details",
         hint: {
-          text: "Select all that apply."
+          text: "Select the details you want to add to the certificate."
         },
         items: [
           {
@@ -65,7 +63,7 @@
           },
           {
             value: "None",
-            text: "None of the above",
+            text: "Don't add any details to the certificate",
             behaviour: "exclusive",
             checked: checked("baby-details", "None")
           }

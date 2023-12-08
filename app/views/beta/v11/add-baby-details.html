@@ -20,7 +20,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="babys-details-post" method="post">
+    <form class="form" action="check-your-answers" method="post">
 
       {% include 'beta/v11/includes/step.html' %}
 
@@ -51,7 +51,7 @@
       {% if 'Sex' in data['baby-details'] %}
 
       {{ govukRadios({
-        name: "baby-sex",
+        name: "baby-gender",
         classes: "govuk-radios--inline",
         fieldset: {
           legend: {
@@ -63,12 +63,12 @@
           {
             value: "Male",
             text: "Male",
-            checked: checked("baby-sex", "Male")
+            checked: checked("baby-gender", "Male")
           },
           {
             value: "Female",
             text: "Female",
-            checked: checked("baby-sex", "Female")
+            checked: checked("baby-gender", "Female")
           }
         ]
       }) }}

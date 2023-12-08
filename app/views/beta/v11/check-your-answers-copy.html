@@ -172,85 +172,118 @@
 
     <h3 class="govuk-heading-s">Parent 2</h3>
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Add a second parent
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['add-other-parent'] or 'No' }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="add-parent">
-              Change<span class="govuk-visually-hidden"> whether to add a second parent</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Their relationship to your baby
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['parent2-relationship'] or 'Father' }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="second-relation-to-baby">
-              Change<span class="govuk-visually-hidden"> name</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Their name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            To be added once the other parent confirms their details
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            &nbsp;
-          </dd>
-        </div>
-      </dl>
-    
-    {% endif %}
-
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Baby's details
+          Their relationship to your baby
         </dt>
         <dd class="govuk-summary-list__value">
-
-          {% if 'None' in data['baby-details']  %}
-            Don't add any details to the certificate
-          {% else %}
-
-            {% if data['add-name'] !== 'No' %}
-              Name: {{ data['baby-firstname'] or 'Alfie' }} <br>
-            {% endif %}
-
-            {% if data['baby-gender'] !== 'No' %}
-              Sex: {{ data['baby-gender'] or 'Male' }} <br>
-            {% endif %}
-
-            {% if data['dol-day'] or data['dol-month'] %}
-              Date of loss: {{ data | isoDateFromDateInput("dol") | govukDate or 'January 2022' }} <br>
-            {% endif %}
-
-            {% if data['add-place-of-loss'] !== 'No' %}
-              Place of loss: {{ data['place-of-loss'] or 'Newcastle' }} <br>
-            {% endif %}
-
-          {% endif %}
-
+          {{ data['parent2-relationship'] or 'Father' }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="babys-details-2">
-            Change<span class="govuk-visually-hidden"> baby's details</span>
+          <a class="govuk-link" href="second-relation-to-baby">
+            Change<span class="govuk-visually-hidden"> name</span>
           </a>
         </dd>
       </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Their name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          To be added once the other parent confirms their details
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          &nbsp;
+        </dd>
+      </div>
+    </dl>
+
+    {% endif %}
+
+    <h3 class="govuk-heading-s">Baby's details</h3>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      {#    {% if data['add-name'] !== 'No' %} #}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Baby's name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['add-name'] !== 'No' %}
+            {{ data['baby-firstname'] or 'Alfie' }}
+          {% else %}
+            ---
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="babys-name">
+            Change<span class="govuk-visually-hidden"> baby's name</span>
+          </a>
+        </dd>
+      </div>
+
+      {#    {% endif %} #}
+
+      {#     {% if data['add-name'] !== 'No' %} #}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Baby's sex
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['baby-gender'] or 'Male' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="sex-of-baby">
+            Change<span class="govuk-visually-hidden"> baby's sex</span>
+          </a>
+        </dd>
+      </div>
+
+      {#    {% endif %} #}
+
+  {#    {% if data['dol-on-cert'] !== 'No' and data['dol-on-cert'] !== 'Not known' %} #}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of baby loss
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['dol-day'] or data['dol-month'] %}
+            {{ data | isoDateFromDateInput("dol") | govukDate or 'January 2022' }}
+          {% else %}
+            {{data['dol-year'] or '2022'}}
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="date-of-loss">
+            Change<span class="govuk-visually-hidden"> date of baby loss</span>
+          </a>
+        </dd>
+      </div>
+
+      {#    {% endif %} #}
+
+      {#    {% if data['add-place-of-loss'] !== 'No' and data['add-place-of-loss'] !== 'Not Known' %} #}
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Place of baby loss
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['place-of-loss'] or 'Newcastle' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="place-of-loss">
+            Change<span class="govuk-visually-hidden"> place of baby loss</span>
+          </a>
+        </dd>
+      </div>
+
+      {#    {% endif %} #}
 
     </dl>
 

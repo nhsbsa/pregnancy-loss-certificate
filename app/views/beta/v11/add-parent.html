@@ -9,16 +9,10 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
-{% if 'None' in data['baby-details'] %}
-  {% set backLink = 'babys-details-2' %}
-{% else %}
-  {% set backLink = 'add-baby-details' %}
-{% endif %}
-
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: backLink
+    href: "confirm-postal-address"
   }) }}
 {% endblock %}
 
@@ -55,11 +49,11 @@
         ]
       }) }}
 
-    {% endcall %}
+      {% endcall %}
 
-    {{ govukButton({
-      text: "Continue"
-    }) }}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
 
     </form>
   </div>
