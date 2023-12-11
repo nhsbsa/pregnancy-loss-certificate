@@ -1,7 +1,7 @@
 {% extends "layouts/main-beta.html" %}
 {% set servicePhase = 'beta' %}
 {% set feedbackType = 'step' %}
-{% set section = '0' %}
+{% set section = '' %}
 
 {% set heading = "What is your reference number?" %}
 
@@ -35,7 +35,7 @@
         },
         value: data['nhs-number'],
         hint: {
-          text: "For example, J4R-8H5-2K9F1"
+          html: "<p>You can find your reference number in your email.</p><p class=\"govuk-hint\">For example, J4R-8H5-2K9F1</p>"
         }
 
       }) }}

@@ -1,7 +1,7 @@
 {% extends "layouts/main-beta.html" %}
 {% set servicePhase = 'beta' %}
 {% set feedbackType = 'step' %}
-{% set section = '1' %}
+{% set section = '' %}
 
 {% set heading = "What is your postcode?" %}
 
@@ -34,7 +34,6 @@
       }) %}
 
       <p>You must enter the home postcode you registered with your GP surgery.</p>
-      <p>This is the address your certificate will be sent to.</p>
 
       {{ govukInput({
         id: "postcodeinput2",

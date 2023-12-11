@@ -1,7 +1,7 @@
 {% extends "layouts/main-beta.html" %}
 {% set servicePhase = 'beta' %}
 {% set feedbackType = 'step' %}
-{% set section = '1' %}
+{% set section = '' %}
 
 {% set heading = "What is your date of birth?" %}
 
@@ -57,11 +57,6 @@
             value: data["dob2-year"]
           }
         ]
-      }) }}
-
-      {{ govukDetails({
-        summaryText: "Why we're asking you this question",
-        text: "We need to find your NHS record and check you're 16 so you can use this service."
       }) }}
 
       {{ govukButton({

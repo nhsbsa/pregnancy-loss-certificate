@@ -1,7 +1,7 @@
 {% extends "layouts/main-beta.html" %}
 {% set servicePhase = 'beta' %}
 {% set feedbackType = 'step' %}
-{% set section = '1' %}
+{% set section = '' %}
 
 {% set heading = "Do you know your NHS number?" %}
 
@@ -24,18 +24,31 @@
 
       {% include 'beta/v11/includes/step.html' %}
 
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-6",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>Telling us your NHS number will give us the best chance of matching you to your NHS record.</p>
+      <p>You do not need to know your NHS number to continue. If you do not know it, you can tell us your full name instead.</p>
+
+      {{ govukDetails({
+        summaryText: "Where to find your NHS number",
+        html: '<p>If you’re registered with a GP, you will have a 10 digit NHS number unique to you.</p>
+              <p>You can find it on the NHS app or <a href="">use our online NHS number finder (opens in a new tab)</a>.</p>
+              <p>It is also on any letters or documents you receive from the NHS, such as:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>prescriptions</li>
+                <li>test results</li>
+                <li>appointment letters</li>
+              </ul>'
+      }) }}
+
       {{ govukRadios({
         name: "knows-nhs-number",
-        fieldset: {
-          legend: {
-            text: heading,
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        hint: {
-          html: "Your NHS number is a 10 digit number, like 485 777 3456.<br><br>You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service."
-        },
         items: [
           {
             value: "Yes",
@@ -44,18 +57,16 @@
           },
           {
             value: "No",
-            text: "No, continue with my date of birth",
+            text: "No, continue with my full name",
             checked: checked("knows-nhs-number", "No")
           }
         ]
       }) }}
 
-      {{ govukDetails({
-        summaryText: "Why we're asking you this question",
-        text: "We need to find your NHS record."
-      }) }}
+  {% endcall %}
 
-      {{ govukButton({
+
+  {{ govukButton({
         text: "Continue"
       }) }}
 
