@@ -26,7 +26,8 @@ router.post("/beta/v11/enter-location-uk-post/", (req, res) => {
   if (liveInEngland === 'No') {
     res.redirect('location-kickout-uk');
   } else {
-    res.redirect('baby-loss-in-england')
+    // res.redirect('baby-loss-in-england')
+    res.redirect('living-in-england');
   }
 })
 
@@ -127,7 +128,58 @@ router.get('/beta/v11/get-security-code', function (req, res) {
 
   } else {
     // do nothing
-    return res.render('beta/v11/get-security-code')
+    mobileObf = '*******6789'
+    emailObf = 'Sa********@gmail.com'
+
+    return res.render('beta/v11/get-security-code', {
+      'email': emailObf,
+      'mobile': mobileObf
+    })
+  }
+})
+
+// Obfuscate the UR participants contact details for display on the page
+router.get('/beta/v11/enter-security-code', function (req, res) {
+  if (req.session.data['ur']) {
+
+    let email = process.env[req.session.data['ur']+'_EMAIL']
+
+    // create an obfuscated version of it
+    if (email) {
+      emailObf = obfuscatorEmail(email)
+    } else {
+      // create a placeholder string as the field wasn't filled in properly
+      emailObf = '*******6789'
+    }
+
+    req.session.data['emailAddress'] = email
+    req.session.data['emailAddressObf'] = emailObf
+
+    // pull in mobile number from environmant variable and create an obsfucated version
+    let mobile = process.env[req.session.data['ur']+'_MOBILE']
+
+    // create an obfuscated version of it
+    if (mobile && mobile.length === 11 ) {
+      mobileObf = '*******' + mobile.substr(-4)
+    } else {
+      // create a placeholder string as the field wasn't filled in properly
+      mobileObf = '*******6789'
+    }
+    req.session.data['mobileNum'] = mobile
+    req.session.data['mobileNumObf'] = mobileObf
+
+    return res.render('beta/v11/enter-security-code', {
+      'email': emailObf,
+      'mobile': mobileObf
+    })
+  } else {
+    // do nothing
+    mobileObf = '*******6789'
+    emailObf = 'Sa********@gmail.com'
+    return res.render('beta/v11/enter-security-code', {
+      'email': emailObf,
+      'mobile': mobileObf
+    })
   }
 })
 
