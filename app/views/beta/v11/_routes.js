@@ -244,7 +244,7 @@ router.post("/beta/v11/confirm-postal-address-post/", (req, res) => {
 router.post("/beta/v11/babys-details-post/", (req, res) => {
   const details = req.session.data['baby-details']
   if (details.includes("None")) {
-    res.redirect('check-your-answers');
+    res.redirect('contact-email');
   } else {
     res.redirect('add-baby-details');
   }

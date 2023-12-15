@@ -1,9 +1,9 @@
 {% extends "layouts/main-beta.html" %}
 {% set servicePhase = 'beta' %}
 {% set feedbackType = 'step' %}
-{% set section = '' %}
+{% set section = '1' %}
 
-{% set heading = "Would you like to add your email address?" %}
+{% set heading = "Would you like to receive a confirmation email about your request for a certificate?" %}
 
 {% block pageTitle %}
   {{ heading }} – {{ serviceName }} – NHSBSA
@@ -31,7 +31,7 @@
         }
       }) %}
 
-      <p>We'll send you updates about your request for a certificate.</p>
+      <!-- <p>We'll send you updates about your request for a certificate.</p> -->
 
       {% set otherHtml %}
         {{ govukInput({
@@ -40,7 +40,7 @@
           classes: "govuk-input--width-20",
           value: data['contactByEmail'],
           label: {
-            text: "Email address"
+            text: "Enter email address"
           }
         }) }}
 
