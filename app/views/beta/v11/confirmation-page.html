@@ -4,6 +4,13 @@
 {% set section = '1' %}
 
 {% if data['add-other-parent'] !== 'No' %}
+  {% set emailLink = 'notification-email-confirmation' %}
+  {% set emailLink2 = 'notification-email-invite-p2' %}
+{% else %}
+  {% set emailLink = 'notification-email-successful' %}
+{% endif %}
+
+{% if data['add-other-parent'] !== 'No' %}
   {% set heading = "Request pending" %}
 {% else %}
   {% set heading = "Request complete" %}

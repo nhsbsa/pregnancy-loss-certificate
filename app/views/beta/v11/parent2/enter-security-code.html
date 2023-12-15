@@ -5,6 +5,12 @@
 
 {% set heading = "Enter your security code" %}
 
+{% if data['otp-delivery'] === 'email' %}
+  {% set emailLink = 'notification-email-otp' %}
+{% else %}
+  {% set smsLink = 'notification-text-otp' %}
+{% endif %}
+
 {% block pageTitle %}
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
@@ -33,7 +39,7 @@
       {{ govukInput({
         id: "entercode",
         name: "entercode",
-        classes: "govuk-input--width-4 govuk-input--extra-letter-spacing",
+        classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
         autocomplete: "one-time-code",
         type: "text",
         inputmode: "numeric",
@@ -64,6 +70,16 @@
         </span>
         </summary>
         <div class="govuk-details__text">
+          <h4>Scenarios</h4>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="?otp-delivery=sms">User chose text message for the OTP</a>
+            </li>
+            <li>
+              <a href="?otp-delivery=email">User chose Email for the OTP</a>
+            </li>
+          </ul>
+
           <h4>Service Errors</h4>
           <ul class="govuk-list govuk-list--bullet">
             <li>

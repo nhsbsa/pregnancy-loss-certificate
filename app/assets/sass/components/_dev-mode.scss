@@ -22,6 +22,7 @@ details.dev-mode summary, details.dev-mode ol {
 // display a wedge on the footer of the screen
 
 .proto-action,
+.proto-action-2,
 .proto-error {
   position: fixed;
   right: 0;
@@ -34,6 +35,10 @@ details.dev-mode summary, details.dev-mode ol {
   a {
     text-decoration: none;
   }
+}
+
+.proto-action-2 {
+  bottom: 100px;
 }
 
 .proto-error {
