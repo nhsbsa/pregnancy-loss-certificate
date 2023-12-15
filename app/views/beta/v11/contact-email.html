@@ -9,10 +9,16 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
+{% if 'None' in data['baby-details'] %}
+  {% set backLink = 'babys-details-2' %}
+{% else %}
+  {% set backLink = 'add-baby-details' %}
+{% endif %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "babys-name"
+    href: backLink
   }) }}
 {% endblock %}
 
