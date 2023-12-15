@@ -20,12 +20,12 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="living-in-england-post" method="post">
+    <form class="form" action="baby-loss-in-england-post" method="post">
 
       {% include 'beta/v11/includes/step.html' %}
 
       {{ govukRadios({
-        name: "living-in-england",
+        name: "loss-in-england",
         classes: "govuk-radios--inline",
         fieldset: {
           legend: {
@@ -38,12 +38,12 @@
           {
             value: "Yes",
             text: "Yes",
-            checked: checked("living-in-england", "Yes")
+            checked: checked("loss-in-england", "Yes")
           },
           {
             value: "No",
             text: "No",
-            checked: checked("living-in-england", "No")
+            checked: checked("loss-in-england", "No")
           }
         ]
       }) }}

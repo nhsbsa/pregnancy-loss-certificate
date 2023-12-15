@@ -10,9 +10,9 @@
 {% endblock %}
 
 {% if data['otp-delivery'] === 'sms' %}
-  {% set hintText = "<p>We sent your security code by text to " + mobile + "</p>" %}
+  {% set hintText = "<p class=\"govuk-hint\">We sent your security code by text to " + mobile + "</p>" %}
 {% else %}
-  {% set hintText = "<p>We sent your security code by email to " + email + "</p><p class=\"govuk-hint\">If you do not receive the email within a few minutes, check your spam or junk mail folder.</p>" %}
+  {% set hintText = "<p class=\"govuk-hint\">We sent your security code by email to " + email + "</p><p class=\"govuk-hint\"><!-- If you do not receive the email within a few minutes, check your spam or junk mail folder.</p>-->" %}
 {% endif %}
 
 {% block beforeContent %}
@@ -33,7 +33,7 @@
       {{ govukInput({
         id: "entercode",
         name: "entercode",
-        classes: "govuk-input--width-4 govuk-input--extra-letter-spacing",
+        classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
         autocomplete: "one-time-code",
         type: "text",
         inputmode: "numeric",

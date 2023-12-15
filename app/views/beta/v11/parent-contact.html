@@ -32,8 +32,8 @@
         }
       }) %}
 
-      <p>We'll send a link to the other parent by email.</p>
-      <p>We'll ask them if they give permission to be named on the certificate and to confirm their details.</p>
+<!--      <p>We'll send a link to the other parent by email.</p>-->
+<!--      <p>We'll ask them if they give permission to be named on the certificate and to confirm their details.</p>-->
 
       {{ govukInput({
         id: "parent2-email",
@@ -55,12 +55,16 @@
         }
       }) }}
 
+      {{ govukInsetText({
+        text: "You must tell the other parent that they’ll be contacted."
+      }) }}
+
       {{ govukCheckboxes({
         name: "told-other-parent",
         items: [
           {
             value: "Yes",
-            text: "I confirm I've told the other parent that they'll be contacted.",
+            text: "I agree and confirm",
             checked: checked("told-other-parent", "Yes")
           }
         ]
