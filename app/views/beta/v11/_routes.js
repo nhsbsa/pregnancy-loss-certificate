@@ -36,7 +36,7 @@ router.post("/beta/v11/baby-loss-in-england-post/", (req, res) => {
   if (lossInEngland === 'No') {
     res.redirect('location-kickout');
   } else {
-    res.redirect('living-in-england');
+    res.redirect('loss-in-5-years');
   }
 })
 
