@@ -1,0 +1,86 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '3' %}
+
+{% set heading = "What is the other parent's email address?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "what-happens-next"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="enter-date-of-birth-parent" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+<!--      <p>We'll send a link to the other parent by email.</p>-->
+<!--      <p>We'll ask them if they give permission to be named on the certificate and to confirm their details.</p>-->
+
+      {{ govukInput({
+        id: "parent2-email",
+        name: "parent2-email",
+        classes: "govuk-input--width-20",
+        value: data['parent2-email'],
+        label: {
+          text: "Enter email address"
+        }
+      }) }}
+
+      {{ govukInput({
+        id: "parent2-email-conf",
+        name: "parent2-email-conf",
+        classes: "govuk-input--width-20",
+        value: data['parent2-email-conf'],
+        label: {
+          text: "Confirm email address"
+        }
+      }) }}
+
+      {{ govukInsetText({
+        text: "You must tell the other parent that they’ll be contacted."
+      }) }}
+
+      {{ govukCheckboxes({
+        name: "told-other-parent",
+        items: [
+          {
+            value: "Yes",
+            text: "I agree and confirm",
+            checked: checked("told-other-parent", "Yes")
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '2' %}
+
+{% set heading = "Would you like your baby’s name on the certificate?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% if data['add-sex'] === 'No' %}
+  {% set backLink = 'sex-of-baby' %}
+{% else %}
+  {% set backLink = 'enter-baby-gender' %}
+{% endif %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: backLink
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="contact-email" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>You may not have named your baby.</p>
+
+      <div id="passport-issued-hint" class="govuk-hint">
+        If you select ‘No’, this will not be shown on the certificate.
+      </div>
+
+      {% set otherHtml %}
+        {{ govukInput({
+          id: "baby-firstname",
+          name: "baby-firstname",
+          classes: "govuk-input--width-20",
+          value: data['baby-firstname'],
+          label: {
+            text: "Baby's name"
+          }
+        }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        name: "add-name",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            conditional: {
+              "html": otherHtml
+            },
+            checked: checked("add-name", "Yes")
+          },
+          {
+            value: "No",
+            text: "No",
+            checked: checked("add-name", "No")
+          }
+        ]
+      }) }}
+
+     {% endcall %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

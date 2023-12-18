@@ -1,0 +1,72 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '1' %}
+
+{% set heading = "What is your address?" %}
+
+{% block pageTitle %}
+{{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="add-parent" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <label class="govuk-label" for="select-1">
+        Postcode
+      </label>
+
+      <p>NE1 OLD &nbsp; <a href="postcode">Change</a></p>
+
+      <div class="govuk-hint">
+        This will be where your certificate is sent to.
+      </div>
+     
+      <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
+        <option value="choose" selected>Select your address</option>
+        <option value="1">1 Test Road, Town, NE1 OLD</option>
+        <option value="2">2 Test Road, Town, NE1 OLD</option>
+        <option value="3">3 Test Road, Town, NE1 OLD</option>
+        <option value="4">4 Test Road, Town, NE1 OLD</option>
+        <option value="5">5 Test Road, Town, NE1 OLD</option>
+        <option value="6">6 Test Road, Town, NE1 OLD</option>
+        <option value="7">7 Test Road, Town, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, NE1 OLD</option>
+      </select>
+
+      <p class="govuk-!-margin-top-2"><a href="what-is-your-address">My address isn't listed</a></p>
+
+      {% endcall %}
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

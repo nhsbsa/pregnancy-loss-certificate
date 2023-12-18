@@ -1,0 +1,49 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '3' %}
+
+{% set heading = "Your baby's details" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "second-relation-to-baby"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="baby-details-post" method="post">
+
+      <h1 class="govuk-heading-l">{{ heading }}</h1>
+
+      <p>The next four questions are about your baby. You can add these details to the certificate:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>date of baby loss</li>
+        <li>place of baby loss</li>
+        <li>baby's sex</li>
+        <li>baby's name</li>
+      </ul>
+
+      <p>If you choose not to answer these questions, the sections will be blank on the certificate</p>
+       
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

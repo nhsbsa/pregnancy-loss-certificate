@@ -1,0 +1,88 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '2' %}
+
+{% set heading = "Your baby's details" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "second-relation-to-baby"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="babys-details-post" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>If you do not know or do not want to add these details, the sections will be blank on the certificate.</p>
+
+      {{ govukCheckboxes({
+        name: "baby-details",
+        hint: {
+          text: "Select the details you'd like to add to the certificate."
+        },
+        items: [
+          {
+            value: "Date of loss",
+            text: "Date of baby loss",
+            checked: checked("baby-details", "Date of loss")
+          },
+          {
+            value: "Place of loss",
+            text: "Place of baby loss",
+            checked: checked("baby-details", "Place of loss")
+          },
+          {
+            value: "Sex",
+            text: "Baby's sex",
+            checked: checked("baby-details", "Sex")
+          },
+          {
+            value: "Name",
+            text: "Baby's name",
+            checked: checked("baby-details", "Name")
+          },
+          {
+            divider: "or"
+          },
+          {
+            value: "None",
+            text: "Don't add any details to the certificate",
+            behaviour: "exclusive",
+            checked: checked("baby-details", "None")
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

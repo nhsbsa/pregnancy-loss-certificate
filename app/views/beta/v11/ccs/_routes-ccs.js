@@ -1,27 +1,14 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
-const obfuscatorEmail = require('obfuscator-email')
-
 
 // GOV Notify integration - ask Matt F for the API key if you need it
 var NotifyClient = require('notifications-node-client').NotifyClient,
   notify = new NotifyClient(process.env.NOTIFYAPIKEY)
 
 
-// add data to terminal output
-router.use((req, res, next) => {
-  const log = {
-    method: req.method,
-    url: req.originalUrl,
-    data: req.session.data
-  }
-  console.log(JSON.stringify(log, null, 2))
-  next()
-})
+// CCS journey routes
 
-// Add your routes here
-
-router.post("/beta/v11/enter-location-uk-post/", (req, res) => {
+router.post("/beta/v11/ccs/enter-location-uk-post/", (req, res) => {
   const liveInEngland = req.session.data['location-england']
   if (liveInEngland === 'No') {
     res.redirect('location-kickout-uk');
@@ -31,7 +18,7 @@ router.post("/beta/v11/enter-location-uk-post/", (req, res) => {
   }
 })
 
-router.post("/beta/v11/baby-loss-in-england-post/", (req, res) => {
+router.post("/beta/v11/ccs/baby-loss-in-england-post/", (req, res) => {
   const lossInEngland = req.session.data['loss-in-england']
   if (lossInEngland === 'No') {
     res.redirect('location-kickout');
@@ -40,7 +27,7 @@ router.post("/beta/v11/baby-loss-in-england-post/", (req, res) => {
   }
 })
 
-router.post("/beta/v11/loss-in-5-years-post/", (req, res) => {
+router.post("/beta/v11/ccs/loss-in-5-years-post/", (req, res) => {
   const lossInYears = req.session.data['over-5-years']
   if (lossInYears === 'No') {
     res.redirect('date-of-loss-kickout');
@@ -49,7 +36,7 @@ router.post("/beta/v11/loss-in-5-years-post/", (req, res) => {
   }
 })
 
-router.post("/beta/v11/relation-to-baby-post/", (req, res) => {
+router.post("/beta/v11/ccs/relation-to-baby-post/", (req, res) => {
   const relationship = req.session.data['relation-baby']
   if (relationship === 'None of these') {
     res.redirect('relation-kickout')
@@ -58,7 +45,7 @@ router.post("/beta/v11/relation-to-baby-post/", (req, res) => {
   }
 })
 
-router.post("/beta/v11/nhs-number-post/", (req, res) => {
+router.post("/beta/v11/ccs/nhs-number-post/", (req, res) => {
   const NHSNumber = req.session.data['knows-nhs-number']
   if (NHSNumber === 'No') {
     res.redirect('what-is-your-name');
@@ -67,18 +54,18 @@ router.post("/beta/v11/nhs-number-post/", (req, res) => {
   }
 })
 
-router.post("/beta/v11/enter-date-of-birth/", (req, res) => {
+router.post("/beta/v11/ccs/enter-date-of-birth/", (req, res) => {
   res.redirect('enter-date-of-birth');
 })
 
-router.post("/beta/v11/enter-date-of-birth-parent/", (req, res) => {
+router.post("/beta/v11/ccs/enter-date-of-birth-parent/", (req, res) => {
   res.redirect('enter-date-of-birth-parent');
 })
 
 // set a variable once all demographic questions are asked
-router.get("/beta/v11/check-your-details/", function (req, res) {
+router.get("/beta/v11/ccs/check-your-details/", function (req, res) {
   req.session.data['checkpage-reached'] = "true"
-  return res.render('beta/v11/check-your-details')
+  return res.render('beta/v11/ccs/check-your-details')
 })
 
 // Obfuscate the UR participants contact details for display on the page
@@ -112,7 +99,7 @@ router.get('/beta/v11/get-security-code', function (req, res) {
     req.session.data['mobileNum'] = mobile
     req.session.data['mobileNumObf'] = mobileObf
 
-    return res.render('beta/v11/get-security-code', {
+    return res.render('beta/v11/ccs/get-security-code', {
       'email': emailObf,
       'mobile': mobileObf
     })
@@ -122,7 +109,7 @@ router.get('/beta/v11/get-security-code', function (req, res) {
     mobileObf = '*******6789'
     emailObf = 'Sa********@gmail.com'
 
-    return res.render('beta/v11/get-security-code', {
+    return res.render('beta/v11/ccs/get-security-code', {
       'email': emailObf,
       'mobile': mobileObf
     })
@@ -130,7 +117,7 @@ router.get('/beta/v11/get-security-code', function (req, res) {
 })
 
 // Obfuscate the UR participants contact details for display on the page
-router.get('/beta/v11/enter-security-code', function (req, res) {
+router.get('/beta/v11/ccs/enter-security-code', function (req, res) {
   if (req.session.data['ur']) {
 
     let email = process.env[req.session.data['ur']+'_EMAIL']
@@ -159,7 +146,7 @@ router.get('/beta/v11/enter-security-code', function (req, res) {
     req.session.data['mobileNum'] = mobile
     req.session.data['mobileNumObf'] = mobileObf
 
-    return res.render('beta/v11/enter-security-code', {
+    return res.render('beta/v11/ccs/enter-security-code', {
       'email': emailObf,
       'mobile': mobileObf
     })
@@ -167,14 +154,14 @@ router.get('/beta/v11/enter-security-code', function (req, res) {
     // do nothing
     mobileObf = '*******6789'
     emailObf = 'Sa********@gmail.com'
-    return res.render('beta/v11/enter-security-code', {
+    return res.render('beta/v11/ccs/enter-security-code', {
       'email': emailObf,
       'mobile': mobileObf
     })
   }
 })
 
-router.post('/beta/v11/get-security-code-post', function (req, res) {
+router.post('/beta/v11/ccs/get-security-code-post', function (req, res) {
 
   let contactMethod = req.session.data['otp-delivery']
 
@@ -205,7 +192,7 @@ router.post('/beta/v11/get-security-code-post', function (req, res) {
   res.redirect('enter-security-code')
 })
 
-router.get('/beta/v11/confirm-postal-address', function (req, res) {
+router.get('/beta/v11/ccs/confirm-postal-address', function (req, res) {
   if (req.session.data['ur']) {
 
     let name = process.env[req.session.data['ur']+'_NAME']
@@ -213,26 +200,28 @@ router.get('/beta/v11/confirm-postal-address', function (req, res) {
 
     req.session.data['fullName'] = name
 
-    return res.render('beta/v11/confirm-postal-address', {
+    return res.render('beta/v11/ccs/confirm-postal-address', {
       'fullName': name
     })
 
   } else {
     // do nothing
-    return res.render('beta/v11/confirm-postal-address')
+    return res.render('beta/v11/ccs/confirm-postal-address')
   }
 })
 
-router.post("/beta/v11/confirm-postal-address-post/", (req, res) => {
+router.post("/beta/v11/ccs/confirm-postal-address-post/", (req, res) => {
   const address = req.session.data['address-ok']
   if (address === 'No') {
     res.redirect('check-your-address-kickout');
+  } else if (address === 'Alternative') {
+    res.redirect('what-is-your-address');
   } else {
     res.redirect('add-parent');
   }
 })
 
-router.post("/beta/v11/babys-details-post/", (req, res) => {
+router.post("/beta/v11/ccs/babys-details-post/", (req, res) => {
   const details = req.session.data['baby-details']
   if (details.includes("None")) {
     res.redirect('contact-email');
@@ -241,7 +230,7 @@ router.post("/beta/v11/babys-details-post/", (req, res) => {
   }
 })
 
-router.post("/beta/v11/add-parent-post/", (req, res) => {
+router.post("/beta/v11/ccs/add-parent-post/", (req, res) => {
   const addOther = req.session.data['add-other-parent']
   if (addOther === 'No') {
     res.redirect('babys-details-2');
@@ -250,7 +239,7 @@ router.post("/beta/v11/add-parent-post/", (req, res) => {
   }
 })
 
-router.post("/beta/v11/sex-of-baby-post/", (req, res) => {
+router.post("/beta/v11/ccs/sex-of-baby-post/", (req, res) => {
   const addSex = req.session.data['add-sex']
   if (addSex === 'No' || addSex === 'I do not know the sex of my baby') {
     res.redirect('babys-name');
@@ -260,14 +249,14 @@ router.post("/beta/v11/sex-of-baby-post/", (req, res) => {
 })
 
 // set a variable once all questions are asked
-router.get("/beta/v11/check-your-answers/", function (req, res) {
+router.get("/beta/v11/ccs/check-your-answers/", function (req, res) {
   req.session.data['answerpage-reached'] = "true"
-  return res.render('beta/v11/check-your-answers')
+  return res.render('beta/v11/ccs/check-your-answers')
 })
 
 ///// PARENT 2 /////
 
-router.post("/beta/v11/parent2/nhs-number-post/", (req, res) => {
+router.post("/beta/v11/ccs/parent2/nhs-number-post/", (req, res) => {
   const NHSNumber = req.session.data['knows-nhs-number']
   if (NHSNumber === 'No') {
     res.redirect('what-is-your-name');
@@ -276,21 +265,21 @@ router.post("/beta/v11/parent2/nhs-number-post/", (req, res) => {
   }
 })
 
-router.post("/beta/v11/parent2/enter-date-of-birth/", (req, res) => {
+router.post("/beta/v11/ccs/parent2/enter-date-of-birth/", (req, res) => {
   res.redirect('enter-date-of-birth');
 })
 
 // set a variable once all demographic questions are asked
-router.get("/beta/v11/parent2/check-your-details/", function (req, res) {
+router.get("/beta/v11/ccs/parent2/check-your-details/", function (req, res) {
   req.session.data['checkpage-reached'] = "true"
-  return res.render('beta/v11/parent2/check-your-details')
+  return res.render('beta/v11/ccs/parent2/check-your-details')
 })
 
-router.post("/beta/v11/parent2/get-security-code-post/", (req, res) => {
+router.post("/beta/v11/ccs/parent2/get-security-code-post/", (req, res) => {
   res.redirect('enter-security-code');
 })
 
-router.post("/beta/v11/parent2/check-your-answers-post/", (req, res) => {
+router.post("/beta/v11/ccs/parent2/check-your-answers-post/", (req, res) => {
   const correct = req.session.data['cya-correct']
   if (correct === 'No') {
     res.redirect('check-answers-kickout-copy');
@@ -299,7 +288,7 @@ router.post("/beta/v11/parent2/check-your-answers-post/", (req, res) => {
   }
 })
 
-router.post("/beta/v11/parent2/check-answers-kickout-post/", (req, res) => {
+router.post("/beta/v11/ccs/parent2/check-answers-kickout-post/", (req, res) => {
   const sure = req.session.data['cya-kickout']
   if (sure === 'No') {
     res.redirect('check-your-answers');
