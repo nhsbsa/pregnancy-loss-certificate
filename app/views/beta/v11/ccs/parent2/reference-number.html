@@ -1,0 +1,55 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your reference number?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "start-page"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="nhs-number" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {{ govukInput({
+        id: "ref-number",
+        name: "ref-number",
+        classes: "govuk-input--width-10",
+        label: {
+          text: heading,
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        value: data['nhs-number'],
+        hint: {
+          html: "<p>You can find your reference number in your email.</p><p class=\"govuk-hint\">For example, J4R-8H5-2K9F1</p>"
+        }
+
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

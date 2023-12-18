@@ -1,0 +1,56 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "Declaration" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "check-your-answers"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="confirmation-page" method="post" novalidate>
+
+      <h1 class="govuk-heading-l">{{ heading }}</h1>
+
+      <h2 class="govuk-heading-m">Second Parent</h2>
+
+      <p>I declare that the information I have provided is true and correct. </p>
+      <p>I certify that I have read, understood and agree to the  <a href="">Terms of Use and Privacy Policy</a>.</p>
+      <p>I consent to my personal information provided in this application to be used to verify my identity.</p>
+      <p>I consent for my name to be included as a parent of the baby on the ‘Certificate of Baby Loss Before 24 Weeks of Pregnancy’ applied for through this application.</p>
+
+      {{ govukCheckboxes({
+        name: "declaration",
+        items: [
+          {
+            value: "agree",
+            text: "I agree and confirm"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Accept - send my request"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

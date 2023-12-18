@@ -1,0 +1,81 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "Do you know your NHS number?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "reference-number"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="nhs-number-post" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-6",
+          isPageHeading: true
+        }
+      }) %}
+
+      <p>Telling us your NHS number will give us the best chance of matching you to your NHS record.</p>
+      <p>You do not need to know your NHS number to continue. If you do not know it, you can tell us your full name instead.</p>
+
+      {{ govukDetails({
+        summaryText: "Where to find your NHS number",
+        html: '<p>If you’re registered with a GP, you will have a 10 digit NHS number unique to you.</p>
+              <p>You can find it on the NHS app or <a href="">use our online NHS number finder (opens in a new tab)</a>.</p>
+              <p>It is also on any letters or documents you receive from the NHS, such as:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>prescriptions</li>
+                <li>test results</li>
+                <li>appointment letters</li>
+              </ul>'
+      }) }}
+
+      {{ govukRadios({
+        name: "knows-nhs-number",
+        items: [
+          {
+            value: "Yes",
+            text: "Yes, I know my NHS number",
+            checked: checked("knows-nhs-number", "Yes")
+          },
+          {
+            value: "No",
+            text: "No, continue with my full name",
+            checked: checked("knows-nhs-number", "No")
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

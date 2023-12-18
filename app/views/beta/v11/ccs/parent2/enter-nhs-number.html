@@ -1,0 +1,55 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your NHS number?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "nhs-number"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="check-your-details" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {{ govukInput({
+        id: "nhs-number",
+        name: "nhs-number",
+        classes: "govuk-input--width-10",
+        label: {
+          text: heading,
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        value: data['nhs-number'],
+        hint: {
+          html: "Your NHS number is a 10 digit number that you find on any letter the NHS has sent you.</p><p class=\"govuk-hint\">For example, 485 777 3456"
+        }
+
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}
