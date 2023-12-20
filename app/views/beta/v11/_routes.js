@@ -93,7 +93,7 @@ router.get('/beta/v11/get-security-code', function (req, res) {
       emailObf = obfuscatorEmail(email)
     } else {
       // create a placeholder string as the field wasn't filled in properly
-      emailObf = '*******6789'
+      emailObf = 'a********@gmail.com'
     }
 
     req.session.data['emailAddress'] = email
@@ -241,12 +241,91 @@ router.post("/beta/v11/babys-details-post/", (req, res) => {
   }
 })
 
+router.post("/beta/v11/babys-details-steps-post/", (req, res) => {
+  let details = []
+  details = req.session.data['baby-details'] || []
+  if (details.includes('None')) {
+    res.redirect('contact-email');
+  } else {
+    if (details.includes("Date of loss")) {
+      res.redirect('date-of-loss');
+    } else if (details.includes("Place of loss")) {
+      res.redirect('place-of-loss');
+    } else if (details.includes("Sex")) {
+      res.redirect('enter-baby-gender');
+    } else if (details.includes("Name")) {
+      res.redirect('enter-baby-name');
+    } else {
+      res.redirect('date-of-loss');
+    }
+  }
+})
+
+router.post("/beta/v11/date-of-loss-post/", (req, res) => {
+  let details = req.session.data['baby-details'] || []
+
+  if (details === []) {
+    res.redirect('place-of-loss');
+  } else {
+    if (details.includes("Place of loss")) {
+      res.redirect('place-of-loss');
+    } else if (details.includes("Sex")) {
+      res.redirect('enter-baby-gender');
+    } else if (details.includes("Name")) {
+      res.redirect('enter-baby-name');
+    } else {
+      res.redirect('contact-email');
+    }
+  }
+})
+
+router.post("/beta/v11/place-of-loss-post/", (req, res) => {
+  const details = req.session.data['baby-details']
+  if (details === []) {
+    res.redirect('enter-baby-gender');
+  } else {
+    if (details.includes("Sex")) {
+      res.redirect('enter-baby-gender');
+    } else if (details.includes("Name")) {
+      res.redirect('enter-baby-name');
+    } else {
+      res.redirect('contact-email');
+    }
+  }
+})
+
+router.post("/beta/v11/enter-baby-gender-post/", (req, res) => {
+  const details = req.session.data['baby-details']
+  if (!details.includes("Name")) {
+    res.redirect('contact-email');
+  } else {
+    res.redirect('enter-baby-name');
+  }
+})
+
+
 router.post("/beta/v11/add-parent-post/", (req, res) => {
   const addOther = req.session.data['add-other-parent']
+  const steps = req.session.data['use-steps']
+
   if (addOther === 'No') {
-    res.redirect('babys-details-2');
+    if (steps === 'false') {
+      res.redirect('babys-details-2');
+    } else {
+      res.redirect('babys-details-steps');
+    }
   } else {
     res.redirect('what-happens-next');
+  }
+})
+
+router.post("/beta/v11/second-relation-to-baby-post/", (req, res) => {
+  const steps = req.session.data['use-steps']
+
+  if (steps === 'false') {
+    res.redirect('babys-details-2');
+  } else {
+    res.redirect('babys-details-steps');
   }
 })
 

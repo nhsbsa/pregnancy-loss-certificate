@@ -20,7 +20,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="babys-details-post" method="post">
+    <form class="form" action="babys-details-steps-post" method="post">
 
       {% include 'beta/v11/includes/step.html' %}
 
@@ -74,7 +74,7 @@
 
       {% endcall %}
 
-      <input type="hidden" name="used-steps" value="false" />
+      <input type="hidden" name="used-steps" value="true" />
 
       {{ govukButton({
         text: "Continue"

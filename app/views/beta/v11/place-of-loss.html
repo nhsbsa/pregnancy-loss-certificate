@@ -9,10 +9,16 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
+{% if 'Date of loss' in data['baby-details'] %}
+  {% set backLink = 'date-of-loss' %}
+{% else %}
+  {% set backLink = 'babys-details-steps' %}
+{% endif %}
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "date-of-loss"
+    href: backLink
   }) }}
 {% endblock %}
 
@@ -20,58 +26,23 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="sex-of-baby" method="post">
+    <form class="form" action="place-of-loss-post" method="post">
 
       {% include 'beta/v11/includes/step.html' %}
 
-      {% set otherHtml %}
-        {{ govukInput({
-          id: "place-of-loss",
-          name: "place-of-loss",
-          classes: "govuk-input--width-20",
-          value: data['place-of-loss'],
-          label: {
-            text: "Place of your baby loss"
-          },
-          hint: {
-            text: "For example, Canterbury, Kent"
-          }
-        }) }}
-      {% endset -%}
-
-      {{ govukRadios({
-        name: "add-place-of-loss",
-        fieldset: {
-          legend: {
-            text: heading,
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
+      {{ govukInput({
+        id: "place-of-loss",
+        name: "place-of-loss",
+        classes: "govuk-input--width-20",
+        value: data['place-of-loss'],
+        label: {
+          text: "Place of your baby loss",
+          classes: "govuk-label--l",
+          isPageHeading: true
         },
-       
-        items: [
-          {
-            value: "Yes",
-            text: "Yes",
-            "conditional": {
-              html: otherHtml
-            },
-            checked: checked("add-place-of-loss", "Yes")
-          },
-          {
-            value: "No",
-            text: "No",
-            checked: checked("add-place-of-loss", "No")
-          },
-          {
-            divider: "or"
-          },
-          {
-            value: "Not Known",
-            text: "I do not know the place of my baby loss",
-            checked: checked("add-place-of-loss", "Not Known")
-          }
-        ]
+        hint: {
+          text: "For example, Canterbury, Kent"
+        }
       }) }}
 
       {{ govukButton({

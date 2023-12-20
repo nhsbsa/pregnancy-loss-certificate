@@ -9,10 +9,25 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
-{% if 'None' in data['baby-details'] %}
-  {% set backLink = 'babys-details-2' %}
+{% if data['used-steps'] === 'false' %}
+  {% if 'None' in data['baby-details'] %}
+    {% set backLink = 'babys-details-2' %}
+  {% else %}
+    {% set backLink = 'add-baby-details' %}
+  {% endif %}
 {% else %}
-  {% set backLink = 'add-baby-details' %}
+  {% if 'Name' in data['baby-details'] %}
+    {% set backLink = 'enter-baby-name' %}
+  {% elif 'Sex' in data['baby-details'] %}
+    {% set backLink = 'enter-baby-gender' %}
+  {% elif 'Place of loss' in data['baby-details'] %}
+    {% set backLink = 'place-of-loss' %}
+  {% elif 'Date of loss' in data['baby-details'] %}
+    {% set backLink = 'date-of-loss' %}
+  {% else %}
+    {% set backLink = 'babys-details-steps' %}
+  {% endif %}
+
 {% endif %}
 
 {% block beforeContent %}
