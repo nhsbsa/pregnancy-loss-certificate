@@ -35,8 +35,8 @@
       "url": "http://localhost:3000/beta/v11/add-parent?baby-details[]=None"
     },
     {
-      "label": "address-list",
-      "url": "http://localhost:3000/beta/v11/address-list"
+      "label": "backoffice-address-list",
+      "url": "http://localhost:3000/beta/v11/back-office/address-list"
     },
     {
       "label": "babys-details",
@@ -77,6 +77,10 @@
     {
       "label": "confirm-postal-address",
       "url": "http://localhost:3000/beta/v11/confirm-postal-address"
+    },
+    {
+      "label": "ccs-confirm-postal-address",
+      "url": "http://localhost:3000/beta/v11/ccs/confirm-postal-address"
     },
     {
       "label": "check-your-address-kickout",
@@ -135,8 +139,12 @@
       "url": "http://localhost:3000/beta/v11/declaration"
     },
     {
-      "label": "enter-address",
-      "url": "http://localhost:3000/beta/v11/enter-address"
+      "label": "backoffice-document-number",
+      "url": "http://localhost:3000/beta/v11/back-office/document-number"
+    },
+    {
+      "label": "backoffice-enter-address",
+      "url": "http://localhost:3000/beta/v11/back-office/enter-address"
     },
     {
       "label": "enter-baby-gender",
@@ -151,8 +159,16 @@
       "url": "http://localhost:3000/beta/v11/enter-date-of-birth"
     },
     {
+      "label": "backoffice-enter-date-of-birth",
+      "url": "http://localhost:3000/beta/v11/back-office/enter-date-of-birth"
+    },
+    {
       "label": "enter-date-of-birth-parent",
       "url": "http://localhost:3000/beta/v11/enter-date-of-birth-parent"
+    },
+    {
+      "label": "backoffice-enter-date-of-birth-parent",
+      "url": "http://localhost:3000/beta/v11/back-office/enter-date-of-birth-parent"
     },
     {
       "label": "enter-location-uk",
@@ -173,6 +189,10 @@
     {
       "label": "get-security-code",
       "url": "http://localhost:3000/beta/v11/get-security-code"
+    },
+    {
+      "label": "backoffice-identity-doc",
+      "url": "http://localhost:3000/beta/v11/back-office/identity-doc"
     },
     {
       "label": "location-kickout",
@@ -247,8 +267,8 @@
       "url": "http://localhost:3000/beta/v11/relation-to-baby"
     },
     {
-      "label": "second-parent",
-      "url": "http://localhost:3000/beta/v11/second-parent"
+      "label": "backoffice-second-parent",
+      "url": "http://localhost:3000/beta/v11/back-office/second-parent"
     },
     {
       "label": "second-parent-copy",
@@ -261,6 +281,10 @@
     {
       "label": "second-relation-to-baby",
       "url": "http://localhost:3000/beta/v11/second-relation-to-baby"
+    },
+    {
+      "label": "backoffice-second-relation-to-baby",
+      "url": "http://localhost:3000/beta/v11/back-office/second-relation-to-baby"
     },
     {
       "label": "sex-of-baby",
@@ -291,12 +315,12 @@
       "url": "http://localhost:3000/beta/v11/what-is-their-name"
     },
     {
-      "label": "what-is-your-address",
-      "url": "http://localhost:3000/beta/v11/what-is-your-address"
+      "label": "backoffice-what-is-your-address",
+      "url": "http://localhost:3000/beta/v11/back-office/what-is-your-address"
     },
     {
-      "label": "what-is-your-name",
-      "url": "http://localhost:3000/beta/v11/what-is-your-name"
+      "label": "backoffice-what-is-your-name",
+      "url": "http://localhost:3000/beta/v11/back-office/what-is-your-name"
     },
     {
       "label": "p2-start-page",
