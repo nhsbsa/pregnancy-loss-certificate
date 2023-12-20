@@ -47,6 +47,10 @@
       "url": "http://localhost:3000/beta/v11/babys-details-2"
     },
     {
+      "label": "babys-details-steps",
+      "url": "http://localhost:3000/beta/v11/babys-details-steps"
+    },
+    {
       "label": "babys-name",
       "url": "http://localhost:3000/beta/v11/babys-name"
     },
