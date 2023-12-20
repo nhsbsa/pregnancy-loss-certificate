@@ -1,0 +1,100 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '4' %}
+
+{% set heading = "What type of identity verification has been provided?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "enter-date-of-birth"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="document-number" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {{ govukRadios({
+      name: "id-document-type",
+      fieldset: {
+        legend: {
+          text: heading,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      hint: {
+        text: 'Select an option'
+      },
+      items: [
+        {
+          value: "Current signed passport",
+          text: "Current signed passport",
+          checked: checked("id-document-type", "Current signed passport")
+        },
+        {
+          value: "Original birth certificate",
+          text: "Original birth certificate (UK birth certificate issued within 12 months of the date of birth in full form, including those issued by UK authorities overseas such as Embassies High Commissions and HM Forces)",
+          checked: checked("id-document-type", "Original birth certificate")
+        },
+        {
+          value: "EEA member state identity card",
+          text: "EEA member state identity card",
+          checked: checked("id-document-type", "EEA member state identity card")
+        },
+        {
+          value: "Current UK or EEA photocard driving licence",
+          text: "Current UK or EEA photocard driving licence",
+          checked: checked("id-document-type", "Current UK or EEA photocard driving licence")
+        },
+        {
+          value: "Full old-style driving licence",
+          text: "Full old-style driving licence",
+          checked: checked("id-document-type", "Full old-style driving licence")
+        },
+        {
+          value: "Photographic registration cards for self-employed individuals in the construction industry – CIS4",
+          text: "Photographic registration cards for self-employed individuals in the construction industry – CIS4",
+          checked: checked("id-document-type", "Photographic registration cards for self-employed individuals in the construction industry – CIS4")
+        },
+        {
+          value: "Benefit book or original notification letter from Benefits Agency",
+          text: "Benefit book or original notification letter from Benefits Agency",
+          checked: checked("id-document-type", "Benefit book or original notification letter from Benefits Agency")
+        },
+        {
+          value: "Residence permit issued by the Home Office to EEA nationals on sight of own country passport",
+          text: "Residence permit issued by the Home Office to EEA nationals on sight of own country passport",
+          checked: checked("id-document-type", "Residence permit issued by the Home Office to EEA nationals on sight of own country passport")
+        },
+        {
+          value: "National identity card",
+          text: "National identity card",
+          checked: checked("id-document-type", "National identity card")
+        }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

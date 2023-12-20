@@ -1,0 +1,74 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '3' %}
+
+{% set heading = "What is the other parent's relationship to your baby?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "add-parent"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="second-parent" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {{ govukRadios({
+        name: "parent2-relationship",
+        fieldset: {
+          legend: {
+            text: heading,
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "This will be shown on the certificate."
+        },
+        items: [
+          {
+            value: "Mother",
+            text: "Mother",
+            checked: checked("parent2-relationship", "Mother")
+          },
+          {
+            value: "Father",
+            text: "Father",
+            checked: checked("parent2-relationship", "Father")
+          },
+          {
+            value: "Parent",
+            text: "Parent",
+            checked: checked("parent2-relationship", "Parent")
+          },
+          {
+            value: "Surrogate",
+            text: "Surrogate",
+            checked: checked("parent2-relationship", "Surrogate")
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

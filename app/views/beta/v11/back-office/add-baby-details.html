@@ -1,0 +1,144 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '2' %}
+
+{% set heading = "Enter your baby's details" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "babys-details-2"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="contact-email" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l govuk-!-padding-bottom-6",
+          isPageHeading: true
+        }
+      }) %}
+
+      {% if 'Date of loss' in data['baby-details'] %}
+
+      {{ govukDateInput({
+        id: "dol",
+        namePrefix: "dol",
+        hint: {
+          html: "You can enter a meaningful date if you do not know the exact date. </p><p class=\"govuk-hint\">This can be a partial date, such as a month and year, or year only."
+        },
+        fieldset: {
+          legend: {
+            text: "Date of baby loss",
+            isPageHeading: false
+          }
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            value: data["dol-day"]
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            value: data["dol-month"]
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            value: data["dol-year"]
+          }
+        ]
+      }) }}
+
+      {% endif %}
+
+      {% if 'Place of loss' in data['baby-details'] %}
+
+      {{ govukInput({
+        id: "place-of-loss",
+        name: "place-of-loss",
+        classes: "govuk-input--width-20",
+        value: data['place-of-loss'],
+        label: {
+          text: "Place of baby loss"
+        },
+        hint: {
+          text: "This does not need to be a full address. You can enter a town, city or hospital."
+        }
+      }) }}
+
+      {% endif %}
+
+      {% if 'Sex' in data['baby-details'] %}
+
+      {{ govukRadios({
+        name: "baby-gender",
+        classes: "govuk-radios--inline",
+        fieldset: {
+          legend: {
+            text: "Baby's Sex",
+            isPageHeading: false
+          }
+        },
+        items: [
+          {
+            value: "Male",
+            text: "Male",
+            checked: checked("baby-gender", "Male")
+          },
+          {
+            value: "Female",
+            text: "Female",
+            checked: checked("baby-gender", "Female")
+          }
+        ]
+      }) }}
+
+      {% endif %}
+
+      {% if 'Name' in data['baby-details'] %}
+
+      {{ govukInput({
+        label: {
+          text: "Baby's name"
+        },
+        hint: {
+          text: "If you named your baby, you can enter a first name, full name, or a nickname."
+        },
+        classes: "govuk-input--width-20",
+        id: "baby-firstname",
+        name: "baby-firstname",
+        value: data['baby-firstname']
+      }) }}
+
+      {% endif %}
+
+      {% endcall %}
+       
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

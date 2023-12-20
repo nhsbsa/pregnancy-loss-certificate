@@ -1,0 +1,90 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% if data['add-other-parent'] !== 'No' %}
+  {% set emailLink = 'notification-email-confirmation' %}
+  {% set emailLink2 = 'notification-email-invite-p2' %}
+{% else %}
+  {% set emailLink = 'notification-email-successful' %}
+{% endif %}
+
+{% if data['add-other-parent'] !== 'No' %}
+  {% set heading = "Request pending" %}
+{% else %}
+  {% set heading = "Request complete" %}
+{% endif %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ govukPanel({
+      titleText: heading,
+      html: "Your reference number<br><strong>J4R-8H5-2K9F1</strong>"
+    }) }}
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-6">What happens next</h2>
+
+    {% if data['add-other-parent'] !== 'No' %}
+      <p>The other parent will have 7 days to give permission and confirm their details.</p>
+      <p>They may choose not to be named on the certificate. If you would like a certificate with only your name as a parent of your baby, you'll need to start again.</p>
+      <p>If you've lost more than one pregnancy, you can <a href="">request another certificate</a>.</p>
+    {% else %}
+      <p>You’ll receive the certificate within 14 days.</p>
+      <p>If you’ve lost more than one pregnancy, you can <a href="">request another certificate</a>.</p>
+    {% endif %}
+
+    <h3 class="govuk-heading-m govuk-!-margin-top-6">Support organisations</h3>
+
+    <p>The following organisations give support and advice:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="">NHS How to access mental health services</a></li>
+      <li><a href=''>Sands</a></li>
+      <li><a href=''>Tommy's</a></li>
+      <li><a href="">Antenatal Results and Choices (ARC)</a></li>
+      <li><a href="">Saying Goodbye</a></li>
+      <li><a href="">The Miscarriage Association</a></li>
+      <li><a href="">Petals</a></li>
+      <li><a href="">Daddy's with Angels</a></li>
+    </ul>
+
+    <p><a href="#">What did you think of this service?</a> (takes 30 seconds)</p>
+
+    {% if data['devMode'] === 'true' %}
+    {# DEVMODE SCENARIOS #}
+    <br>
+    <details class="govuk-details dev-mode govuk-!-margin-bottom-5" role="group">
+      <summary class="govuk--details__summary" role="button" aria-controls="details-content-0" aria-expanded="true">
+        <span class="govuk--details__summary-text">
+          Change scenario
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <h4>Parent 2</h4>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            <a href="?add-other-parent=Yes">Parent 2 was added</a>
+          </li>
+          <li>
+            <a href="?add-other-parent=No">Parent 2 was not added</a>
+          </li>
+        </ul>
+      </div>
+    </details>
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

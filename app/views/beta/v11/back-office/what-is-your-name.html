@@ -1,0 +1,78 @@
+{% extends "layouts/main-beta.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '4' %}
+
+{% set heading = "What is your name?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "nhs-number"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="enter-date-of-birth" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      {% call govukFieldset({
+        legend: {
+          text: heading,
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <div id="passport-issued-hint" class="govuk-hint">
+        This is the name that will be printed on the certificate.
+      </div>
+
+      {{ govukInput({
+        id: "parent1-firstname",
+        name: "parent1-firstname",
+        classes: "govuk-input--width-20",
+        value: data['parent1-firstname'],
+        label: {
+          text: "First name"
+        }
+      }) }}
+
+      {{ govukInput({
+        id: "parent1-lastname",
+        name: "parent1-lastname",
+        classes: "govuk-input--width-20",
+        value: data['parent1-lastname'],
+        label: {
+          text: "Last name"
+        }
+      }) }}
+
+      {% endcall %}
+
+      <div class="govuk-inset-text">
+        The certificate will not go on your GP record.
+      </div>
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}
