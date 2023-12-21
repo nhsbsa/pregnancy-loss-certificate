@@ -1,0 +1,53 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+
+  {{ govukHeader({
+    homepageUrl: "/index",
+    serviceName: "BLC certificate manager",
+    serviceUrl: "start",
+    navigation: [
+      {
+        href: "/crm/v3/start",
+        text: "Home"
+      },
+      {
+        href: "/beta/v11/ccs/start-page",
+        text: "Request (P1)"
+      },
+      {
+        href: "/beta/v11/ccs/parent2/start-page",
+        text: "Request (P2)",
+        active: true
+      },
+      {
+        href: "/crm/v3/search",
+        text: "Search"
+      },
+      {
+        href: "/crm/v3/start",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+
+  {% if feedbackType %}
+    {% if servicePhase === 'beta' %}
+      {% include 'beta/v11/includes/phase-banner.html' %}
+    {% endif %}
+  {% endif %}
+
+{% endblock %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    {% include "govuk-prototype-kit/includes/scripts.njk" %}
+    {% block pageScripts %}{% endblock %}
+  {% endblock %}
+
+{% if data['devMode'] === 'true' %}
+  {% include "includes/devmode.html" %}
+{% endif %}
+
+{% endblock %}
+
