@@ -1,0 +1,139 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include 'v2/includes/header' %}
+{% endblock %}
+
+{% block content %}
+<div>
+  <h1 class="govuk-heading-l">Find an application</h1>
+</div>
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#ref">
+        By Reference Number
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#details">
+        By Basic Details
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#postcode">
+        By Postcode
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel" id="ref">
+
+    <form action="get-results" method="post" autocomplete="off">
+
+      {{ govukInput({
+        label: {
+          text: "Reference number"
+        },
+          hint: {
+          text: "For example, J4R-8H5-2K9F1."
+        },
+        classes: "govuk-input--width-10 govuk-input--extra-letter-spacing",
+        id: "reference-number",
+        name: "reference-number",
+        spellcheck: false
+      }) }}
+
+      <input type="hidden" name="search-type" value="refnum" />
+
+      {{ govukButton({
+      text: "Search",
+      classes: "govuk-!-margin-top-0"
+      }) }}
+
+    </form>
+  </div>
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="details">
+    <form action="get-results" method="post" autocomplete="off">
+
+    {{ govukInput({
+      label: {
+        text: "Last name"
+      },
+      classes: "govuk-input--width-20 govuk-input--extra-letter-spacing",
+      id: "last-name",
+      name: "last-name",
+      spellcheck: false
+    }) }}
+
+    {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+    {{ govukDateInput({
+      id: "dob",
+      namePrefix: "[date-of-birth]",
+      fieldset: {
+        legend: {
+          text: "Date of birth"
+        }
+      },
+      hint: {
+        text: "For example, 31 3 1980"
+      },
+      items: [
+        {
+          name: "day",
+          classes: "govuk-input--width-2",
+          autocomplete: "bday-day"
+        },
+        {
+          name: "month",
+          classes: "govuk-input--width-2",
+          autocomplete: "bday-month"
+        },
+        {
+          name: "year",
+          classes: "govuk-input--width-4",
+          autocomplete: "bday-year"
+        }
+      ]
+    }) }}
+
+    <input type="hidden" name="search-type" value="basic" />
+
+    {{ govukButton({
+      text: "Search",
+      classes: "govuk-!-margin-top-0"
+    }) }}
+
+    </form>
+  </div>
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="postcode">
+    <form action="get-results" method="post" autocomplete="off">
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "search-postcode",
+        name: "search-postcode"
+      }) }}
+
+      <input type="hidden" name="search-type" value="postcode" />
+
+      {{ govukButton({
+      text: "Search",
+      classes: "govuk-!-margin-top-0"
+      }) }}
+
+    </form>
+  </div>
+
+</div>
+        
+{% endblock %}
