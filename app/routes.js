@@ -60,5 +60,10 @@ router.use('discovery-alpha/v3', require('./views/discovery-alpha/v3/_routes'));
 router.use('discovery-alpha/v2', require('./views/discovery-alpha/v2/_routes'));
 router.use('discovery-alpha/v1', require('./views/discovery-alpha/v1/_routes'));
 
+//////////////////////////////
+////////    CRM       ////////
+//////////////////////////////
+
+router.use('crm', require('./views/crm/_routes-crm'));
 
 module.exports = router;

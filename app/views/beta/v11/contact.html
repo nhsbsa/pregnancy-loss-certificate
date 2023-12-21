@@ -38,6 +38,111 @@
     <p>Email: <a href="">nhsbsa.babylosscertificate@nhsbsa.nhs.uk</a></p>
     <p>We will reply to your email within 2 working days.</p>
 
+    {% set completedStatus = {
+    text: "Completed"
+    } %}
+
+    {% set incompleteStatus = {
+      tag: {
+        text: "Incomplete",
+        classes: "govuk-tag--blue"
+      }
+    } %}
+
+
+    {{ govukTaskList({
+    idPrefix: "first-section",
+    items: [
+      {
+        title: {
+          text: "Name of first task"
+        },
+        href: "#",
+        status: {
+          tag: {
+            text: "Incomplete",
+            classes: "govuk-tag--blue"
+          }
+        }
+      },
+      {
+        title: {
+          text: "Name of second task"
+        },
+        href: "#",
+        status: incompleteStatus
+      }
+    ]
+  }) }}
+
+
+
+    {{ govukTaskList({
+    idPrefix: "company-details",
+    items: [
+      {
+        title: {
+          text: "Company Directors"
+        },
+        href: "#",
+        status: {
+          text: "Completed"
+        }
+      },
+      {
+        title: {
+          text: "Registered company details"
+        },
+        href: "#",
+        status: {
+          tag: {
+            text: "Incomplete",
+            classes: "govuk-tag--blue"
+          }
+        }
+      },
+      {
+        title: {
+          text: "Financial history"
+        },
+        hint: {
+          text: "Include 5 years of the company’s relevant financial information."
+        },
+        href: "#",
+        status: {
+          tag: {
+            text: "Incomplete",
+            classes: "govuk-tag--blue"
+          }
+        }
+      },
+      {
+        title: {
+          text: "Business plan"
+        },
+        href: "#",
+        status: {
+          tag: {
+            text: "Incomplete",
+            classes: "govuk-tag--blue"
+          }
+        }
+      },
+      {
+        title: {
+          text: "References"
+        },
+        href: "#",
+        status: {
+          tag: {
+            text: "Incomplete",
+            classes: "govuk-tag--blue"
+          }
+        }
+      }
+    ]
+  }) }}
+
   </div>
 </div>
 {% endblock %}
