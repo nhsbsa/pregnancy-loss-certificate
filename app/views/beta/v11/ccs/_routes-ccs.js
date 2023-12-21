@@ -1,10 +1,19 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-// GOV Notify integration - ask Matt F for the API key if you need it
-var NotifyClient = require('notifications-node-client').NotifyClient,
-  notify = new NotifyClient(process.env.NOTIFYAPIKEY)
-
+// GOV Notify integration - ask Charlotte for the API key if you need it
+// Check if these is an API key environment variable
+if (process.env.NOTIFYAPIKEY) {
+  var notifyEnabled = 'true'
+  console.log('GOVUK Notify API Key found')
+} else {
+  console.log('No GOVUK Notify API Key found')
+}
+// only load this in if it can be used - thus avoiding some kit errors for new user
+if (notifyEnabled){
+  var NotifyClient = require('notifications-node-client').NotifyClient,
+    notify = new NotifyClient(process.env.NOTIFYAPIKEY)
+}
 
 // CCS journey routes
 
@@ -172,21 +181,23 @@ router.post('/beta/v11/ccs/get-security-code-post', function (req, res) {
     'one-time-passcode': pinCode1 + "" + pinCode2
   }
 
-  if (contactMethod === 'email'){
-    if (req.session.data['emailAddress'] !== '') {
-      notify.sendEmail(
-        '6c08059e-05b3-4ec1-b896-51236f9d3a4c',
-        req.session.data['emailAddress'],
-        { personalisation: personalisation }
-      ).catch(err => console.error(err))
-    }
-  } else {
-    if (req.session.data['mobileNum'] !== '') {
-      notify.sendSms(
-        '03839307-0359-4e34-9cea-6553a72f7ce9',
-        req.session.data['mobileNum'],
-        { personalisation: personalisation }
-      ).catch(err => console.error(err))
+  if (notifyEnabled) {
+    if (contactMethod === 'email') {
+      if (req.session.data['emailAddress'] !== '') {
+        notify.sendEmail(
+          '6c08059e-05b3-4ec1-b896-51236f9d3a4c',
+          req.session.data['emailAddress'],
+          {personalisation: personalisation}
+        ).catch(err => console.error(err))
+      }
+    } else {
+      if (req.session.data['mobileNum'] !== '') {
+        notify.sendSms(
+          '03839307-0359-4e34-9cea-6553a72f7ce9',
+          req.session.data['mobileNum'],
+          {personalisation: personalisation}
+        ).catch(err => console.error(err))
+      }
     }
   }
   res.redirect('enter-security-code')

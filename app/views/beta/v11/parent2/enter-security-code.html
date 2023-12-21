@@ -16,9 +16,9 @@
 {% endblock %}
 
 {% if data['otp-delivery'] === 'sms' %}
-  {% set hintText = "<p>We sent your security code by text to ********009</p>" %}
+  {% set hintText = "<p>We sent your security code by text to " + mobile + "</p>" %}
 {% else %}
-  {% set hintText = "<p>We sent your security code by email to Sa********@gmail.com</p><p class=\"govuk-hint\">If you do not receive the email within a few minutes, check your spam or junk mail folder.</p>" %}
+  {% set hintText = "<p>We sent your security code by email to " + email + "</p><p class=\"govuk-hint\">If you do not receive the email within a few minutes, check your spam or junk mail folder.</p>" %}
 {% endif %}
 
 {% block beforeContent %}

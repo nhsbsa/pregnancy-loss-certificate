@@ -3,10 +3,19 @@ const router = govukPrototypeKit.requests.setupRouter()
 const obfuscatorEmail = require('obfuscator-email')
 
 
-// GOV Notify integration - ask Matt F for the API key if you need it
-var NotifyClient = require('notifications-node-client').NotifyClient,
-  notify = new NotifyClient(process.env.NOTIFYAPIKEY)
-
+// GOV Notify integration - ask Charlotte for the API key if you need it
+// Check if these is an API key environment variable
+if (process.env.NOTIFYAPIKEY) {
+  var notifyEnabled = 'true'
+  console.log('GOVUK Notify API Key found')
+} else {
+  console.log('No GOVUK Notify API Key found')
+}
+// only load this in if it can be used - thus avoiding some kit errors for new user
+if (notifyEnabled){
+  var NotifyClient = require('notifications-node-client').NotifyClient,
+    notify = new NotifyClient(process.env.NOTIFYAPIKEY)
+}
 
 // add data to terminal output
 router.use((req, res, next) => {
@@ -184,22 +193,23 @@ router.post('/beta/v11/get-security-code-post', function (req, res) {
   var personalisation = {
     'one-time-passcode': pinCode1 + "" + pinCode2
   }
-
-  if (contactMethod === 'email'){
-    if (req.session.data['emailAddress'] !== '') {
-      notify.sendEmail(
-        '6c08059e-05b3-4ec1-b896-51236f9d3a4c',
-        req.session.data['emailAddress'],
-        { personalisation: personalisation }
-      ).catch(err => console.error(err))
-    }
-  } else {
-    if (req.session.data['mobileNum'] !== '') {
-      notify.sendSms(
-        '03839307-0359-4e34-9cea-6553a72f7ce9',
-        req.session.data['mobileNum'],
-        { personalisation: personalisation }
-      ).catch(err => console.error(err))
+  if (notifyEnabled) {
+    if (contactMethod === 'email'){
+      if (req.session.data['emailAddress'] !== '') {
+        notify.sendEmail(
+          '6c08059e-05b3-4ec1-b896-51236f9d3a4c',
+          req.session.data['emailAddress'],
+          { personalisation: personalisation }
+        ).catch(err => console.error(err))
+      }
+    } else {
+      if (req.session.data['mobileNum'] !== '') {
+        notify.sendSms(
+          '03839307-0359-4e34-9cea-6553a72f7ce9',
+          req.session.data['mobileNum'],
+          { personalisation: personalisation }
+        ).catch(err => console.error(err))
+      }
     }
   }
   res.redirect('enter-security-code')
@@ -365,8 +375,148 @@ router.get("/beta/v11/parent2/check-your-details/", function (req, res) {
   return res.render('beta/v11/parent2/check-your-details')
 })
 
-router.post("/beta/v11/parent2/get-security-code-post/", (req, res) => {
-  res.redirect('enter-security-code');
+// Obfuscate the UR participants contact details for display on the page
+router.get('/beta/v11/parent2/get-security-code', function (req, res) {
+  console.log(process.env[req.session.data['ur']+'_EMAIL'])
+  if (req.session.data['ur']) {
+
+    let email = process.env[req.session.data['ur']+'_EMAIL']
+    console.log(email)
+    // create an obfuscated version of it
+    if (email ) {
+      emailObf = obfuscatorEmail(email)
+    } else {
+      // create a placeholder string as the field wasn't filled in properly
+      emailObf = 'a********@gmail.com'
+    }
+
+    req.session.data['emailAddress'] = email
+    req.session.data['emailAddressObf'] = emailObf
+
+    // pull in mobile number from environmant variable and create an obsfucated version
+    let mobile = process.env[req.session.data['ur']+'_MOBILE']
+
+    // create an obfuscated version of it
+    if (mobile && mobile.length === 11 ) {
+      mobileObf = '*******' + mobile.substr(-4)
+    } else {
+      // create a placeholder string as the field wasn't filled in properly
+      mobileObf = '*******6789'
+    }
+    req.session.data['mobileNum'] = mobile
+    req.session.data['mobileNumObf'] = mobileObf
+
+    return res.render('beta/v11/parent2/get-security-code', {
+      'email': emailObf,
+      'mobile': mobileObf
+    })
+
+  } else {
+    // do nothing
+    mobileObf = '*******6789'
+    emailObf = 'Sa********@gmail.com'
+
+    return res.render('beta/v11/parent2/get-security-code', {
+      'email': emailObf,
+      'mobile': mobileObf
+    })
+  }
+})
+
+
+// Obfuscate the UR participants contact details for display on the page
+router.get('/beta/v11/parent2/enter-security-code', function (req, res) {
+  if (req.session.data['ur']) {
+
+    let email = process.env[req.session.data['ur']+'_EMAIL']
+
+    // create an obfuscated version of it
+    if (email) {
+      emailObf = obfuscatorEmail(email)
+    } else {
+      // create a placeholder string as the field wasn't filled in properly
+      emailObf = '*******6789'
+    }
+
+    req.session.data['emailAddress'] = email
+    req.session.data['emailAddressObf'] = emailObf
+
+    // pull in mobile number from environmant variable and create an obsfucated version
+    let mobile = process.env[req.session.data['ur']+'_MOBILE']
+
+    // create an obfuscated version of it
+    if (mobile && mobile.length === 11 ) {
+      mobileObf = '*******' + mobile.substr(-4)
+    } else {
+      // create a placeholder string as the field wasn't filled in properly
+      mobileObf = '*******6789'
+    }
+    req.session.data['mobileNum'] = mobile
+    req.session.data['mobileNumObf'] = mobileObf
+
+    return res.render('beta/v11/parent2/enter-security-code', {
+      'email': emailObf,
+      'mobile': mobileObf
+    })
+  } else {
+    // do nothing
+    mobileObf = '*******6789'
+    emailObf = 'Sa********@gmail.com'
+    return res.render('beta/v11/parent2/enter-security-code', {
+      'email': emailObf,
+      'mobile': mobileObf
+    })
+  }
+})
+
+router.post('/beta/v11/parent2/get-security-code-post', function (req, res) {
+
+  let contactMethod = req.session.data['otp-delivery']
+
+  // generate a random 6 digit number for the Email
+  var pinCode1 = Math.floor(100 + Math.random() * 900)
+  var pinCode2 = Math.floor(100 + Math.random() * 900)
+  var personalisation = {
+    'one-time-passcode': pinCode1 + "" + pinCode2
+  }
+  if (notifyEnabled) {
+    if (contactMethod === 'email') {
+      if (req.session.data['emailAddress'] !== '') {
+        notify.sendEmail(
+          '6c08059e-05b3-4ec1-b896-51236f9d3a4c',
+          req.session.data['emailAddress'],
+          {personalisation: personalisation}
+        ).catch(err => console.error(err))
+      }
+    } else {
+      if (req.session.data['mobileNum'] !== '') {
+        notify.sendSms(
+          '03839307-0359-4e34-9cea-6553a72f7ce9',
+          req.session.data['mobileNum'],
+          {personalisation: personalisation}
+        ).catch(err => console.error(err))
+      }
+    }
+  }
+  res.redirect('enter-security-code')
+})
+
+router.get('/beta/v11/parent2/confirm-postal-address', function (req, res) {
+  if (req.session.data['ur']) {
+
+    let name = process.env[req.session.data['ur']+'_NAME']
+    console.log(name)
+
+    req.session.data['fullName'] = name
+
+    return res.render('beta/v11/parent2/confirm-postal-address', {
+      'fullName': name
+    })
+
+  } else {
+    // do nothing
+    return res.render('beta/v11/parent2/confirm-postal-address')
+  }
 })
 
 router.post("/beta/v11/parent2/check-your-answers-post/", (req, res) => {
