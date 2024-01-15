@@ -38,9 +38,11 @@
       <form class="form" action="parent-add" method="post">
         
         <div class="govuk-body">
-         The other parent may choose to not be on the certificate, you can still request a certificate without them on the certficate.
+          The other parent might not confirm their details. This could be because they do not respond in time, or they do not want to be named on the certificate. 
         </div>
-        <div class="govuk-body">We'll let you know if the other parent gives permission for their name to be on the certificate.</div>
+        <div class="govuk-body">If this happens, you can still request a certificate that shows only your name as a parent of your baby. 
+
+          We'll let you know if the other parent gives permission. </div>
        
         
               
@@ -60,11 +62,17 @@
         </div>
           </fieldset>
         </div>
-        
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            If the other parent does not respond, your request for a certificate will be cancelled. 
+          </strong>
+        </div>
       
         {{ govukButton({
           text: "Continue",
-          href: "what-is-their-name",
+          href: "babys-details",
           isStartButton: false
           }) }}
 
