@@ -63,11 +63,6 @@ Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 
     
   
-    {{ govukButton({
-    text: "Continue",
-    href: "reference-number",
-    isStartButton: true
-    }) }}
 
  
     <h2 class="govuk-heading-m">Before you start</h2>
@@ -87,6 +82,12 @@ Start page template – {{ serviceName }} – GOV.UK Prototype Kit
 
   
 </div>
+
+{{ govukButton({
+  text: "Continue",
+  href: "reference-number",
+  isStartButton: true
+  }) }}
 <style>
 .govspeak .mc-chart .mc-td, .govspeak .mc-chart .mc-th, .gem-c-govspeak .mc-chart .mc-td, .gem-c-govspeak .mc-chart .mc-th {
     padding: 0;
