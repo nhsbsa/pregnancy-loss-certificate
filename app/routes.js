@@ -19,6 +19,10 @@ const router = govukPrototypeKit.requests.setupRouter()
 ////////   Beta  ////////
 //////////////////////////////
 
+router.use('beta/v12', require('./views/beta/v12/_routes'));
+
+
+
 router.use('beta/v11', require('./views/beta/v11/_routes'));
 router.use('beta/v11/ccs', require('./views/beta/v11/ccs/_routes-ccs'));
 router.use('beta/v11/back-office', require('./views/beta/v11/back-office/_routes-backoffice'));
