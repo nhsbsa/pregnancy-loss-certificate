@@ -25,11 +25,11 @@
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
-  <span class="govuk-caption-l">Details on the certificate</span>
+  <span class="govuk-caption-l">Other parent's details</span>
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    What is their relationship to your baby?
+    What is the other parent's relationship to your baby?
     
   </h1>
 </legend>
@@ -74,11 +74,11 @@
                 
                 
            
-        
-
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+    {{ govukButton({
+      text: "Continue",
+      href: "babys-details",
+      isStartButton: false
+      }) }}
 
       </form>
 

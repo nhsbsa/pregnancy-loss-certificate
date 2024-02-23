@@ -15,49 +15,47 @@
     </span>
   </p>
 </div>
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+ 
 {% endblock %}
 
 {% block content %}
 
-<span class="govuk-caption-l">Your details</span>
+<span class="govuk-caption-l">Other parent's details</span>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
-        <h1 class="govuk-heading-l">Check your details</h1>
-        <p>This is the address your certificate will be sent to.</p>
+        <h1 class="govuk-heading-l">Check their details</h1>
+        <div class="govuk-form-group">
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
              Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['first-name'] %}
-
-                {{ data['first-name'] }} {{ data['last-name'] }}
-
+             
+                {% if data['parent2-firstname'] %}
+                {{ data['parent2-firstname'] }} {{ data['parent2-lastname'] }}
                 {% else %}
-
                 Example name
-
-               {% endif %}
+                {% endif %}
+           
             </dd>
             <dd class="govuk-summary-list__actions">
-              
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
             </dd>
           </div>
-          
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Address
+             Email
             </dt>
             <dd class="govuk-summary-list__value">
-              72 Guild Street<br>London<br>SE23 6FH
+             
             </dd>
             <dd class="govuk-summary-list__actions">
-             
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
             </dd>
           </div>
           
@@ -68,13 +66,21 @@
           
         </dl>
        
-        
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="nationality-3" name="nationality" type="checkbox" value="other">
+          <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+            I confirm I've told the other parent that they'll be contacted.
+          </label>
+        </div>
+        </div>
+      
+  
        
-        <form action="/v12/get-security-code" method="post" novalidate>
+        <form action="/v6/get-security-code" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
           {{ govukButton({
             text: "Continue",
-            href: "add-parent",
+            href: "date-of-loss",
             isStartButton: false
             }) }}
         </form>

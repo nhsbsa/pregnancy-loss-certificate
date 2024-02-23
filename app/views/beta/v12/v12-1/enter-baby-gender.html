@@ -33,7 +33,7 @@
   </h1>
 </legend>
 
-      <form class="form" action="/v12-1/babys-name" method="post">
+      <form class="form" action="/v12/babys-name" method="post">
         
          
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
@@ -54,9 +54,11 @@
           </fieldset>
         
 
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+          {{ govukButton({
+            text: "Continue",
+            href: "babys-name",
+            isStartButton: false
+            }) }}
 
       </form>
 

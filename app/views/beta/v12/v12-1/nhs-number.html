@@ -26,8 +26,8 @@
 
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
-<div class="govuk-form-group">
-  
+
+  <span class="govuk-caption-l">Your details</span>
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
@@ -36,7 +36,7 @@
   </h1>
 </legend>
 
-      <form class="form" action="action-nhs-number" method="post">
+      <form class="form" action="main-applicant-nhs" method="post">
         <div id="passport-issued-hint" class="govuk-body">
           Telling us your NHS number will give us the best chance of matching you to your NHS record.
         </div>
@@ -51,46 +51,46 @@
           </summary>
           <div class="govuk-details__text">
             If you’re registered with a GP, you will have a 10 digit NHS number unique to you. 
-          </div>
-          <div class="govuk-details__text">
-            You can find it on the NHS app or <a href="">use our online NHS number finder (opens in a new tab)</a>. 
-          </div>
-          <div class="govuk-details__text">It is also on any letters or documents you receive from the NHS, such as:</div>
-          <div class="govuk-details__text">
+       <br>
+          <br>  You can find it on the NHS app or <a href="">use our online NHS number finder (opens in a new tab)</a>. 
+          
+          <br>It is also on any letters or documents you receive from the NHS, such as:
+          <br>
           <ul>
             <li>prescriptions</li>
             <li>test results</li>
             <li>appointment letters</li>
           </ul>
         </div>
+        </div>
+        
         </details>
          
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="action-nhs-number" name="nhs" type="radio" value="yes">
+            <input class="govuk-radios__input" id="main-applicant-nhs" name="nhs" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="yes">
               Yes, I know my NHS number
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="action-nhs-number" name="nhs" type="radio" value="no">
+            <input class="govuk-radios__input" id="main-applicant-nhs" name="nhs" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="no">
               No, continue with my full name, date of birth and postcode
             </label>
           </div>
-        </div>
+       
             </div>
           </fieldset>
-          
-</div>
-</div>
+        
+
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
 
       </form>
-
     </div>
+
   </div>
   </div>
   <style>

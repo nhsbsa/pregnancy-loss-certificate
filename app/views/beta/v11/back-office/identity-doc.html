@@ -81,10 +81,32 @@
           value: "National identity card",
           text: "National identity card",
           checked: checked("id-document-type", "National identity card")
+        },
+        {
+          value: "Death certificate",
+          text: "Death certificate",
+          checked: checked("id-document-type", "Death certificate")
         }
+
+      
+
         ]
       }) }}
-
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item" style ="margin-top: -20px;">
+          <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+          <label class="govuk-label govuk-radios__label" for="contact">
+          Other
+          </label>
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="contact-by-email">
+              Provide details
+            </label>
+            <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+          </div>
+        </div>
       {{ govukButton({
         text: "Continue"
       }) }}

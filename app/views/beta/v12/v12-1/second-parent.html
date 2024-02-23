@@ -35,7 +35,7 @@
     
   </h1>
 </legend>
-
+<div class="govuk-body">You must enter the names the other parent registered with their GP. If they've changed their name, they will need to contact their GP.</div>
 <div id="passport-issued-hint" class="govuk-hint">
   This is the name that will be printed on the certificate.
 </div>
@@ -60,10 +60,11 @@
       
 </div>
 </div>
-<button type="submit" class="govuk-button">
-  Continue
-</button>
-
+{{ govukButton({
+  text: "Continue",
+  href: "parent-contact",
+  isStartButton: false
+  }) }}
       </form>
 
     </div>

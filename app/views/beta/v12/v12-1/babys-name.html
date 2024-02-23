@@ -34,10 +34,12 @@
     
   </h1>
 </legend>
-<p>You may not have named your baby.</p>
-<div id="passport-issued-hint" class="govuk-hint">
-  If you select ‘No’, this will not be shown on the certificate.
-</div>
+<p>You may not have named your baby. </p>
+<p>If you did name your baby, you can enter a first name, full name, or a nickname.</p>
+
+<p>
+  If you select ‘No’, this section will be blank on the certificate.
+</p>
 
       <form class="form" action="baby-name-version1" method="post">
 
@@ -57,7 +59,7 @@
             </div>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="babys" name="years" type="radio" value="no" data-aria-controls="conditional-contact-2">
+            <input class="govuk-radios__input" id="babys" name="years" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="contact-2">
               No
             </label>
@@ -68,9 +70,15 @@
        
        </div>
        </div>
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+         
+       <div class="govuk-inset-text">
+        You can enter more than one name if you've lost twins, triplets or more.
+       </div>
+    {{ govukButton({
+      text: "Continue",
+      href: "contact-email",
+      isStartButton: false
+      }) }}
 
       </form>
 

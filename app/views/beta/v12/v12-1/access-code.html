@@ -25,34 +25,28 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
   {% block content %}
   <div class="govuk-form-group">
     <div class="govuk-grid-column-two-thirds">
-      
+      <span class="govuk-caption-l">Your details</span>
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-           What is your access code?
+            We've provided an access code for the other parent
           </h1>
         </legend>
       </fieldset>
+      <div class="govuk-body">You will need to give the other parent this access code so they can enter it to confirm their details</div>
 
         <form class="form" action="get-security-code" method="post">
          
-            <div id="passport-issued-hint" class="govuk-hint">
-              Enter your access code provided by the main applicant to confirm your details
-            </div>
-            <div id="passport-issued-hint" class="govuk-hint">
-              For example, 12345678
-            </div>
-
-            <input class="govuk-input govuk-input--width-10" id="nhs-number" name="nhs-number" type="text"
-              aria-describedby="nhs-number-hint" inputmode="numeric">
-
+          <div class="govuk-inset-text">
+            12345678
+          </div>
           </div>
          
          </div>
-
+<p>They will need to use this URL to confirm their details <a href="www.pregnancy-loss-certificate.herokuapp.com/Beta/v12/s-1/enter-access-code">www.pregnancy-loss-certificate.herokuapp.com/Beta/v12/s-1/enter-access-code</a>.</p>
          {{ govukButton({
           text: "Continue",
-          href: "start-page",
+          href: "declaration",
           isStartButton: false
           }) }}
     </form>

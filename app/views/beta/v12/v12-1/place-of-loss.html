@@ -34,12 +34,12 @@
     
   </h1>
 </legend>
+
+<div class="govuk-inset-text">This does not need to be a full address. You can enter a town, city or hospital.</div>
 <p>You may not know the place of your baby loss.</p>
-<div id="passport-issued-hint" class="govuk-hint">
-  If you select ‘No’ or ‘I do not know the place of my baby loss’, this will not be shown on the certificate.</div>
-  <div id="passport-issued-hint" class="govuk-hint">
-    For example, Canterbury, Kent   
-  </div>
+<p>
+  If you select ‘No’ or ‘I do not know the place of my baby loss’, this section will be blank on the certificate.</p>
+  
 
       <form class="form" action="sex-of-baby" method="post">
 
@@ -52,13 +52,19 @@
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
             <div class="govuk-form-group">
-             
-             
+              <label class="govuk-label" for="email">
+                Place of loss
+              </label>
+              <div id="passport-issued-hint" class="govuk-hint">
+               
+                For example, Canterbury, Kent   
+              </div>
+
               <input class="govuk-input" id="baby-name" name="place" type="text">
             </div>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="babys" name="years" type="radio" value="no" data-aria-controls="conditional-contact-2">
+            <input class="govuk-radios__input" id="babys" name="years" type="radio" value="no" >
             <label class="govuk-label govuk-radios__label" for="contact-2">
               No
             </label>

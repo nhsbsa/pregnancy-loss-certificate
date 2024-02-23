@@ -26,60 +26,49 @@
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
-  <span class="govuk-caption-l">Confirm your eligibility</span>
+
   <fieldset class="govuk-fieldset">
-    
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Did your baby loss happen on or after 1 September 2018?
+    Would you like to request another certificate?
+    
   </h1>
 </legend>
+<p>You can request another certificate if you've had more than one baby loss.</p>
 
-      <form class="form" action="loss-5-years" method="post">
+      <form class="form" action="multiple-certificate" method="post">
+      
        
-        <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="years-yes" name="years" type="radio" value="yes" data-aria-controls="conditional-contact">
-            <label class="govuk-label govuk-radios__label" for="contact">
+            <input class="govuk-radios__input" id="multiple-certificate" name="cert" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="yes">
               Yes
             </label>
           </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="contact-by-email">
-               Enter year of baby loss
-                <div class="govuk-hint"> For example, 2021</div>
-                
-              </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" name="year-loss" type="yes" spellcheck="false" autocomplete="email">
-            </div>
-          </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="years-no" name="years" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="contact-2">
+            <input class="govuk-radios__input" id="multiple-certificate" name="cert" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="no">
               No
             </label>
           </div>
-         
+        </div>
           </fieldset>
         </div>
-      
-
+        
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
 
       </form>
-    </div>
+</div>
+</div>
     </div>
   </div>
   <style>
-   
-    .govuk-fieldset__legend--l {
-      margin-bottom: 30px;
-    }
+    
     .govuk-radios {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
   </style>
 

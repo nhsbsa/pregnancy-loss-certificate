@@ -26,68 +26,53 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
   {% block content %}
   <div class="govuk-form-group">
     <div class="govuk-grid-column-two-thirds">
-      <div class="govuk-form-group">
-        
+        <span class="govuk-caption-l">Other parent's details</span>
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Is this name correct?
+              What is their name?
 
             </h1>
           </legend>
+
+
+          <p>You must enter the names the other parent registered with their GP. If they've changed their name, they'll need to contact their GP.</p>
+
 
 
           <div id="passport-issued-hint" class="govuk-hint">
             This is the name that will be printed on the certificate.
           </div>
 
-          <form class="form" action="parent-name" method="post">
-            <div class="govuk-inset-text">
-             George Clooney
-            </div>
-            
-            
-      </div>
+          <form class="form" action="test-route" method="post">
 
-      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="check-details-yes" name="details" type="radio" value="yes">
-          <label class="govuk-label govuk-radios__label" for="changed-name">
-            Yes
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="check-details-no" name="details" type="radio" value="no">
-          <label class="govuk-label govuk-radios__label" for="changed-name-2">
-            No
-          </label>
-        </div>
-      </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="add-name">
+                First name
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="add-name" name="parent1-firstname" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="one-third">
+                Last name
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="add-name" name="parent1-lastname" type="text">
+            </div>
     </div>
   </div>
 
 
-  {{ govukButton({
-    text: "Continue",
-    href: "nhs-number",
-    isStartButton: false
-    }) }}
-  </form>
-</div>
-</div>
-</div>
-<style>
-  .govuk-radios {
-    margin-bottom: 30px;
-  }
 
-  .govuk-details {
-    margin-top: 30px;
-  }
 
-  .govuk-button {
-    margin-left: 15px;
-  }
-</style>
+<button class="govuk-button" data-module="govuk-button" type="submit">
+  Continue
+</button>
+</div>
+</div>
+
+
+
+</form>
+</div>
 
 {% endblock %}

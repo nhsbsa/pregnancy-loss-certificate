@@ -221,9 +221,9 @@ router.post(/multiple-certificate/, (req, res) => {
   const MultCert = req.session.data['cert']
 
   if (MultCert == 'yes') {
-    res.redirect('request-pending-mult');
+    res.redirect('confirmation-page-copy');
   } else {
-    res.redirect('request-pending');
+    res.redirect('confirmation-page');
   }
 
 })

@@ -17,20 +17,22 @@
     </p>
   </div>
   {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
 {% endblock %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      We cannot provide the main applicant with a baby loss certificate because you've chosen not to continue
+      
+We cannot provide a baby loss certificate because we need the other parent's email address.
     </h1>
-    <h3 class="govuk-heading-m">Support organisations</h3>
+<p>You and the other parent will need to <a href="">contact us</a>.</p>
+    
+    <h2 class="govuk-heading-m">Support organisations</h2>
     <p>The following organisations give support and advice:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li><a href=''>Sands</a></li>
@@ -42,18 +44,7 @@
       <li><a href="">NHS How to access mental health services</a></li>
       <li><a href="">Daddy's with angels</a></li>
     </ul>
-    
-   
-   </div>
   </div>
 </div>
- 
-  
-</form>
-  <style>
-    .govuk-fieldset__heading {
-      margin-bottom: 30px;
-    }
-    
-  </style>
+
 {% endblock %}

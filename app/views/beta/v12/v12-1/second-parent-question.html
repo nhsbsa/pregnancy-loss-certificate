@@ -26,52 +26,58 @@
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
-  <span class="govuk-caption-l">Confirm your eligibility</span>
+  <span class="govuk-caption-l">Details on the certificate</span>
   <fieldset class="govuk-fieldset">
-    
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Do you live in England?
+    Would you still like to receive the certificate if the other parent cannot confirm their details?
   </h1>
 </legend>
 
-      <form class="form" action="location-uk" method="post">
+
+      <form class="form" action="parent-add" method="post">
         
-         
+        <div class="govuk-body">
+          The other parent might not confirm their details. This could be because they do not respond in time, or they do not want to be named on the certificate. 
+        </div>
+        <div class="govuk-body">If this happens, you can still request a certificate that shows only your name as a parent of your baby. 
+
+          We'll let you know if the other parent gives permission. </div>
+       
+        
+              
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="location-uk-yes" name="location" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="location-england-yes">
+            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="yes">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="location-uk-no" name="location" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="location-england-no">
+            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="no">
               No
             </label>
           </div>
         </div>
-           
           </fieldset>
         </div>
-    
-
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+       
+        {{ govukButton({
+          text: "Continue",
+          href: "babys-details",
+          isStartButton: false
+          }) }}
 
       </form>
-    </div>
+</div>
+</div>
     </div>
   </div>
   <style>
     
-    .govuk-fieldset__legend--l {
-      margin-bottom: 30px;
-    }
-    .govuk-radios--inline {
-      margin-bottom: 30px;
+    .govuk-radios {
+      margin-bottom: 20px;
     }
   </style>
 
