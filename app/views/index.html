@@ -11,15 +11,24 @@
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
-    <div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-warning-text__assistive">Important</span>
-        Don't use any of this prototype code on production services, it doesn't adhere to development standards and is hacked together quickly and roughly.
-      </strong>
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+         This is a sensitive service and topic
+         
+        </p>
+      </div>
     </div>
+   
     <div class="payment-summary-wrap">
+      
       <div class="payment-summary">
+      
         <h1 class="govuk-heading-l">
           Prototype of live service
          </h1>
@@ -29,7 +38,11 @@
           <div class="govuk-inset-text">
            To get through each journey you must use the date of birth 27/3/2007 and postcode NE1 3JA
           </div>
+
           <a class="govuk-button" href="/live/start-page">Main applicant journey start now</a>
+          <p>The other parent journey is if the main applicant has decided to add another parent to the certificate. The other parent 
+            will receive an email with a URL link to their own start page where they will go through identity verification to prove they are who they say they are.
+          </p>
           <a class="govuk-button" href="/live/live-parent2/start-page">Other parent journey start now</a>
           <p class="govuk-body hidden" id="payment-summary-breakdown">
           </p>
