@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -19,48 +19,47 @@
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
-}) }}
+  }) }}
   {% endblock %}
 
   {% block content %}
-  <span class="govuk-caption-l">Your details</span>
   <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h1 class="govuk-fieldset__heading">
-          Enter your security code
-        </h1>
-      </legend>
+  <span class="govuk-caption-l">Your details</span>
+    <div class="govuk-grid-column-two-thirds">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Enter your security code
+          </h1>
+        </legend>
 
-      <form action="security-code" class="form" method="post">
+        <form action="security-code" class="form" method="post">
 
-        <p>We sent your security code by email to Sa********@gmail.com</p>
+          <p>We sent your security code by email to Sa********@gmail.com</p>
 
-        <div class="govuk-hint" id="passport-issued-hint">
-          If you do not receive the email within a few minutes, check your spam or junk mail folder.
-        </div>
-        <input aria-describedby="nhs-number-hint" class="govuk-input govuk-input--width-10" id="security-code" inputmode="numeric" name="entercode" type="text">
-  </div>
+          <div class="govuk-hint" id="passport-issued-hint">
+            If you do not receive the email within a few minutes, check your spam or junk mail folder.
+          </div>
+          <input aria-describedby="nhs-number-hint" class="govuk-input govuk-input--width-10" id="security-code"
+            inputmode="numeric" name="entercode" type="text">
 
+      </fieldset>
+      <p>Didn't get your security code?
+        <a href="">Resend code
+        </a>
+      </p>
+
+      {{ govukButton({
+      text: "Continue",
+      href: "check-your-details-nhs",
+      isStartButton: false
+      }) }}
+
+      </form>
+    </div>
 </div>
-</fieldset>
-<p>Didn't get your security code?
-  <a href="">Resend code
-  </a>
-</p>
-
-{{ govukButton({
-text: "Continue",
-href: "check-your-details-nhs",
-isStartButton: false
-}) }}
-
-</form>
-
 </div>
-</div>
-<style>
 
 
-</style>
-{% endblock %}
+
+    {% endblock %}
