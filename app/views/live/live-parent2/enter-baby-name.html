@@ -2,6 +2,7 @@
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,57 +26,42 @@
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
-<div class="govuk-form-group">
-
+  <span class="govuk-caption-l">Details on your certificate</span>
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Your baby's details
+    Baby's name
     
   </h1>
 </legend>
+</fieldset>
 
+<div id="passport-issued-hint" class="govuk-hint">
+  This is the name that will be printed on the certificate.
+</div>
 
-      <form class="form" action="parent-add" method="post">
+      <form class="form" action="check-your-answers" method="post">
+       
         <div class="govuk-form-group">
-
-          <p>The next 4 questions are about your baby. You can add these details to the certificate:</p>
-          
-
+          <input class="govuk-input" id="baby-name" name="baby-firstname" type="text">
+        </div>
+</form>
+</div>
+</div>
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </div>
      
-        
-       
-        <ul class="govuk-list govuk-list--bullet">
-          <li>date of baby loss</li>
-          <li>place of baby loss</li>
-          <li>baby's sex</li>
-          <li>baby's name</li>
-          
-          
-       
-      
-        </ul>
 
-        <p>If you choose not to answer these questions, the sections will be blank on the certificate.</p>
-        
-      {{ govukButton({
-        text: "Continue",
-        href: "date-of-loss",
-        isStartButton: false
-        }) }}
-    
-</div>
-      
-</div>
-</div>
     </div>
   </div>
   <style>
-  .govukButton {
-    margin-left: 15px;
-  }
-   
-  
+    
+    .govuk-grid-column-two-thirds {
+      padding-left: 0px;
+    }
+    
   </style>
 
 {% endblock %}

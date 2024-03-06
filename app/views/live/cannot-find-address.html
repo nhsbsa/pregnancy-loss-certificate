@@ -16,66 +16,45 @@
       </span>
     </p>
   </div>
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+ 
 {% endblock %}
 
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
-
+ 
   <fieldset class="govuk-fieldset">
+    
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Your baby's details
-    
+    We cannot send the certificate because we have not found a valid postal address
   </h1>
 </legend>
 
-
-      <form class="form" action="parent-add" method="post">
-        <div class="govuk-form-group">
-
-          <p>The next 4 questions are about your baby. You can add these details to the certificate:</p>
-          
-
-     
+      <form class="form" action="location-england" method="post">
         
-       
-        <ul class="govuk-list govuk-list--bullet">
-          <li>date of baby loss</li>
-          <li>place of baby loss</li>
-          <li>baby's sex</li>
-          <li>baby's name</li>
-          
-          
-       
-      
-        </ul>
+        <p class="govuk-body">We have found your record, but it does not have a valid postal address.</p>
+        <p class="govuk-body">If your address has changed, you can contact your GP surgery to update your details.</p>
 
-        <p>If you choose not to answer these questions, the sections will be blank on the certificate.</p>
-        
-      {{ govukButton({
-        text: "Continue",
-        href: "date-of-loss",
-        isStartButton: false
-        }) }}
-    
-</div>
-      
-</div>
-</div>
+
+        </div>
+        </div>
+           
+          </fieldset>
+        </div>
+       
+
+       
+
+      </form>
+    </div>
     </div>
   </div>
-  <style>
-  .govukButton {
-    margin-left: 15px;
+<style>
+  .govuk-button {
+    margin-left: 10px;
   }
-   
-  
-  </style>
+</style>
 
 {% endblock %}
