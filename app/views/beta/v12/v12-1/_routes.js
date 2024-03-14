@@ -90,14 +90,14 @@ router.post(/date-of-birth/, (req, res) => {
 
 })
 
-router.post(/relation-baby/, (req, res) => {
+router.post(/relation-mult-cert/, (req, res) => {
 
   const relationship = req.session.data['relation-baby']
 
   if (relationship == 'no') {
       res.redirect('relation-kickout')
   } else {
-      res.redirect('nhs-number')
+      res.redirect('add-parent')
   }
 
 })
