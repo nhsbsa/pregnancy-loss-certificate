@@ -34,10 +34,11 @@
     
   </h1>
 </legend>
-<p>You may not know the sex of your baby. <br>
-  <br>If you select 'No, I do not want the sex on the certificate', this section will be blank of the certificate.</p>
+<p>You may not know the sex of your baby.</p>
 <p></p>
-
+<div id="passport-issued-hint" class="govuk-hint">
+  If you select ‘No’ or ‘I do not know the sex of my baby’, this will not be shown on the certificate. 
+</div>
 
       <form class="form" action="baby-gender-version1" method="post">
         
@@ -46,20 +47,20 @@
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="yes">
-              Yes, I'd like the sex on the certificate
+              Yes
             </label>
           </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="no">
-              No, I do not want the sex on the certificate
+              No
             </label>
           </div>
           <p>or</p>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="unknown">
             <label class="govuk-label govuk-radios__label" for="unknown">
-           I do not know the sex and I'd like 'unknown' on the certificate
+              I do not know the sex of my baby
             </label>
           </div>
         </div>

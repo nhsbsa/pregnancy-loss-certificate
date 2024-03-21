@@ -25,61 +25,60 @@
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
-  <span class="govuk-caption-l">Details on the certificate</span>
 <div class="govuk-form-group">
+  <span class="govuk-caption-l">Details on the certificate</span>
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you like the sex of your baby on the certificate?
+    Would you like to add another parent to the certificate? 
     
   </h1>
 </legend>
-<p>You may not know the sex of your baby. <br>
-  <br>If you select 'No, I do not want the sex on the certificate', this section will be blank of the certificate.</p>
-<p></p>
 
 
-      <form class="form" action="baby-gender-version1" method="post">
+      <form class="form" action="parent-add" method="post">
         
-         
-         <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            You must have permission from the other parent if you choose to add them to the certificate.
+          </strong>
+        </div>
+
+              
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="yes">
+            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="yes">
-              Yes, I'd like the sex on the certificate
+              Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="no">
+            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="no">
-              No, I do not want the sex on the certificate
-            </label>
-          </div>
-          <p>or</p>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="unknown">
-            <label class="govuk-label govuk-radios__label" for="unknown">
-           I do not know the sex and I'd like 'unknown' on the certificate
+              No
             </label>
           </div>
         </div>
-            </div>
           </fieldset>
-       
-</div>
-</div>
+        </div>
+        
+      
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
 
       </form>
-
+</div>
+</div>
     </div>
   </div>
   <style>
-   
-    .govuk-button {
-      margin-left: 15px;
+    
+    .govuk-radios {
+      margin-bottom: 20px;
     }
   </style>
+
 {% endblock %}

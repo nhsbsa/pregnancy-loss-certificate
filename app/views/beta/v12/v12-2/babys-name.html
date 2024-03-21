@@ -30,44 +30,44 @@
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you like the sex of your baby on the certificate?
+    Would you like your baby’s name on the certificate?
     
   </h1>
 </legend>
-<p>You may not know the sex of your baby. <br>
-  <br>If you select 'No, I do not want the sex on the certificate', this section will be blank of the certificate.</p>
-<p></p>
+<p>You may not have named your baby.</p>
+<div id="passport-issued-hint" class="govuk-hint">
+  If you select ‘No’, this will not be shown on the certificate.
+</div>
 
+      <form class="form" action="baby-name-version1" method="post">
 
-      <form class="form" action="baby-gender-version1" method="post">
-        
-         
-         <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="yes">
-              Yes, I'd like the sex on the certificate
+            <input class="govuk-radios__input" id="years-yes" name="years" type="radio" value="yes" data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Yes
             </label>
           </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="no">
-              No, I do not want the sex on the certificate
-            </label>
-          </div>
-          <p>or</p>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="unknown">
-            <label class="govuk-label govuk-radios__label" for="unknown">
-           I do not know the sex and I'd like 'unknown' on the certificate
-            </label>
-          </div>
-        </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+            <div class="govuk-form-group">
+              <div id="passport-issued-hint" class="govuk-hint">
+                Baby's name
+              </div>
+              <input class="govuk-input" id="baby-name" name="baby-firstname" type="text">
             </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="babys" name="years" type="radio" value="no" data-aria-controls="conditional-contact-2">
+            <label class="govuk-label govuk-radios__label" for="contact-2">
+              No
+            </label>
+          </div>
+            </div>
+          </div>
           </fieldset>
        
-</div>
-</div>
+       </div>
+       </div>
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
@@ -77,9 +77,9 @@
     </div>
   </div>
   <style>
-   
     .govuk-button {
       margin-left: 15px;
     }
   </style>
+
 {% endblock %}

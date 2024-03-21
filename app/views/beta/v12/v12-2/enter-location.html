@@ -25,61 +25,63 @@
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
-  <span class="govuk-caption-l">Details on the certificate</span>
 <div class="govuk-form-group">
+  <span class="govuk-caption-l">Confirm your eligibility</span>
   <fieldset class="govuk-fieldset">
+    
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you like the sex of your baby on the certificate?
-    
+    Were you living in England at the time of your baby loss?
   </h1>
 </legend>
-<p>You may not know the sex of your baby. <br>
-  <br>If you select 'No, I do not want the sex on the certificate', this section will be blank of the certificate.</p>
-<p></p>
 
-
-      <form class="form" action="baby-gender-version1" method="post">
+      <form class="form" action="location-england" method="post">
         
          
-         <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="yes">
-              Yes, I'd like the sex on the certificate
+            <input class="govuk-radios__input" id="location-england-yes" name="location" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="location-england-yes">
+              Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="no">
-              No, I do not want the sex on the certificate
-            </label>
-          </div>
-          <p>or</p>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="unknown">
-            <label class="govuk-label govuk-radios__label" for="unknown">
-           I do not know the sex and I'd like 'unknown' on the certificate
+            <input class="govuk-radios__input" id="location-england-no" name="location" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="location-england-no">
+              No
             </label>
           </div>
         </div>
-            </div>
+           
           </fieldset>
-       
-</div>
-</div>
+        </div>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Why we're asking you this question
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            You can only get a certificate if you lived in England when you lost your baby.
+          </div>
+        </details>
+
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
 
       </form>
-
+    </div>
     </div>
   </div>
   <style>
-   
-    .govuk-button {
-      margin-left: 15px;
+    
+    .govuk-fieldset__legend--l {
+      margin-bottom: 30px;
+    }
+    .govuk-radios--inline {
+      margin-bottom: 30px;
     }
   </style>
+
 {% endblock %}
