@@ -30,7 +30,7 @@
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you still like to receive the certificate if the other parent cannot confirm their details?
+    Would you still like to receive the certificate if the other parent does not confirm their details?
   </h1>
 </legend>
 
@@ -38,15 +38,16 @@
       <form class="form" action="parent-add" method="post">
         
         <div class="govuk-body">
-          The other parent might not confirm their details. This could be because they do not respond in time, or they do not want to be named on the certificate. 
+          You can still receive a certificate that shows only your name as a parent of your baby, if the other parent does not:
         </div>
-        <div class="govuk-body">If this happens, you can still request a certificate that shows only your name as a parent of your baby. 
-
-          We'll let you know if the other parent gives permission. </div>
-       
+        <ul class="govuk-list govuk-list--bullet">
+          <li>respond within 7 days</li>
+          <li>give permission to be named on the certificate</li>
+      
+        </ul>
         
               
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="yes">
@@ -54,10 +55,18 @@
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="no">
+            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="no" value="email" data-aria-controls="conditional-contact">
             <label class="govuk-label govuk-radios__label" for="no">
               No
             </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-email">
+                If the other parent does not respond, your request for a certificate will be cancelled.
+              </label>
+             
+            </div>
           </div>
         </div>
           </fieldset>
