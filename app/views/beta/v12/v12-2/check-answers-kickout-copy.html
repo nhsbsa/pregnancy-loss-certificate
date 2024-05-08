@@ -28,27 +28,28 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Are you sure you want to cancel the request for a certificate?
+      You've told us the details are incorrect  
     </h1>
 
-    <div class="govuk-body">If the details are not correct, the request for a certificate will be cancelled and the main applicant will need to start a new request.</div>
     <form class="form" action="cya-kickout" method="post">
-        
-         
-      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-body">If the details are incorrect, the request for a certificate will be cancelled and the main applicant will need to start a new request.</div>
+      
+      <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="cya-kickout" name="kickout" type="radio" value="yes">
           <label class="govuk-label govuk-radios__label" for="location-england-yes">
-            Yes
+            Yes, I'd like to cancel the request for a certificate
           </label>
         </div>
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="cya-kickout" name="kickout" type="radio" value="no">
           <label class="govuk-label govuk-radios__label" for="location-england-no">
-            No
+            No, I'd like to continue with the request for a certificate
           </label>
         </div>
       </div>
+    
+      
     
    
 
@@ -60,7 +61,7 @@
       </button>
 
 
-
+</form>
 
    </div>
 
@@ -69,6 +70,9 @@
   <style>
     .govuk-fieldset__heading {
       margin-bottom: 30px;
+    }
+    .govuk-button {
+      margin-top: 20px;
     }
     
   </style>

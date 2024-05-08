@@ -16,34 +16,26 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
       </span>
     </p>
   </div>
-
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+  }) }}
   {% endblock %}
 
   {% block content %}
   <div class="govuk-form-group">
     <div class="govuk-grid-column-two-thirds">
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            Blank sample certificate
-          </h1>
-        </legend>
-       
-        
-        <img src="/public/images/certificate.png" alt="User icon" style="height: 800px;">
-      </div>
-      <div class="govuk-grid-column-one-third">
-
-        <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
-          
-          <nav role="navigation" aria-labelledby="subsection-title">
-            
+       <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Sample certificate
+            </h1>
           </legend>
               </aside>
-              <div class="govuk-body">This is a blank sample of a baby loss certificate. </div>
+            
                 <div class="govuk-body">
-                  The certificate is an official document issued on behalf of the Secretary of State for Health and Social Care. It will be printed on watermarked paper.<br> <br>
-                  The wording on the certificate is as follows:<br><br>Certificate of baby loss under 24 weeks gestation. <br><br>Issued on behalf of the Secretary of State for Health and Social Care.<br> <br><ul class="govuk-list govuk-list--number">
+                  The baby loss certificate is an official document issued on behalf of the Secretary of State for Health and Social Care. It will be printed on watermarked paper.<br> <br>
+                  The wording on the certificate is as follows:<br><br>Certificate of baby loss under 24 weeks gestation.Issued on behalf of the Secretary of State for Health and Social Care.<br> <br><ul class="govuk-list govuk-list--number">
                   <li>Certificate reference</li>
                   <li>Date of issue</li>
                   <li>Name and surname of parent</li>
@@ -59,16 +51,34 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
               
                            </div>
            </div>
-          </nav>
-        </aside>
-    
-      </div>
-        </div>
-       
-       
+           
+            {{ govukButton({
+              text: "Continue",
+              href: "date-of-loss",
+              isStartButton: false
+              }) }}
+         
    
+        </div>
+      
+       </div>
+       
+       
+      </form>
+      
+    </div>
+   </div>
   </div>
-</div>
-</form>
-</fieldset>
-{% endblock %}
+  
+
+   
+  <style>
+    .govukButton {
+      margin-left: 15px;
+    }
+    .govuk-body {
+      margin-top: 20px;
+    }
+  </style>
+
+  {% endblock %}

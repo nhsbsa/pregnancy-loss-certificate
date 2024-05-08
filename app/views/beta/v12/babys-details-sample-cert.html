@@ -41,24 +41,10 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
                 <li>baby's name</li>
               </ul>
               <p>If you choose not to answer these questions, the sections will be blank on the certificate.</p>
+              <div class="govuk-inset-text">You can <a href="sample-cert">view a sample of a baby loss certificate (opens in new tab)</a>.</div>
             </div>
-            <details class="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                 The certificate can show
-                </span>
-              </summary>
-              <div class="govuk-details__text">
-                <ul class="govuk-list govuk-list--bullet">
-                  <li>name of parents</li>
-                  <li>relationship to baby</li>
-                  <li>date of baby loss</li>
-                  <li>place of baby loss</li>
-                  <li>baby's sex</li>
-                  <li>baby's name</li>
-                </ul>
-              </div>
-            </details>
+           
+           
             {{ govukButton({
               text: "Continue",
               href: "date-of-loss",
@@ -68,6 +54,30 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
    
         </div>
        
+        <div class="govuk-grid-column-one-third">
+
+          <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+            <h2 class="govuk-heading-m" id="subsection-title">
+              Baby loss certificate sample
+            </h2>
+            <nav role="navigation" aria-labelledby="subsection-title">
+              <img src="/public/images/certificate.png" alt="User icon" style="height: 300px;">
+      <div class="govuk-body">The certificate can show:</div>
+         
+              <ul class="govuk-list govuk-list--bullet">
+                <li>name of parents</li>
+                <li>relationship to baby</li>
+                <li>date of baby loss</li>
+                <li>place of baby loss</li>
+                <li>baby’s sex</li>
+                <li>baby’s name</li>
+              
+                 
+              </ul>
+            </nav>
+          </aside>
+      
+        </div>
        </div>
        
        
