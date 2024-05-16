@@ -228,6 +228,32 @@ router.post(/multiple-certificate/, (req, res) => {
 
 })
 
+router.post(/request-cert/, (req, res) => {
+
+  // if user wants their baby gender included in the certificate they will select yes then it 
+  //will take them to enter baby gender name
+  const certRequest = req.session.data['reqcert']
+
+  if (certRequest == 'no') {
+    res.redirect('confirmation-page');
+  } else {
+    res.redirect('add-parent-cert-copy');
+  }
+
+})
+router.post(/v12-add-parent/, (req, res) => {
+
+  // if user wants their baby gender included in the certificate they will select yes then it 
+  //will take them to enter baby gender name
+  const addSecondParent = req.session.data['parent']
+
+  if (addSecondParent == 'yes') {
+    res.redirect('add-other-parent');
+  } else {
+    res.redirect('confirmation-page-copy');
+  }
+
+})
 
 
 module.exports = router;
