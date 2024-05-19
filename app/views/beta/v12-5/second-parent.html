@@ -2,6 +2,7 @@
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,68 +27,56 @@
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
-
+  <span class="govuk-caption-l">Details on the certificate</span>
   <fieldset class="govuk-fieldset">
-    
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    What is your reference number?
+    What is their name?
+    
   </h1>
 </legend>
+<div class="govuk-body">You must enter the names the other parent registered with their GP. If they've changed their name, they will need to contact their GP.</div>
+<div id="passport-issued-hint" class="govuk-hint">
+  This is the name that will be printed on the certificate.
+</div>
 
-      <form class="form" action="parent-reference" method="post">
-       
+      <form class="form" action="enter-parent-name" method="post">
         
-
           <div class="govuk-form-group">
-          
-         
-         <p>You can find your reference number in your email. 
-        </p>
-        <label class="govuk-label" for="email">
-         Enter reference number
-        </label>
-            <div id="csigAppReference-hint" class="govuk-hint">
-              For example, J4R-8H5-2K9F1
-            </div>
-           
-          
-          <input class="govuk-input govuk-!-width-one-half" id="ref-number" name="csigAppReference" type="text" aria-describedby="csigAppReference-hint" aria-required="true">
-          
+            <label class="govuk-label" for="add-name">
+              First name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="add-name" name="parent2-firstname" type="text">
           </div>
-          
-          
           <div class="govuk-form-group">
-          
-            
-            
-          
-          
+            <label class="govuk-label" for="one-third">
+              Last name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="add-name" name="parent2-lastname" type="text">
           </div>
-             
-                      <input type="hidden" name="x-csrf-token" value="SHOjUB77-WLzE5cRajErkFL6DOk5Zv6R0L34">
-              </form>
-          </fieldset>
-        </div>
-        </div>
-        </div>
-
-        <button type="submit" class="govuk-button">
-          Continue
-        </button>
-
-      </form>
+        
+      </div>
     </div>
+      
+</div>
+</div>
+{{ govukButton({
+  text: "Continue",
+  href: "parent-contact",
+  isStartButton: false
+  }) }}
+      </form>
+
     </div>
   </div>
   <style>
     
-    .govuk-fieldset__legend--l {
-      margin-bottom: 30px;
+    .govuk-grid-column-two-thirds {
+      padding-left: 0px;
+
     }
-    .govuk-radios--inline {
-      margin-bottom: 30px;
-    }
+    
+    
   </style>
 
 {% endblock %}

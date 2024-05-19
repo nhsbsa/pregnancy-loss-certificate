@@ -26,53 +26,38 @@
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
-
+  <span class="govuk-caption-l">Confirm your eligibility</span>
   <fieldset class="govuk-fieldset">
     
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    What is your reference number?
+    Were you living in England at the time of your baby loss?
   </h1>
 </legend>
 
-      <form class="form" action="parent-reference" method="post">
-       
+      <form class="form" action="location-england" method="post">
         
-
-          <div class="govuk-form-group">
-          
          
-         <p>You can find your reference number in your email. 
-        </p>
-        <label class="govuk-label" for="email">
-         Enter reference number
-        </label>
-            <div id="csigAppReference-hint" class="govuk-hint">
-              For example, J4R-8H5-2K9F1
-            </div>
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="location-england-yes" name="location" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="location-england-yes">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="location-england-no" name="location" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="location-england-no">
+              No
+            </label>
+          </div>
+        </div>
            
-          
-          <input class="govuk-input govuk-!-width-one-half" id="ref-number" name="csigAppReference" type="text" aria-describedby="csigAppReference-hint" aria-required="true">
-          
-          </div>
-          
-          
-          <div class="govuk-form-group">
-          
-            
-            
-          
-          
-          </div>
-             
-                      <input type="hidden" name="x-csrf-token" value="SHOjUB77-WLzE5cRajErkFL6DOk5Zv6R0L34">
-              </form>
           </fieldset>
         </div>
-        </div>
-        </div>
+      
 
-        <button type="submit" class="govuk-button">
+        <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
 
