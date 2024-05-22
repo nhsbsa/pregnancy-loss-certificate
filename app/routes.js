@@ -34,6 +34,7 @@ router.use('live', require('./views/live/live-parent2/_routes'));
 
 router.use('beta/v12', require('./views/beta/v12/_routes'));
 router.use('beta/v12/12-1', require('./views/beta/v12/v12-1/_routes'));
+router.use('beta/v12/12-2', require('./views/beta/v12/v12-2/_routes'));
 
 
 router.use('beta/v11', require('./views/beta/v11/_routes'));

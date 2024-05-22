@@ -121,16 +121,16 @@ router.post(/cya-kickout/, (req, res) => {
   }
 
 })
-router.post(/parent-reference/, (req, res) => {
+router.post(/other-ref-number/, (req, res) => {
 
-  const SecurityCode = req.session.data['entercode']
+  const EnterRef = req.session.data['parent-reference']
 
-  if (SecurityCode == '123') {
-    res.redirect('check-your-details-nhs');
-  } else if (SecurityCode == '1234') {
-    res.redirect('check-your-details-nhs-option-2')
+  if (EnterRef == '123') {
+    res.redirect('nhs-number');
+  } else if (EnterRef == '4321') {
+    res.redirect('contact-email')
   } else {
-    res.redirect('check-your-details-nhs-option-3');
+    res.redirect('contact-email');
   }
 
 })

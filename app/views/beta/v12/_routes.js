@@ -255,5 +255,17 @@ router.post(/v12-add-parent/, (req, res) => {
 
 })
 
+router.post(/security-code/, (req, res) => {
 
+  const SecurityCode = req.session.data['entercode']
+
+  if (SecurityCode == '123') {
+    res.redirect('check-your-details-nhs');
+  } else if (SecurityCode == '1234') {
+    res.redirect('check-your-details-nhs-option-2')
+  } else {
+    res.redirect('check-your-details-nhs-option-3');
+  }
+
+})
 module.exports = router;

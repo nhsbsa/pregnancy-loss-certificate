@@ -35,31 +35,31 @@
   </h1>
 </legend>
 
-      <form class="form" action="relation-baby" method="post">
+      <form class="form" action="v12-5-relation-baby" method="post">
         <div id="passport-issued-hint" class="govuk-hint">
           This will be shown on the certificate.
         </div>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Mother" name="relation-baby" type="radio" value="Mother">
+            <input class="govuk-radios__input" id="Mother" name="v12-5-relation-baby" type="radio" value="Mother">
             <label class="govuk-label govuk-radios__label" for="where-do-you-live">
              Mother
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Biological father" name="relation-baby" type="radio" value="Father">
+            <input class="govuk-radios__input" id="Biological father" name="v12-5-relation-baby" type="radio" value="Father">
             <label class="govuk-label govuk-radios__label" for="Father">
               Father
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Non biological father" name="relation-baby" type="radio" value="Parent">
+            <input class="govuk-radios__input" id="Non biological father" name="v12-5-relation-baby" type="radio" value="Parent">
             <label class="govuk-label govuk-radios__label" for="Parent">
               Parent
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="Non biological mother" name="relation-baby" type="radio" value="Surrogate">
+            <input class="govuk-radios__input" id="Non biological mother" name="v12-5-relation-baby" type="radio" value="Surrogate">
             <label class="govuk-label govuk-radios__label" for="Surrogate">
               Surrogate
             </label>
@@ -67,7 +67,7 @@
           
           <p>or</p>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="No, none of these" name="relation-baby" type="radio" value="no">
+            <input class="govuk-radios__input" id="No, none of these" name="v12-5-relation-baby" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for=" No, none of these">
              None of these
             </label>
@@ -82,10 +82,11 @@
              
            
         
-
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+    {{ govukButton({
+      text: "Continue",
+      href: "babys-details",
+      isStartButton: false
+      }) }}
 
       </form>
     </div>
