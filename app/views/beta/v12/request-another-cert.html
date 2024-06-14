@@ -25,8 +25,6 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
   {% block content %}
   <div class="govuk-form-group">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">Details on the certificate</span>
-
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
@@ -40,33 +38,28 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
         <form class="form" action="request-cert" method="post">
 
 
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="request-cert" name="reqcert" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="no">
-                No
-              </label>
-            </div>
-            <p>or</p>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="request-cert" name="reqcert" type="radio" value="yes">
               <label class="govuk-label govuk-radios__label" for="yes">
-                Yes, I've had more than one baby loss
+               Yes
+              </label>
+            </div>
+        
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="request-cert" name="reqcert" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="no">
+               No
               </label>
             </div>
 
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="request-cert" name="reqcert" type="radio" value="yestwin">
-              <label class="govuk-label govuk-radios__label" for="yestwin">
-                Yes, I've lost twins, triplets or more
-              </label>
-            </div>
+           
           </div>
-    </div>
+  
     </fieldset>
 
   </div>
-
+</div>
 <button class="govuk-button" data-module="govuk-button" type="submit">
   Continue
 </button>

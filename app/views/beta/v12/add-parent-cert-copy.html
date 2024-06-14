@@ -25,18 +25,20 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
   {% block content %}
   <div class="govuk-form-group">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">Details on the certificate</span>
+   
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
-            Would you like to add another parent to the certificate?
+            Would you like to add this other parent to the next certificate?
 
           </h1>
         </legend>
 
 
         <form class="form" action="v12-add-parent" method="post">
-
+          <div class="govuk-inset-text">
+            Joe Bloggs
+          </div>
 
           <div class="govuk-radios--inline" data-module="govuk-radios">
             <div class="govuk-radios__item">

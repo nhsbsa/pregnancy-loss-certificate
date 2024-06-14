@@ -25,7 +25,7 @@
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
-  <span class="govuk-caption-l">Details on the certificate</span>
+  
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -47,14 +47,20 @@
               Yes, I'd like to add the same parent
             </label>
           </div>
-          
+          <div class="govuk-radios__divider">or</div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="request-cert" name="reqcert" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="yes">
               No, I'd like to add a different parent
             </label>
           </div>
-          
+         
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="request-cert" name="reqcert" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="yes">
+              No, I'd like only myself named as a parent
+            </label>
+          </div>
           
         </div>
             </div>
