@@ -237,7 +237,7 @@ router.post(/request-cert/, (req, res) => {
   if (certRequest == 'no') {
     res.redirect('confirmation-page');
   } else {
-    res.redirect('add-parent-cert-copy');
+    res.redirect('add-other-parent');
   }
 
 })
