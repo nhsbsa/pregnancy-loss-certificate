@@ -164,19 +164,8 @@ router.post(/address-postcode/, (req, res) => {
 
 })
 
-router.post(/security-code/, (req, res) => {
 
-  const SecurityCode = req.session.data['entercode']
 
-  if (SecurityCode == '123') {
-    res.redirect('check-your-details-nhs');
-  } else if (SecurityCode == '1234') {
-    res.redirect('check-your-details-nhs-option-2')
-  } else {
-    res.redirect('check-your-details-nhs-option-3');
-  }
-
-})
 router.post(/confirm-post-address/, (req, res) => {
 
   // creating a variable named lossInEngland, assigning the variable the value of the input (location)
@@ -228,6 +217,19 @@ router.post(/multiple-certificate/, (req, res) => {
 
 })
 
+router.post(/email-security-code/, (req, res) => {
+
+  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
+  // lossInEngland = location (value)
+  const securityCode = req.session.data['seccode']
+
+  if (securityCode == 'email') {
+    res.redirect('enter-security-code');
+  } else {
+    res.redirect('enter-security-code-text');
+  }
+
+})
 
 
 module.exports = router;

@@ -23,7 +23,9 @@
 {% endblock %}
 
 {% block content %}
+<span class="govuk-caption-l">Your details</span>
 <div class="govuk-form-group">
+  
   <div class="govuk-grid-column-two-thirds">
  <fieldset class="govuk-fieldset">
     
@@ -52,7 +54,9 @@
           <input class="govuk-input govuk-!-width-one-half" id="csigAppReference" name="csigAppReference" type="text" aria-describedby="csigAppReference-hint" aria-required="true">
           
           
-   
+          </div>
+          </div>
+          
           
             
             
@@ -78,6 +82,13 @@
     </div>
   </div>
 </fieldset>
-  
+  <style>
+    .govuk-button {
+      margin-left: 10px;
+    }
+    .govuk-caption-l {
+      margin-left: 15px;
+    }
+  </style>
 
 {% endblock %}

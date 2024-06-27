@@ -37,13 +37,14 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
           <p>We sent your security code by email to Sa********@gmail.com</p>
 
-          <div class="govuk-hint" id="passport-issued-hint">
+          <div class="govuk-body">
             If you do not receive the email within a few minutes, check your spam or junk mail folder.
           </div>
           <input aria-describedby="nhs-number-hint" class="govuk-input govuk-input--width-10" id="security-code"
             inputmode="numeric" name="entercode" type="text">
 
-      </fieldset>
+    
+      
       <p>Didn't get your security code?
         <a href="">Resend code
         </a>
@@ -54,12 +55,19 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
       href: "check-your-details-nhs",
       isStartButton: false
       }) }}
-
+    </fieldset>
       </form>
     </div>
 </div>
 </div>
-
+<style>
+  .govuk-caption-l {
+    margin-left: 15px;
+  }
+  .govuk-input {
+    margin-bottom: 10px;
+  }
+</style>
 
 
     {% endblock %}

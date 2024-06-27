@@ -25,7 +25,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
   {% block content %}
   <div class="govuk-form-group">
     <div class="govuk-grid-column-two-thirds">
-      
+      <span class="govuk-caption-l">Your details</span>
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
@@ -36,30 +36,27 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
         <form class="form" action="get-security-code" method="post">
          
-            <div id="passport-issued-hint" class="govuk-hint">
+            <div class="govuk-body">
               Your NHS number is a 10 digit number that you find on any letter the NHS has sent you.
             </div>
             <div id="passport-issued-hint" class="govuk-hint">
               For example, 485 777 3456
             </div>
 
-            <input class="govuk-input govuk-input--width-10" id="nhs-number" name="nhs-number" type="text"
-              aria-describedby="nhs-number-hint" inputmode="numeric">
-
-          </div>
-         
-         </div>
-
-         {{ govukButton({
-          text: "Continue",
-          href: "check-your-details-copy",
-          isStartButton: false
-          }) }}
-    </form>
-   </div>
+            <input class="govuk-input govuk-input--width-10" id="nhs-number" name="nhs-number" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
+          
+          {{ govukButton({
+            text: "Continue",
+            href: "check-your-details-copy",
+            isStartButton: false
+            }) }}
+  
+  
 
 </div>
-
+</div>
+</div>
+</form>
 <style>
   .govuk-button {
     margin-left: 10px;
@@ -67,10 +64,4 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 </style>
 
 
-
-
-
-<style>
- 
-</style>
 {% endblock %}

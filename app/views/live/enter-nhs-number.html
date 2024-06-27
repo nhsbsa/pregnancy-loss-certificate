@@ -42,41 +42,28 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
             <div id="passport-issued-hint" class="govuk-hint">
               For example, 485 777 3456
             </div>
+<div class="govuk-label">NHS number</div>
+          
 
-            <input class="govuk-input govuk-input--width-10" id="nhs-number" name="nhs-number" type="text"
-              aria-describedby="nhs-number-hint" inputmode="numeric">
-
-          </div>
          
-         </div>
+          <input class="govuk-input govuk-input--width-10" id="nhs-number" name="nhs-number" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
+         
          
          <div class="govuk-inset-text">
           The certificate will not go on your GP record.
         </div>
+       
+
          {{ govukButton({
           text: "Continue",
           href: "check-your-details-copy",
           isStartButton: false
           }) }}
+          
     </form>
    </div>
 
 </div>
 
-<style>
-  .govuk-button {
-    margin-left: 10px;
-  }
-  .govuk-inset-text {
-    margin-left: 10px;
-  }
-</style>
 
-
-
-
-
-<style>
- 
-</style>
 {% endblock %}
