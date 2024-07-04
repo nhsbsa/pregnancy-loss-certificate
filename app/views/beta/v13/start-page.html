@@ -1,0 +1,134 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+ 
+{{ govukBreadcrumbs({
+items: [
+{
+text: "Home",
+href: "#"
+},
+{
+text: "Births, deaths, marriages and care",
+href: "#"
+},
+{
+  text: "Having a child, parenting and adoption",
+href: "#"
+},
+{
+
+}
+]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+     Request a baby loss certificate
+    </h1>
+    <p>
+      If your pregnancy ends before 24 weeks, you can get a certificate in memory of your baby.  It’s free to get a certificate.</p>
+    <p>You do not need to request a certificate if you prefer not to. It’s optional.</p>
+    
+    <div class="govuk-inset-text">The certificate is not a legal document - for example you cannot use it to claim benefits. The certificate will not be added to your GP record.</div>
+
+    <p>If your pregnancy ends from 24 weeks onwards, you need to <a href="https://www.gov.uk/register-stillbirth">register a stillbirth</a> instead.</p>
+
+   
+
+ 
+    <h2 class="govuk-heading-m">Before you start</h2>
+    
+    <p>You'll need:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>your NHS number or postcode registered with your GP</li>
+      <li>the mobile phone or email address registered with your GP</li>
+      <li>permission from the other parent and their email address, if you want their name on the certificate</li>
+    </ul>
+    <p>You can <a rel="external" href="https://www.nhs.uk/nhs-services/online-services/find-nhs-number/">find out your NHS number on the NHS website</a>.</p>
+        
+    
+    <h2 class="govuk-heading-l">
+      Request a certificate
+    </h2>
+    <p>You can ask for a certificate if all these apply:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>you’ve lost a baby before the 24th week of pregnancy</li>
+      <li>you’re one of the baby’s parents or surrogate</li>
+      <li>you’re at least 16 years old</li>  
+      <li>your pregnancy ended on or after 1 September 2018</li>
+      <li>you lived in England when you lost your baby</li>
+      <li>you live in England</li>
+      
+    </ul>
+    {{ govukButton({
+      text: "Start now",
+      href: "enter-location-uk",
+      isStartButton: true
+      }) }}
+    <p>If you’ve lost more than one pregnancy, you can apply separately to get certificate for each baby loss.</p>
+   <p>Your certificate should arrive in the post within 14 days. If you do not receive it, you can request another certificate.</p>
+
+   
+   <h2 class="govuk-heading-m">Get help to request a certificate</h2>
+   <p>If you want your certificate in a different format or cannot request the certificate online, email or call the helpline.</p>
+   <div class="contact">
+    <p>Baby loss certificate service <br>
+    Email: <a href="mailto:babylosscertificate@nhsbsa.nhs.uk">babylosscertificate@nhsbsa.nhs.uk</a> <br>
+    Telephone: 0300 330 9445</p>
+    
+    <p>Monday to Friday, 9am to 5pm <br>
+    <a href="/call-charges">Find out about call charges</a></p>
+    </div>
+    
+
+
+  </div>
+
+  
+</div>
+ 
+
+<style>
+.contact {
+    border-left: 1px solid #b1b4b6;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+user agent stylesheet
+div {
+    display: block;
+}
+.govspeak .contact, .gem-c-govspeak .contact {
+    position:relative
+}
+</style>
+
+{% endblock %}
