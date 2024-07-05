@@ -230,6 +230,18 @@ router.post(/email-security-code/, (req, res) => {
   }
 
 })
+router.post(/another-request-cert/, (req, res) => {
 
+  // if user wants their baby gender included in the certificate they will select yes then it 
+  //will take them to enter baby gender name
+  const CertificateRequest = req.session.data['certreq']
+
+  if (CertificateRequest == 'no') {
+    res.redirect('confirmation-page-new');
+  } else {
+    res.redirect('add-other-parent');
+  }
+
+})
 
 module.exports = router;

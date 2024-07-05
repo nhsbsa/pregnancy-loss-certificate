@@ -29,10 +29,12 @@
 <h2 class="govuk-heading-m"> Would you like to request a <br> certificate for another baby loss?</h2>
 
 
+<form class="form" action="another-request-cert" method="post">
+
 <div class="govuk-radios" data-module="govuk-radios">
   <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="years-yes" name="years" type="radio" value="yes" data-aria-controls="conditional-contact">
-    <label class="govuk-label govuk-radios__label" for="contact">
+    <input class="govuk-radios__input" id="another-request-cert" name="certreq" type="radio" value="yes" data-aria-controls="conditional-contact">
+    <label class="govuk-label govuk-radios__label" for="yes">
       Yes
     </label>
   </div>
@@ -40,7 +42,6 @@
     <div class="govuk-form-group">
       <label class="govuk-label" for="contact-by-email">
         You'll need to answer some questions again. This is because the next certificate is for another baby loss.<br>
-       <br> If you'd like to come back later to request another certificate, you'll need to start again. 
         
         
       </label>
@@ -48,8 +49,8 @@
     </div>
   </div>
   <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="years-no" name="years" type="radio" value="no">
-    <label class="govuk-label govuk-radios__label" for="contact-2">
+    <input class="govuk-radios__input" id="another-request-cert" name="certreq" type="radio" value="no">
+    <label class="govuk-label govuk-radios__label" for="no">
       No
     </label>
   </div>
@@ -57,6 +58,11 @@
   <button class="govuk-button" data-module="govuk-button" type="submit">
     Continue
   </button>
+
+
+
+</form>
+
   <style>
     .govuk-panel--confirmation {
     color: #0b0c0c;
