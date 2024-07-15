@@ -25,7 +25,7 @@ router.post(/location-england/, (req, res) => {
 
 })
 
-router.post(/location-uk/, (req, res) => {
+router.post(/ccslocation-uk/, (req, res) => {
 
   // creating a variable named lossInEngland, assigning the variable the value of the input (location)
   // lossInEngland = location (value)

@@ -1,20 +1,15 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-ccs.html" %}
+
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your reference number?" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
-
 {% block beforeContent %}
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      alpha
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
+
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -31,10 +26,16 @@
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              NHS number
+             Name
             </dt>
             <dd class="govuk-summary-list__value">
-              485 777 3456
+             
+                {% if data['parent1-firstname'] %}
+                {{ data['parent1-firstname'] }} {{ data['parent1-lastname'] }}
+                {% else %}
+                Example name
+                {% endif %}
+           
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -61,7 +62,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Address
+              Postcode
             </dt>
             <dd class="govuk-summary-list__value">
               NE1 3JA
@@ -72,27 +73,7 @@
               </a>
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-             Name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['first-name'] %}
-
-                {{ data['first-name'] }} {{ data['last-name'] }}
-
-                {% else %}
-
-                Example name
-
-               {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
+          
           </dl>
         
           
@@ -108,11 +89,13 @@
         </ul>
         
        
-        <form action="/ccs/get-security-code" method="post" novalidate>
+        <form action="/v12/get-security-code" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
-          <button class="govuk-button" data-module="govuk-button">
-            Agree and continue
-          </button>
+          {{ govukButton({
+            text: "Agree and continue",
+            href: "get-security-code",
+            isStartButton: false
+            }) }}
         </form>
       </div>
     </div>

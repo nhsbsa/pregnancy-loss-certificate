@@ -1,15 +1,28 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-ccs2.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your reference number?" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
 {% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "start-page"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
 
   <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
+        Beta
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -55,7 +68,7 @@
           <option value="7">7 Test Road, Town, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, Test, NE1 OLD</option>
         </select>
       </select>
-      <p><a href="/ccs/what-is-your-address">My address isn't listed</a></p>
+      <p><a href="/v12/what-is-your-address">My address isn't listed</a></p>
     </div>
     </div>
     </div>
@@ -64,7 +77,7 @@
     </fieldset>
       </form>
     
-      <a class="govuk-button" href="/ccs/add-parent">Continue</a>
+      <a class="govuk-button" href="/v12/add-parent">Continue</a>
     </div>
   </div>
   <style>

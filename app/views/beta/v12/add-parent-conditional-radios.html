@@ -35,9 +35,9 @@
 </legend>
 
 
-      <form class="form" action="v12-add-parent" method="post">
+      <form class="form" action="/v12/what-happens-next-new" method="post">
       
-       
+       <div class="govuk-body">You’ll need to let the other parent know that you’d like to add their name to the certificate. </div>
         <div class="govuk-radios govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="version10-add-parent" name="parent" type="radio" value="yes" data-aria-controls="conditional-contact">
@@ -48,11 +48,11 @@
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
 
               <label class="govuk-label" for="contact-by-email">
-                You’ll need to let the other parent know that you’d like to add their name to the certificate.<br>
-               <br> We’ll ask you for the other parent’s email address so we can send them a link. They’ll have up to 7 days to:<br>
+                
+                We’ll ask you for the other parent’s email address so we can send them a link. They’ll have up to 7 days to:<br>
                 <br><ul class="govuk-list govuk-list--bullet">
                   <li>confirm their details, including their date of birth</li>
-                  <li>give their permission to have their name on the certificate</li>
+                  <li>give their permission to be named on the certificate</li>
               
                 </ul>
 
@@ -70,9 +70,11 @@
           </fieldset>
         </div>
         
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+{{ govukButton({
+  text: "Continue",
+  href: "what-happens-next-new",
+  isStartButton: false
+  }) }}
 
       </form>
 </div>

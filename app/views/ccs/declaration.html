@@ -1,20 +1,15 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-ccs.html" %}
+
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your reference number?" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
-
 {% block beforeContent %}
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      alpha
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
+
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -28,12 +23,14 @@
       <div class="govuk-grid-column-two-thirds-from-desktop">
         <div class="govuk-width-container">
           <h1 class="govuk-heading-l">Declaration</h1>
-          <p>Do you declare that the information you have provided is true and correct?</p>
-          <p>Do you consent to the release of information provided by you, to those agencies who may be able to validate that information in support of your request?</p>
-          <p>Do you acknowledge that the ‘Certificate of Baby Loss Before 24 Weeks of Pregnancy’ you receive is not a legal document?</p>
+          
+          <p>I declare that the information I have provided is true and correct.</p>
+          <p>I certify that I have read, understood and agree to the  <a href="">Terms of Use and Privacy Policy</a>.</p>
+          <p>I consent to my personal information provided in this application to be used to verify my identity.</p>
+          <p>I acknowledge the ‘Certificate of Baby Loss Before 24 Weeks of Pregnancy’ I receive is not a legal document.</p>
          
           
-          <form action="/ccs/confirmation-page" method="post" novalidate>
+          <form action="/live/confirmation-page" method="post" novalidate>
             <div class="govuk-form-group">
              
              
@@ -46,12 +43,23 @@
               </label>
             </div>
           </div>
+          </div>
+         
         </div>
-          <button class="govuk-button" data-module="govuk-button">
-          I agree – send my request
-          </button>
-          
+        {{ govukButton({
+          text: "I agree and continue",
+          href: "confirmation-page",
+          isStartButton: false
+          }) }}
+      
+ 
         </form>
   </main>
 </div>
+<style>
+  .govuk-checkboxes {
+    margin-bottom: 20px;
+  }
+
+</style>
 {% endblock %}

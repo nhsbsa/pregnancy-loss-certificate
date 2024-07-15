@@ -3,7 +3,7 @@
 {% set feedbackType = 'step' %}
 {% set section = '3' %}
 
-{% set heading = "Would you still like to receive the certificate if the other parent cannot confirm their details?" %}
+{% set heading = "Would you still like to receive the certificate if the other parent does not confirm their details?" %}
 
 {% block pageTitle %}
   {{ heading }} – {{ serviceName }} – NHSBSA
@@ -35,7 +35,7 @@
           }
         },
         hint: {
-          html: "<p>The other parent may choose to not be on the certificate, you can still request a certificate without them on the certficate.</p><p>We'll let you know if the other parent gives permission for their name to be on the certificate.</p>"
+          html: "<p>The other parent might not confirm their details. This could be because they do not respond in time, or they do not want to be named on the certificate. <p>If this happens, you can still request a certificate that shows only your name as a parent of your baby.</p>"
         },
         items: [
           {

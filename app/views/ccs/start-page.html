@@ -13,7 +13,7 @@ Start page template – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
+        Beta
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -28,11 +28,15 @@ text: "Home",
 href: "#"
 },
 {
-text: "Section",
+text: "Births, deaths, marriages and care",
 href: "#"
 },
 {
-text: "Request a baby loss certificate"
+  text: "Having a child, parenting and adoption",
+href: "#"
+},
+{
+
 }
 ]
 }) }}
@@ -47,57 +51,72 @@ text: "Request a baby loss certificate"
     <h1 class="govuk-heading-xl">
      Request a baby loss certificate
     </h1>
-    <p>Use this service to request a certificate in memory of your baby.</p>
-    <p>The certificate recognises a baby loss before 24 weeks of pregnancy.</p>
+    <p>
+      If your pregnancy ends before 24 weeks, you can get a certificate in memory of your baby.  It’s free to get a certificate.</p>
+    <p>You do not need to request a certificate if you prefer not to. It’s optional.</p>
     
-    <p></p>
-    <p>You can <a href="">find out more about the certificate</a>.</p>
+    <div class="govuk-inset-text">The certificate is not a legal document - for example you cannot use it to claim benefits. The certificate will not be added to your GP record.</div>
 
-    
-     
-    <h2 class="govuk-heading-l">
-      Before you start
-    </h2>
-    <p>You can use this service if you:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>have had a baby loss before 24 weeks of pregnancy</li>
-      <li>have had a baby loss in the last 5 years in England</li>
-      <li>have a <a href="">parental relationship</a> to the baby</li>  
-      <li>are aged 13 or over</li>
-      <li>live in the UK</li>
-      
-    </ul>
+    <p>If your pregnancy ends from 24 weeks onwards, you need to <a href="https://www.gov.uk/register-stillbirth">register a stillbirth</a> instead.</p>
+
    
+
+ 
+    <h2 class="govuk-heading-m">Before you start</h2>
+    
     <p>You'll need:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li>permission from another parent if you choose to name them on the certificate</li>
-      <li>your postcode</li>
-     
+      <li>your NHS number or postcode registered with your GP</li>
+      <li>the mobile phone or email address registered with your GP</li>
+      <li>permission from the other parent and their email address, if you want their name on the certificate</li>
     </ul>
-
-   
+    <p>You can <a rel="external" href="https://www.nhs.uk/nhs-services/online-services/find-nhs-number/">find out your NHS number on the NHS website</a>.</p>
+        
     
-    <div class="govuk-inset-text">
-      The certificate is not a legal document.
-    </div>
-
-    <p>By using this service you are agreeing to its <a href="">terms of use and privacy policy</a>.</p>
+    <h2 class="govuk-heading-l">
+      Request a certificate
+    </h2>
+    <p>You can ask for a certificate if all these apply:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>you’ve lost a baby before the 24th week of pregnancy</li>
+      <li>you’re one of the baby’s parents or surrogate</li>
+      <li>you’re at least 16 years old</li>  
+      <li>your pregnancy ended on or after 1 September 2018</li>
+      <li>you lived in England when you lost your baby</li>
+      <li>you live in England</li>
+      
+    </ul>
     {{ govukButton({
-    text: "Start now",
-    href: "enter-location",
-    isStartButton: true
-    }) }}
+      text: "Start now",
+      href: "enter-location-uk",
+      isStartButton: true
+      }) }}
+    <p>If you’ve lost more than one pregnancy, you can apply separately to get certificate for each baby loss.</p>
+   <p>Your certificate should arrive in the post within 14 days. If you do not receive it, you can request another certificate.</p>
 
 
-<h2 class="govuk-heading-m">
- Other ways to request a certificate
-</h2>
-<p>If you're unable to use this digital service, <a href="">you can apply offline</a>.</p>
-<p>If you need the certificate in a different format, <a href="">contact us</a>.</p>
+
   </div>
 
   
 </div>
+ 
 
+<style>
+.contact {
+    border-left: 1px solid #b1b4b6;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+user agent stylesheet
+div {
+    display: block;
+}
+.govspeak .contact, .gem-c-govspeak .contact {
+    position:relative
+}
+</style>
 
 {% endblock %}

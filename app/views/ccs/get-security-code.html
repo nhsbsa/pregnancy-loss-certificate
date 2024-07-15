@@ -1,26 +1,23 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-ccs.html" %}
+
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your reference number?" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
-
 {% block beforeContent %}
 <div class="govuk-width-container app-width-container">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
+
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
+
+
 
 {% block content %}
 <div class="govuk-form-group">
@@ -35,20 +32,20 @@
   </h1>
 </legend>
 
-      <form class="form" action="/ccs/enter-security-code" method="post">
+      <form class="form" action="email-security-code" method="post">
      
         
-<p>With the details you gave us we think we've found your contact details from your health records</p>
+<p>With the details you gave us, we think we've found your contact details from your health records.</p>
 <p>We now need to send you a security code. After 30 minutes your security code will not work.</p>
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+            <input class="govuk-radios__input" id="email-security-code" name="seccode" type="radio" value="email">
             <label class="govuk-label govuk-radios__label" for="where-do-you-live">
               By email to Sa********@gmail.com
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+            <input class="govuk-radios__input" id="email-security-code" name="seccode" type="radio" value="text">
             <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
               By text to ********009
             </label>
@@ -58,7 +55,7 @@
           
         
 </div>
-</div>
+
 <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
@@ -66,24 +63,21 @@
     </span>
   </summary>
   <div class="govuk-details__text">
-    If these contact details are wrong contact your GP practice
+    You’ll need to contact your GP practice and ask them to update your details before you can request a certificate. 
   </div>
 </details>
 
-
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+<button class="govuk-button" data-module="govuk-button" type="submit">
+  Continue
+</button>
 
       </form>
 
     </div>
-    
+  </div>
   </div>
   <style>
-    .govuk-fieldset__heading {
-      margin-bottom: 30px;
-    }
+    
     .govuk-grid-column-two-thirds {
       padding-left: 0px;
     }

@@ -29,6 +29,8 @@ router.use('live', require('./views/live/live-parent2/_routes'));
 //////////////////////////////
 ////////   Beta  ////////
 //////////////////////////////
+router.use('ccs', require('./views/ccs/_routes'));
+router.use('ccs2', require('./views/ccs2/_routes'));
 
 
 router.use('beta/v13', require('./views/beta/v13/_routes'));

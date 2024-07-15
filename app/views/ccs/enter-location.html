@@ -1,26 +1,22 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-ccs.html" %}
+
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your reference number?" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-width-container app-width-container">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
   {{ govukBackLink({
   text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  href: "start-page"
+  }) }}
 {% endblock %}
+
+
 
 {% block content %}
 <div class="govuk-form-group">
@@ -55,16 +51,7 @@
            
           </fieldset>
         </div>
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Why we're asking you this question
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            We need to check you're eligible to use this service.
-          </div>
-        </details>
+      
 
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue

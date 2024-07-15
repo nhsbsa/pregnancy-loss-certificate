@@ -1,21 +1,15 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-ccs.html" %}
+
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your reference number?" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
-
 {% block beforeContent %}
-<div class="govuk-width-container app-width-container">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
+
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -30,43 +24,114 @@
         <h1 class="govuk-heading-l">Check your answers</h1>
         <h2 class="govuk-heading-m">Your details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-             27 March 2007
-            </dd>
-           
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Address
-            </dt>
-            <dd class="govuk-summary-list__value">
-              1 Test Town<br>Town<br>NE1 3JA
-            </dd>
-            
-          </div>
-          </dl>
-        <h2 class="govuk-heading-m">Details on the certificate</h2>
-        <h3 class="govuk-heading-s">Parent 1</h3>
-        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['first-name'] %}
-              {{ data['first-name'] }}
-                 {{ data['last-name'] }}
-                {% else %}
-                Example name
-                {% endif %}
+              {% if data['parent1-firstname'] %}
+              {{ data['parent1-firstname'] }} {{ data['parent1-lastname'] }}
+              {% else %}
+              Example name
+              {% endif %}
             </dd>
-            
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
           </div>
+         
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              4 Albert Road<br>Newcastle<br>NE1 3JA
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Test@test.com
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact-email">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+              </dd>
+            </dd>
+          </div>
+          
+
+
+
+</dl>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+<h2 class="govuk-heading-m">Other parent's details</h2>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Do you want to add another parent?
+  </dt>
+  <dd class="govuk-summary-list__value">
+  Yes
+  </dd>
+  <dd class="govuk-summary-list__actions">
+   
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="add-parent">
+      Change<span class="govuk-visually-hidden"> name</span>
+    </a>
+  </dd>
+</div>
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+    Email address
+  </dt>
+  <dd class="govuk-summary-list__value">
+   Test@test.com
+  </dd>
+  <dd class="govuk-summary-list__actions">
+   
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="parent-contact">
+      Change<span class="govuk-visually-hidden"> name</span>
+    </a>
+  </dd>
+</div>
+
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key">
+   Date of birth
+  </dt>
+  <dd class="govuk-summary-list__value">
+   1 January 1998
+  </dd>
+  <dd class="govuk-summary-list__actions">
+   
+  </dd>
+  <dd class="govuk-summary-list__actions">
+    <a class="govuk-link" href="enter-date-of-birth-parent">
+      Change<span class="govuk-visually-hidden"> name</span>
+    </a>
+  </dd>
+</div>
+
+
+</dl>
+
+        <h2 class="govuk-heading-m">Details on the certificate</h2>
+        <h3 class="govuk-heading-s">Parent 1</h3>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+         
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Your relationship to your baby
@@ -78,40 +143,119 @@
              Example relation
              {% endif %}
             </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="relation-to-baby">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your name
+            </dt>
+            <dd class="govuk-summary-list__value">
+             
+             Example name
+           
+            </dd>
             
           </div>
           </dl>
-          <h3 class="govuk-heading-s">Parent 2</h3>
+        
+          <h3 class="govuk-heading-s">Parent 2
+            
+          </h3>
+         
+          
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {% if data['parent2-firstname'] %}
-                 {{ data['parent2-firstname'] }}
-                {% else %}
-                Example name
-                {% endif %}
-              </dd>
-              
-            </div>
+            
+          
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Their relationship to your baby
               </dt>
               <dd class="govuk-summary-list__value">
-                {% if data['relation'] %}
-                {{ data['relation'] }}
+                {% if data['parent-2'] %}
+                {{ data['parent-2'] }}
                {% else %}
                Example relation
                {% endif %}
               </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="second-relation-to-baby">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                 
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Their name
+              </dt>
+              <dd class="govuk-summary-list__value">
              
+                To be added once the other parent confirms their details
+              
+               </dd>
+              
             </div>
             </dl>
+         
             <h3 class="govuk-heading-s">Baby's details</h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of baby loss
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['dol-day'] %}
+                        {{ data['dol-day'] }} <span class="cya-month">{{ data['dol-month'] }}</span> {{ data['dol-year'] }}
+                        {% else %}
+                      Example date of loss
+                      {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="date-of-loss">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Place of baby loss
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['place'] %}
+                  {{ data['place'] }}
+                 {% else %}
+                 Example place
+                 {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="place-of-loss">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Baby's sex
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['baby-gender'] %}
+              {{ data['baby-gender'] }}
+             {% else %}
+             Example sex
+             {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="sex-of-baby">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          
+         
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Baby's name
@@ -123,43 +267,11 @@
               Example name
               {% endif %}
             </dd>
-            
-          </div>
-          
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Baby's sex
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['baby-gender'] %}
-              {{ data['baby-gender'] }}
-             {% else %}
-             Example gender
-             {% endif %}
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="babys-name">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
             </dd>
-            
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of baby loss
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['dol-day'] %}
-                    {{ data['dol-day'] }} <span class="cya-month">{{ data['dol-month'] }}</span> {{ data['dol-year'] }}
-                    {% else %}
-                  Example date of loss
-                  {% endif %}
-            </dd>
-           
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Place of baby loss
-            </dt>
-            <dd class="govuk-summary-list__value">
-             Example place
-            </dd>
-            
           </div>
           </div>
           
@@ -168,12 +280,15 @@
         </dl>
         
        
-        <form action="/ccs/declaration" method="post" novalidate>
+        <form action="Beta/v12/declaration" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
-          <button class="govuk-button" data-module="govuk-button">
-            Accept and continue
-          </button>
+          {{ govukButton({
+            text: "Accept and continue",
+            href: "declaration",
+            isStartButton: false
+            }) }}
         </form>
+       
       </div>
     </div>
   </main>

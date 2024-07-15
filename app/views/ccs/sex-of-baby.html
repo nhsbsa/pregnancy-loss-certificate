@@ -1,25 +1,19 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-ccs.html" %}
+
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your reference number?" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
-
 {% block beforeContent %}
-<div class="govuk-width-container app-width-container">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
+
   {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -30,15 +24,13 @@
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you like to include the sex of your baby on the certificate? 
+    Would you like the sex of your baby on the certificate?
     
   </h1>
 </legend>
 <p>You may not know the sex of your baby.</p>
-<p></p>
-<div id="passport-issued-hint" class="govuk-hint">
-  If you select No or I do not know the sex of my baby, this will not be shown on the certificate. 
-</div>
+<p>If you select ‘No’ or ‘I do not know the sex of my baby’, this section will be blank on the certificate</p>
+
 
       <form class="form" action="baby-gender-version1" method="post">
         
@@ -47,27 +39,28 @@
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="yes">
-              Yes
+              Yes, I’d like the sex on the certificate
             </label>
           </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="no">
-              No
+              No, I do not want the sex on the certificate
+
             </label>
           </div>
-          <p>or</p>
+          <div class="govuk-radios__divider">or</div>
+        </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="unknown">
             <label class="govuk-label govuk-radios__label" for="unknown">
-              I do not know the sex of my baby
+              I do not know the sex and I’d like ‘Unknown’ on the certificate
             </label>
           </div>
         </div>
             </div>
           </fieldset>
        
-</div>
 </div>
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue

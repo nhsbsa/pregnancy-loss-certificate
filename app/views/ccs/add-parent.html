@@ -1,26 +1,21 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-ccs.html" %}
+
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your reference number?" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
-{% block beforeContent %}
-<div class="govuk-width-container app-width-container">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
 
 {% block content %}
 <div class="govuk-form-group">
@@ -36,26 +31,18 @@
 </legend>
 
 
-      <form class="form" action="parent-add" method="post">
-        
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            You must have permission from the other parent if you choose to add them to the certificate.
-          </strong>
-        </div>
-
-              
+      <form class="form" action="version10-add-parent" method="post">
+      
+       
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="yes">
+            <input class="govuk-radios__input" id="version10-add-parent" name="parent" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="yes">
               Yes
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="no">
+            <input class="govuk-radios__input" id="version10-add-parent" name="parent" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="no">
               No
             </label>
@@ -64,7 +51,6 @@
           </fieldset>
         </div>
         
-      
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>

@@ -125,7 +125,26 @@
               National identity card
             </label>
           </div>
-       
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="Non biological mother" name="backoffice-relation-baby" type="radio" value="Surrogate">
+            <label class="govuk-label govuk-radios__label" for="Surrogate">
+              Death certificate
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="years-yes" name="years" type="radio" value="yes" data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="contact">
+             Other identity verification type provided
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-email">
+                Other
+                 </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-20" name="year-loss" type="yes" spellcheck="false" autocomplete="email">
+            </div>
+          </div>
         </div>
         </div>
 </div>        

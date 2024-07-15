@@ -1,21 +1,24 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-ccs2.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your reference number?" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-width-container app-width-container">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
+  {{ govukBackLink({
+  text: "Back",
+  href: "start-page"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
  
 {% endblock %}
 
@@ -25,12 +28,9 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      You cannot request a baby loss certificate
+      We cannot provide a baby loss certificate because you must be aged 16 or over to use this service
     </h1>
 
-    <p>
-     This is because you must be aged 13 or over to use this service.
-    </p>
     <h3 class="govuk-heading-m">Support organisations</h3>
     <p>The following organisations give support and advice:</p>
     <ul class="govuk-list govuk-list--bullet">

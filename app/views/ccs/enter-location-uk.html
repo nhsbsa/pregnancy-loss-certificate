@@ -1,21 +1,11 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-ccs.html" %}
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-width-container app-width-container">
-  <div class="govuk-phase-banner">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-      </span>
-    </p>
-  </div>
+
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -26,16 +16,16 @@
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
-  <span class="govuk-caption-l">Your details</span>
+  <span class="govuk-caption-l">Confirm your eligibility</span>
   <fieldset class="govuk-fieldset">
     
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Do you live in the UK?
+    Do you live in England?
   </h1>
 </legend>
 
-      <form class="form" action="location-uk" method="post">
+      <form class="form" action="ccslocation-uk" method="post">
         
          
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
@@ -55,16 +45,7 @@
            
           </fieldset>
         </div>
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Why we're asking you this question
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            We need to check you're eligible to use this service.
-          </div>
-        </details>
+    
 
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
