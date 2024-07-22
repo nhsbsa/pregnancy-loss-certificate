@@ -72,7 +72,7 @@ router.post(/loss-5-years/, (req, res) => {
 
 // Date of birth 
 
-router.post(/backoffice-date-of-birth/, (req, res) => {
+router.post(/backoffice-date-ofbirth/, (req, res) => {
 
   const day = req.session.data['dob-day']
   const month = req.session.data['dob-month']
@@ -90,9 +90,9 @@ router.post(/backoffice-date-of-birth/, (req, res) => {
 
 router.post(/backoffice-relationbaby/, (req, res) => {
 
-  const Therelationship = req.session.data['backoffice-relationbaby']
+  const FirstRelationBaby = req.session.data['backoffice-relationbaby']
 
-  if (Therelationship == 'no') {
+  if (FirstRelationBaby == 'no') {
       res.redirect('relation-kickout')
   } else {
       res.redirect('what-is-your-name')
@@ -144,16 +144,16 @@ router.post(/nhs-number-action/, (req, res) => {
   }
 
 })
-router.post(/parent-add/, (req, res) => {
+router.post(/backofficeparent-add/, (req, res) => {
 
   // if user wants their baby gender included in the certificate they will select yes then it 
   //will take them to enter baby gender name
-  const AddParent = req.session.data['parent']
+  const AddbackofficeParent = req.session.data['otherparent']
 
-  if (AddParent == 'yes') {
+  if (AddbackofficeParent == 'yes') {
     res.redirect('second-relation-to-baby');
   } else {
-    res.redirect('date-of-loss');
+    res.redirect('identity-doc-copy');
   }
 
 })

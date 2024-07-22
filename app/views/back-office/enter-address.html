@@ -53,13 +53,17 @@
       
    
       
-   
+   <div class="govuk-body"><a href="what-is-your-address">Enter address manually</a></div>
   </div>
 </div>
 </div>
-  <button class="govuk-button" data-module="govuk-button" type="submit">
-    Continue
-  </button>
+
+{{ govukButton({
+  text: "Continue",
+  href: "address-list",
+  isStartButton: false
+  }) }}
+
 </fieldset>
     </div>
   </div>

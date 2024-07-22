@@ -1,0 +1,77 @@
+{% extends "layouts/main-beta.html" %}
+
+{% extends "layouts/main-backoffice.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '4' %}
+
+{% set heading = "What is the ID unique reference number?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "identity-doc"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="enter-address" method="post">
+
+      {% include 'beta/v11/includes/step.html' %}
+
+      <h1 class="govuk-heading-l">{{ heading }}</h1>
+
+      {{ govukInput({
+        id: "id-document-number",
+        name: "id-document-number",
+        classes: "govuk-input--width-20",
+        value: data['id-document-number'],
+        hint: {
+            text: 'For example, HARRI559146MJ93122'
+        },
+        label: {
+          text: "Enter document number"
+        }
+      }) }}
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="country-of-origin">
+          Select country of origin
+        </label>
+        <select class="govuk-select" id="country-of-origin" name="country-of-origin">
+          <option value="Great Britain" {% if data['country-of-origin'] === "Great Britain" %} selected{% endif %}>Great Britain</option>
+          <option value="East Midlands" {% if data['country-of-origin'] === "East Midlands" %} selected{% endif %}>East Midlands</option>
+          <option value="East of England" {% if data['country-of-origin'] === "East of England" %} selected{% endif %}>East of England</option>
+          <option value="london" {% if data['country-of-origin'] === "london" %} selected{% endif %}>London</option>
+          <option value="North East" {% if data['country-of-origin'] === "North East" %} selected{% endif %}>North East</option>
+          <option value="North West" {% if data['country-of-origin'] === "North West" %} selected{% endif %}>North West</option>
+          <option value="South East" {% if data['country-of-origin'] === "South East" %} selected{% endif %}>South East</option>
+          <option value="South West" {% if data['country-of-origin'] === "South West" %} selected{% endif %}>South West</option>
+          <option value="West Midlands" {% if data['country-of-origin'] === "West Midlands" %} selected{% endif %}>West Midlands</option>
+          <option value="Yorkshire and the Humber" {% if data['country-of-origin'] === "Yorkshire and the Humber" %} selected{% endif %}>Yorkshire and the Humber</option>
+        </select>
+      </div>
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "enter-address",
+        isStartButton: false
+        }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {% include 'beta/v11/includes/footer.html' %}
+{% endblock %}

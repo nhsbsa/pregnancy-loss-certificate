@@ -26,11 +26,10 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
           </legend>
 
 
-          <p>You must enter the names the other parent registered with their GP. If they've changed their name, they'll need to contact their GP.</p>
 
 
 
-          <div id="passport-issued-hint" class="govuk-hint">
+          <div class="govuk-body">
             This is the name that will be printed on the certificate.
           </div>
 
@@ -53,10 +52,12 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 
-
-<button class="govuk-button" data-module="govuk-button" type="submit">
-  Continue
-</button>
+           
+  {{ govukButton({
+    text: "Continue",
+    href: "enter-date-of-birth-parent",
+    isStartButton: false
+    }) }}
 </div>
 </div>
 
@@ -64,5 +65,10 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 </form>
 </div>
+<style>
+  .govuk-button {
+    margin-left: 10px;
+  }
+</style>
 
 {% endblock %}
