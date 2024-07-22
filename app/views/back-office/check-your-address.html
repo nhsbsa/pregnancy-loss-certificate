@@ -1,0 +1,67 @@
+{% extends "layouts/main-ccs2.html" %}
+{% set servicePhase = 'beta' %}
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your reference number?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "start-page"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group">
+  <span class="govuk-caption-l">Your details</span>
+  <fieldset class="govuk-fieldset">
+    
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    Check your address
+  </h1>
+</legend>
+
+      <form class="form" action="" method="post">
+        
+        <div class="govuk-inset-text">
+         1 TEST TOWN <br>
+         NEWCASTLE<br>
+         NE1 3JA
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
+      </div>
+      </form>
+    </div>
+    </div>
+  </div>
+  <style>
+   
+    .govuk-fieldset__legend--l {
+      margin-bottom: 30px;
+    }
+    .govuk-radios {
+      margin-bottom: 30px;
+    }
+  </style>
+
+{% endblock %}

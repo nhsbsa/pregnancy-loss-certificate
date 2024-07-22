@@ -174,6 +174,19 @@ router.post(/address-postcode/, (req, res) => {
 
 
 
+router.post(/alternative-postaddress/, (req, res) => {
+
+  const confirmAddress = req.session.data['postdetails']
+
+  if (confirmAddress == 'yes') {
+    res.redirect('nhs-number');
+  } else if (confirmAddress == 'no') {
+    res.redirect('check-your-details-kickout')
+  } else {
+    res.redirect('what-is-your-name');
+  }
+
+})
 
 // router.post(/baby-loss-date/, (req, res) => {
 

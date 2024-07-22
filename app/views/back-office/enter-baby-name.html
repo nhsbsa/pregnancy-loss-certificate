@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+  <span class="govuk-caption-l">Details on your certificate</span>
+  <fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    Baby's name
+    
+  </h1>
+</legend>
+</fieldset>
+
+<div id="passport-issued-hint" class="govuk-hint">
+  This is the name that will be printed on the certificate.
+</div>
+
+      <form class="form" action="check-your-answers" method="post">
+       
+        <div class="govuk-form-group">
+          <input class="govuk-input" id="baby-name" name="baby-firstname" type="text">
+        </div>
+</form>
+</div>
+</div>
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </div>
+     
+
+    </div>
+  </div>
+  <style>
+    
+    .govuk-grid-column-two-thirds {
+      padding-left: 0px;
+    }
+    
+  </style>
+
+{% endblock %}

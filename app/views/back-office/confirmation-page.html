@@ -1,0 +1,74 @@
+{% extends "layouts/main-backoffice.html" %}
+
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your reference number?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Request pending",
+        html: "Your reference number<br><strong>J4R-8H5-2K9F1</strong>"
+      }) }}
+
+   
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+      
+      <p>The other parent will have 7 days to give permission and confirm their details.
+      </p>
+<p>They may choose not to be named on the certificate. If you would like a certificate with only your name as a parent of your baby, you'll need to start again.</p>
+<p>If you've lost more than one pregnancy, you can <a href="">request another certificate</a>.</p>
+{{ govukButton({
+  text: "Start again",
+  href: "start-page",
+  isStartButton: false
+  }) }}
+      <h3 class="govuk-heading-m">Support organisations</h3>
+      <p>The following organisations give support and advice:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="www.nhs.uk/mental-health/social-care-and-your-rights/how-to-access-mental-health-services/">NHS How
+            to access mental health services</a></li>
+        <li><a href="www.arc-uk.org">Antenatal Results and Choices (ARC)</a></li>
+        <li><a href="www.daddyswithangels.org">Daddy’s with Angels</a></li>
+        <li><a href="www.petalscharity.org ">Petals</a></li>
+        <li><a href=“https://www.sands.org.uk/”>Sands</a></li>
+        <li><a href="www.sayinggoodbye.org">Saying Goodbye</a></li>
+        <li><a href="https://ectopic.org.uk/">The Ectopic Pregnancy Trust</a></li>
+        <li><a href="www.miscarriageassociation.org.uk">The Miscarriage Association</a></li>
+        <li><a href=“www.tommys.org”>Tommy's</a></li>
+      </ul>
+      <p>
+        <a href="#">
+          What did you think of this service?
+        </a> (takes 30 seconds)
+      </p>
+
+      
+      <p>
+        
+      </p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "layouts/main-backoffice.html" %}
+
+{% set feedbackType = 'step' %}
+{% set section = '' %}
+
+{% set heading = "What is your reference number?" %}
+
+{% block pageTitle %}
+  {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "start-page"
+  }) }}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group">
+  <span class="govuk-caption-l">Confirm your eligibility</span>
+  <fieldset class="govuk-fieldset">
+    
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    Were you living in England at the time of your baby loss?
+  </h1>
+</legend>
+
+      <form class="form" action="location-england" method="post">
+        
+         
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="location-england-yes" name="location" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="location-england-yes">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="location-england-no" name="location" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="location-england-no">
+              No
+            </label>
+          </div>
+        </div>
+           
+          </fieldset>
+        </div>
+      
+
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
+
+      </form>
+    </div>
+    </div>
+  </div>
+  <style>
+    
+    .govuk-fieldset__legend--l {
+      margin-bottom: 30px;
+    }
+    .govuk-radios--inline {
+      margin-bottom: 30px;
+    }
+  </style>
+
+{% endblock %}
