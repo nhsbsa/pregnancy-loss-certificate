@@ -183,7 +183,7 @@ router.post(/alternative-postaddress/, (req, res) => {
   } else if (confirmAddress == 'no') {
     res.redirect('check-your-details-kickout')
   } else {
-    res.redirect('what-is-your-name');
+    res.redirect('what-is-your-address');
   }
 
 })
