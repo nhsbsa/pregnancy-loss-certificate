@@ -23,3 +23,55 @@
   color: #ffffff;
   width: 860px;
 }
+
+ 
+#border 
+{
+    border: 5px solid #DEE0E2;
+    background-color: #F8F8F8;
+    display: block;
+    padding: 5px;
+ 
+}
+ 
+[aria-sort] button,
+[aria-sort] button:hover {
+  background-color: transparent;
+  border-width: 0;
+  white-space: nowrap;
+  -webkit-box-shadow: 0 0 0 0;
+  -moz-box-shadow: 0 0 0 0;
+  box-shadow: 0 0 0 0;
+  color: #005ea5;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0 10px 0 0;
+  position: relative;
+  text-align: inherit;
+  font-size: 1em;
+  margin: 0; }
+ 
+[aria-sort] button:focus,
+[aria-sort] button:hover:focus {
+  outline: 3px solid #ffbf47;
+  outline-offset: 0;
+  white-space: nowrap; }
+ 
+[aria-sort]:first-child button {
+  right: auto; }
+ 
+[aria-sort] button:before {
+  content: " \25bc";
+  position: absolute;
+  right: -1px;
+  top: 9px;
+  font-size: 0.5em; }
+ 
+[aria-sort] button:after {
+  content: " \25b2";
+  position: absolute;
+  right: -1px;
+  top: 1px;
+  font-size: 0.5em; }

@@ -1,0 +1,267 @@
+{% extends "layouts/main.html" %}
+
+{% set heading = "What do you want to do?" %}
+
+{% block pageTitle %}
+{{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block header %}
+  {% include 'crm/v3/includes/header' %}
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to search",
+    href: "search"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+  
+.govuk-summary-list__key, .govuk-summary-list__value, .govuk-summary-list__actions {
+    border-bottom: 1px solid darkgray;
+    display: table-cell;
+    padding-bottom: 8px;
+    padding-right: 24px;
+    padding-top: 8px;
+}
+.govuk-table__cell {
+  margin-bottom: 20px;
+}
+.govuk-notification-banner {
+background-color: 	#d4351c;
+border-color: 	#d4351c;
+}
+ 
+ 
+
+</style>
+<h1 class ="govuk-heading-l">Certificate details</h1>
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+     Blocked
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      Jane Doe has been blocked from  adding John Doe's name to the certificate.
+
+      
+    </p>
+  </div>
+</div>
+
+
+<br>
+<div id="search" style="margin-top: 25px; margin-bottom: -25px;">
+<div>
+<style>
+  .flex-container{
+    width: 100%;
+    min-height: 300px;
+    margin: 0 auto;
+    display: -webkit-flex; /* Safari */   
+    display: flex; /* Standard syntax */
+    border-radius: 0px;
+    
+    
+  }
+  .flex-container .column{
+   
+    margin: 20px 20px -20px 0px;
+ 
+   
+    width: 100%;
+    display: flex;
+    
+  }
+  
+  
+  
+
+ 
+</style>
+ 
+  <div>
+    
+    
+  <div class="flex-container" style="margin-top: -30px;" >
+    <div class="column">
+ 
+      
+      
+        
+      
+      
+      <div class="govuk-summary-card" aria-label="Certificate details">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-heading-m">Details on the certificate</h2>
+          <ul class="govuk-summary-card__actions">
+          
+          </ul>
+        </div>
+        <div class="govuk-summary-card__content">
+          <h2 class="govuk-heading-m">Parent 1</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Your relation to your baby
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Parent
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Your name
+              </dt>
+              <dd class="govuk-summary-list__value">
+               
+                  Father
+                
+              </dd>
+            </div>
+            <br>
+            <h2 class="govuk-heading-m">Parent 2</h2>
+            <div class="govuk-summary-list__row">
+              
+              <dt class="govuk-summary-list__key">
+                Their relation to your baby
+              </dt>
+              <dd class="govuk-summary-list__value">
+              Father
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Their name
+              </dt>
+              <dd class="govuk-summary-list__value">
+               John doe
+              </dd>
+            </div>
+            <br>
+            <h2 class="govuk-heading-m">Baby's details</h2>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of baby loss
+              </dt>
+              <dd class="govuk-summary-list__value">
+                12/1/2024
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+               Place of baby loss
+              </dt>
+              <dd class="govuk-summary-list__value">
+               Kent
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Baby's sex
+              </dt>
+              <dd class="govuk-summary-list__value">
+               Male
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Baby's name
+              </dt>
+              <dd class="govuk-summary-list__value">
+               Thomas
+              
+    
+              </dd>
+            </div>
+            
+          </dl>
+        </div>
+      </div>
+ 
+    </div>
+    
+    <div class="column">
+      
+      
+      <div class="govuk-summary-card" aria-label="Personal details">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-heading-m">Parent 2 details</h2>
+          <ul class="govuk-summary-card__actions">
+           
+            
+          </ul>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Name
+              </dt>
+              <dd class="govuk-summary-list__value">
+             John Doe
+              </dd>
+            </div>
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                101 Test Lane<br>
+                Stella<br>
+                Goldcrest<br>
+                TR110TS
+              </dd>
+            </div>
+            
+           
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                28/11/1993
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+         John.doe@hotmail.com
+    
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                NHS number
+              </dt>
+              <dd class="govuk-summary-list__value">
+                1234567890
+    
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      
+    </div>
+</div>
+ 
+      
+{{ govukButton({
+  text: "Reissue",
+  href: "reissue",
+  isStartButton: false
+}) }}
+
+
+
+      {% endblock %}

@@ -1,0 +1,187 @@
+{% extends "layouts/main.html" %}
+
+{% set heading = "What do you want to do?" %}
+
+{% block pageTitle %}
+{{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block header %}
+  {% include 'crm/v3/includes/header' %}
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to search results",
+    href: "results"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Certificate reissued
+  </h1>
+ 
+</div>
+
+ <div class="govuk-body">We've reissued the certificate and sent it to the following address. </div>
+ <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+     Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      
+      Example name
+      
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      
+    </dd>
+  </div>
+  
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      4 Albert Road<br>Newcastle<br>NE1 3JA
+    </dd>
+    <dd class="govuk-summary-list__actions">
+     
+    </dd>
+  </div>
+  
+  </dl>
+
+  
+  <h2 class="govuk-heading-m">Details on the certificate</h2>
+  <h3 class="govuk-heading-s">Parent 1</h3>
+  <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+   
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Your relation to your baby
+      </dt>
+      <dd class="govuk-summary-list__value">
+        
+       Example relation
+       
+      </dd>
+      <dd class="govuk-summary-list__actions">
+       
+      </dd>
+    </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Your name
+      </dt>
+      <dd class="govuk-summary-list__value">
+       
+       Example name
+     
+      </dd>
+      
+    </div>
+    </dl>
+  
+    <h3 class="govuk-heading-s">Parent 2
+      
+    </h3>
+   
+    
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      
+    
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Their relation to your baby
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+         Example relation
+         
+        </dd>
+        <dd class="govuk-summary-list__actions">
+         
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Their name
+        </dt>
+        <dd class="govuk-summary-list__value">
+       
+          To be added once the other parent confirms their details
+        
+         </dd>
+        
+      </div>
+      </dl>
+   
+      <h3 class="govuk-heading-s">Baby's details</h3>
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of baby loss
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+                Example date of loss
+                
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Place of baby loss
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+           Example place
+           
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Baby's sex
+      </dt>
+      <dd class="govuk-summary-list__value">
+        
+       Example sex
+       
+      </dd>
+      <dd class="govuk-summary-list__actions">
+       
+      </dd>
+    </div>
+    
+   
+    <div class="govuk-summary-list__row">
+      <dt class="govuk-summary-list__key">
+        Baby's name
+      </dt>
+      <dd class="govuk-summary-list__value">
+        
+        Example name
+        
+      </dd>
+      <dd class="govuk-summary-list__actions">
+       
+      </dd>
+    </div>
+    </dl>
+
+  {{ govukButton({
+    text: "Search for a certificate",
+    href: "search",
+    isStartButton: false
+  }) }}
+
+      {% endblock %}

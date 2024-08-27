@@ -55,14 +55,7 @@
 {% endif %}
 
 
-<style>
-  .copyButton {
-    background-color: #eee;
-    border: 1px solid black;
-    padding: 5px;
-    border-radius: 5px;
-  }
-</style>
+
 
 {% if data['results'].length >0 %}
 
@@ -89,16 +82,24 @@
     <div class="search-card__status">
       {{ data['applications'][data['results'][i]].status | tag | safe }}<br>
       <p class="govuk-!-font-size-14 govuk-!-margin-top-2">Submitted:<br> {{ data['applications'][data['results'][i]].submitted | govukDate }}<br>{{ data['applications'][data['results'][i]].submitted | govukTime }}</p>
+      {{ govukButton({
+        text: "Certificate details",
+        href: "Cert-details",
+        isStartButton: false
+        }) }}
     </div>
-
+  
     <div class="search-card__copy">
-
+   
       <button id="copyButton-{{ i }}" class="copyButton">
         <svg id="copyIcon-{{ i }}" data-view-component="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
           <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path>
+         
           <path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
         </svg>
       </button>
+    
+     
 
 
 <textarea rows="8" id="copyText-{{ i }}" style="display:none; min-width: 20em;">
@@ -108,6 +109,7 @@ DOB: {{ data['applications'][data['results'][i]].dateOfBirth | changeDateFormat 
 Email: {{ data['applications'][data['results'][i]].emailAddress }}
 Status: {{ data['applications'][data['results'][i]].status }}
 </textarea>
+
       <noscript>
         <style>
           #copyText-{{ i }} {
@@ -146,6 +148,8 @@ Status: {{ data['applications'][data['results'][i]].status }}
     </script>
 
   </div>
+ 
+
   {%- endfor %}
   </div>
 
