@@ -46,6 +46,7 @@
 <!--<h1 class="govuk-heading-l tag-">Search result</h1>-->
 <p class="govuk-!-margin-bottom-6">Results for <strong>{{ data['search-term'] }}</strong></p>
 {% elif data['results'].length === 0 %}
+
 <!--<h1 class="govuk-heading-l tag-">Search results ({{ data['results'].length }})</h1>-->
 <p>No results were found for <strong>{{ data['search-term'] }}</strong>.</p>
 <p class="govuk-!-margin-bottom-6"><strong>Please note:</strong> <br>Data is anonymised after 3 months. After 12 months it is deleted.</p>
@@ -67,6 +68,22 @@
   <div class="search-card">
 
     <div class="search-card__name">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Parent 1</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1"> {{ data['applications'][data['results'][i]].lastName }}, {{ data['applications'][data['results'][i]].firstName }}</h2>
+
+      <p class="govuk-!-font-size-16 govuk-!-margin-bottom-3">{{ data['applications'][data['results'][i]].address }}</p>
+      <p class="govuk-!-font-size-16 govuk-!-margin-bottom-1">DOB: {{ data['applications'][data['results'][i]].dateOfBirth | govukDate("truncate") }}</p>
+      <p class="govuk-!-font-size-16">Email: {{ data['applications'][data['results'][i]].emailAddress }}</p>
+
+      <p class="govuk-!-margin-bottom-3 govuk-!-font-size-16">Reference number: <strong>{{ data['applications'][data['results'][i]].referenceNumber }}</strong></p>
+      <p class="govuk-!-margin-bottom-3 govuk-!-font-size-16">Year of loss: {{ data['applications'][data['results'][i]].dateOfLoss }}</p>
+    
+
+      
+    </div>
+
+    <div class="search-card__address">
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Parent 2</h2>
       <h2 class="govuk-heading-m govuk-!-margin-bottom-1"> {{ data['applications'][data['results'][i]].lastName }}, {{ data['applications'][data['results'][i]].firstName }}</h2>
 
       <p class="govuk-!-font-size-16 govuk-!-margin-bottom-3">{{ data['applications'][data['results'][i]].address }}</p>
@@ -74,17 +91,12 @@
       <p class="govuk-!-font-size-16">Email: {{ data['applications'][data['results'][i]].emailAddress }}</p>
     </div>
 
-    <div class="search-card__address">
-      <p class="govuk-!-margin-bottom-3">Reference number: <strong>{{ data['applications'][data['results'][i]].referenceNumber }}</strong></p>
-      <p class="govuk-!-margin-bottom-1">Year of loss: {{ data['applications'][data['results'][i]].dateOfLoss }}</p>
-    </div>
-
     <div class="search-card__status">
       {{ data['applications'][data['results'][i]].status | tag | safe }}<br>
       <p class="govuk-!-font-size-14 govuk-!-margin-top-2">Submitted:<br> {{ data['applications'][data['results'][i]].submitted | govukDate }}<br>{{ data['applications'][data['results'][i]].submitted | govukTime }}</p>
       {{ govukButton({
         text: "Certificate details",
-        href: "Cert-details",
+        href: "cert-det",
         isStartButton: false
         }) }}
     </div>
