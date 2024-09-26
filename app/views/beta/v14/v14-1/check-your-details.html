@@ -15,10 +15,7 @@
     </span>
   </p>
 </div>
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+ 
 {% endblock %}
 
 {% block content %}
@@ -34,15 +31,13 @@
              Name
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['first-name'] %}
-
-                {{ data['first-name'] }} {{ data['last-name'] }}
-
+             
+                {% if data['parent1-firstname'] %}
+                {{ data['parent1-firstname'] }} {{ data['parent1-lastname'] }}
                 {% else %}
-
                 Example name
-
-               {% endif %}
+                {% endif %}
+           
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -96,11 +91,13 @@
         </ul>
         
        
-        <form action="/live-parent2/get-security-code" method="post" novalidate>
+        <form action="/v14-1/get-security-code" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
-          <button class="govuk-button" data-module="govuk-button">
-            Agree and continue
-          </button>
+          {{ govukButton({
+            text: "Agree and continue",
+            href: "get-security-code",
+            isStartButton: false
+            }) }}
         </form>
       </div>
     </div>

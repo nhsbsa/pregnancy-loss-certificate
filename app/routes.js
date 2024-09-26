@@ -35,7 +35,7 @@ router.use('ccs2', require('./views/ccs2/_routes'));
 
 
 router.use('beta/v14', require('./views/beta/v14/_routes'));
-
+router.use('beta/v14/v14-1', require('./views/beta/v14/v14-1/_routes'));
 
 router.use('beta/v13', require('./views/beta/v13/_routes'));
 
