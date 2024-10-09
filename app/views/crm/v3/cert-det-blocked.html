@@ -27,11 +27,28 @@
     padding-right: 24px;
     padding-top: 8px;
 }
- 
+.govuk-notification-banner {
+background-color: 	#d4351c;
+border-color: 	#d4351c;
+}
  
  
  
 </style>
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+     Blocked
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      John.Doe@gmail.com will not receive email invitations from Jane Doe
+
+      
+    </p>
+  </div>
+</div>
 <h1 class ="govuk-heading-l">Certificate details</h1>
  
  
@@ -172,12 +189,12 @@
       </div>
       
       
-
-
 {{ govukButton({
-  text: "Block email invitations",
-  href: "block-user",
-  classes: "govuk-button--warning"
+  text: "Reissue",
+  href: "reissue",
+  isStartButton: false
 }) }}
+
+
 
       {% endblock %}

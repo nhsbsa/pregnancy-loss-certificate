@@ -27,11 +27,25 @@
     padding-right: 24px;
     padding-top: 8px;
 }
- 
+
  
  
  
 </style>
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+    Anonymised
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      This data has been anonymised. After 12 months, it will be deleted.
+
+      
+    </p>
+  </div>
+</div>
 <h1 class ="govuk-heading-l">Certificate details</h1>
  
  
@@ -91,7 +105,7 @@
                 Your relation to your baby
               </dt>
               <dd class="govuk-summary-list__value">
-                Parent
+              ****
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -172,12 +186,12 @@
       </div>
       
       
-
-
 {{ govukButton({
-  text: "Block email invitations",
-  href: "block-user",
-  classes: "govuk-button--warning"
+  text: "Reissue",
+  href: "reissue",
+  isStartButton: false
 }) }}
+
+
 
       {% endblock %}

@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+ 
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Certificate of Baby Loss Terms of Use
+    </h1>
+    <p>
+      The purpose of recording and issuing a Certificate of Baby Loss is to provide comfort and support to bereaved parents by recognising a loss.</p>
+
+
+      <h2 class="govuk-heading-m">
+        Who is entitled
+      </h2>
+      <p>You are entitled to a Certificate of Baby Loss if you:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>have experienced a loss under 24 weeks gestation (or 28 weeks gestation if your pregnancy ended before 1 October 1992)</li>
+        <li>are at least 16 years of age</li>
+        <li>are living in England</li>
+      </ul>
+
+<h2 class="govuk-heading-m">
+  How you can request a certificate
+      </h2>
+      <p>You can request a certificate online using the Certificate of Baby Loss service:</p>
+<p><a href="http://www.request-a-baby-loss-certificate.service.gov.uk/">http://www.request-a-baby-loss-certificate.service.gov.uk/</a></p>
+
+    <p>You will receive a paper certificate in the post within 14 days of us receiving your request.</p>
+    
+    
+    <h2 class="govuk-heading-m">
+      Entitlements
+    </h2>
+
+<p>The certificate is produced following a self-declaration by the parent.</p>
+<p>The certificate cannot be used as evidence of identity and does not allow entitlement to any services or benefits.</p>
+
+ 
+<h2 class="govuk-heading-m">
+  How to report a change in details
+</h2>
+
+   <p>If your details change from those provided for your certificate, you must submit a new request with your new details. Once you have received the new certificate, you can destroy the old one.</p>
+    
+<h2 class="govuk-heading-m">
+  Lost, damaged or incorrect certificates
+</h2>
+   
+   
+   
+<p>If you lose or damage your certificate within three months of your initial request, you can contact us to request a duplicate certificate. If you lose or damage your certificate after three months of your initial request, or there is an error on your certificate, you must submit a new request. </p>
+    
+
+
+  </div>
+
+  
+</div>
+
+
+
+
+{% endblock %}

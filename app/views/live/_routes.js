@@ -32,7 +32,7 @@ router.post(/location-uk/, (req, res) => {
   const lossInuk = req.session.data['location']
 
   if (lossInuk == 'yes') {
-    res.redirect('enter-location');
+    res.redirect('relation-to-baby');
   } else {
     res.redirect('location-kickout-uk');
   }
