@@ -266,5 +266,19 @@ router.get('/crm/v2/results2', function (req, res) {
     'results': resultsSorted
   })
 })
+router.post(/reissue-check/, (req, res) => {
+
+  const ReissueaCert = req.session.data['reissue-check']
+
+  if (ReissueaCert == 'no') {
+      res.redirect('cert-det')
+  } else {
+      res.redirect('reissue')
+  }
+
+})
+
+
+
 
 module.exports = router;
