@@ -30,50 +30,41 @@
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you like to add the same other parent to the next certificate?
+    Would you like to request a certificate for another baby loss?
     
   </h1>
 </legend>
 
 
 
-      <form class="form" action="mult-cert-req" method="post">
+      <form class="form" action="request-cert" method="post">
         
          
-         <div class="govuk-radios" data-module="govuk-radios">
+         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="mult-cert-req" name="multcert" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="no">
-              Yes, I'd like to add the same parent
-            </label>
-          </div>
-          <div class="govuk-radios__divider">or</div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="mult-cert-req" name="multcert" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="no">
-              No, I'd like to add a different parent
-            </label>
-          </div>
-          
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="mult-cert-req" name="multcert" type="radio" value="yes">
+            <input class="govuk-radios__input" id="request-cert" name="reqcert" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="yes">
-              No, I'd like only myself named as a parent
+              Yes
+            </label>
+          </div>
+  
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="request-cert" name="reqcert" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="no">
+              No
             </label>
           </div>
           
-          
+         
         </div>
             </div>
           </fieldset>
        
 </div>
 </div>
-{{ govukButton({
-  text: "Continue",
-  href: "/beta/v14/v14-5/relation-to-baby",
-  isStartButton: false
-}) }}
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
 
       </form>
 

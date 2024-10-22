@@ -25,64 +25,52 @@
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
-
 <div class="govuk-form-group">
+  <span class="govuk-caption-l">Details on the certificate</span>
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you like to add the same other parent to the next certificate?
+    Would you like to add another parent to the certificate? 
     
   </h1>
 </legend>
 
 
-
-      <form class="form" action="mult-cert-req" method="post">
-        
-         
-         <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="mult-cert-req" name="multcert" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="no">
-              Yes, I'd like to add the same parent
-            </label>
-          </div>
-          <div class="govuk-radios__divider">or</div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="mult-cert-req" name="multcert" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="no">
-              No, I'd like to add a different parent
-            </label>
-          </div>
-          
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="mult-cert-req" name="multcert" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="yes">
-              No, I'd like only myself named as a parent
-            </label>
-          </div>
-          
-          
-        </div>
-            </div>
-          </fieldset>
+      <form class="form" action="version12-add-parent" method="post">
+      
        
-</div>
-</div>
-{{ govukButton({
-  text: "Continue",
-  href: "/beta/v14/v14-5/relation-to-baby",
-  isStartButton: false
-}) }}
+        <div class="govuk-radios--inline" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="version10-add-parent" name="parent" type="radio" value="yes" data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="yes">
+              Yes
+            </label>
+          </div>
+         
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="version10-add-parent" name="parent" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="no">
+              No
+            </label>
+          </div>
+       
+          </fieldset>
+        </div>
+        
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
 
       </form>
-
+</div>
+</div>
     </div>
   </div>
   <style>
-   
-    .govuk-button {
-      margin-left: 15px;
+    
+    .govuk-radios {
+      margin-bottom: 20px;
     }
   </style>
+
 {% endblock %}

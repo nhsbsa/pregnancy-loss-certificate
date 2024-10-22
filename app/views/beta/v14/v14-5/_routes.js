@@ -11,36 +11,66 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
-router.post(/location-v14-england/, (req, res) => {
+router.post(/location-england/, (req, res) => {
 
   // creating a variable named lossInEngland, assigning the variable the value of the input (location)
   // lossInEngland = location (value)
-  const version14lossInEngland = req.session.data['version14location']
+  const lossInEngland = req.session.data['location']
 
-  if (version14lossInEngland == 'yes') {
-    res.redirect('relation-to-baby');
+  if (lossInEngland == 'yes') {
+    res.redirect('loss-in-5-years');
   } else {
     res.redirect('location-kickout');
   }
 
 })
 
-router.post(/england-version14/, (req, res) => {
+router.post(/location-uk/, (req, res) => {
 
   // creating a variable named lossInEngland, assigning the variable the value of the input (location)
   // lossInEngland = location (value)
-  const lossIneng = req.session.data['england']
+  const lossInuk = req.session.data['location']
 
-  if (lossIneng == 'yes') {
-    res.redirect('relation-to-baby');
+  if (lossInuk == 'yes') {
+    res.redirect('enter-location');
   } else {
     res.redirect('location-kickout-uk');
   }
 
 })
+router.post(/loss-5-years/, (req, res) => {
 
+  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
+  // lossInEngland = location (value)
+  const lossInYears = req.session.data['years']
 
+  if (lossInYears == 'yes') {
+    res.redirect('relation-to-baby');
+  } else {
+    res.redirect('date-of-loss-kickout');
+  }
 
+})
+
+// Date of loss 
+
+// router.post(/date-loss/, (req, res) => {
+
+//   const day = req.session.data['dol-day']
+//   const month = req.session.data['dol-month']
+//   const year = req.session.data['dol-year']
+
+//   const dol = day + '/' + month + '/' + year
+
+//   if (dol == '27/3/2007') {
+//     res.redirect('relation-to-baby');
+//   } else {
+//     res.redirect('date-of-loss-kickout');
+// }
+
+// })
+
+// Date of birth 
 
 router.post(/date-of-birth/, (req, res) => {
 
@@ -60,14 +90,14 @@ router.post(/date-of-birth/, (req, res) => {
 
 })
 
-router.post(/relation-baby/, (req, res) => {
+router.post(/v14-5-relation-baby/, (req, res) => {
 
-  const relationship = req.session.data['relation-baby']
+  const relationship = req.session.data['v14-5-relation-baby']
 
   if (relationship == 'no') {
       res.redirect('relation-kickout')
   } else {
-      res.redirect('nhs-number')
+      res.redirect('babys-details')
   }
 
 })
@@ -104,7 +134,7 @@ router.post(/main-applicant-nhs/, (req, res) => {
   }
 
 })
-router.post(/version10-add-parent/, (req, res) => {
+router.post(/version12-add-parent/, (req, res) => {
 
   // if user wants their baby gender included in the certificate they will select yes then it 
   //will take them to enter baby gender name
@@ -134,8 +164,19 @@ router.post(/address-postcode/, (req, res) => {
 
 })
 
+router.post(/security-code/, (req, res) => {
 
+  const SecurityCode = req.session.data['entercode']
 
+  if (SecurityCode == '123') {
+    res.redirect('check-your-details-nhs');
+  } else if (SecurityCode == '1234') {
+    res.redirect('check-your-details-nhs-option-2')
+  } else {
+    res.redirect('check-your-details-nhs-option-3');
+  }
+
+})
 router.post(/confirm-post-address/, (req, res) => {
 
   // creating a variable named lossInEngland, assigning the variable the value of the input (location)
@@ -143,7 +184,7 @@ router.post(/confirm-post-address/, (req, res) => {
   const parentcheckDetails = req.session.data['details']
 
   if (parentcheckDetails == 'yes') {
-    res.redirect('add-parent-conditional-radios');
+    res.redirect('add-parent');
   } else {
     res.redirect('check-your-details-kickout');
   }
@@ -187,44 +228,32 @@ router.post(/multiple-certificate/, (req, res) => {
 
 })
 
-router.post(/email-security-code/, (req, res) => {
-
-  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
-  // lossInEngland = location (value)
-  const securityCode = req.session.data['seccode']
-
-  if (securityCode == 'email') {
-    res.redirect('enter-security-code');
-  } else {
-    res.redirect('enter-security-code-text');
-  }
-
-})
-router.post(/another-request-cert/, (req, res) => {
+router.post(/request-cert/, (req, res) => {
 
   // if user wants their baby gender included in the certificate they will select yes then it 
   //will take them to enter baby gender name
-  const CertificateRequest = req.session.data['certreq']
+  const certRequest = req.session.data['reqcert']
 
-  if (CertificateRequest == 'no') {
-    res.redirect('confirmation-page-new');
+  if (certRequest == 'no') {
+    res.redirect('confirmation-page');
   } else {
-    res.redirect('add-other-parent');
+    res.redirect('add-parent-cert-copy');
   }
 
 })
-router.post(/mult-cert-req/, (req, res) => {
+router.post(/v12.5-add-parent/, (req, res) => {
 
   // if user wants their baby gender included in the certificate they will select yes then it 
   //will take them to enter baby gender name
-  const MultLoss = req.session.data['multcert']
+  const addSecondParent = req.session.data['parent']
 
-  if (MultLoss == 'no') {
-    res.redirect('/v14-5/relation-to-baby');
-  } else {
+  if (addSecondParent == 'yes') {
     res.redirect('add-other-parent');
+  } else {
+    res.redirect('confirmation-page-copy');
   }
 
 })
+
 
 module.exports = router;

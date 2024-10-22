@@ -2,6 +2,7 @@
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+  
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,64 +26,64 @@
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
-
 <div class="govuk-form-group">
+  <span class="govuk-caption-l">Details on the certificate</span>
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you like to add the same other parent to the next certificate?
+    Would you still like to request a certificate in your name only if the other parent chooses not to be shown on the certificate?
     
   </h1>
 </legend>
 
+<div class="govuk-body">
+  We'll let you know if the other parent gives permission for their name to be on the certificate.
+</div>
+<div class="govuk-body">
+  If the other parent does not want their name on the certificate, you can request a certificate in your name only.
+</div>
 
-
-      <form class="form" action="mult-cert-req" method="post">
+      <form class="form" action="enter-parent-name" method="post">
         
          
-         <div class="govuk-radios" data-module="govuk-radios">
+         
+        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="mult-cert-req" name="multcert" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="no">
-              Yes, I'd like to add the same parent
+            <input class="govuk-radios__input" id="location-england-yes" name="location" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="location-england-yes">
+              Yes
             </label>
           </div>
-          <div class="govuk-radios__divider">or</div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="mult-cert-req" name="multcert" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="no">
-              No, I'd like to add a different parent
+            <input class="govuk-radios__input" id="location-england-no" name="location" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="location-england-no">
+              No
             </label>
           </div>
-          
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="mult-cert-req" name="multcert" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="yes">
-              No, I'd like only myself named as a parent
-            </label>
-          </div>
-          
-          
         </div>
-            </div>
-          </fieldset>
-       
+      </div>
+    </div>
+      
 </div>
 </div>
 {{ govukButton({
   text: "Continue",
-  href: "/beta/v14/v14-5/relation-to-baby",
+  href: "second-parent",
   isStartButton: false
-}) }}
+  }) }}
 
       </form>
 
     </div>
   </div>
   <style>
-   
-    .govuk-button {
-      margin-left: 15px;
+    
+    .govuk-grid-column-two-thirds {
+      padding-left: 0px;
+
     }
+    
+    
   </style>
+
 {% endblock %}
