@@ -84,10 +84,12 @@
 
     <div class="search-card__address">
       <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Parent 2</h2>
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-1"> {{ data['applications'][data['results'][i]].lastName }}, {{ data['applications'][data['results'][i]].firstName }}</h2>
+    
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-1 govuk-!-margin-top-1"> {{ data['applications'][data['results'][i]].lastName }}, {{ data['applications'][data['results'][i]].firstName }}</h2>
 
       <p class="govuk-!-font-size-16 govuk-!-margin-bottom-1">DOB: {{ data['applications'][data['results'][i]].dateOfBirth | govukDate("truncate") }}</p>
       <p class="govuk-!-font-size-16">Email: {{ data['applications'][data['results'][i]].emailAddress }}</p>
+      {{ data['applications'][data['results'][i]].status | tag | safe }}<br>
     </div>
 
     <div class="search-card__status">
