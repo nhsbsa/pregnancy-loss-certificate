@@ -89,11 +89,11 @@
 
       <p class="govuk-!-font-size-16 govuk-!-margin-bottom-1">DOB: {{ data['applications'][data['results'][i]].dateOfBirth | govukDate("truncate") }}</p>
       <p class="govuk-!-font-size-16">Email: {{ data['applications'][data['results'][i]].emailAddress }}</p>
-      {{ data['applications'][data['results'][i]].status | tag | safe }}<br>
+      <strong class="govuk-tag govuk-tag--green">Accepted</strong>
     </div>
 
     <div class="search-card__status">
-      {{ data['applications'][data['results'][i]].status | tag | safe }}<br>
+      <strong class="govuk-tag govuk-tag--green">Sent</strong>
       <p class="govuk-!-font-size-14 govuk-!-margin-top-2">Submitted:<br> {{ data['applications'][data['results'][i]].submitted | govukDate }}<br>{{ data['applications'][data['results'][i]].submitted | govukTime }}</p>
       {{ govukButton({
         text: "Certificate details",
