@@ -174,7 +174,17 @@ router.get('/crm/v3/results', function (req, res) {
     'results': resultsSorted
   })
 })
+router.post(/reissue-check-crm/, (req, res) => {
 
+  const ReissueaCert = req.session.data['reissue-check-crm']
+
+  if (ReissueaCert == 'no') {
+      res.redirect('cert-det')
+  } else {
+      res.redirect('reissue')
+  }
+
+})
 
 // V2 Prototype
 
@@ -266,17 +276,18 @@ router.get('/crm/v2/results2', function (req, res) {
     'results': resultsSorted
   })
 })
-router.post(/reissue-check/, (req, res) => {
+router.post("/crm/v3/reissue-check", function (req, res) {
+   
+    const Reissueacert = req.session.data['reissue-check-crm']
+  
+    if (Reissueacert == 'no') {
+      res.redirect('cert-det');
+    } else {
+      res.redirect('reissue');
+    }
+  
+  })
 
-  const ReissueaCert = req.session.data['reissue-check']
-
-  if (ReissueaCert == 'no') {
-      res.redirect('cert-det')
-  } else {
-      res.redirect('reissue')
-  }
-
-})
 
 
 

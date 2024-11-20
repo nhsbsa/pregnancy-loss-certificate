@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Request pending",
+        html: "Your reference number<br><strong>J4R-8H5-2K9F1</strong>"
+      }) }}
+
+   
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+      <p>The other parent will have 7 days to give permission and confirm their details.
+      </p>
+    <p>They may choose not to be named on the certificate or they may not respond.</p>
+    <p>If this happens and you’ve chosen to receive a certificate that shows only your name as a parent of your baby, you’ll receive the certificate in 14 days.</p>
+    <p>If you’ve chosen not to receive a certificate that shows only your name as a parent of your baby, the request will be cancelled.</p>
+
+    
+
+      
+<h2 class="govuk-heading-m"> Would you like to request a <br> certificate for another baby loss?</h2>
+
+
+<form class="form" action="another-request-cert" method="post">
+
+<div class="govuk-radios" data-module="govuk-radios">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="another-request-cert" name="certreq" type="radio" value="yes" data-aria-controls="conditional-contact">
+    <label class="govuk-label govuk-radios__label" for="yes">
+      Yes, I'd like to request another certificate
+    </label>
+  </div>
+  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="contact-by-email">
+        You'll need to answer some questions again. This is because the next certificate is for another baby loss.<br>
+        
+        
+      </label>
+     
+    </div>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="another-request-cert" name="certreq" type="radio" value="no">
+    <label class="govuk-label govuk-radios__label" for="no">
+      No, I do not want to request another certificate
+    </label>
+  </div>
+ <br>
+  <button class="govuk-button" data-module="govuk-button" type="submit">
+    Continue
+  </button>
+
+
+
+</form>
+
+  <style>
+    .govuk-panel--confirmation {
+    color: #0b0c0c;
+    background: #f3f2f1;;
+}
+  </style>
+
+{% endblock %}
