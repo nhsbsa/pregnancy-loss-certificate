@@ -276,17 +276,19 @@ router.get('/crm/v2/results2', function (req, res) {
     'results': resultsSorted
   })
 })
-router.post("/crm/v3/reissue-check", function (req, res) {
-   
-    const Reissueacert = req.session.data['reissue-check-crm']
-  
-    if (Reissueacert == 'no') {
-      res.redirect('cert-det');
-    } else {
-      res.redirect('reissue');
-    }
-  
-  })
+router.post(/reissue-cert/, (req, res) => {
+ 
+  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
+  // lossInEngland = location (value)
+  const reissue = req.session.data['reissue-certificate']
+
+  if (reissue == 'yes') {
+    res.redirect('reissue');
+  } else {
+    res.redirect('cert-det');
+  }
+
+})
 
 
 
