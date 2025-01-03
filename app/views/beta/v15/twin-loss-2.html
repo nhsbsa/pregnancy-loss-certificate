@@ -31,51 +31,40 @@
     
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    How many many babies from your triplet pregnancy have you lost?
-
+    Have you lost both babies from your twin pregnancy?
 
   </h1>
 </legend>
 
       <form class="form" action="england-version14" method="post">
         
-        
         <div class="govuk-radios govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="yes">
+            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="yes" data-aria-controls="conditional-contact">
             <label class="govuk-label govuk-radios__label" for="england-version14">
-              One baby
+            Yes
             </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="no" data-aria-controls="conditional-contact">
-            <label class="govuk-label govuk-radios__label" for="england-version14">
-              Two babies
-
-            </label>
-          
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
             <div class="govuk-form-group">
               <label class="govuk-label" for="contact-by-email">
-              
-You'll receive a separate certificate for each baby.
+                You'll receive a separate certificate for each baby.
               </label>
+             
             </div>
           </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="england-version14">
-              All babies
-
+             No
             </label>
           </div>
+          
         </div>
-        
            
           </fieldset>
         </div>
-    <br>
+
 
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
@@ -92,6 +81,9 @@ You'll receive a separate certificate for each baby.
     }
     .govuk-radios--inline {
       margin-bottom: 30px;
+    }
+    .govuk-button {
+      margin-top: 10px;
     }
   </style>
 

@@ -34,9 +34,9 @@ router.use('ccs', require('./views/ccs/_routes'));
 router.use('ccs2', require('./views/ccs2/_routes'));
 
 
-router.use('beta/v14', require('./views/beta/v15/_routes'));
-router.use('beta/v14/v14-1', require('./views/beta/v15/v14-1/_routes'));
-router.use('beta/v14/v14-5', require('./views/beta/v14/v14-5/_routes'));
+router.use('beta/v15', require('./views/beta/v15/_routes'));
+router.use('beta/v15/v15-1', require('./views/beta/v15/v15-1/_routes'));
+//router.use('beta/v15/v15-5', require('./views/beta/v15/v15-5/_routes'));
 
 
 

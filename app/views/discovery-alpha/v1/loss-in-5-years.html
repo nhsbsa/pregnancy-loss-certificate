@@ -9,7 +9,7 @@
   <div class="govuk-phase-banner">
     <p class="govuk-phase-banner__content">
       <strong class="govuk-tag govuk-phase-banner__content__tag">
-        Beta
+        alpha
       </strong>
       <span class="govuk-phase-banner__text">
         This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -26,56 +26,51 @@
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
- 
+  <span class="govuk-caption-l">Confirm your eligibility</span>
   <fieldset class="govuk-fieldset">
     
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    How many many babies from your triplet pregnancy have you lost?
-
-
+    Did your baby loss happen in the last 5 years?
   </h1>
 </legend>
 
-      <form class="form" action="england-version14" method="post">
+      <form class="form" action="loss-5-years" method="post">
         
-        
-        <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="england-version14">
-              One baby
+            <input class="govuk-radios__input" id="years-yes" name="years" type="radio" value="yes" data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Yes
             </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="no" data-aria-controls="conditional-contact">
-            <label class="govuk-label govuk-radios__label" for="england-version14">
-              Two babies
-
-            </label>
-          
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
             <div class="govuk-form-group">
               <label class="govuk-label" for="contact-by-email">
-              
-You'll receive a separate certificate for each baby.
+                Year
               </label>
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" name="year-loss" type="yes" spellcheck="false" autocomplete="email">
             </div>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="england-version14">
-              All babies
-
+            <input class="govuk-radios__input" id="years-no" name="years" type="radio" value="no" data-aria-controls="conditional-contact-2">
+            <label class="govuk-label govuk-radios__label" for="contact-2">
+              No
             </label>
           </div>
-        </div>
-        
-           
+         
           </fieldset>
         </div>
-    <br>
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Why we're asking you this question
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            We need to check you're eligible to use this service.
+          </div>
+        </details>
 
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
@@ -86,11 +81,11 @@ You'll receive a separate certificate for each baby.
     </div>
   </div>
   <style>
-    
+   
     .govuk-fieldset__legend--l {
       margin-bottom: 30px;
     }
-    .govuk-radios--inline {
+    .govuk-radios {
       margin-bottom: 30px;
     }
   </style>

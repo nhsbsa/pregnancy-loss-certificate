@@ -135,5 +135,17 @@ router.post(/parent-reference-number/, (req, res) => {
   }
 
 })
+router.post(/requesting-cert-parent-2/, (req, res) => {
+
+ 
+  const secondParentrequestanothercert = req.session.data['certreqsecondparent']
+
+  if (secondParentrequestanothercert == 'yes') {
+    res.redirect('reference-number');
+  } else {
+    res.redirect('confirmation-page');
+  }
+
+})
 
 module.exports = router;
