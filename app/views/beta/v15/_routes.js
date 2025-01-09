@@ -226,5 +226,20 @@ router.post(/mult-cert-req/, (req, res) => {
   }
 
 })
+router.post(/multiple-loss-pregnancy/, (req, res) => {
+
+  const TwinTripletSingle = req.session.data['loss-multiple']
+
+  if (TwinTripletSingle == 'single') {
+    res.redirect('date-of-loss');
+  } else if (TwinTripletSingle == 'twin') {
+    res.redirect('twin-loss-2')
+  } else if (TwinTripletSingle == 'triplet') {
+    res.redirect('triplet-loss-2')
+  } else {
+    res.redirect('location-kickout-uk');
+  }
+
+})
 
 module.exports = router;
