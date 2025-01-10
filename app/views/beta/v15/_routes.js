@@ -113,7 +113,7 @@ router.post(/version10-add-parent/, (req, res) => {
   if (parentAddParent == 'yes') {
     res.redirect('what-happens-next');
   } else {
-    res.redirect('babys-details');
+    res.redirect('babies-lost');
   }
 
 })
@@ -241,5 +241,15 @@ router.post(/multiple-loss-pregnancy/, (req, res) => {
   }
 
 })
+router.post(/twin-losses/, (req, res) => {
 
+  const Twinlossbabies = req.session.data['bothbabies']
+
+  if (Twinlossbabies == 'yes') {
+    res.redirect('babys-details-twin');
+  } else {
+    res.redirect('babys-details');
+  }
+
+})
 module.exports = router;
