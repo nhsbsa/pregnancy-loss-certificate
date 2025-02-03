@@ -231,7 +231,7 @@ router.post(/multiple-loss-pregnancy/, (req, res) => {
   const TwinTripletSingle = req.session.data['loss-multiple']
 
   if (TwinTripletSingle == 'single') {
-    res.redirect('date-of-loss');
+    res.redirect('babys-details');
   } else if (TwinTripletSingle == 'twin') {
     res.redirect('twin-loss-2')
   } else if (TwinTripletSingle == 'triplet') {
@@ -246,9 +246,21 @@ router.post(/twin-losses/, (req, res) => {
   const Twinlossbabies = req.session.data['bothbabies']
 
   if (Twinlossbabies == 'yes') {
-    res.redirect('babys-details-twin');
+    res.redirect('date-of-loss');
   } else {
-    res.redirect('babys-details');
+    res.redirect('date-of-loss-single');
+  }
+
+})
+
+router.post(/baby-details-conditional/, (req, res) => {
+
+  const AddAnotherBaby = req.session.data['add-second-baby']
+
+  if (AddAnotherBaby == 'yes') {
+    res.redirect('date-of-loss');
+  } else {
+    res.redirect('contact-email');
   }
 
 })

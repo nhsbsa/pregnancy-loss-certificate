@@ -25,23 +25,24 @@
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
-  <span class="govuk-caption-l">Details on certificate 1</span>
+  <span class="govuk-caption-l">Details on certificate 2</span>
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you like your baby’s name on the certificate?
+    Would you like the place of your baby loss on the certificate?
     
   </h1>
 </legend>
-<p>You may not have named your baby. </p>
-<p>If you did name your baby, you can enter a first name, full name, or a nickname.</p>
+</fieldset>
+<p>You may not know the place of your baby loss.</p>
+<div class="govuk-inset-text">This does not need to be a full address. You can enter a town, city or hospital.</div>
 
 <p>
-  If you select ‘No’, this section will be blank on the certificate.
-</p>
+  This section will be blank on the certificate if you select ‘No’ or ‘I do not know the place of my baby loss’.</p>
+  
 
-      <form class="form" action="baby-name-version1" method="post">
+      <form class="form" action="sex-of-baby-copy" method="post">
 
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
@@ -52,30 +53,41 @@
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
             <div class="govuk-form-group">
+              <label class="govuk-fieldset__legend">Enter the place of your baby loss</label>
               <label class="govuk-label">
-                Enter baby’s name or nickname
+                Place of baby loss
               </label>
-              <input class="govuk-input" id="baby-name" name="baby-firstname" type="text">
+              <div id="passport-issued-hint" class="govuk-hint">
+               
+                For example, Canterbury, Kent   
+              </div>
+
+              <input class="govuk-input" id="baby-name" name="place" type="text">
             </div>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="babys" name="years" type="radio" value="no">
+            <input class="govuk-radios__input" id="babys" name="years" type="radio" value="no" >
             <label class="govuk-label govuk-radios__label" for="contact-2">
               No
             </label>
           </div>
+          <div class="govuk-radios__divider">or</div>
             </div>
+          
+          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="baby-gender-version1" name="years" type="radio" value="unknown">
+            <label class="govuk-label govuk-radios__label" for="unknown">
+              I do not know the place of my baby loss
+            </label>
           </div>
           </fieldset>
-       
        </div>
        </div>
-    
-    {{ govukButton({
-      text: "Continue",
-      href: "check-your-answers-cert-1",
-      isStartButton: false
-      }) }}
+       </div>
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
 
       </form>
 

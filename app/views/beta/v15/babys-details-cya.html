@@ -1,0 +1,233 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+ 
+{% endblock %}
+
+{% block content %}
+<main class="govuk-main-wrapper govuk-main-wrapper--auto-spacing" id="main-content" role="main">
+          
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="baby-details-conditional" method="post">
+
+        <!--<h1 class="govuk-heading-l">Dependant details</h1>-->
+        <h1 class="govuk-heading-l">
+            <span class="govuk-caption-l">Certificate details</span>
+            Check your answers
+        </h1>
+
+        <!--via https://github.com/alphagov/govuk-design-system-backlog/issues/210 -->
+        <h2 class="govuk-heading-m" style="display: inline">Certificate 1</h2>
+        <span style="float:middle; margin-left: 45px;     font-size: 1.1875rem;">
+          <a href="/v19/dependant-details-delete">Delete certificate
+            <span class="govuk-visually-hidden"> Details on cetificate</span>
+          </a>
+        </span>
+<br>
+<br>
+        <h3 class="govuk-heading-s">Parent 1</h3>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+         
+     
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your name
+            </dt>
+            <dd class="govuk-summary-list__value">
+             
+             Example name
+           
+            </dd>
+            
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Your relationship to your baby
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['relation-baby'] %}
+              {{ data['relation-baby'] }}
+             {% else %}
+             Example relation
+             {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="relation-to-baby">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          </dl>
+        
+          <h3 class="govuk-heading-s">Parent 2
+            
+          </h3>
+         
+          
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            
+          
+            
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Their name
+              </dt>
+              <dd class="govuk-summary-list__value">
+             
+                To be added once the other parent confirms their details
+              
+               </dd>
+              
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Their relationship to your baby
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['parent-2'] %}
+                {{ data['parent-2'] }}
+               {% else %}
+               Example relation
+               {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="second-relation-to-baby">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                 
+                </a>
+              </dd>
+            </div>
+            </dl>
+         
+            <h3 class="govuk-heading-s">Baby's details</h3>
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date of baby loss
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['dol-day'] %}
+                        {{ data['dol-day'] }} <span class="cya-month">{{ data['dol-month'] }}</span> {{ data['dol-year'] }}
+                        {% else %}
+                      Example date of loss
+                      {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="date-of-loss">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Place of baby loss
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['place'] %}
+                  {{ data['place'] }}
+                 {% else %}
+                 Example place
+                 {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="place-of-loss">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+                </dd>
+              </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Baby's sex
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['baby-gender'] %}
+              {{ data['baby-gender'] }}
+             {% else %}
+             Example sex
+             {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="sex-of-baby">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          
+         
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Baby's name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['baby-firstname'] %}
+               {{ data['baby-firstname'] }}
+              {% else %}
+              Example name
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="babys-name">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          </div>
+          
+          
+          </div>
+        </dl>
+       
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="dependant-details-conditional-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Do you want to add another baby loss?
+              </h2>
+            </legend>
+            <!-- <span id="dependant-details-conditional-hint" class="govuk-hint">
+            hint text goes here.
+            </span>-->
+            <div class="govuk-radios govuk-radios--inline">
+              <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="baby-details-conditional" name="add-second-baby" type="radio" value="yes" data-aria-controls="conditional-babys-details-conditional">
+                  <label class="govuk-label govuk-radios__label" for="baby-details-conditional">
+                    Yes
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="baby-details-conditional" name="add-second-baby" type="radio" value="no" data-aria-controls="conditional-babys-details-conditional-2">
+                  <label class="govuk-label govuk-radios__label" for="baby-details-conditional">
+                    No
+                  </label>
+                </div>
+              </div>
+          </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+    </div>
+  </div>
+
+
+        </main>
+{% endblock %}
