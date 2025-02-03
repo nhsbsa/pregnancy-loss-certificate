@@ -231,7 +231,7 @@ router.post(/multiple-loss-pregnancy/, (req, res) => {
   const TwinTripletSingle = req.session.data['loss-multiple']
 
   if (TwinTripletSingle == 'single') {
-    res.redirect('babys-details');
+    res.redirect('date-of-loss-single');
   } else if (TwinTripletSingle == 'twin') {
     res.redirect('twin-loss-2')
   } else if (TwinTripletSingle == 'triplet') {
