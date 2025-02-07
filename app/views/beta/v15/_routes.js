@@ -88,6 +88,19 @@ router.post(/baby-gender-version1/, (req, res) => {
 
 })
 
+router.post(/baby-gender-cert-2/, (req, res) => {
+
+  // if user wants their baby gender included in the certificate they will select yes then it 
+  //will take them to enter baby gender name
+  const SexOfBaby = req.session.data['gender']
+
+  if (SexOfBaby == 'yes') {
+    res.redirect('enter-baby-gender-copy');
+  } else {
+    res.redirect('babys-name-copy');
+  }
+
+})
 
 
 
