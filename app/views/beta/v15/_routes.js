@@ -74,16 +74,16 @@ router.post(/relation-baby/, (req, res) => {
 
 
 
-router.post(/baby-gender-version1/, (req, res) => {
+router.post(/baby-gender-singleroute/, (req, res) => {
 
   // if user wants their baby gender included in the certificate they will select yes then it 
   //will take them to enter baby gender name
   const SexOfBaby = req.session.data['gender']
 
   if (SexOfBaby == 'yes') {
-    res.redirect('enter-baby-gender');
+    res.redirect('enter-baby-gender-single');
   } else {
-    res.redirect('babys-name');
+    res.redirect('babys-name-single');
   }
 
 })
@@ -221,6 +221,19 @@ router.post(/another-request-cert/, (req, res) => {
 
   if (CertificateRequest == 'no') {
     res.redirect('confirmation-page-new');
+  } else {
+    res.redirect('add-other-parent');
+  }
+
+})
+router.post(/single-cert-reccurrent/, (req, res) => {
+
+  // if user wants their baby gender included in the certificate they will select yes then it 
+  //will take them to enter baby gender name
+  const reccurrentReq = req.session.data['certreq']
+
+  if (reccurrentReq == 'no') {
+    res.redirect('confirmation-page-new-single');
   } else {
     res.redirect('add-other-parent');
   }
