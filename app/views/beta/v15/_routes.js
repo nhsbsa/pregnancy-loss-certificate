@@ -131,15 +131,15 @@ router.post(/version10-add-parent/, (req, res) => {
 
 })
 
-router.post(/address-postcode/, (req, res) => {
+router.post(/Multipleloss-add-ress/, (req, res) => {
 
-  const AddressPostcode = req.session.data['postcodeinput']
+  const AddressPostcodeMult = req.session.data['multiplepost']
 
-  if (AddressPostcode == 'NE1 3JA') {
+  if (AddressPostcodeMult == 'EN1 1BE') {
     res.redirect('check-your-details');
-  } else if (AddressPostcode == 'ne1 3ja') {
+  } else if (AddressPostcodeMult == 'EN11BE') {
     res.redirect('check-your-details')
-  } else if (AddressPostcode == 'ne13ja') {
+  } else if (AddressPostcodeMult == 'en1 1be') {
     res.redirect('check-your-details')
   } else {
     res.redirect('location-kickout-uk');
