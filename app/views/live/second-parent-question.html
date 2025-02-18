@@ -26,46 +26,52 @@
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
-  <span class="govuk-caption-l">Details on the certificate</span>
+
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you still like to receive the certificate if the other parent cannot confirm their details?
-  </h1>
+    Would you still like to receive the certificate if the other parent does not respond?  </h1>
 </legend>
 
 
       <form class="form" action="parent-add" method="post">
         
         <div class="govuk-body">
-          The other parent might not confirm their details. This could be because they do not respond in time, or they do not want to be named on the certificate. 
-        </div>
-        <div class="govuk-body">If this happens, you can still request a certificate that shows only your name as a parent of your baby. 
-
-          We'll let you know if the other parent gives permission. </div>
+          You can still receive a certificate that shows only your name as a parent of your baby, if the other parent does not confirm their details.</div>
        
-        
-              
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="yes">
+            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="contact">
               Yes
             </label>
           </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-email">
+                The section for the other parent’s name will be blank on the certificate.
+              </label>
+            </div>
+          </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="parent-add" name="parent" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="no">
+            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+            <label class="govuk-label govuk-radios__label" for="contact-2">
               No
             </label>
           </div>
-        </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-phone">
+                If the other parent does not respond, your request for a certificate will be cancelled.
+              </label>
+            </div>
+          </div>
           </fieldset>
         </div>
        
         {{ govukButton({
           text: "Continue",
-          href: "babys-details",
+          href: "parent-contact",
           isStartButton: false
           }) }}
 
