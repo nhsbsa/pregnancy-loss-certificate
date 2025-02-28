@@ -31,7 +31,7 @@
     
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    How many babies from your triplet pregnancy have you lost?
+    Are you requesting a certificate for each triplet?
 
 
   </h1>
@@ -44,13 +44,13 @@
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="yes">
             <label class="govuk-label govuk-radios__label" for="england-version14">
-              One baby
+              No, I'd like a certificate for one baby
             </label>
           </div>
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="no" data-aria-controls="conditional-contact">
             <label class="govuk-label govuk-radios__label" for="england-version14">
-              Two babies
+              No, I'd like certificates for 2 babies
 
             </label>
           
@@ -59,16 +59,25 @@
             <div class="govuk-form-group">
               <label class="govuk-label" for="contact-by-email">
               
-You'll receive a separate certificate for each baby.
+You'll receive a separate certificate for each baby. We'll ask for details about certificate 1 first, then for certificate 2. 
               </label>
             </div>
           </div>
+          
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="no">
+            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="no" data-aria-controls="conditional-contact-2">
             <label class="govuk-label govuk-radios__label" for="england-version14">
-              All babies
+              Yes, I'd like certificates for all babies
 
             </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-email">
+              
+You'll receive a separate certificate for each baby. We'll ask for details about certificate 1 first, then for certificate 2 and 3.   
+              </label>
+            </div>
           </div>
         </div>
         
