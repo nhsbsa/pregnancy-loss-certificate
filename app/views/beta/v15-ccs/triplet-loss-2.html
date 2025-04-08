@@ -1,0 +1,98 @@
+{% extends "layouts/main-ccs.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+ 
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group">
+ 
+  <fieldset class="govuk-fieldset">
+    
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    Are you requesting a certificate for each triplet?
+
+
+  </h1>
+</legend>
+
+      <form class="form" action="england-version14" method="post">
+        
+        
+        <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="england-version14">
+              No, I'd like a certificate for one baby
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="no" data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="england-version14">
+              No, I'd like certificates for 2 babies
+
+            </label>
+          
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-email">
+              
+You'll receive a separate certificate for each baby. We'll ask for details about certificate 1 first, then for certificate 2. 
+              </label>
+            </div>
+          </div>
+          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="no" data-aria-controls="conditional-contact-2">
+            <label class="govuk-label govuk-radios__label" for="england-version14">
+              Yes, I'd like certificates for all babies
+
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="contact-by-email">
+              
+You'll receive a separate certificate for each baby. We'll ask for details about certificate 1 first, then for certificate 2 and 3.   
+              </label>
+            </div>
+          </div>
+        </div>
+        
+           
+          </fieldset>
+        </div>
+    <br>
+
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
+
+      </form>
+    </div>
+    </div>
+  </div>
+  <style>
+    
+    .govuk-fieldset__legend--l {
+      margin-bottom: 30px;
+    }
+    .govuk-radios--inline {
+      margin-bottom: 30px;
+    }
+  </style>
+
+{% endblock %}

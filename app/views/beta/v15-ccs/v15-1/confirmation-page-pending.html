@@ -1,0 +1,70 @@
+{% extends "layouts/main-ccs.html" %}
+
+{% block pageTitle %}
+  Confirmation page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        titleText: "Request complete",
+        html: "Your reference number<br><strong>J4R-8H5-2K9F1</strong>"
+      }) }}
+
+   
+
+      <h2 class="govuk-heading-m">
+        What happens next
+      </h2>
+      
+      <p>The certificate will be posted to the main applicant within 14 days.</p>  
+
+      <p>If you would like your own certificate, you can <a href="">request one</a>.</p>
+     
+      
+<h2 class="govuk-heading-m"> Would you like to add your name<br> to another baby loss certificate?</h2>
+
+
+<form class="form" action="requesting-cert-parent-2" method="post">
+
+<div class="govuk-radios" data-module="govuk-radios">
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="requesting-cert" name="certreqsecondparent" type="radio" value="yes" data-aria-controls="conditional-contact">
+    <label class="govuk-label govuk-radios__label" for="yes">
+      Yes, I have a reference number for another certificate
+    </label>
+  </div>
+  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="yes">
+        You can continue and add your name to a certificate for another baby loss if you've received more than one email.
+      </label>
+     
+    </div>
+  </div>
+  <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="requesting-cert" name="certreqsecondparent" type="radio" value="no">
+    <label class="govuk-label govuk-radios__label" for="no">
+      No, I do not want to add my name to another certificate
+    </label>
+  </div>
+ <br>
+  <button class="govuk-button" data-module="govuk-button" type="submit">
+    Continue
+  </button>
+
+
+
+</form>
+
+  <style>
+    .govuk-panel--confirmation {
+    color: #ffffff;
+    background: #1d70b8;;
+}
+  </style>
+
+{% endblock %}

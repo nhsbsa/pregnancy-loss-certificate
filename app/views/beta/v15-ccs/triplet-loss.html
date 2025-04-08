@@ -1,0 +1,76 @@
+{% extends "layouts/main-ccs.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+ 
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group">
+  <span class="govuk-caption-l">Confirm your eligibility</span>
+  <fieldset class="govuk-fieldset">
+    
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    Was your pregnancy a single, twin or triplet pregnancy?
+
+  </h1>
+</legend>
+
+      <form class="form" action="england-version14" method="post">
+        
+         <div class="govuk-body">If you've lost more than one single pregnancy, you can request a certificate for each loss.</div>
+        <div class="govuk-radios govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="england-version14">
+              Single 
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="england-version14">
+              Twin
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="england-version14" name="england" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="england-version14">
+             Triplets
+            </label>
+          </div>
+        </div>
+           
+          </fieldset>
+        </div>
+    <br>
+
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
+
+      </form>
+    </div>
+    </div>
+  </div>
+  <style>
+    
+    .govuk-fieldset__legend--l {
+      margin-bottom: 30px;
+    }
+    .govuk-radios--inline {
+      margin-bottom: 30px;
+    }
+  </style>
+
+{% endblock %}

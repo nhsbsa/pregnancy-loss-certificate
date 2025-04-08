@@ -1,0 +1,79 @@
+{% extends "layouts/main-ccs.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+ 
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    Would you like to add the same other parent to the next certificate?
+    
+  </h1>
+</legend>
+
+
+
+      <form class="form" action="request-cert" method="post">
+        
+         
+         <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="request-cert" name="reqcert" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="no">
+              Yes, I'd like to add the same parent
+            </label>
+          </div>
+          <div class="govuk-radios__divider">or</div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="request-cert" name="reqcert" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="no">
+              No, I'd like to add a different parent
+            </label>
+          </div>
+          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="request-cert" name="reqcert" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="yes">
+              No, I'd like only myself named as a parent
+            </label>
+          </div>
+          
+          
+        </div>
+            </div>
+          </fieldset>
+       
+</div>
+</div>
+{{ govukButton({
+  text: "Continue",
+  href: "relation-to-baby",
+  isStartButton: false
+}) }}
+
+      </form>
+
+    </div>
+  </div>
+  <style>
+   
+    .govuk-button {
+      margin-left: 15px;
+    }
+  </style>
+{% endblock %}

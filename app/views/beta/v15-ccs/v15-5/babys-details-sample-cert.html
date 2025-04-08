@@ -1,0 +1,89 @@
+{% extends "layouts/main-ccs.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+ 
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+  {% block content %}
+  <div class="govuk-form-group">
+    <div class="govuk-grid-column-two-thirds">
+       <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Your baby's details
+            </h1>
+          </legend>
+          <form class="form" action="parent-add" method="post">
+            <div class="govuk-form-group">
+              <p>The next 4 questions are about your baby. You can add these details to the certificate:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>date of baby loss</li>
+                <li>place of baby loss</li>
+                <li>baby's sex</li>
+                <li>baby's name</li>
+              </ul>
+              <p>If you choose not to answer these questions, the sections will be blank on the certificate.</p>
+              <div class="govuk-inset-text">You can <a href="sample-cert">view a sample of a baby loss certificate (opens in new tab)</a>.</div>
+            </div>
+           
+           
+            {{ govukButton({
+              text: "Continue",
+              href: "date-of-loss",
+              isStartButton: false
+              }) }}
+         
+   
+        </div>
+       
+        <div class="govuk-grid-column-one-third">
+
+          <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+            <h2 class="govuk-heading-m" id="subsection-title">
+              Baby loss certificate sample
+            </h2>
+            <nav role="navigation" aria-labelledby="subsection-title">
+              <img src="/public/images/certificate.png" alt="User icon" style="height: 300px;">
+      <div class="govuk-body">The certificate can show:</div>
+         
+              <ul class="govuk-list govuk-list--bullet">
+                <li>name of parents</li>
+                <li>relationship to baby</li>
+                <li>date of baby loss</li>
+                <li>place of baby loss</li>
+                <li>baby’s sex</li>
+                <li>baby’s name</li>
+              
+                 
+              </ul>
+            </nav>
+          </aside>
+      
+        </div>
+       </div>
+       
+       
+      </form>
+      
+    </div>
+   </div>
+  </div>
+  
+
+   
+  <style>
+    .govukButton {
+      margin-left: 15px;
+    }
+  </style>
+
+  {% endblock %}

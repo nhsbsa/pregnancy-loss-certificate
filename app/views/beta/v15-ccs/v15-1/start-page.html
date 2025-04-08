@@ -1,0 +1,115 @@
+{% extends "layouts/main-ccs.html" %}
+
+{% block pageTitle %}
+Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+ 
+ 
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+     Request a baby loss certificate
+    </h1>
+    
+    <p>If a pregnancy ends before 24 weeks (or 28 weeks if a pregnancy ended before 1 October 1992), parents can get a certificate in memory of their baby.</p>
+    <p>Parents do not have to request a certificate - it’s optional. It’s free to get a certificate.</p>
+    <h2 class="govuk-heading-l">Why we're contacting you</h2>
+
+    <p>We've received a request for a baby loss certificate.</p>
+    <p>The main applicant has named you as the other parent of their baby. They would like to include your name on their certificate.</p>
+    <p>If you would like your name on their certificate, we’ll ask you some questions. You’ll have 7 days to give permission and confirm your details.</p>
+    <p>One certificate will be posted to the main applicant. If you would like your own certificate, you can <a href="start-page">request one</a>.</p>
+    
+    <p>The main applicant can still request a certificate that shows only their name as a parent of their baby if you do not:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>respond within 7 days</li>
+      <li>give permission to be named on the certificate</li>
+      </ul>
+
+    <h2 class="govuk-heading-l">About the certificate</h2>
+    <div class="govuk-inset-text">The certificate is not a legal document. For example, it cannot be used to claim benefits.</div>
+    <p>It can show:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>name of parents</li>
+      <li>relationship to baby</li>
+      <li>date of baby loss</li>
+      <li>place of baby loss</li>
+      <li>baby's sex</li>
+      <li>baby's name</li>  
+     
+     
+      
+    </ul>
+    <p>The certificate will not be added to your GP record.</p>
+    <p>If parents have lost more than one pregnancy, they can request a separate certificate for each loss. This can be done straight after their first request or later.</p>
+    
+
+    
+  
+
+ 
+    <h2 class="govuk-heading-m">Before you start</h2>
+    
+    <p>You'll need:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>your NHS number or postcode registered with your GP</li>
+      <li>the mobile phone number or email address registered with your GP</li>
+      <li>the reference number in your email</li>
+      
+     
+    </ul>
+   
+
+
+  </div>
+
+  
+</div>
+
+{{ govukButton({
+  text: "Start now",
+  href: "reference-number",
+  isStartButton: true
+  }) }}
+
+  <h2 class="govuk-heading-m">Get help to request a certificate</h2>
+  <p>If you cannot continue online, email or call the helpline.</p>
+  <div class="contact">
+   <p>Baby loss certificate service <br>
+   Email: <a href="mailto:babylosscertificate@nhsbsa.nhs.uk">babylosscertificate@nhsbsa.nhs.uk</a> <br>
+   Telephone: 0300 330 9445</p>
+   
+   <p>Monday to Friday, 9am to 5pm <br>
+   <a href="/call-charges">Find out about call charges</a></p>
+   <style>
+    .contact {
+        border-left: 1px solid #b1b4b6;
+        padding-left: 15px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+    
+    user agent stylesheet
+    div {
+        display: block;
+    }
+    .govspeak .contact, .gem-c-govspeak .contact {
+        position:relative
+    }
+    </style>
+
+{% endblock %}

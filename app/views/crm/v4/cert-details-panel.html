@@ -1,0 +1,114 @@
+{% extends "layouts/main.html" %}
+
+{% set heading = "What do you want to do?" %}
+
+{% block pageTitle %}
+{{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+
+{% block header %}
+  {% include 'crm/v3/includes/header' %}
+{% endblock %}
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to search",
+    href: "search"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+  
+.govuk-summary-list__key, .govuk-summary-list__value, .govuk-summary-list__actions {
+    border-bottom: 1px solid darkgray;
+    display: table-cell;
+    padding-bottom: 8px;
+    padding-right: 24px;
+    padding-top: 8px;
+}
+.govuk-table__cell {
+  margin-bottom: 20px;
+}
+.govuk-panel {
+background-color: 	#d4351c;
+border-color: 	#d4351c;
+}
+ 
+ 
+
+</style>
+<div class="govuk-panel govuk-panel--confirmation">
+  <h1 class="govuk-panel__title">
+    Blocked
+  </h1>
+  <div class="govuk-panel__body">
+    John Doe will not receive email invitations from Jane Doe
+  </div>
+</div>
+
+
+
+<br>
+<div id="search" style="margin-top: 25px; margin-bottom: -25px;">
+<div>
+  <style>
+    
+  .govuk-summary-list__key, .govuk-summary-list__value, .govuk-summary-list__actions {
+      border-bottom: 1px solid darkgray;
+      display: table-cell;
+      padding-bottom: 8px;
+      padding-right: 24px;
+      padding-top: 8px;
+
+    
+     
+  }
+   
+   
+   
+   
+  </style>
+  <style>
+    .govuk-notification-banner {
+      margin-bottom: 0px;
+    }
+  </style>
+ 
+   
+   
+   
+      
+      <p>Contact the Call Centre if you want to unblock Jane Doe from sending email invitations to John Doe</p>
+   
+      <div class="contact">
+        <p>Baby loss certificate service <br>
+        Email: <a href="mailto:babylosscertificate@nhsbsa.nhs.uk">babylosscertificate@nhsbsa.nhs.uk</a> <br>
+        Telephone: 0300 330 9445</p>
+        
+        <p>Monday to Friday, 9am to 5pm <br>
+        <a href="/call-charges">Find out about call charges</a></p>
+        </div>
+        {{ govukButton({
+          text: "Search for a certificate",
+          href: "search",
+          isStartButton: false
+        }) }}
+
+        <style>
+          .contact {
+              border-left: 1px solid #b1b4b6;
+              padding-left: 15px;
+              margin-bottom: 30px;
+              margin-top: 30px;
+          }
+          
+          user agent stylesheet
+          div {
+              display: block;
+          }
+          .govspeak .contact, .gem-c-govspeak .contact {
+              position:relative
+          }
+          </style>
+      {% endblock %}

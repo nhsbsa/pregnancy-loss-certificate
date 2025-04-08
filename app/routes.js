@@ -32,8 +32,10 @@ router.use('live', require('./views/live/live-parent2/_routes'));
 router.use('back-office', require('./views/back-office/_routes'));
 router.use('ccs', require('./views/ccs/_routes'));
 router.use('ccs2', require('./views/ccs2/_routes'));
+router.use('ccs3', require('./views/ccs3/_routes'));
 
 
+router.use('beta/v15-ccs', require('./views/beta/v15-ccs/_routes'));
 router.use('beta/v15', require('./views/beta/v15/_routes'));
 router.use('beta/v15/v15-1', require('./views/beta/v15/v15-1/_routes'));
 //router.use('beta/v15/v15-5', require('./views/beta/v15/v15-5/_routes'));

@@ -1,0 +1,75 @@
+{% extends "layouts/main-ccs.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+ 
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+  {% block content %}
+  <div class="govuk-form-group">
+    <div class="govuk-grid-column-two-thirds">
+       <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Sample certificate
+            </h1>
+          </legend>
+              </aside>
+            
+                <div class="govuk-body">
+                  The baby loss certificate is an official document issued on behalf of the Secretary of State for Health and Social Care. It will be printed on watermarked paper.<br> <br>
+                  The wording on the certificate is as follows:<br><br>Certificate of baby loss under 24 weeks gestation.Issued on behalf of the Secretary of State for Health and Social Care.<br> <br><ul class="govuk-list govuk-list--number">
+                  <li>Certificate reference</li>
+                  <li>Date of issue</li>
+                  <li>Name and surname of parent</li>
+                  <li>Name and surname of any other parent</li>
+                  <li>Name of baby (optional)</li>
+                  <li>Sex (if known)</li>
+                  <li>Date of loss (if known)</li>
+                  <li>Place of loss (if known)</li>
+                  </ul>
+                  Information: This certificate is produced following a self-declaration by the parent. <br><br>
+                  This certificate cannot be used as evidence of identity and does not allow any entitlement to any services or benefits.   </div>
+              </details>
+              
+                           </div>
+           </div>
+           
+            {{ govukButton({
+              text: "Continue",
+              href: "date-of-loss",
+              isStartButton: false
+              }) }}
+         
+   
+        </div>
+      
+       </div>
+       
+       
+      </form>
+      
+    </div>
+   </div>
+  </div>
+  
+
+   
+  <style>
+    .govukButton {
+      margin-left: 15px;
+    }
+    .govuk-body {
+      margin-top: 20px;
+    }
+  </style>
+
+  {% endblock %}

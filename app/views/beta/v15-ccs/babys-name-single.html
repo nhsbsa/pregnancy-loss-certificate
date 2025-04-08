@@ -1,0 +1,81 @@
+{% extends "layouts/main-ccs.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+ 
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+  <span class="govuk-caption-l">Details on the certificate</span>
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    Would you like your baby’s name on the certificate?
+    
+  </h1>
+</legend>
+<p>You may not have named your baby. </p>
+<p>If you did name your baby, you can enter a first name, full name, or a nickname.</p>
+
+<p>
+  If you select ‘No’, this section will be blank on the certificate.
+</p>
+
+      <form class="form" action="baby-name-version1" method="post">
+
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="years-yes" name="years" type="radio" value="yes" data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="contact">
+              Yes
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+            <div class="govuk-form-group">
+              <label class="govuk-label">
+                Enter baby’s name or nickname
+              </label>
+              <input class="govuk-input" id="baby-name" name="baby-firstname" type="text">
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="babys" name="years" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="contact-2">
+              No
+            </label>
+          </div>
+            </div>
+          </div>
+          </fieldset>
+       
+       </div>
+       </div>
+    
+    {{ govukButton({
+      text: "Continue",
+      href: "check-your-answers-single",
+      isStartButton: false
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+  <style>
+    .govuk-button {
+      margin-left: 15px;
+    }
+  </style>
+
+{% endblock %}

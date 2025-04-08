@@ -1,0 +1,79 @@
+{% extends "layouts/main-ccs.html" %}
+
+{% block pageTitle %}
+Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+ 
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+  {% block content %}
+  <div class="govuk-form-group">
+    <div class="govuk-grid-column-two-thirds">
+       <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Your baby's details
+            </h1>
+          </legend>
+          <form class="form" action="parent-add" method="post">
+            <div class="govuk-form-group">
+              <p>The next 4 questions are about your baby. You can add these details to the certificate:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>date of baby loss</li>
+                <li>place of baby loss</li>
+                <li>baby's sex</li>
+                <li>baby's name</li>
+              </ul>
+              <p>If you choose not to answer these questions, the sections will be blank on the certificate.</p>
+             
+                <h2 class="govuk-heading-m" id="subsection-title">
+                  Blank sample certificate
+                </h2>
+                <div class="govuk-inset-text">
+                 <div class="govuk-body">You might find it helpful to <a href="sample-cert.html">view a blank sample of the certificate (opens in new tab)</a>.</div>
+                  <div class="govuk-body">You can also <a href="sample-cert.html">read a text-only version that describes the certificate (opens in new tab)</a>.</div>             
+             
+                </nav>
+              </aside>
+        
+              
+                           </div>
+           
+           
+            {{ govukButton({
+              text: "Continue",
+              href: "date-of-loss",
+              isStartButton: false
+              }) }}
+         
+   
+        </div>
+      
+       </div>
+       
+       
+      </form>
+      
+    </div>
+   </div>
+  </div>
+  
+
+   
+  <style>
+    .govukButton {
+      margin-left: 15px;
+    }
+    .govuk-body {
+      margin-top: 20px;
+    }
+  </style>
+
+  {% endblock %}

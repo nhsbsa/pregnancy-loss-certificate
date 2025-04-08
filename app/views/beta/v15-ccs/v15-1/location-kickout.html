@@ -1,0 +1,46 @@
+{% extends "layouts/main-ccs.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+ 
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        We cannot provide a baby loss certificate because you can only use this service if your baby loss happened in England
+      </h1>
+
+     
+      
+      <h3 class="govuk-heading-m">Support organisations</h3>
+      <p>The following organisations give support and advice:</p>
+      <ul class="govuk-list govuk-list--bullet">
+             <li><a href="www.nhs.uk/mental-health/social-care-and-your-rights/how-to-access-mental-health-services/">NHS How to access mental health services</a></li>
+<li><a href="www.arc-uk.org">Antenatal Results and Choices (ARC)</a></li>
+<li><a href="www.daddyswithangels.org">Daddy’s with Angels</a></li>
+<li><a href="www.petalscharity.org ">Petals</a></li>
+    <li><a href=“https://www.sands.org.uk/”>Sands</a></li>
+<li><a href="www.sayinggoodbye.org">Saying Goodbye</a></li>
+<li><a href="https://ectopic.org.uk/">The Ectopic Pregnancy Trust</a></li>
+<li><a href="www.miscarriageassociation.org.uk">The Miscarriage Association</a></li>
+   <li><a href=“www.tommys.org”>Tommy's</a></li>
+   <li><a href=“https://twinstrust.org/”>Twins Trust</a></li>
+   <li><a href=“https://twinstrust.org/”>Twins Trust</a></li>
+ </ul>
+
+    </div>
+  </div>
+
+{% endblock %}

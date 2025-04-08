@@ -1,0 +1,56 @@
+{% extends "layouts/main-ccs.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+ 
+ 
+{% endblock %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-form-group">
+ 
+  <fieldset class="govuk-fieldset">
+    
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+  <h1 class="govuk-fieldset__heading">
+    Sorry, there is a problem with the service
+  </h1>
+</legend>
+
+      <form class="form" action="location-england" method="post">
+        
+        <p class="govuk-body">Try again in a few minutes.</p>
+        
+        
+
+        </div>
+        </div>
+           
+          </fieldset>
+        </div>
+         
+    {{ govukButton({
+      text: "Try again",
+      href: "enter-location-uk",
+      isStartButton: false
+      }) }}
+
+        
+
+      </form>
+    </div>
+    </div>
+  </div>
+<style>
+  .govuk-button {
+    margin-left: 10px;
+  }
+</style>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "layouts/main-ccs.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+ 
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-form-group">
+  <div class="govuk-grid-column-two-thirds">
+
+
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Automatic timeout
+          </h1>
+        </legend>
+        <form class="form" action="place-of-loss" method="post">
+          <p>Your session automatically ends if you don't use the service for 30 minutes.</p>
+       
+         
+          
+       
+          
+          
+      </fieldset>
+    </div>
+  </div>
+ 
+        </div>
+
+        {{ govukButton({
+          text: "Start now",
+          href: "enter-location",
+          isStartButton: true
+          }) }}
+
+      </form>
+
+    </div>
+  </div>
+  <style>
+    
+    .govuk-button {
+      margin-left: 15px;
+    }
+  </style>
+{% endblock %}
