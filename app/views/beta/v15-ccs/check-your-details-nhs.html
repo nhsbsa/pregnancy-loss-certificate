@@ -5,16 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      Beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
+
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -29,7 +20,7 @@
         <h1 class="govuk-heading-l">Confirm your postal address</h1>
         <p>This is the address your certificate will be sent to.</p>
         <p>If this is not the correct address, you will need to contact your GP surgery.</p>
-        <form class="form" action="confirm-post-address" method="post">
+        <form class="form" action="call-post-ad" method="post">
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -76,20 +67,20 @@
       
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="confirm-post-address" name="details" type="radio" value="yes">
+                <input class="govuk-radios__input" id="call-post-ad" name="ccsaddress" type="radio" value="yes">
                 <label class="govuk-label govuk-radios__label" for="check-details-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="confirm-post-address" name="details" type="radio" value="no">
+                <input class="govuk-radios__input" id="call-post-ad" name="ccsaddress" type="radio" value="no">
                 <label class="govuk-label govuk-radios__label" for="check-details-no">
                   No
                 </label>
               </div>
               <div class="govuk-radios__divider">or</div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="confirm-post-address" name="details" type="radio" value="no">
+                <input class="govuk-radios__input" id="call-post-ad" name="ccsaddress" type="radio" value="alternative">
                 <label class="govuk-label govuk-radios__label" for="check-details-no">
                   Alternative
                 </label>

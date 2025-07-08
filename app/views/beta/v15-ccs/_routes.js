@@ -290,4 +290,20 @@ router.post(/baby-details-conditional/, (req, res) => {
   }
 
 })
+
+router.post(/call-post-ad/, (req, res) => {
+
+  const AddressAlternative = req.session.data['ccsaddress']
+
+  if (AddressAlternative == 'yes') {
+    res.redirect('add-parent');
+  } else if (AddressAlternative == 'no') {
+    res.redirect('check-your-details-kickout')
+  } else if (AddressAlternative == 'alternative') {
+    res.redirect('what-is-your-address')
+  } else {
+    res.redirect('add-parent');
+  }
+
+})
 module.exports = router;

@@ -35,7 +35,7 @@
   </h1>
 </legend>
 
-      <form class="form" action="parent-continue" method="post">
+      <form class="form" action="parent-ref" method="post">
        
         
 
@@ -51,7 +51,7 @@
             </div>
            
           
-          <input class="govuk-input govuk-!-width-one-half" id="csigAppReference" name="csigAppReference" type="text" aria-describedby="csigAppReference-hint" aria-required="true">
+          <input class="govuk-input govuk-!-width-one-half" id="csigAppReference" name="live-ref-parent" type="text" aria-describedby="csigAppReference-hint" aria-required="true">
           
           
           </div>
@@ -69,13 +69,10 @@
           
    
      
-    
-
-        {{ govukButton({
-          text: "Continue",
-          href: "nhs-number",
-          isStartButton: false
-          }) }}
+        
+  <button type="submit" class="govuk-button">
+    Continue
+  </button>
 
       </form>
     </div>

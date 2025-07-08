@@ -230,6 +230,15 @@ router.post(/email-security-code/, (req, res) => {
   }
 
 })
+router.post(/live-req-another/, (req, res) => {
+liveotherreq = req.session.data['liverequestcertififcate']
 
+  if (liveotherreq == 'yes') {
+    res.redirect('add-other-parent');
+  } else {
+    res.redirect('confirmation-page-new');
+  }
+
+})
 
 module.exports = router;

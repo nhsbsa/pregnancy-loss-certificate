@@ -94,13 +94,18 @@
 
     <div class="search-card__status">
       <strong class="govuk-tag govuk-tag--green">Sent</strong>
-      <p class="govuk-!-font-size-14 govuk-!-margin-top-2">Submitted:<br> {{ data['applications'][data['results'][i]].submitted | govukDate }}<br>{{ data['applications'][data['results'][i]].submitted | govukTime }}</p>
+      <p class="govuk-!-font-size-14 govuk-!-margin-top-2 govuk-!-margin-bottom-1">Submitted:<br> {{ data['applications'][data['results'][i]].submitted | govukDate }}</p>
+      <p class="govuk-!-font-size-14 govuk-!-margin-top-0 govuk-!-margin-bottom-1">Last updated:<br>{{ data['applications'][data['results'][i]].submitted | govukDate }}</p>
+        <p class="govuk-!-font-size-14 govuk-!-margin-top-0 govuk-!-margin-bottom-1 ">Reissued certificates: 1</p>
       {{ govukButton({
         text: "Certificate details",
         href: "cert-det",
         isStartButton: false
         }) }}
+        <p class="govuk-!-font-size-16">Please note:
+          Data is anonymised after 3 months. After 10 years it is deleted.</p>
     </div>
+    
   
     <div class="search-card__copy">
    

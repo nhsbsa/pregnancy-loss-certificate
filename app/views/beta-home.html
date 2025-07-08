@@ -5,11 +5,27 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-thirds">
     <h1 class="govuk-heading-l">
       Private Beta (September 2023)
     </h1>
-
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important 
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <div class="govuk-heading-m">Use these details to get through both parent journeys</div>
+        <p>Postcode: NE1 3JA<br>
+          Date of birth: 27/3/2007<br>
+        Other parent reference number for non recurrent loss: 123<br>
+      Other parent reference number for reccurrent loss: 4321</p>
+      
+      </div>
+    </div>
+   
+  
     <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
 
       <div class="govuk-accordion__section">
@@ -20,41 +36,43 @@
             </span>
           </h2>
       </div>
-
+      
           <div aria-labelledby="accordion-default-heading-10" class="govuk-accordion__section-content" id="accordion-default-content-10">
-            <a class="govuk-button" href="beta/v15/start-page">Parent 1 Start screen</a>
-            <br>
             
-            <p class='govuk-body'>Use EN1 1BE to get throught the IDV route</p>
-            <p class='govuk-body'>Use date 27/3/2007 for date of birth, any other dates will guide you to the kickout
-              screen</p>
-            <div class="govuk-heading-m">Other parent journey including recurrent and multiple loss</div>
-            <div class="govuk-body">For this journey if the main applicant has chosen to add the same other parent to
-              other certificates the other parent will not need to go through the identity verification process again
-            </div>
-            <div class="govuk-heading-m">For the non multiple loss journey use:</div>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>reference number "123"</li>
-              <li>postcode "NE1 3JA"</li>
-              <li>date of birth "27/3/2007"</li>
-            </ul> <div class="govuk-heading-m">For the multiple loss journey use:</div>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>reference number "4321"</li></ul>
-
-            <a class="govuk-button" href="beta/v15/v15-1/start-page">Other parent start screen</a>
-
-            <div class="govuk-heading-m">Recurrent loss main parent journey</div>
-            <div class="govuk-body">This journey is for users that have selected they want to request other certificates
-              if they
-              have had more than one loss, it will cut out
-              the eligibility question "do you live in England?" as we already know this from their initial application.
-              The
-              applicant wont need to go through the identify verification process again.
-            </div>
-            <a class="govuk-button" href="beta/v12-5/enter-location">Recurrent loss</a>
+            <a class="govuk-button" href="beta/v15/start-page">Main parent/applicant start</a>
+            <br>
+         
           
-           
+            <a class="govuk-button" href="beta/v15/v15-1/start-page">Other parent start</a>
+            <div class="govuk-heading-m">What we created</div>
+            <div class="govuk-body">We created a journey that reflects the twin and triplet baby loss, by allowing these users to request two or more certificates in one application without reaching the end of the journey</div>
 
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Added content on the start page</li>
+              <li>Added new screen <a rel="external" href="https://pregnancy-loss-certificate.herokuapp.com/beta/v15/babies-lost">Did you have a single, twin or triplet pregnancy?</a></li>
+              <li>Added new screen <a rel="external" href="https://pregnancy-loss-certificate.herokuapp.com/beta/v15/twin-loss-2">Are you requesting certificates for both babies from your twin pregnancy?</a></li>
+              <li>Added new screen <a rel="external" href="https://pregnancy-loss-certificate.herokuapp.com/beta/v15/triplet-loss-2">Are you requesting a certificate for each triplet?</a></li>
+              <li>Added application number as well as certificate reference number on the confirmation page <a rel="external" href="https://pregnancy-loss-certificate.herokuapp.com/beta/v15/confirmation-page">Request pending</a></li>
+
+              </a>
+            </ul>
+              <div class="govuk-heading-m">What we tested</div>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>The content on the start page</li>
+                <li>The content on the new twin and triplet loss screens</li>
+                <li>The user journey</li>
+              </ul>
+          
+          <div class="govuk-heading-m">What we found</div>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Users had a good understanding of the application number and certificate reference numbers.</li>
+                <li>The question ‘Have you lost both babies from your twin pregnancy?’ was clear for most users.</li>
+                
+              </ul>
+         
+          <div class="govuk-heading-m">Any known issues?</div>
+              <div class="govuk-body">Overall most users were happy with the journey, however most people we tested with would assume that both or more certificates would come in the same envelope, this is something we will keep an eye on from the survey to see if this would be a need. One user out of all that we tested still assumed the twin or triplet details would be on the same certificate, again the content states otherwise but this is something we plan on monitoring. One user struggled with the question "have you lost both babies from your twin pregnancy?" as the options did not reflect their experience.</li>
+               
           </div>
         </div>
 
@@ -66,39 +84,43 @@
             </span>
           </h2>
       </div>
-
+     
           <div aria-labelledby="accordion-default-heading-10" class="govuk-accordion__section-content" id="accordion-default-content-10">
-            <a class="govuk-button" href="beta/v14/start-page">Parent 1 Start screen</a>
+            <a class="govuk-button" href="beta/v14/start-page">Main parent/applicant start</a>
             <br>
-            
-            <p class='govuk-body'>Use NE1 3JA to get throught the IDV route</p>
-            <p class='govuk-body'>Use date 27/3/2007 for date of birth, any other dates will guide you to the kickout
-              screen</p>
-            <div class="govuk-heading-m">Other parent journey including recurrent and multiple loss</div>
-            <div class="govuk-body">For this journey if the main applicant has chosen to add the same other parent to
-              other certificates the other parent will not need to go through the identity verification process again
-            </div>
-            <div class="govuk-heading-m">For the non multiple loss journey use:</div>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>reference number "123"</li>
-              <li>postcode "NE1 3JA"</li>
-              <li>date of birth "27/3/2007"</li>
-            </ul> <div class="govuk-heading-m">For the multiple loss journey use:</div>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>reference number "4321"</li></ul>
+            <a class="govuk-button" href="beta/v14/v14-1/start-page">Other parent start</a>
+            <div class="govuk-heading-m">What we created</div>
+            <div class="govuk-body">We created a journey that allows the main applicant to still receive a certificate in their name only or to be cancelled if the other parent cannot confirm or doesnt want to be on the certificate. We also removed the question </div>
 
-            <a class="govuk-button" href="beta/v14/v14-1/start-page">Other parent start screen</a>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Added content on the start page</li>
+              <li>Added new screen <a rel="external" href="https://pregnancy-loss-certificate.herokuapp.com/beta/v15/babies-lost">Did you have a single, twin or triplet pregnancy?</a></li>
+              <li>Added new screen <a rel="external" href="https://pregnancy-loss-certificate.herokuapp.com/beta/v15/twin-loss-2">Are you requesting certificates for both babies from your twin pregnancy?</a></li>
+              <li>Added new screen <a rel="external" href="https://pregnancy-loss-certificate.herokuapp.com/beta/v15/triplet-loss-2">Are you requesting a certificate for each triplet?</a></li>
+              <li>Added application number as well as certificate reference number on the confirmation page <a rel="external" href="https://pregnancy-loss-certificate.herokuapp.com/beta/v15/confirmation-page">Request pending</a></li>
 
-            <div class="govuk-heading-m">Recurrent loss main parent journey</div>
-            <div class="govuk-body">This journey is for users that have selected they want to request other certificates
-              if they
-              have had more than one loss, it will cut out
-              the eligibility question "do you live in England?" as we already know this from their initial application.
-              The
-              applicant wont need to go through the identify verification process again.
-            </div>
-            <a class="govuk-button" href="beta/v12-5/enter-location">Recurrent loss</a>
+              </a>
+            </ul>
+              <div class="govuk-heading-m">What we tested</div>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>The content on the start page</li>
+                <li>The content on the new twin and triplet loss screens</li>
+                <li>The user journey</li>
+              </ul>
           
+          <div class="govuk-heading-m">What we found</div>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Users had a good understanding of the application number and certificate reference numbers.</li>
+                <li>The question ‘Have you lost both babies from your twin pregnancy?’ was clear for most users.</li>
+                
+              </ul>
+         
+          <div class="govuk-heading-m">Any known issues?</div>
+              <div class="govuk-body">Overall most users were happy with the journey, however most people we tested with would assume that both or more certificates would come in the same envelope, this is something we will keep an eye on from the survey to see if this would be a need. One user out of all that we tested still assumed the twin or triplet details would be on the same certificate, again the content states otherwise but this is something we plan on monitoring. One user struggled with the question "have you lost both babies from your twin pregnancy?" as the options did not reflect their experience.</li>
+               
+          </div>
+        </div>
+         
            
 
           </div>

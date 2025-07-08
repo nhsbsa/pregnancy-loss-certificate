@@ -97,13 +97,13 @@ router.post(/is-this-correct/, (req, res) => {
   }
 
 })
-router.post(/cya-correct/, (req, res) => {
+router.post(/twincyacorrect/, (req, res) => {
 
  
-  const checkDetails = req.session.data['check']
+  const twincheckDetails = req.session.data['check']
 
-  if (checkDetails == 'yes') {
-    res.redirect('declaration');
+  if (twincheckDetails == 'yes') {
+    res.redirect('check-your-answers-twins');
   } else {
     res.redirect('check-answers-kickout-copy');
   }
@@ -130,6 +130,7 @@ router.post(/parent-reference-number/, (req, res) => {
     res.redirect('nhs-number');
   } else if (EnterReference == '4321') {
     res.redirect('contact-email')
+  
   } else {
     res.redirect('contact-email');
   }

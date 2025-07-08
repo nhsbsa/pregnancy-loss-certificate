@@ -121,7 +121,20 @@ router.post(/cya-kickout/, (req, res) => {
   }
 
 })
+router.post(/parent-ref/, (req, res) => {
 
+  const Referencepar2 = req.session.data['live-ref-parent']
+
+  if (Referencepar2 == '123') {
+    res.redirect('nhs-number');
+  } else if (Referencepar2 == '4321') {
+    res.redirect('contact-email')
+  
+  } else {
+    res.redirect('contact-email');
+  }
+
+})
 
 
 module.exports = router;

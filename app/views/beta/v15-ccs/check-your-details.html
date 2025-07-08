@@ -19,6 +19,25 @@
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
+              Do you know your NHS number?
+            </dt>
+            <dd class="govuk-summary-list__value">
+             
+                {% if data['parent1-firstname'] %}
+                {{ data['parent1-firstname'] }} {{ data['parent1-lastname'] }}
+                {% else %}
+               No
+                {% endif %}
+           
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
              Name
             </dt>
             <dd class="govuk-summary-list__value">
