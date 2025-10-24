@@ -25,61 +25,67 @@
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
-  <span class="govuk-caption-l">Details on certificate 1</span>
 <div class="govuk-form-group">
+ 
   <fieldset class="govuk-fieldset">
+    
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
-    Would you like the sex of your baby on the certificate?
-    
+    Did you have a single, twin or triplet pregnancy?
+
+
   </h1>
 </legend>
-<p>You may not know the sex of your baby.</p>
-<p>This section will be blank on the certificate if you select ‘No, I do not want the sex on the certificate’.</p>
 
-
-      <form class="form" action="baby-gender-version1" method="post">
+      <form class="form" action="multiple-loss-pregnancy" method="post">
         
-         
-         <div class="govuk-radios" data-module="govuk-radios">
+       
+        <div class="govuk-radios govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="yes">
-              Yes, I’d like the sex on the certificate
+            <input class="govuk-radios__input" id="multiple-loss-pregnancy" name="loss-multiple" type="radio" value="single">
+            <label class="govuk-label govuk-radios__label" for="multiple-loss-pregnancy">
+              Single pregnancy
             </label>
           </div>
+          
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="no">
-              No, I do not want the sex on the certificate
+            <input class="govuk-radios__input" id="multiple-loss-pregnancy" name="loss-multiple" type="radio" value="twin">
+            <label class="govuk-label govuk-radios__label" for="multiple-loss-pregnancy">
+              Twin pregnancy
 
             </label>
           </div>
-          <div class="govuk-radios__divider">or</div>
-        </div>
+          
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="unknown">
-            <label class="govuk-label govuk-radios__label" for="unknown">
-              I do not know the sex and I’d like ‘Unknown’ on the certificate
+            <input class="govuk-radios__input" id="multiple-loss-pregnancy" name="loss-multiple" type="radio" value="triplet">
+            <label class="govuk-label govuk-radios__label" for="multiple-loss-pregnancy">
+            Triplet pregnancy
+
             </label>
           </div>
+         
         </div>
-            </div>
+           
           </fieldset>
-       
-</div>
+        </div>
+    <br>
+
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
 
       </form>
-
+    </div>
     </div>
   </div>
   <style>
-   
-    .govuk-button {
-      margin-left: 15px;
+    
+    .govuk-fieldset__legend--l {
+      margin-bottom: 30px;
+    }
+    .govuk-radios--inline {
+      margin-bottom: 30px;
     }
   </style>
+
 {% endblock %}
