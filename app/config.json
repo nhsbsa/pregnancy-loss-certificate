@@ -1,3 +1,8 @@
 {
-  "serviceName": "Request a baby loss certificate"
+  "serviceName": "Request a baby loss certificate",
+  "plugins": {
+  "govuk-frontend": {
+    "rebrand": true
+  }
+}
 }
