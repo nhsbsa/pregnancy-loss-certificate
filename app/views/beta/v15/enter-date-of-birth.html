@@ -23,9 +23,9 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+  <form class="form" action="date-of-birth" method="post">
   <span class="govuk-caption-l">Your details</span>
   <fieldset class="govuk-fieldset">
     <div class="govuk-form-group">
@@ -35,11 +35,12 @@
             What is your date of birth?
           </h1>
         </legend>
-        <form class="form" action="date-of-birth" method="post">
+
         <div id="dob-enter" class="govuk-hint">
           For example, 27 3 2007
         </div>
-        
+
+        <div class="govuk-form-group">
           <div class="govuk-date-input" id="date-of-birth">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
@@ -66,28 +67,21 @@
             </div>
           </div>
         </div>
+      </div>
       </fieldset>
     </div>
-  </div> </div>
 
-
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+      Continue
+    </button>
 
       </form>
 </div>
-    </div>
+</div>
+</div>
 
   <style>
-  
-   
-    .govuk-button {
-      margin-left: 15px;
-     
-    }
-    
-    
+
   </style>
 
 {% endblock %}

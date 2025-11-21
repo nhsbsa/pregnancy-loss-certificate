@@ -23,9 +23,10 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
   {% endblock %}
 
   {% block content %}
-  <div class="govuk-form-group">
+  <div class="govuk-grid-row">
   <span class="govuk-caption-l">Your details</span>
     <div class="govuk-grid-column-two-thirds">
+      <form action="security-code" class="form" method="post">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
@@ -33,7 +34,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
           </h1>
         </legend>
 
-        <form action="security-code" class="form" method="post">
+          <div class="govuk-form-group">
 
           <p>We sent your security code by email to Sa********@gmail.com</p>
 
@@ -43,8 +44,8 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
           <input aria-describedby="nhs-number-hint" class="govuk-input govuk-input--width-10" id="security-code"
             inputmode="numeric" name="entercode" type="text">
 
-    
-      
+          </div>
+
       <p>Didn't get your security code?
         <a href="">Resend code
         </a>

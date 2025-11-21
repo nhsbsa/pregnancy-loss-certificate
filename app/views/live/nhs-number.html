@@ -54,7 +54,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
             </summary>
             <div class="govuk-details__text">
               If you’re registered with a GP, you will have a 10 digit NHS number unique to you.<br>
-             
+
               <br> You can find it on the NHS app or <a href="">use our online NHS number finder (opens in a new
                 tab)</a>.<br>
 
@@ -67,33 +67,31 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
                 <li>maternity notes</li>
               </ul>
             </div>
-    </div>
+          </details>
 
-    </details>
+          <div class="govuk-form-group">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="main-applicant-nhs" name="nhs" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="yes">
+                Yes, I know my NHS number
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="main-applicant-nhs" name="nhs" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="no">
+                No, continue with my full name, date of birth and postcode
+              </label>
+            </div>
+          </div>
 
-
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="main-applicant-nhs" name="nhs" type="radio" value="yes">
-      <label class="govuk-label govuk-radios__label" for="yes">
-        Yes, I know my NHS number
-      </label>
-    </div>
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="main-applicant-nhs" name="nhs" type="radio" value="no">
-      <label class="govuk-label govuk-radios__label" for="no">
-        No, continue with my full name, date of birth and postcode
-      </label>
-    </div>
-
+          <div class="govuk-form-group">
+            <button class="govuk-button" data-module="govuk-button" type="submit">
+              Continue
+            </button>
+          </div>
+      </form>
+    </fieldset>
   </div>
-  </fieldset>
-
-
-  <button class="govuk-button" data-module="govuk-button" type="submit">
-    Continue
-  </button>
-
-  </form>
 </div>
 
 </div>

@@ -23,23 +23,20 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<div class="govuk-form-group">
-  <span class="govuk-caption-l">Details on the certificate</span>
-  <fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-    Would you like to add another parent to the certificate? 
-    
-  </h1>
-</legend>
+    <form class="form" action="version10-add-parent" method="post">
+      <div class="govuk-form-group">
+        <span class="govuk-caption-l">Details on the certificate</span>
+        <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Would you like to add another parent to the certificate?
+          </h1>
+        </legend>
 
-
-      <form class="form" action="version10-add-parent" method="post">
-      
-        <div class="govuk-body">You’ll need to let the other parent know that you’d like to add their name to the certificate. </div>
-<div class="govuk-body">The section for the other parent's name will be blank on the certificate if you select 'No'.</div>
+        <div class="govuk-body">You’ll need to let the other parent know that you’d like to add their name to the certificate.</div>
+        <div class="govuk-body">The section for the other parent's name will be blank on the certificate if you select 'No'.</div>
         <div class="govuk-radios govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="version10-add-parent" name="parent" type="radio" value="yes" data-aria-controls="conditional-contact">
@@ -50,7 +47,7 @@
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
 
             <label class="govuk-label" for="contact-by-email">
-              
+
               We’ll ask you for the other parent’s email address so we can send them a link. They’ll have up to 7 days to:<br>
               <br><ul class="govuk-list govuk-list--bullet">
                 <li>confirm their details, including their date of birth</li>
@@ -59,7 +56,7 @@
               <p>You'll need to <a href="/Beta/v12/contact">contact us</a> if the other parent does not have an email address or has died.</p>
             </label>
           </div>
-         
+
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="version10-add-parent" name="parent" type="radio" value="no">
             <label class="govuk-label govuk-radios__label" for="no">
@@ -67,20 +64,19 @@
             </label>
           </div>
         </div>
-          </fieldset>
-        </div>
-        
-        <button class="govuk-button" data-module="govuk-button" type="submit">
-          Continue
-        </button>
+      </fieldset>
+    </div>
 
-      </form>
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+      Continue
+    </button>
+
+  </form>
 </div>
 </div>
     </div>
-  </div>
   <style>
-    
+
     .govuk-radios {
       margin-bottom: 20px;
     }

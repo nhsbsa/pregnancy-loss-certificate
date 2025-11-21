@@ -23,23 +23,21 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
   {% endblock %}
 
   {% block content %}
-  <div class="govuk-form-group">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">Your details</span>
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            What is your NHS number?
-          </h1>
-        </legend>
-      </fieldset>
+      <form class="form" action="get-security-code" method="post">
+        <span class="govuk-caption-l">Your details</span>
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What is your NHS number?
+            </h1>
+          </legend>
 
-        <form class="form" action="get-security-code" method="post">
-         
             <div class="govuk-body">
               Your NHS number is a 10 digit number that you find on any letter the NHS has sent you.
             </div>
-            
+
             <div id="passport-issued-hint" class="govuk-hint">
               For example, 485 777 3456
             </div>
@@ -49,20 +47,17 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
             <div class="govuk-inset-text">
               The certificate will not go on your GP record.
             </div>
+          </fieldset>
 
           {{ govukButton({
             text: "Continue",
             href: "check-your-details-copy",
             isStartButton: false
             }) }}
-  
-  
 
-      
           </form>
         </div>
      </div>
-     </div>
-     </div>
+   </div>
 
 {% endblock %}

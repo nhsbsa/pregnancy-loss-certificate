@@ -23,22 +23,19 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<div class="govuk-form-group">
+    <form class="form" action="parent-add" method="post">
+      <div class="govuk-form-group">
 
-  <fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-    Would you still like to receive the certificate if the other parent does not respond?  </h1>
-</legend>
+        <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Would you still like to receive the certificate if the other parent does not respond?  </h1>
+      </legend>
 
+        <div class="govuk-body">You can still receive a certificate that shows only your name as a parent of your baby, if the other parent does not confirm their details.</div>
 
-      <form class="form" action="parent-add" method="post">
-        
-        <div class="govuk-body">
-          You can still receive a certificate that shows only your name as a parent of your baby, if the other parent does not confirm their details.</div>
-       
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
@@ -68,7 +65,7 @@
           </div>
           </fieldset>
         </div>
-       
+
         {{ govukButton({
           text: "Continue",
           href: "parent-contact",
@@ -76,12 +73,11 @@
           }) }}
 
       </form>
-</div>
-</div>
     </div>
   </div>
+</div>
   <style>
-    
+
     .govuk-radios {
       margin-bottom: 20px;
     }

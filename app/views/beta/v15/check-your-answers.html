@@ -16,15 +16,15 @@
       </span>
     </p>
   </div>
- 
+
 {% endblock %}
 
 {% block content %}
 
- 
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
-       
+
         <h1 class="govuk-heading-l">Check your answers</h1>
         <h2 class="govuk-heading-m">Your details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -40,11 +40,11 @@
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-             
+
             </dd>
           </div>
-         
-          
+
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Address
@@ -53,86 +53,77 @@
               4 Albert Road<br>Newcastle<br>NE1 3JA
             </dd>
             <dd class="govuk-summary-list__actions">
-             
+
             </dd>
           </div>
-          
-          
-          
+        </dl>
+        <h2 class="govuk-heading-m">Other parent's details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you want to add another parent?
+            </dt>
+            <dd class="govuk-summary-list__value">
+            Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="add-parent">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Would you still like to receive the certificate if the other parent does not respond?
+            </dt>
+            <dd class="govuk-summary-list__value">
+            Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
 
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="add-parent">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Test@test.com
+            </dd>
+            <dd class="govuk-summary-list__actions">
 
-</dl>
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-<h2 class="govuk-heading-m">Other parent's details</h2>
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Do you want to add another parent?
-  </dt>
-  <dd class="govuk-summary-list__value">
-  Yes
-  </dd>
-  <dd class="govuk-summary-list__actions">
-   
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="add-parent">
-      Change<span class="govuk-visually-hidden"> name</span>
-    </a>
-  </dd>
-</div>
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Would you still like to receive the certificate if the other parent does not respond?
-  </dt>
-  <dd class="govuk-summary-list__value">
-  Yes
-  </dd>
-  <dd class="govuk-summary-list__actions">
-   
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="add-parent">
-      Change<span class="govuk-visually-hidden"> name</span>
-    </a>
-  </dd>
-</div>
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-    Email address
-  </dt>
-  <dd class="govuk-summary-list__value">
-   Test@test.com
-  </dd>
-  <dd class="govuk-summary-list__actions">
-   
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="parent-contact">
-      Change<span class="govuk-visually-hidden"> name</span>
-    </a>
-  </dd>
-</div>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="parent-contact">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+             1 January 1998
+            </dd>
+            <dd class="govuk-summary-list__actions">
 
-<div class="govuk-summary-list__row">
-  <dt class="govuk-summary-list__key">
-   Date of birth
-  </dt>
-  <dd class="govuk-summary-list__value">
-   1 January 1998
-  </dd>
-  <dd class="govuk-summary-list__actions">
-   
-  </dd>
-  <dd class="govuk-summary-list__actions">
-    <a class="govuk-link" href="enter-date-of-birth-parent">
-      Change<span class="govuk-visually-hidden"> name</span>
-    </a>
-  </dd>
-</div>
-
-
-</dl>
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="enter-date-of-birth-parent">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
 
         <form action="Beta/v12/declaration" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
@@ -142,7 +133,7 @@
             isStartButton: false
             }) }}
         </form>
-       
+
       </div>
     </div>
   </main>
@@ -171,7 +162,7 @@
                 "6": "June",
                 "7": "July",
                 "8": "August",
-                "9": "September",   
+                "9": "September",
 
             };
 
