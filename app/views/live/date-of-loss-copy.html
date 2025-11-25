@@ -23,35 +23,27 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-  <span class="govuk-caption-l">Details on certificate 2</span>
+    <form class="form" action="place-of-loss-copy" method="post">
+      <span class="govuk-caption-l">Details on certificate 2</span>
+      <fieldset class="govuk-fieldset">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Would you like the date of your baby loss on the certificate?
+              </h1>
+            </legend>
 
-  <fieldset class="govuk-fieldset">
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            Would you like the date of your baby loss on the certificate?
-          </h1>
-        </legend>
-        <form class="form" action="place-of-loss" method="post">
-          
           <div class="govuk-inset-text">
-            <div class="govuk-heading-s">If you do not know the exact date
-            </div>
-            You can enter a meaningful date.
+            You can enter a meaningful date if you do not know the exact date.
             <br>
-            This can be a partial date, such as a month and year, or year only. 
+            This can be a partial date, such as a month and year, or year only.
           </div>
-       
-          
-          <div id="passport-issued-hint" class="govuk-hint">
-            If you select ‘No' or ‘I do not know the date of my baby loss’, this will not be shown on the certificate.
-          </div>
-          
-       
-          
+
+          <p>This section will be blank on the certificate if you select ‘No' or ‘I do not know the date of my baby loss'.</p>
+
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
@@ -61,8 +53,9 @@
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
               <div class="govuk-form-group">
+                <div class="govuk-fieldset__legend">Enter the date of your baby loss</div>
                 <div id="passport-issued-hint" class="govuk-hint">
-                  For example, 27 3 2021   
+                  For example, 27 3 2021
                 </div>
                   <div class="govuk-date-input" id="date-loss">
                     <div class="govuk-date-input__item">
@@ -90,47 +83,38 @@
                       </div>
                     </div>
                   </div>
-                </label>
-                
               </div>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+              <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" >
               <label class="govuk-label govuk-radios__label" for="contact-2">
                 No
               </label>
             </div>
             <div class="govuk-radios__divider">or</div>
             </div>
-          
-          
+
+
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="baby-gender-version1" name="contact" type="radio" value="unknown">
             <label class="govuk-label govuk-radios__label" for="unknown">
               I do not know the date of my baby loss
             </label>
           </div>
-        
-        
-          
+
       </fieldset>
     </div>
-  </div>
- 
-        </div>
 
         <button class="govuk-button" data-module="govuk-button">
           Continue
         </button>
 
       </form>
+    </div>
 
     </div>
-  </div>
+
+    </div>
   <style>
-    
-    .govuk-button {
-      margin-left: 15px;
-    }
   </style>
 {% endblock %}

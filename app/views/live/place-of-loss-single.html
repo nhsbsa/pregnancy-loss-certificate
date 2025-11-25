@@ -23,26 +23,21 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-  <span class="govuk-caption-l">Details on the certificate</span>
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-    Would you like the place of your baby loss on the certificate?
-    
-  </h1>
-</legend>
-</fieldset>
-<p>You may not know the place of your baby loss.</p>
-<div class="govuk-inset-text">This does not need to be a full address. You can enter a town, city or hospital.</div>
+    <form class="form" action="sex-of-baby-single" method="post">
+    <span class="govuk-caption-l">Details on the certificate</span>
+      <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Would you like the place of your baby loss on the certificate?
+        </h1>
+      </legend>
+      <p>You may not know the place of your baby loss.</p>
+      <div class="govuk-inset-text">This does not need to be a full address. You can enter a town, city or hospital.</div>
 
-<p>
-  This section will be blank on the certificate if you select ‘No’ or ‘I do not know the place of my baby loss’.</p>
-  
-
-      <form class="form" action="sex-of-baby" method="post">
+      <p>This section will be blank on the certificate if you select ‘No’ or ‘I do not know the place of my baby loss’.</p>
 
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
@@ -58,8 +53,8 @@
                 Place of baby loss
               </label>
               <div id="passport-issued-hint" class="govuk-hint">
-               
-                For example, Canterbury, Kent   
+
+                For example, Canterbury, Kent
               </div>
 
               <input class="govuk-input" id="baby-name" name="place" type="text">
@@ -73,8 +68,8 @@
           </div>
           <div class="govuk-radios__divider">or</div>
             </div>
-          
-          
+
+
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="baby-gender-version1" name="years" type="radio" value="unknown">
             <label class="govuk-label govuk-radios__label" for="unknown">
@@ -83,20 +78,18 @@
           </div>
           </fieldset>
        </div>
-       </div>
-       </div>
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
 
       </form>
+    </div>
+    </div>
 
     </div>
   </div>
   <style>
-    .govuk-button {
-      margin-left: 15px;
-    }
+
   </style>
 
 {% endblock %}

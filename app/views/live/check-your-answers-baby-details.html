@@ -5,119 +5,135 @@
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      Beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
- 
+<div class="govuk-width-container app-width-container">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
 {% endblock %}
 
 {% block content %}
 
-<span class="govuk-caption-l">Your details</span>
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
-        <h1 class="govuk-heading-l">Check your details</h1>
-       
+
+        <h1 class="govuk-heading-l">Check your answers</h1>
+        <h2 class="govuk-heading-m">Your details</h2>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-            Do you know your NHS number?
+              Name
             </dt>
             <dd class="govuk-summary-list__value">
-             
-                {% if data['parent1-firstname'] %}
-                {{ data['parent1-firstname'] }} {{ data['parent1-lastname'] }}
-                {% else %}
-                No
-                {% endif %}
-           
+              {% if data['parent1-firstname'] %}
+              {{ data['parent1-firstname'] }} {{ data['parent1-lastname'] }}
+              {% else %}
+              Example name
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
+
             </dd>
           </div>
+
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-             Name
+              Address
             </dt>
             <dd class="govuk-summary-list__value">
-             
-                {% if data['parent1-firstname'] %}
-                {{ data['parent1-firstname'] }} {{ data['parent1-lastname'] }}
-                {% else %}
-                Example name
-                {% endif %}
-           
+              4 Albert Road<br>Newcastle<br>NE1 3JA
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
+
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-                  {% if data['dob-day'] %}
-                    {{ data['dob-day'] }} <span class="cya-month">{{ data['dob-month'] }}</span> {{ data['dob-year'] }}
-                    {% else %}
-                  Example date of birth
-                  {% endif %}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Postcode
-            </dt>
-            <dd class="govuk-summary-list__value">
-              NE1 3JA
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> name</span>
-              </a>
-            </dd>
-          </div>
-          
-          </dl>
-        
-          
-          
-          
         </dl>
-        <p>By continuing you agree to let us use your details to:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>check who you are</li>
-          <li>find your contact details from your NHS health records so we can send you a security code</li>
-         
-          
-        </ul>
-        
-       
-        <form action="/v12/get-security-code" method="post" novalidate>
+        <h2 class="govuk-heading-m">Other parent's details</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Do you want to add another parent?
+            </dt>
+            <dd class="govuk-summary-list__value">
+            Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="add-parent">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Would you still like to receive the certificate if the other parent does not respond?
+            </dt>
+            <dd class="govuk-summary-list__value">
+            Yes
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="add-parent">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+             Test@test.com
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="parent-contact">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+             Date of birth
+            </dt>
+            <dd class="govuk-summary-list__value">
+             1 January 1998
+            </dd>
+            <dd class="govuk-summary-list__actions">
+
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="enter-date-of-birth-parent">
+                Change<span class="govuk-visually-hidden"> name</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <form action="Beta/v12/declaration" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
           {{ govukButton({
-            text: "Agree and continue",
-            href: "get-security-code",
+            text: "Accept and continue",
+            href: "babys-details",
             isStartButton: false
             }) }}
         </form>
+
       </div>
     </div>
   </main>
@@ -146,7 +162,7 @@
                 "6": "June",
                 "7": "July",
                 "8": "August",
-                "9": "September",   
+                "9": "September",
 
             };
 

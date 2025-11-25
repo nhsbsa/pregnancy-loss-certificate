@@ -23,52 +23,43 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<div class="govuk-form-group">
+    <form class="form" action="parent-add" method="post">
+    <div class="govuk-form-group">
 
-  <fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-    What happens next
-    
-  </h1>
-</legend>
+      <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        What happens next
 
-      <form class="form" action="parent-add" method="post">
-        <div class="govuk-form-group">
+      </h1>
+    </legend>
 
-        
-          
-          <p>We’ll ask you for the other parent’s date of birth. This is because we need to match their details with their GP record, if they give permission for their name to be on the certificate.</p>
- <div class="govuk-inset-text">
-              If the date of birth you enter for the other parent does not match the date they enter, your request for a certificate will be cancelled.
-          </div>
-          <p>The other parent will have up to 7 days to give permission before the request is complete.</p>
-          
+      <p>We’ll ask you for the other parent’s date of birth. This is because we need to match their details with their GP record, if they give permission for their name to be on the certificate.</p>
 
-          <p>If we get their permission, you'll then receive the certificate within 14 days.</p>
+      <div class="govuk-inset-text">
+          If the date of birth you enter for the other parent does not match the date they enter, your request for a certificate will be cancelled.
+      </div>
 
-       
-       
+      <p>The other parent will have up to 7 days to give permission before the request is complete.</p>
+
+      <p>If we get their permission, you'll then receive the certificate within 14 days.</p>
+
+
+
       {{ govukButton({
         text: "Continue",
         href: "second-parent-question",
         isStartButton: false
         }) }}
-    
-</div>
-      
-</div>
-</div>
+
+    </div>
     </div>
   </div>
+</div>
   <style>
-  .govukButton {
-    margin-left: 15px;
-  }
-   
-  
+
   </style>
 
 {% endblock %}

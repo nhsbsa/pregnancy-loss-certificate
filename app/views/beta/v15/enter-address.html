@@ -23,7 +23,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
   <span class="govuk-caption-l">Your details</span>
@@ -37,44 +37,31 @@
       </legend>
       <p>You must enter the home postcode you registered with your GP surgery.</p>
       <p>This is the address your certificate will be sent to.</p>
-     
-     
-   
-     
-      
       <div id="passport-issued-hint" class="govuk-hint">
         For example, EN1 1BE
       </div>
       <form class="form" action="Multipleloss-add-ress" method="post">
-        
-      
+
       <div class="govuk-form-group">
         <label class="govuk-label" for="Multipleloss-add-ress">
           Postcode
         </label>
         <input class="govuk-input govuk-input--width-10" id="Multipleloss-add-ress" name="multiplepost" type="text" autocomplete="postal-code">
       </div>
-      
-   
-      
-   
-  </div>
-</div>
-</div>
-  <button class="govuk-button" data-module="govuk-button" type="submit">
-    Continue
-  </button>
+      <button class="govuk-button" data-module="govuk-button" type="submit">
+        Continue
+      </button>
+  </form>
 </fieldset>
+
     </div>
   </div>
-
-</form>
+</div>
+</div>
 <style>
   .govuk-input {
     margin-bottom: 15px;
   }
-  .govuk-button {
-    margin-left: 10px;
-  }
+
 </style>
 {% endblock %}

@@ -52,7 +52,7 @@ router.post(/loss-5-years/, (req, res) => {
 
 })
 
-// Date of loss 
+// Date of loss
 
 // router.post(/date-loss/, (req, res) => {
 
@@ -70,7 +70,7 @@ router.post(/loss-5-years/, (req, res) => {
 
 // })
 
-// Date of birth 
+// Date of birth
 
 router.post(/date-of-birth/, (req, res) => {
 
@@ -106,7 +106,7 @@ router.post(/relation-baby/, (req, res) => {
 
 router.post(/baby-gender-version1/, (req, res) => {
 
-  // if user wants their baby gender included in the certificate they will select yes then it 
+  // if user wants their baby gender included in the certificate they will select yes then it
   //will take them to enter baby gender name
   const SexOfBaby = req.session.data['gender']
 
@@ -123,7 +123,7 @@ router.post(/baby-gender-version1/, (req, res) => {
 
 router.post(/main-applicant-nhs/, (req, res) => {
 
-  // if user wants their baby gender included in the certificate they will select yes then it 
+  // if user wants their baby gender included in the certificate they will select yes then it
   //will take them to enter baby gender name
   const NHSNumber = req.session.data['nhs']
 
@@ -136,7 +136,7 @@ router.post(/main-applicant-nhs/, (req, res) => {
 })
 router.post(/version10-add-parent/, (req, res) => {
 
-  // if user wants their baby gender included in the certificate they will select yes then it 
+  // if user wants their baby gender included in the certificate they will select yes then it
   //will take them to enter baby gender name
   const parentAddParent = req.session.data['parent']
 
@@ -237,6 +237,22 @@ liveotherreq = req.session.data['liverequestcertififcate']
     res.redirect('add-other-parent');
   } else {
     res.redirect('confirmation-page-new');
+  }
+
+})
+
+router.post(/triplets-loss-2/, (req, res) => {
+
+  // creating a variable named lossInEngland, assigning the variable the value of the input (location)
+  // lossInEngland = location (value)
+  const tripletLoss = req.session.data['triplet-loss']
+
+  if (tripletLoss == 'single') {
+    res.redirect('date-of-loss-single');
+  } else if (tripletLoss == 'twin') {
+    res.redirect('date-of-loss');
+  } else {
+    res.redirect('triplet-loss-2#');
   }
 
 })
