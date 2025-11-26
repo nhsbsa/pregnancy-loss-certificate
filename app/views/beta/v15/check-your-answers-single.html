@@ -16,32 +16,32 @@
       </span>
     </p>
   </div>
- 
+
 {% endblock %}
 
 {% block content %}
 
- 
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
         <h1 class="govuk-heading-l">Check your answers</h1>
-  
+
 
         <h2 class="govuk-heading-m">Details on the certificate</h2>
         <h3 class="govuk-heading-s">Parent 1</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         
-     
+
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Your name
             </dt>
             <dd class="govuk-summary-list__value">
-             
+
              Example name
-           
+
             </dd>
-            
+
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -61,26 +61,26 @@
             </dd>
           </div>
           </dl>
-        
+
           <h3 class="govuk-heading-s">Parent 2
-            
+
           </h3>
-         
-          
+
+
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            
-          
-            
+
+
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Their name
               </dt>
               <dd class="govuk-summary-list__value">
-             
+
                 To be added once the other parent confirms their details
-              
+
                </dd>
-              
+
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -96,12 +96,12 @@
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="second-relation-to-baby">
                   Change<span class="govuk-visually-hidden"> name</span>
-                 
+
                 </a>
               </dd>
             </div>
             </dl>
-         
+
             <h3 class="govuk-heading-s">Baby's details</h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
               <div class="govuk-summary-list__row">
@@ -155,8 +155,8 @@
               </a>
             </dd>
           </div>
-          
-         
+
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Baby's name
@@ -175,21 +175,21 @@
             </dd>
           </div>
           </div>
-          
-          
+
+
           </div>
         </dl>
-        
-       
+
+
         <form action="Beta/v12/declaration" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
           {{ govukButton({
             text: "Accept and continue",
-            href: "declaration-single",
+            href: "contact-email-single",
             isStartButton: false
             }) }}
         </form>
-       
+
       </div>
     </div>
   </main>
@@ -218,7 +218,7 @@
                 "6": "June",
                 "7": "July",
                 "8": "August",
-                "9": "September",   
+                "9": "September",
 
             };
 
