@@ -28,40 +28,65 @@ Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            NHS number
+          Relationship to baby
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['first-name'] %}
-
-             {{ data['first-name'] }} {{ data['last-name'] }}
-
-            {% else %}
-
-            485 777 3456
-
-            {% endif %}
+              {% if data['relation-baby'] %}
+                {{ data['relation-baby'] }}
+              {% else %}
+                Mother
+              {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="relation-to-baby">
               Change<span class="govuk-visually-hidden"> name</span>
             </a>
           </dd>
         </div>
-       
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+          Do you know your NHS number?
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> do you know your NHS number?</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            NHS number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['nhs-number'] %}
+             {{ data['nhs-number'] }}
+            {% else %}
+              485 777 3456
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> NHS number</span>
+            </a>
+          </dd>
+        </div>
+
       </dl>
       <p>By continuing you agree to let us use your details to:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>check who you are</li>
         <li>find your contact details from your NHS health records so we can send you a security code</li>
-       
-        
       </ul>
+
       {{ govukButton({
-    text: "Agree and continue",
-    href: "get-security-code",
-    isStartButton: false
-    }) }}
-      
+      text: "Agree and continue",
+      href: "get-security-code",
+      isStartButton: false
+      }) }}
+
     </form>
   </div>
 </div>
