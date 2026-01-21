@@ -41,7 +41,7 @@ router.post(/date-of-birth/, (req, res) => {
 
 router.post(/action-nhs-number/, (req, res) => {
 
-  // if user wants their baby gender included in the certificate they will select yes then it 
+  // if user wants their baby gender included in the certificate they will select yes then it
   //will take them to enter baby gender name
   const NHSNumber = req.session.data['nhs']
 
@@ -75,7 +75,7 @@ router.post(/address-postcode/, (req, res) => {
 
 router.post(/do-you-want-to-continue/, (req, res) => {
 
- 
+
   const checkContinue = req.session.data['continue']
 
   if (checkContinue == 'yes') {
@@ -87,7 +87,7 @@ router.post(/do-you-want-to-continue/, (req, res) => {
 })
 router.post(/is-this-correct/, (req, res) => {
 
- 
+
   const checkCorrect = req.session.data['correct']
 
   if (checkCorrect == 'yes') {
@@ -99,11 +99,15 @@ router.post(/is-this-correct/, (req, res) => {
 })
 router.post(/twincyacorrect/, (req, res) => {
 
- 
   const twincheckDetails = req.session.data['check']
+  const twins = req.session.data['twins']
 
   if (twincheckDetails == 'yes') {
-    res.redirect('check-your-answers-twins');
+    if (twins == 'true') {
+      res.redirect('check-your-answers-twins');
+    } else {
+      res.redirect('declaration-single');
+    }
   } else {
     res.redirect('check-answers-kickout-copy');
   }
@@ -111,7 +115,7 @@ router.post(/twincyacorrect/, (req, res) => {
 })
 router.post(/cya-kickout/, (req, res) => {
 
- 
+
   const answerKickout = req.session.data['kickout']
 
   if (answerKickout == 'yes') {
@@ -130,7 +134,7 @@ router.post(/v15parent-number/, (req, res) => {
     res.redirect('nhs-number');
   } else if (EnterReference == '4321') {
     res.redirect('contact-email')
-  
+
   } else {
     res.redirect('contact-email');
   }
@@ -138,7 +142,7 @@ router.post(/v15parent-number/, (req, res) => {
 })
 router.post(/requesting-cert-parent-2/, (req, res) => {
 
- 
+
   const secondParentrequestanothercert = req.session.data['certreqsecondparent']
 
   if (secondParentrequestanothercert == 'yes') {

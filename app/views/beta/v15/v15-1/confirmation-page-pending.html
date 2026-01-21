@@ -13,39 +13,53 @@
         titleText: "Request complete",
         html: "Your application number<br><strong>J4R-8H5-2K9F1</strong>"
       }) }}
+      {% if data['twins'] == 'true' %}
       <div class="govuk-heading-m">Certificate reference numbers</div>
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Certificate 1 
+            Certificate 1
           </dt>
           <dd class="govuk-summary-list__value">
             ABC-DEF-2K9F1
-          </dd> 
+          </dd>
         </div>
       </dl>
+
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Certificate 2 
+            Certificate 2
           </dt>
           <dd class="govuk-summary-list__value">
             ZYC-DEF-2K9F1
-          </dd> 
+          </dd>
         </div>
       </dl>
-     
-   
+      {% else %}
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Certificate reference number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ABC-DEF-2K9F1
+          </dd>
+        </div>
+      </dl>
+      {% endif %}
+
+
 
       <h2 class="govuk-heading-m">
         What happens next
       </h2>
-      
-      <p>The certificates will be posted to the main applicant within 14 days.</p>  
+
+      <p>The certificates will be posted to the main applicant within 14 days.</p>
 
       <p>If you would like your own certificates, you can <a href="">request one</a>.</p>
-     
-      
+
+
 <h2 class="govuk-heading-m"> Would you like to add your name<br> to another baby loss certificate?</h2>
 
 
@@ -63,7 +77,7 @@
       <label class="govuk-label" for="yes">
         You can continue and add your name to a certificate for another baby loss if you've received more than one email.
       </label>
-     
+
     </div>
   </div>
   <div class="govuk-radios__item">
