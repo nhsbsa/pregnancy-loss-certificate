@@ -15,7 +15,7 @@
     </span>
   </p>
 </div>
- 
+
 {% endblock %}
 
 {% block content %}
@@ -24,20 +24,20 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
         <h1 class="govuk-heading-l">Check your details</h1>
-       
+
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
              Name
             </dt>
             <dd class="govuk-summary-list__value">
-             
+
                 {% if data['parent1-firstname'] %}
                 {{ data['parent1-firstname'] }} {{ data['parent1-lastname'] }}
                 {% else %}
                 Example name
                 {% endif %}
-           
+
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -67,7 +67,11 @@
               Postcode
             </dt>
             <dd class="govuk-summary-list__value">
-              NE1 3JA
+              {% if data['multiplepost'] %}
+                {{ data['multiplepost'] }}
+                {% else %}
+                Example postcode
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -75,22 +79,22 @@
               </a>
             </dd>
           </div>
-          
+
           </dl>
-        
-          
-          
-          
+
+
+
+
         </dl>
         <p>By continuing you agree to let us use your details to:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>check who you are</li>
           <li>find your contact details from your NHS health records so we can send you a security code</li>
-         
-          
+
+
         </ul>
-        
-       
+
+
         <form action="/v14-1/get-security-code" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
           {{ govukButton({
@@ -127,7 +131,7 @@
                 "6": "June",
                 "7": "July",
                 "8": "August",
-                "9": "September",   
+                "9": "September",
 
             };
 
