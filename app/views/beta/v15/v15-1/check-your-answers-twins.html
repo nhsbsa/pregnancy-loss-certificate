@@ -28,37 +28,64 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
 
-
-
-
-
-
-
-</dl>
-<h1 class="govuk-heading-l">Your details</h1>
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Email address
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {% if data['first-name'] %}
-      {{ data['first-name'] }}
-     {% else %}
-     Example name
-     {% endif %}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="contact-email">
-          Change<span class="govuk-visually-hidden"> name</span>
-        </a>
-      </dd>
-    </dd>
-  </div>
-
-  </dl>
-<h2 class="govuk-heading-m">Confirm the details on certificate 2</h2>
+        <h1 class="govuk-heading-l">Your details</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          {% if data['confirmation-email'] !== 'no' %}
+            <div class="govuk-summary-list__row" style="border-bottom: 0px;">
+              <dt class="govuk-summary-list__key">
+                Receive confirmation email
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['confirmation-email'] %}
+                  {{ data['confirmation-email'] | capitalize }}
+                {% else %}
+                  Yes
+                {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="contact-email">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['contactByEmail'] %}
+                  {{ data['contactByEmail'] }}
+                {% else %}
+                  Example@email.com
+                {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <!--<a class="govuk-link" href="contact-email">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>-->
+              </dd>
+            </div>
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Receive confirmation email
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['confirmation-email'] %}
+                {{ data['confirmation-email'] | capitalize }}
+              {% else %}
+                Yes
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact-email">
+                  Change<span class="govuk-visually-hidden"> name</span>
+                </a>
+            </dd>
+          </div>
+          {% endif %}
+        </dl>
+        <h2 class="govuk-heading-m">Confirm the details on certificate 2</h2>
         <h3 class="govuk-heading-s">Parent 1</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">

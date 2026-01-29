@@ -25,20 +25,20 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
   {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="location-england" method="post">
+      <form class="form" action="check-your-answers" method="post">
         <div class="govuk-form-group">
           <span class="govuk-caption-l">Your details</span>
           <fieldset class="govuk-fieldset">
 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Would you like to receive a confirmation email about your request for a certificate?
+                Would you like a confirmation email about this request?
               </h1>
             </legend>
 
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email"
+                <input class="govuk-radios__input" id="contact" name="confirmation-email" type="radio" value="yes"
                   data-aria-controls="conditional-contact">
                 <label class="govuk-label govuk-radios__label" for="contact">
                   Yes
@@ -56,21 +56,21 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
                   <label class="govuk-label" for="contact-by-email">
                     Confirm email address
                   </label>
-                  <input class="govuk-input govuk-!-width-one-half" id="contact-by-email" name="contactByEmail"
+                  <input class="govuk-input govuk-!-width-one-half" id="contact-by-email" name="confirmcontactByEmail"
                     type="email" spellcheck="false" autocomplete="email">
                 </div>
-                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <!--<div class="govuk-checkboxes" data-module="govuk-checkboxes">
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
                     <label class="govuk-label govuk-checkboxes__label" for="waste">
                       I give permission for my email to be used to give feedback on the certificate design
                     </label>
                   </div>
-                </div>
+                </div>-->
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+                <input class="govuk-radios__input" id="contact-2" name="confirmation-email" type="radio" value="no">
                 <label class="govuk-label govuk-radios__label" for="contact-2">
                   No
                 </label>
@@ -82,7 +82,6 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
       {{ govukButton({
       text: "Continue",
-      href: "check-your-answers",
       isStartButton: false
       }) }}
 

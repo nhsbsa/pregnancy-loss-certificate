@@ -36,7 +36,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
               </h1>
             </legend>
 
-            <div class="govuk-body">We'll send you confirmation emails and a link to a survey to help us improve the service. </div>
+            <!--<div class="govuk-body">We'll send you confirmation emails and a link to a survey to help us improve the service. </div>-->
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email"
@@ -60,7 +60,14 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
                   <input class="govuk-input govuk-!-width-one-half" id="contact-by-email" name="contactByEmail"
                     type="email" spellcheck="false" autocomplete="email">
                 </div>
-
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                      I'd like to receive a link to a short survey so I can give feedback about this service.
+                    </label>
+                  </div>
+                </div>
               </div>
 
               <div class="govuk-radios__item">

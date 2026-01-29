@@ -30,16 +30,52 @@
 
         <h1 class="govuk-heading-l">Your details</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          {% if data['confirmation-email'] !== 'no' %}
+            <div class="govuk-summary-list__row" style="border-bottom: 0px;">
+              <dt class="govuk-summary-list__key">
+                Receive confirmation email
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['confirmation-email'] %}
+                  {{ data['confirmation-email'] | capitalize }}
+                {% else %}
+                  Yes
+                {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="contact-email">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['contactByEmail'] %}
+                  {{ data['contactByEmail'] }}
+                {% else %}
+                  Example@email.com
+                {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <!--<a class="govuk-link" href="contact-email">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>-->
+              </dd>
+            </div>
+          {% else %}
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Email address
+              Receive confirmation email
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['first-name'] %}
-              {{ data['first-name'] }}
-             {% else %}
-             Example name
-             {% endif %}
+              {% if data['confirmation-email'] %}
+                {{ data['confirmation-email'] | capitalize }}
+              {% else %}
+                Yes
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="contact-email">
@@ -47,6 +83,7 @@
                 </a>
             </dd>
           </div>
+          {% endif %}
         </dl>
 
         {% if data['twins'] == 'true' %}
