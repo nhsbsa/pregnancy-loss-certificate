@@ -124,15 +124,12 @@ router.post(/cya-kickout/, (req, res) => {
 
 router.post(/v15parent-number/, (req, res) => {
 
-  const RefEnter= req.session.data['v15ref-version']
+  const RefEnter = (req.session.data['v15ref-version'] || '').trim();
 
-  if (RefEnter == '123') {
-    res.redirect('nhs-number');
-  } else if (EnterReference == '4321') {
-    res.redirect('contact-email')
-
-  } else {
+  if (RefEnter == '4321') {
     res.redirect('contact-email');
+  } else {
+    res.redirect('nhs-number');
   }
 
 })
