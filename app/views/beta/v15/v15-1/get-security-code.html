@@ -25,7 +25,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/v14-1/enter-security-code" method="post">
+    <form class="form" action="lobster" method="post">
       <span class="govuk-caption-l">Your details</span>
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -39,20 +39,19 @@
           <p>We now need to send you a security code. After 30 minutes your security code will not work.</p>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
-              <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+              <input class="govuk-radios__input" id="security-code-option" name="security-code-option" type="radio" value="email">
+              <label class="govuk-label govuk-radios__label" for="security-code-option">
                 By email to Sa********@gmail.com
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
-              <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+              <input class="govuk-radios__input" id="security-code-option-2" name="security-code-option" type="radio" value="telephone">
+              <label class="govuk-label govuk-radios__label" for="security-code-option-2">
                 By text to ********009
               </label>
             </div>
-            </div>
+          </div>
           </fieldset>
-
         </div>
 
         <details class="govuk-details" data-module="govuk-details">
@@ -68,15 +67,14 @@
 
         {{ govukButton({
           text: "Continue",
-          href: "enter-security-code",
           isStartButton: false
           }) }}
 
       </form>
 
     </div>
-    </div>
   </div>
+</div>
   <style>
 
     .govuk-details__summary {

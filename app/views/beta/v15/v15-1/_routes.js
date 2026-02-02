@@ -29,11 +29,17 @@ router.post(/new-dob/, (req, res) => {
   return res.redirect('enter-address')
 })
 
+router.post(/lobster/, (req, res) => {
 
+  const SecurityCodeOption = req.session.data['security-code-option']
 
+  if (SecurityCodeOption == 'telephone') {
+    res.redirect('/beta/v15/v15-1/enter-security-code-text');
+  } else {
+    res.redirect('/beta/v15/v15-1/enter-security-code');
+  }
 
-
-
+})
 
 router.post(/action-nhs-number/, (req, res) => {
 

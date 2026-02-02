@@ -25,6 +25,17 @@ router.post(/new-dob/, (req, res) => {
   return res.redirect('enter-address')
 })
 
+router.post(/get-security-code/, (req, res) => {
+
+  const SecurityCodeOption = req.session.data['security-code-option']
+
+  if (SecurityCodeOption == 'telephone') {
+    res.redirect('/live/live-parent2/enter-security-code-text');
+  } else {
+    res.redirect('/live/live-parent2/enter-security-code');
+  }
+
+})
 
 
 router.post(/action-nhs-number/, (req, res) => {
