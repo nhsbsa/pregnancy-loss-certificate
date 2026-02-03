@@ -123,6 +123,18 @@
           </dl>
           <h3 class="govuk-heading-s">Parent 2</h3>
 
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                If you'd like a different name displayed on your certificate
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>This is how your name will be displayed on the certificate. </p>
+              <p>You can <a href="contact">contact us to request a certificate with a different name</a>, for example a maiden name.</p>
+            </div>
+          </details>
+
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
             <div class="govuk-summary-list__row">
@@ -131,15 +143,12 @@
               Your name
               </dt>
               <dd class="govuk-summary-list__value">
-
                   {% if data['parent2-firstname'] %}
                   {{ data['parent2-firstname'] }} {{ data['parent2-lastname'] }}
                   {% else %}
                   Example name
                   {% endif %}
-
               </dd>
-
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -152,11 +161,11 @@
                Example relation
                {% endif %}
               </dd>
-
             </div>
-            </dl>
-            <h3 class="govuk-heading-s">Baby's details</h3>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          </dl>
+
+          <h3 class="govuk-heading-s">Baby's details</h3>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Baby's name
