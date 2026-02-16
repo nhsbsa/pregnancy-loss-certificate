@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+Confirm your name – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,12 +26,12 @@
 <span class="govuk-caption-l">Your details</span>
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
-        <h1 class="govuk-heading-l">Confirm your postal address</h1>
-        <p>This is the address your certificate will be sent to.</p>
-        <p>If this is not the correct address, you will need to contact your GP surgery.</p>
-        <form class="form" action="confirm-post-address" method="post">
+        <h1 class="govuk-heading-l">Confirm your name</h1>
+        <p>This is how your name will be displayed on the certificate.</p>
+        <form class="form" action="confirm-name" method="post">
+
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <!--<div class="govuk-summary-list__row">
+          <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
              Name
             </dt>
@@ -45,54 +45,29 @@
             <dd class="govuk-summary-list__actions">
 
             </dd>
-          </div>-->
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Address
-            </dt>
-            <dd class="govuk-summary-list__value">
-              4 Albert Road<br>Newcastle<br>NE1 3JA
-            </dd>
-            <dd class="govuk-summary-list__actions">
-
-            </dd>
           </div>
 
           </dl>
-
-          <!--<details class="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                If you'd like a different name displayed on your certificate
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <p>This is how your name will be displayed on the certificate. </p>
-              <p>You can <a href="contact">contact us to request a certificate with a different name</a>, for example a maiden name.</p>
-            </div>
-          </details>-->
-
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h2 class="govuk-heading-m">
-                Is this address correct?
+                Is this name correct?
               </h2>
             </legend>
-
+            <div id="event-name-hint" class="govuk-hint">If your name is displayed incorrectly or you'd like a different name on your certificate, for example a maiden name, select No.</div>
 
             <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="confirm-post-address" name="details" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="check-details-yes">
+                <input class="govuk-radios__input" id="confirm-name-yes" name="confirm-name" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="confirm-name-yes">
                   Yes
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="confirm-post-address" name="details" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="check-details-no">
+                <input class="govuk-radios__input" id="confirm-name-no" name="confirm-name" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="cconfirm-name-no">
                   No
                 </label>
               </div>

@@ -143,6 +143,18 @@ router.post(/postcode/, (req, res) => {
 
 
 
+router.post(/confirm-name/, (req, res) => {
+
+  const confirmName = req.session.data['confirm-name']
+
+  if (confirmName == 'yes') {
+    res.redirect('check-your-details-nhs');
+  } else {
+    res.redirect('confirm-name-kickout');
+  }
+
+})
+
 router.post(/confirm-post-address/, (req, res) => {
 
   // creating a variable named lossInEngland, assigning the variable the value of the input (location)

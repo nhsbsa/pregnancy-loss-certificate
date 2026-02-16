@@ -12,7 +12,17 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 
+router.post(/bobble-confirm-name/, (req, res) => {
 
+  const confirmName = req.session.data['confirm-name']
+
+  if (confirmName == 'yes') {
+    res.redirect('contact-email');
+  } else {
+    res.redirect('confirm-name-kickout');
+  }
+
+})
 
 
 router.post(/new-dob/, (req, res) => {

@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+You have told us the name is wrong – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-width-container app-width-container">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+  }) }}
+  {% endblock %}
+
+  {% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          You have told us the name is wrong
+        </h1>
+      </legend>
+
+      <p class="govuk-body">You can contact us to request a certificate with a different name, for example a maiden name or correct capitalisation.</p>
+
+      <div class="contact">
+       <p>Baby loss certificate service <br>
+       Email: <a href="mailto:babylosscertificate@nhsbsa.nhs.uk">babylosscertificate@nhsbsa.nhs.uk</a> <br>
+       Telephone: 0300 330 9445</p>
+
+       <p>Monday to Friday, 9am to 5pm <br>
+       <a href="/call-charges">Find out about call charges</a></p>
+       </div>
+
+      <h2 class="govuk-heading-m">Support organisations</h2>
+
+      <p>The following organisations give support and advice:</p>
+      <ul class="govuk-list govuk-list--bullet">
+         <li><a href="www.nhs.uk/mental-health/social-care-and-your-rights/how-to-access-mental-health-services/">NHS How to access mental health services</a></li>
+         <li><a href="www.arc-uk.org">Antenatal Results and Choices (ARC)</a></li>
+         <li><a href="www.daddyswithangels.org">Daddy’s with Angels</a></li>
+         <li><a href="www.petalscharity.org ">Petals</a></li>
+         <li><a href=“https://www.sands.org.uk/”>Sands</a></li>
+         <li><a href="www.sayinggoodbye.org">Saying Goodbye</a></li>
+         <li><a href="https://ectopic.org.uk/">The Ectopic Pregnancy Trust</a></li>
+         <li><a href="www.miscarriageassociation.org.uk">The Miscarriage Association</a></li>
+         <li><a href=“www.tommys.org”>Tommy's</a></li>
+         <li><a href=“https://twinstrust.org/”>Twins Trust</a></li>
+      </ul>
+
+  </div>
+
+  </div>
+</div>
+
+</div>
+
+<style>
+.contact {
+    border-left: 1px solid #b1b4b6;
+    padding-left: 15px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+user agent stylesheet
+div {
+    display: block;
+}
+.govspeak .contact, .gem-c-govspeak .contact {
+    position:relative
+}
+</style>
+
+{% endblock %}

@@ -27,7 +27,7 @@
 <div class="govuk-form-group">
   <span class="govuk-caption-l">Your details</span>
   <fieldset class="govuk-fieldset">
-    
+
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
     Enter your security code
@@ -43,15 +43,15 @@
       </div>
         <input class="govuk-input govuk-input--width-10" id="security-code" name="entercode" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
       </div>
-        
-            
-          
+
+
+
           <p>Didn't get your security code? <a href="">Resend code
           </a></p>
 
           {{ govukButton({
             text: "Continue",
-            href: "contact-email",
+            href: "confirm-name",
             isStartButton: false
             }) }}
           </div>
@@ -60,7 +60,7 @@
     </div>
   </div>
   <style>
-   
-    
+
+
   </style>
 {% endblock %}
