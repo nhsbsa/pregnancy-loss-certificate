@@ -12,7 +12,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 
 
-router.post(/bobble-confirm-name/, (req, res) => {
+router.post(/bobble/, (req, res) => {
 
   const confirmName = req.session.data['confirm-name']
 
