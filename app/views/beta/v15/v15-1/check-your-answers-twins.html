@@ -204,30 +204,26 @@
             </dd>
 
           </div>
-          </div>
-
-
-          </div>
         </dl>
         <form class="form" action="cya-correct" method="post">
         <h2 class="govuk-heading-m">Are these details correct?</h2>
         <div class="govuk-body">If the details are incorrect, the request for all certificates will be cancelled and<br> the main applicant will need to start a new request.</div>
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="cya-correct" name="check" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="changedName">
-              Yes
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="cya-correct" name="check" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="changedName-2">
-              No
-            </label>
+        <div class="govuk-form-group">
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cya-correct-yes" name="check" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="cya-correct-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cya-correct-no" name="cya-correct-no" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="cya-correct-no">
+                No
+              </label>
+            </div>
           </div>
         </div>
-        </div>
-
 
           <button class="govuk-button" data-module="govuk-button" type="submit">
             Continue
@@ -235,7 +231,6 @@
         </form>
       </div>
     </div>
-  </main>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

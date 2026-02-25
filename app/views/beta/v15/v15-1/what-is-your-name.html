@@ -33,10 +33,8 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
                 What is your name?
-
               </h1>
             </legend>
-
 
             <p>You must enter the names you registered with your GP.</p>
 
@@ -44,32 +42,32 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
               This is the name that will be printed on the certificate.
             </div>
 
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="add-name">
-                  First name
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="add-name" name="parent1-firstname" type="text">
-              </div>
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="one-third">
-                  Last name
-                </label>
-                <input class="govuk-input govuk-!-width-two-thirds" id="add-name" name="parent1-lastname" type="text">
-              </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="add-name">
+                First name
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="add-name" name="parent1-firstname" type="text">
+            </div>
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="add-last-name">
+                Last name
+              </label>
+              <input class="govuk-input govuk-!-width-two-thirds" id="add-last-name" name="parent1-lastname" type="text">
+            </div>
+          </div>
 
-      </div>
+        <div class="govuk-inset-text">
+          The certificate will not go on your GP record.
+        </div>
 
-  <div class="govuk-inset-text">
-    The certificate will not go on your GP record.
+      {{ govukButton({
+        text: "Continue",
+        href: "enter-date-of-birth",
+        isStartButton: false
+        }) }}
+      </form>
+    </div>
   </div>
-  {{ govukButton({
-    text: "Continue",
-    href: "enter-date-of-birth",
-    isStartButton: false
-    }) }}
-  </form>
-</div>
-</div>
 </div>
 <style>
   .govuk-radios {

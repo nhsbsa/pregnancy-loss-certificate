@@ -16,7 +16,7 @@
       </span>
     </p>
   </div>
- 
+
 {% endblock %}
 
 {% block content %}
@@ -26,50 +26,37 @@
 }) }}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-l">
-      Do you want to cancel the request for a certificate?
-    </h1>
+    <fieldset class="govuk-fieldset">
+    <legend>
+      <h1 class="govuk-heading-l">
+        Do you want to cancel the request for a certificate?
+      </h1>
+    </legend>
 
     <form class="form" action="cya-kickout" method="post">
-        
-         
+
+    <div class="govuk-form-group">
       <div class="govuk-radios govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="cya-kickout" name="kickout" type="radio" value="yes">
-          <label class="govuk-label govuk-radios__label" for="location-england-yes">
+          <input class="govuk-radios__input" id="cya-kickout-yes" name="kickout" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="cya-kickout-yes">
             Yes, I'd like to cancel the request for a certificate
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="cya-kickout" name="kickout" type="radio" value="no">
-          <label class="govuk-label govuk-radios__label" for="location-england-no">
+          <input class="govuk-radios__input" id="cya-kickout-no" name="kickout" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="cya-kickout-no">
             No, I'd like to continue with the request for a certificate
           </label>
         </div>
       </div>
-    <br>
-   
-   
-
-
-
+    </div>
 
       <button class="govuk-button" data-module="govuk-button" type="submit">
         Continue
       </button>
-
-
-
-
+    </fieldset>
    </div>
-
-  </div>
 </div>
-  <style>
-    .govuk-fieldset__heading {
-      margin-bottom: 30px;
-    }
-    
-  </style>
+</div>
 {% endblock %}

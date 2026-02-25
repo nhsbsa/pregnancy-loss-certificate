@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -59,41 +58,44 @@
 
       <p>If you would like your own certificates, you can <a href="">request one</a>.</p>
 
+  <fieldset class="govuk-fieldset">
+    <legend>
+      <h2 class="govuk-heading-m"> Would you like to add your name to another baby loss certificate?</h2>
+    </legend>
 
-<h2 class="govuk-heading-m"> Would you like to add your name<br> to another baby loss certificate?</h2>
+      <form class="form" action="requesting-cert-parent-2" method="post">
 
-
-<form class="form" action="requesting-cert-parent-2" method="post">
-
-<div class="govuk-radios" data-module="govuk-radios">
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="requesting-cert" name="certreqsecondparent" type="radio" value="yes" data-aria-controls="conditional-contact">
-    <label class="govuk-label govuk-radios__label" for="yes">
-      Yes, I have a reference number for another certificate
-    </label>
+        <div class="govuk-form-group">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="requesting-cert-yes" name="certreqsecondparent" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="requesting-cert-yes">
+                Yes, I have a reference number for another certificate
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+                <p>You can continue and add your name to a certificate for another baby loss if you've received more than one email.</p>
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="requesting-cert-no" name="certreqsecondparent" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="requesting-cert-no">
+                No, I do not want to add my name to another certificate
+              </label>
+            </div>
+          </div>
+        </div>
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+  </fieldset>
   </div>
-  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="yes">
-        You can continue and add your name to a certificate for another baby loss if you've received more than one email.
-      </label>
-
-    </div>
   </div>
-  <div class="govuk-radios__item">
-    <input class="govuk-radios__input" id="requesting-cert" name="certreqsecondparent" type="radio" value="no">
-    <label class="govuk-label govuk-radios__label" for="no">
-      No, I do not want to add my name to another certificate
-    </label>
-  </div>
- <br>
-  <button class="govuk-button" data-module="govuk-button" type="submit">
-    Continue
-  </button>
 
 
 
-</form>
 
   <style>
     .govuk-panel--confirmation {

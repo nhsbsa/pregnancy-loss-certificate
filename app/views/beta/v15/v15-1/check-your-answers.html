@@ -25,9 +25,9 @@
 {% block content %}
 
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds-from-desktop">
-
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <fieldset class="govuk-fieldset">
         <h1 class="govuk-heading-l">Your details</h1>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           {% if data['confirmation-email'] !== 'no' %}
@@ -166,91 +166,85 @@
 
           <h3 class="govuk-heading-s">Baby's details</h3>
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Baby's name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['baby-firstname'] %}
-               {{ data['baby-firstname'] }}
-              {% else %}
-              Example name
-              {% endif %}
-            </dd>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Baby's name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['baby-firstname'] %}
+                 {{ data['baby-firstname'] }}
+                {% else %}
+                Example name
+                {% endif %}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Baby's sex
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['baby-gender'] %}
+                {{ data['baby-gender'] }}
+               {% else %}
+               Example sex
+               {% endif %}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of baby loss
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['dol-day'] %}
+                      {{ data['dol-day'] }} <span class="cya-month">{{ data['dol-month'] }}</span> {{ data['dol-year'] }}
+                      {% else %}
+                    Example date of loss
+                    {% endif %}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Place of baby loss
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['place'] %}
+                {{ data['place'] }}
+               {% else %}
+               Example place
+               {% endif %}
+              </dd>
+            </div>
+          </dl>
 
-          </div>
-
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Baby's sex
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['baby-gender'] %}
-              {{ data['baby-gender'] }}
-             {% else %}
-             Example sex
-             {% endif %}
-            </dd>
-
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of baby loss
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['dol-day'] %}
-                    {{ data['dol-day'] }} <span class="cya-month">{{ data['dol-month'] }}</span> {{ data['dol-year'] }}
-                    {% else %}
-                  Example date of loss
-                  {% endif %}
-            </dd>
-
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Place of baby loss
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['place'] %}
-              {{ data['place'] }}
-             {% else %}
-             Example place
-             {% endif %}
-            </dd>
-
-          </div>
-          </div>
-
-
-          </div>
-        </dl>
         <form class="form" action="twincyacorrect" method="post">
-        <h2 class="govuk-heading-m">Are these details correct?</h2>
+          <legend>
+            <h2 class="govuk-heading-m">Are these details correct?</h2>
+          </legend>
         <div class="govuk-body">If the details are incorrect, the request for all certificates will be cancelled and<br> the main applicant will need to start a new request.</div>
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="twincyacorrect" name="check" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="changedName">
-              Yes
-            </label>
+        <div class="govuk-form-group">
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="details-correct-yes" name="check" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="details-correct-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="details-correct-no" name="check" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="details-correct-no">
+                No
+              </label>
+            </div>
           </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="twincyacorrect" name="check" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="changedName-2">
-              No
-            </label>
           </div>
-        </div>
-        </div>
-
-
           <button class="govuk-button" data-module="govuk-button" type="submit">
             Continue
           </button>
+
         </form>
-      </div>
+      </fieldset>
     </div>
-  </main>
+  </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
