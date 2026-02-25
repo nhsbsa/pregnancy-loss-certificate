@@ -29,9 +29,11 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
       <form action="security-code" class="form" method="post">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            Enter your security code
-          </h1>
+          <label for="security-code">
+            <h1 class="govuk-fieldset__heading">
+              Enter your security code
+            </h1>
+          </label>
         </legend>
 
           <div class="govuk-form-group">
@@ -41,8 +43,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
           <div class="govuk-body">
             If you do not receive the email within a few minutes, check your spam or junk mail folder.
           </div>
-          <input aria-describedby="nhs-number-hint" class="govuk-input govuk-input--width-10" id="security-code"
-            inputmode="numeric" name="entercode" type="text">
+          <input class="govuk-input govuk-input--width-10" id="security-code" inputmode="numeric" name="entercode" type="text">
 
           </div>
 
@@ -53,7 +54,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
       {{ govukButton({
       text: "Continue",
-      href: "confirm-name",
+      href: "check-your-details-nhs",
       isStartButton: false
       }) }}
     </fieldset>

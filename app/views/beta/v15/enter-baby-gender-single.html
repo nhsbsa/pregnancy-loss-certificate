@@ -29,30 +29,30 @@
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
     Baby's sex
-    
+
   </h1>
 </legend>
 
       <form class="form" action="/v12/babys-name" method="post">
-        
-         
+
+
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender" name="baby-gender" type="radio" value="Male">
-            <label class="govuk-label govuk-radios__label" for="yes">
+            <input class="govuk-radios__input" id="baby-gender-male" name="baby-gender" type="radio" value="Male">
+            <label class="govuk-label govuk-radios__label" for="baby-gender-male">
               Male
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender" name="baby-gender" type="radio" value="Female">
-            <label class="govuk-label govuk-radios__label" for="no">
+            <input class="govuk-radios__input" id="baby-gender-female" name="baby-gender" type="radio" value="Female">
+            <label class="govuk-label govuk-radios__label" for="baby-gender-female">
               Female
             </label>
           </div>
         </div>
             </div>
           </fieldset>
-        
+
 
           {{ govukButton({
             text: "Continue",

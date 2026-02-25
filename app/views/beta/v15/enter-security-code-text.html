@@ -26,38 +26,37 @@
 <span class="govuk-caption-l">Your details</span>
 <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-    Enter your security code
-  </h1>
-</legend>
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <label for="security-code">
+        <h1 class="govuk-fieldset__heading">
+          Enter your security code
+        </h1>
+      </label>
+    </legend>
 
-      <form class="form" action="security-code" method="post">
-        <div class="govuk-body">
-          We sent your security code by text to ********009
-        </div>
-        
-        
-        <input class="govuk-input govuk-input--width-10" id="security-code" name="entercode" type="text" aria-describedby="nhs-number-hint" inputmode="numeric">
+    <form class="form" action="security-code" method="post">
+      <div class="govuk-body">
+        We sent your security code by text to ********009
       </div>
-        
-          
-          </fieldset>
-          <p>Didn't get your security code? <a href="">Resend code
-          </a></p>
 
-          {{ govukButton({
-            text: "Continue",
-            href: "check-your-details-nhs",
-            isStartButton: false
-            }) }}
+      <input class="govuk-input govuk-input--width-10" id="security-code" name="entercode" type="text" inputmode="numeric">
+
+
+      <p>Didn't get your security code? <a href="">Resend code
+      </a></p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "check-your-details-nhs",
+        isStartButton: false
+        }) }}
 
       </form>
-
+      </fieldset>
     </div>
   </div>
   <style>
-   
-    
+
+
   </style>
 {% endblock %}

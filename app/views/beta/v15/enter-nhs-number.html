@@ -29,12 +29,14 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
       <span class="govuk-caption-l">Your details</span>
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <label for="nhs-number">
           <h1 class="govuk-fieldset__heading">
             What is your NHS number?
           </h1>
+          </label>
         </legend>
 
-            <div class="govuk-body">
+            <div class="govuk-body" id="nhs-number-hint">
               Your NHS number is a 10 digit number that you find on any letter the NHS has sent you.
             </div>
             <div id="passport-issued-hint" class="govuk-hint">

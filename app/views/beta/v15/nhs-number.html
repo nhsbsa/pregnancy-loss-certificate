@@ -23,78 +23,75 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
   {% endblock %}
 
   {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <form class="form" action="main-applicant-nhs" method="post">
-      <span class="govuk-caption-l">Your details</span>
-      <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            Do you know your NHS number?
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="main-applicant-nhs" method="post">
+    <span class="govuk-caption-l">Your details</span>
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">Do you know your NHS number?</h1>
+      </legend>
 
-          </h1>
-        </legend>
+      <div class="govuk-form-group">
 
-        <div class="govuk-form-group">
+      <div id="passport-issued-hint" class="govuk-body">
+        Telling us your NHS number will give us the best chance of matching you to your GP record.
+      </div>
+      <div id="passport-issued-hint" class="govuk-body">This will help us identify you so we can send the certificate to the correct address.</div>
+      <div id="passport-issued-hint" class="govuk-body">
+        You do not need to know your NHS number to continue. If you do not know it, you can tell us your full name,
+        date of birth and postcode instead.
+      </div>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Where to find your NHS number
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          If you’re registered with a GP, you will have a 10 digit NHS number unique to you.<br>
+          <br> You can find it on the NHS app or <a href="">use our online NHS number finder (opens in a new
+            tab)</a>.<br>
+          <br>It is also on any letters or documents you receive from the NHS, such as:
+          <br>
+          <ul>
+            <li>prescriptions</li>
+            <li>test results</li>
+            <li>appointment letters</li>
+            <li>maternity notes</li>
+          </ul>
+        </div>
+      </details>
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            If the name on your GP record was not your name at the time of loss
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>You can only request your certificate online using the name on your GP record.</p>
+          <p>You can <a href="contact">contact us to request a certificate with a different name</a>, for example a maiden name.</p>
+        </div>
+      </details>
 
-          <div id="passport-issued-hint" class="govuk-body">
-            Telling us your NHS number will give us the best chance of matching you to your GP record.
-          </div>
-          <div id="passport-issued-hint" class="govuk-body">This will help us identify you so we can send the certificate to the correct address.</div>
-          <div id="passport-issued-hint" class="govuk-body">
-            You do not need to know your NHS number to continue. If you do not know it, you can tell us your full name,
-            date of birth and postcode instead.
-          </div>
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Where to find your NHS number
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              If you’re registered with a GP, you will have a 10 digit NHS number unique to you.<br>
-              <br> You can find it on the NHS app or <a href="">use our online NHS number finder (opens in a new
-                tab)</a>.<br>
-              <br>It is also on any letters or documents you receive from the NHS, such as:
-              <br>
-              <ul>
-                <li>prescriptions</li>
-                <li>test results</li>
-                <li>appointment letters</li>
-                <li>maternity notes</li>
-              </ul>
-            </div>
-          </details>
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                If the name on your GP record was not your name at the time of loss
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              <p>You can only request your certificate online using the name on your GP record.</p>
-              <p>You can <a href="contact">contact us to request a certificate with a different name</a>, for example a maiden name.</p>
-            </div>
-          </details>
-
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="main-applicant-nhs" name="nhs" type="radio" value="yes">
-      <label class="govuk-label govuk-radios__label" for="yes">
-        Yes, I know my NHS number
-      </label>
-    </div>
-    <div class="govuk-radios__item">
-      <input class="govuk-radios__input" id="main-applicant-nhs" name="nhs" type="radio" value="no">
-      <label class="govuk-label govuk-radios__label" for="no">
-        No, continue with my full name, date of birth and postcode
-      </label>
-    </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nhs-number-yes" name="nhs" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="nhs-number-yes">
+          Yes, I know my NHS number
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="nhs-number-no" name="nhs" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="nhs-number-no">
+          No, continue with my full name, date of birth and postcode
+        </label>
+      </div>
 
 
     </fieldset>
-  <button class="govuk-button" data-module="govuk-button" type="submit">
-    Continue
-  </button>
+    <button class="govuk-button" data-module="govuk-button" type="submit">
+      Continue
+    </button>
 
   </form>
 </div>

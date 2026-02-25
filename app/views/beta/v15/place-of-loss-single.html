@@ -41,28 +41,21 @@
 
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="years-yes" name="years" type="radio" value="yes" data-aria-controls="conditional-contact">
-            <label class="govuk-label govuk-radios__label" for="contact">
+            <input class="govuk-radios__input" id="place-yes" name="years" type="radio" value="yes" data-aria-controls="place-yes-expand">
+            <label class="govuk-label govuk-radios__label" for="place-yes">
               Yes
             </label>
           </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="place-yes-expand">
             <div class="govuk-form-group">
-              <label class="govuk-fieldset__legend">Enter the place of your baby loss</label>
-              <label class="govuk-label">
-                Place of baby loss
-              </label>
-              <div id="passport-issued-hint" class="govuk-hint">
-
-                For example, Canterbury, Kent
-              </div>
-
-              <input class="govuk-input" id="baby-name" name="place" type="text">
+              <label class="govuk-label" for="place">Place of baby loss</label>
+              <div id="passport-issued-hint" class="govuk-hint">For example, Canterbury, Kent</div>
+              <input class="govuk-input" id="place" name="place" type="text">
             </div>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="babys" name="years" type="radio" value="no" >
-            <label class="govuk-label govuk-radios__label" for="contact-2">
+            <input class="govuk-radios__input" id="place-no" name="years" type="radio" value="no" >
+            <label class="govuk-label govuk-radios__label" for="place-no">
               No
             </label>
           </div>
@@ -71,8 +64,8 @@
 
 
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender-version1" name="years" type="radio" value="unknown">
-            <label class="govuk-label govuk-radios__label" for="unknown">
+            <input class="govuk-radios__input" id="years-dont-know" name="years" type="radio" value="unknown">
+            <label class="govuk-label govuk-radios__label" for="years-dont-know">
               I do not know the place of my baby loss
             </label>
           </div>
