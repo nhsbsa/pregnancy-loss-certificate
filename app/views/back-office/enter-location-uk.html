@@ -4,6 +4,10 @@
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {% include 'back-office/includes/header' %}
+{% endblock %}
+
 {% block beforeContent %}
 
   {{ govukBackLink({
@@ -13,12 +17,12 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
   <span class="govuk-caption-l">Confirm your eligibility</span>
   <fieldset class="govuk-fieldset">
-    
+
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
     Do you live in England?
@@ -26,8 +30,8 @@
 </legend>
 
       <form class="form" action="ccslocation-uk" method="post">
-        
-         
+
+
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="location-uk-yes" name="location" type="radio" value="yes">
@@ -42,10 +46,10 @@
             </label>
           </div>
         </div>
-           
+
           </fieldset>
         </div>
-    
+
 
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
@@ -54,9 +58,8 @@
       </form>
     </div>
     </div>
-  </div>
   <style>
-    
+
     .govuk-fieldset__legend--l {
       margin-bottom: 30px;
     }

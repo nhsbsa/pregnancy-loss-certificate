@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block header %}
-  {% include 'crm/v3/includes/header' %}
+  {% include 'crm/v4/includes/header' %}
 {% endblock %}
 {% block beforeContent %}
   {{ govukBackLink({
@@ -19,69 +19,52 @@
 {% block content %}
 
 <style>
-  
+
 .govuk-summary-list__key, .govuk-summary-list__value, .govuk-summary-list__actions {
     border-bottom: 1px solid darkgray;
     display: table-cell;
     padding-bottom: 8px;
     padding-right: 24px;
     padding-top: 8px;
-   
-   
+
+
 }
- 
- 
- 
- 
+
+
+
+
 </style>
 <h1 class ="govuk-heading-l" style="padding-bottom: 10px;">Certificate details</h1>
- 
- 
- 
-<div id="search" style="margin-top: -25px; margin-bottom: -25px;">
-<div>
-<style>
 
- 
-  
-  
-  
 
- 
-</style>
- 
-  <div>
-</div>
-      
-    
-    
-  <div class="flex-container" style="margin-top: -30px;;" >
+
+  <div class="flex-container">
     <div class="column">
- 
-      
-      
-        
-      
-      
+
+
+
+
+
+
       <div class="govuk-summary-card" aria-label="Certificate details" style="margin-top: 10px">
         <div class="govuk-summary-card__title-wrapper">
           <h2 class="govuk-heading-m">Certificate information</h2>
           <ul class="govuk-summary-card__actions">
-          
+
           </ul>
         </div>
         <div class="govuk-summary-card__content">
           <h2 class="govuk-heading-m">Parent 1</h2>
           <dl class="govuk-summary-list">
-           
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Your name
               </dt>
               <dd class="govuk-summary-list__value">
-               
+
                   Father
-                
+
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -96,11 +79,11 @@
               <dt class="govuk-summary-list__key">
                 You requested a certificate that shows only your name as a parent of your baby, if the other parent does not respond.
               </dt>
-             
+
             </div>
             <br>
             <h2 class="govuk-heading-m">Parent 2</h2>
-           
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Their name
@@ -110,7 +93,7 @@
               </dd>
             </div>
             <div class="govuk-summary-list__row">
-              
+
               <dt class="govuk-summary-list__key">
                 Their relation to your baby
               </dt>
@@ -144,35 +127,35 @@
                Male
               </dd>
             </div>
-            
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Baby's name
               </dt>
               <dd class="govuk-summary-list__value">
                Thomas
-              
-    
+
+
               </dd>
             </div>
-            
+
           </dl>
         </div>
       </div>
- 
-    </div>
-    
 
-      
+    </div>
+
+
+
       </div>
-      
-      
+
+
       {{ govukButton({
         text: "Reissue",
         href: "reissue-check",
         classes: "govuk-button"
       }) }}
-      
+
 
 {{ govukButton({
   text: "Block email invitations",

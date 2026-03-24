@@ -1,12 +1,24 @@
-{% extends "layouts/main-ccs.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {% include 'crm/v4/includes/header' %}
+{% endblock %}
 {% block beforeContent %}
 <div class="govuk-width-container app-width-container">
- 
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -19,11 +31,11 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      We cannot provide a baby loss certificate to the applicant because you've told us the details are wrong
+      We cannot provide the main applicant with a baby loss certificate
     </h1>
 
     
-    
+    <p>This is because you’ve told us the details are wrong.</p>
     <h3 class="govuk-heading-m">Support organisations</h3>
     <p>The following organisations give support and advice:</p>
     <ul class="govuk-list govuk-list--bullet">

@@ -5,6 +5,10 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% endblock %}
 
+{% block header %}
+  {% include 'back-office/includes/header' %}
+{% endblock %}
+
 {% block beforeContent %}
 
   {{ govukBackLink({
@@ -14,20 +18,15 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
   {% endblock %}
 
   {% block content %}
-  <div class="govuk-form-group">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-l">Other parent's details</span>
+        <span class="govuk-caption-l">Details on the certificate</span>
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              What is their name?
-
+              What is the other parent's name?
             </h1>
           </legend>
-
-
-
-
 
           <div class="govuk-body">
             This is the name that will be printed on the certificate.
@@ -47,12 +46,10 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
               </label>
               <input class="govuk-input govuk-!-width-two-thirds" id="add-name" name="parent1-lastname" type="text">
             </div>
-    </div>
-  </div>
 
 
 
-           
+
   {{ govukButton({
     text: "Continue",
     href: "enter-date-of-birth-parent",
@@ -66,9 +63,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 </form>
 </div>
 <style>
-  .govuk-button {
-    margin-left: 10px;
-  }
+
 </style>
 
 {% endblock %}

@@ -1,12 +1,24 @@
-{% extends "layouts/main-ccs.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {% include 'crm/v4/includes/header' %}
+{% endblock %}
 {% block beforeContent %}
 <div class="govuk-width-container app-width-container">
- 
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -14,25 +26,24 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-  <span class="govuk-caption-l">Details on certificate 2</span>
-<div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-    Would you like your baby’s name on the certificate?
-    
-  </h1>
-</legend>
-<p>You may not have named your baby. </p>
-<p>If you did name your baby, you can enter a first name, full name, or a nickname.</p>
+    <form class="form" action="baby-name-version1" method="post">
+      <span class="govuk-caption-l">Details on certificate 2</span>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Would you like your baby’s name on the certificate?
 
-<p>
-  If you select ‘No’, this section will be blank on the certificate.
-</p>
+          </h1>
+        </legend>
+        <p>You may not have named your baby. </p>
+        <p>If you did name your baby, you can enter a first name, full name, or a nickname.</p>
 
-      <form class="form" action="baby-name-version1" method="post">
+        <p>
+          If you select ‘No’, this section will be blank on the certificate.
+        </p>
 
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
@@ -56,12 +67,10 @@
             </label>
           </div>
             </div>
-          </div>
           </fieldset>
-       
+
        </div>
-       </div>
-    
+
     {{ govukButton({
       text: "Continue",
       href: "check-your-answers-cert-2",
@@ -69,13 +78,10 @@
       }) }}
 
       </form>
-
+    </div>
     </div>
   </div>
   <style>
-    .govuk-button {
-      margin-left: 15px;
-    }
   </style>
 
 {% endblock %}

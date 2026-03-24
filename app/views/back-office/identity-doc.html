@@ -1,12 +1,15 @@
 {% extends "layouts/main-backoffice.html" %}
 
 {% set feedbackType = 'step' %}
-{% set section = '4' %}
+{% set section = '1' %}
 
 {% set heading = "What type of identity verification has been provided?" %}
 
 {% block pageTitle %}
   {{ heading }} – {{ serviceName }} – NHSBSA
+{% endblock %}
+{% block header %}
+  {% include 'back-office/includes/header' %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -34,7 +37,7 @@
         }
       },
       hint: {
-        text: 'Select an option'
+        text: 'Select one option'
       },
       items: [
         {
@@ -88,7 +91,7 @@
           checked: checked("id-document-type", "Death certificate")
         }
 
-      
+
 
         ]
       }) }}
@@ -96,7 +99,7 @@
         <div class="govuk-radios__item" style ="margin-top: -20px;">
           <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
           <label class="govuk-label govuk-radios__label" for="contact">
-          Other
+          Other identity verification type provided
           </label>
         </div>
         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">

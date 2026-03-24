@@ -1,0 +1,36 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-m">Subject: Baby loss certificate request</h1>
+
+  <p class="govuk-body">We're contacting you from the Baby loss certificate service.</p>
+
+  <p class="govuk-body">Your application number is: 123</p>
+
+  <p class="govuk-body">We've received a request from (first parent name) to add your name to 2 baby loss certificates. </p>
+
+  <p class="govuk-body">Use the link below if you would like your name on the certificates. You'll need to give permission for each one, but you can do this in a single request. You have 7 days to provide permission and confirm your details. You have until (date and time expiry).</p>
+
+  <p class="govuk-body"><a href="start-page?twins=true">https://pregnancy-loss-certificate.herokuapp.com/beta/v15/v15-1/start-page</a></p>
+
+  <p class="govuk-body">We’ll send you a reminder 3 days before the link expires.</p>
+
+  <p class="govuk-body">If you choose not to add your name, you do not need to do anything and your name will not be on the certificates.</p>
+
+  <h2 class="govuk-heading-s">Contact us</h2>
+
+  <p class="govuk-body">If you have any queries about the baby loss certificates, contact us:</p>
+
+  <p class="govuk-body">Monday to Friday, 9am to 5pm:</p>
+
+  <p class="govuk-body">Telephone: 0300 330 9445</p>
+
+  <p class="govuk-body">Outside UK: +44 191 267 0884</p>
+
+  <p class="govuk-body">Find out about call charges at <a href="https://www.gov.uk/call-charges">https://www.gov.uk/call-charges</a></p>
+
+{% endblock %}

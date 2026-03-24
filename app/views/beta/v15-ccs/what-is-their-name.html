@@ -1,13 +1,25 @@
-{% extends "layouts/main-ccs.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
 Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 {% endblock %}
 
+{% block header %}
+  {% include 'crm/v4/includes/header' %}
+{% endblock %}
 {% block beforeContent %}
 <div class="govuk-width-container app-width-container">
- 
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -44,10 +56,10 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
               <input class="govuk-input govuk-!-width-two-thirds" id="add-name" name="parent1-firstname" type="text">
             </div>
             <div class="govuk-form-group">
-              <label class="govuk-label" for="one-third">
+              <label class="govuk-label" for="parent1-lastname">
                 Last name
               </label>
-              <input class="govuk-input govuk-!-width-two-thirds" id="add-name" name="parent1-lastname" type="text">
+              <input class="govuk-input govuk-!-width-two-thirds" id="parent1-lastname" name="parent1-lastname" type="text">
             </div>
     </div>
   </div>

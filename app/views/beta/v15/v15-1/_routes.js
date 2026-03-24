@@ -44,9 +44,9 @@ router.post(/lobster/, (req, res) => {
   const SecurityCodeOption = req.session.data['security-code-option']
 
   if (SecurityCodeOption == 'telephone') {
-    res.redirect('/beta/v15/v15-1/enter-security-code-text');
+    res.redirect('enter-security-code-text');
   } else {
-    res.redirect('/beta/v15/v15-1/enter-security-code');
+    res.redirect('enter-security-code');
   }
 
 })

@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block header %}
-  {% include 'crm/v3/includes/header' %}
+  {% include 'crm/v4/includes/header' %}
 {% endblock %}
 {% block beforeContent %}
   {{ govukBackLink({
@@ -19,7 +19,7 @@
 {% block content %}
 
 <style>
-  
+
 .govuk-summary-list__key, .govuk-summary-list__value, .govuk-summary-list__actions {
     border-bottom: 1px solid darkgray;
     display: table-cell;
@@ -31,9 +31,9 @@
 background-color: 	#d4351c;
 border-color: 	#d4351c;
 }
- 
- 
- 
+
+
+
 </style>
 <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
   <div class="govuk-notification-banner__header">
@@ -45,59 +45,27 @@ border-color: 	#d4351c;
     <p class="govuk-notification-banner__heading">
       John.Doe@gmail.com will not receive email invitations from Jane Doe
 
-      
+
     </p>
   </div>
 </div>
 <h1 class ="govuk-heading-l">Certificate details</h1>
- 
- 
- 
-<div id="search" style="margin-top: -25px; margin-bottom: -25px;">
-<div>
-<style>
-  .flex-container{
-    width: 100%;
-    min-height: 300px;
-    margin: 0 auto;
-    display: -webkit-flex; /* Safari */   
-    display: flex; /* Standard syntax */
-    border-radius: 0px;
-    
-    
-  }
-  .flex-container .column{
-   
-    margin: 20px 20px -20px 0px;
- 
-   
-    width: 100%;
-    display: flex;
-    
-  }
-  
-  
-  
 
- 
-</style>
- 
-  <div>
-    
-    
-  <div class="flex-container" style="margin-top: -30px;" >
+
+
+  <div class="flex-container" >
     <div class="column">
- 
-      
-      
-        
-      
-      
+
+
+
+
+
+
       <div class="govuk-summary-card" aria-label="Certificate details">
         <div class="govuk-summary-card__title-wrapper">
           <h2 class="govuk-heading-m">Details on the certificate</h2>
           <ul class="govuk-summary-card__actions">
-          
+
           </ul>
         </div>
         <div class="govuk-summary-card__content">
@@ -116,15 +84,15 @@ border-color: 	#d4351c;
                 Your name
               </dt>
               <dd class="govuk-summary-list__value">
-               
+
                   Father
-                
+
               </dd>
             </div>
             <br>
             <h2 class="govuk-heading-m">Parent 2</h2>
             <div class="govuk-summary-list__row">
-              
+
               <dt class="govuk-summary-list__key">
                 Their relation to your baby
               </dt>
@@ -166,29 +134,29 @@ border-color: 	#d4351c;
                Male
               </dd>
             </div>
-            
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Baby's name
               </dt>
               <dd class="govuk-summary-list__value">
                Thomas
-              
-    
+
+
               </dd>
             </div>
-            
+
           </dl>
         </div>
       </div>
- 
-    </div>
-    
 
-      
+    </div>
+
+
+
       </div>
-      
-  
+
+
 
 
       {% endblock %}

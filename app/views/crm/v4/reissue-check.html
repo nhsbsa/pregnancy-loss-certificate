@@ -1,43 +1,16 @@
 {% extends "layouts/main.html" %}
- 
+
 {% block header %}
-{{ govukHeader({
-homepageUrl: "/index",
-serviceName: "BLC certificate manager",
-serviceUrl: "start",
-navigation: [
-{
-href: "start",
-text: "Home"
-},
-{
-href: "/beta/v11/ccs/start-page",
-text: "Request (P1)"
-},
-{
-href: "/beta/v11/ccs/parent2/start-page",
-text: "Request (P2)"
-},
-{
-href: "search",
-text: "Search",
-active: true
-},
-{
-href: "start",
-text: "Sign out"
-}
-]
-}) }}
+  {% include 'crm/v4/includes/header' %}
 {% endblock %}
- 
+
 {% block beforeContent %}
 {{ govukBackLink({
 text: "Back to certificate details",
 href: "cert-details"
 }) }}
 {% endblock %}
- 
+
 {% block content %}
 <div class="govuk-form-group">
   <div class="govuk-grid-column-two-thirds">
@@ -47,10 +20,10 @@ href: "cert-details"
           Do you want to reissue a duplicate certificate?
         </h1>
       </legend>
- 
+
       <form class="form" action="reissue-cert" method="post">
-        
-         
+
+
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="location-uk-yes" name="reissue-certificate" type="radio" value="yes">
@@ -65,15 +38,15 @@ href: "cert-details"
             </label>
           </div>
         </div>
-           
+
           </fieldset>
         </div>
-    
- 
+
+
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
- 
+
       </form>
- 
+
       {% endblock %}

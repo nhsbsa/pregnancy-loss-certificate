@@ -9,6 +9,10 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
+{% block header %}
+  {% include 'back-office/includes/header' %}
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
@@ -20,7 +24,7 @@
 
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 <div class="govuk-form-group">
   <span class="govuk-caption-l">Your details</span>
@@ -39,10 +43,10 @@
       <div id="passport-issued-hint" class="govuk-hint">
         This will be where your certificate is sent to.
       </div>
-     
+
       <select class="govuk-select" id="subject" name="subject" aria-describedby="subject-hint">
         <option value="choose" selected>Select your address</option>
-        
+
           <option value="1">1 Test Road, Town, NE1 OLD</option>
           <option value="2">2 Test Road, Town, NE1 OLD</option>
           <option value="3">3 Test Road, Town, NE1 OLD</option>
@@ -57,25 +61,21 @@
     </div>
     </div>
     </div>
-      
+
     </fieldset>
       </form>
-    
+
       <a class="govuk-button" href="add-parent">Continue</a>
     </div>
   </div>
   <style>
     .govuk-select {
       box-sizing: border-box;
-height: 40px;
-max-width: 100%;
-padding: 4px;
-margin-bottom: 30px;
-}
-.govuk-button {
-  margin-left: 15px;
-}
-    
+      height: 40px;
+      max-width: 100%;
+      padding: 4px;
+      margin-bottom: 30px;
+      }
   </style>
 
 {% endblock %}

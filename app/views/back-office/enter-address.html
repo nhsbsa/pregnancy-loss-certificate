@@ -9,6 +9,10 @@
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
 
+{% block header %}
+  {% include 'back-office/includes/header' %}
+{% endblock %}
+
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
@@ -19,7 +23,7 @@
 
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
   <span class="govuk-caption-l">Your details</span>
@@ -28,35 +32,31 @@
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h1 class="govuk-fieldset__heading">
-          What is your postcode?
+          What is your alternative postcode?
         </h1>
       </legend>
-      <p>You must enter the home postcode you registered with your GP surgery.</p>
-      <p>This is the address your certificate will be sent to.</p>
-     
-     
-   
-     
-      
-      <div id="passport-issued-hint" class="govuk-hint">
-        For example, EN1 1BE
-      </div>
+
       <form class="form" action="address-postcode" method="post">
-        
-      
+
+
       <div class="govuk-form-group">
-        <label class="govuk-label" for="address-postcode">
-          Postcode
-        </label>
+        <label class="govuk-label" for="postcode-ccs">
+    Enter postcode
+  </label>
+
+
+
+  <div id="postcode-ccs-hint" class="govuk-hint">
+    For example, EN1 1BE
+  </div>
         <input class="govuk-input govuk-input--width-10" id="address-postcode" name="postcodeinput" type="text" autocomplete="postal-code">
       </div>
-      
-   
-      
+
+
+
    <div class="govuk-body"><a href="what-is-your-address">Enter address manually</a></div>
   </div>
-</div>
-</div>
+
 
 {{ govukButton({
   text: "Continue",
@@ -72,9 +72,6 @@
 <style>
   .govuk-input {
     margin-bottom: 15px;
-  }
-  .govuk-button {
-    margin-left: 10px;
   }
 </style>
 {% endblock %}

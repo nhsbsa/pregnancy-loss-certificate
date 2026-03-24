@@ -1,52 +1,100 @@
-{% extends "layouts/main-ccs.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {% include 'crm/v4/includes/header' %}
+{% endblock %}
 {% block beforeContent %}
 <div class="govuk-width-container app-width-container">
- 
- 
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
- 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds-from-desktop">
-  
-        
-          
-        
 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <fieldset class="govuk-fieldset">
+        <h1 class="govuk-heading-l">Your details</h1>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          {% if data['confirmation-email'] !== 'no' %}
+            <div class="govuk-summary-list__row" style="border-bottom: 0px;">
+              <dt class="govuk-summary-list__key">
+                Receive confirmation email
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['confirmation-email'] %}
+                  {{ data['confirmation-email'] | capitalize }}
+                {% else %}
+                  Yes
+                {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="contact-email">
+                    Change<span class="govuk-visually-hidden"> receive confirmation email</span>
+                  </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Email address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['contactByEmail'] %}
+                  {{ data['contactByEmail'] }}
+                {% else %}
+                  Example@email.com
+                {% endif %}
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                  <!--<a class="govuk-link" href="contact-email">
+                    Change<span class="govuk-visually-hidden"> name</span>
+                  </a>-->
+              </dd>
+            </div>
+          {% else %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Receive confirmation email
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {% if data['confirmation-email'] %}
+                {{ data['confirmation-email'] | capitalize }}
+              {% else %}
+                Yes
+              {% endif %}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="contact-email">
+                  Change<span class="govuk-visually-hidden"> receive confirmation email</span>
+                </a>
+            </dd>
+          </div>
+          {% endif %}
+        </dl>
 
+        {% if data['twins'] == 'true' %}
+        <h2 class="govuk-heading-m">Confirm the details on certificate 1</h2>
+        {% else %}
+        <h2 class="govuk-heading-m">Confirm the details on the certificate</h2>
+        {% endif %}
 
-</dl>
-<h1 class="govuk-heading-l">Your details</h1>
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Email address
-    </dt>
-    <dd class="govuk-summary-list__value">
-      {% if data['first-name'] %}
-      {{ data['first-name'] }}
-     {% else %}
-     Example name
-     {% endif %}
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <dd class="govuk-summary-list__actions">
-        <a class="govuk-link" href="contact-email">
-          Change<span class="govuk-visually-hidden"> name</span>
-        </a>
-      </dd>
-    </dd>
-  </div>
-
-  </dl>
-<h2 class="govuk-heading-m">Confirm the details on the certificate</h2>
         <h3 class="govuk-heading-s">Parent 1</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
           <div class="govuk-summary-list__row">
@@ -60,7 +108,7 @@
              Example name
              {% endif %}
             </dd>
-            
+
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -73,28 +121,37 @@
              Example relation
              {% endif %}
             </dd>
-            
+
           </div>
           </dl>
           <h3 class="govuk-heading-s">Parent 2</h3>
-          
+
+          <!--<details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                If you'd like a different name displayed on your certificate
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>This is how your name will be displayed on the certificate. </p>
+              <p>You can <a href="contact">contact us to request a certificate with a different name</a>, for example a maiden name.</p>
+            </div>
+          </details>-->
+
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            
+
             <div class="govuk-summary-list__row">
-              
+
               <dt class="govuk-summary-list__key">
               Your name
               </dt>
               <dd class="govuk-summary-list__value">
-                
                   {% if data['parent2-firstname'] %}
                   {{ data['parent2-firstname'] }} {{ data['parent2-lastname'] }}
                   {% else %}
                   Example name
                   {% endif %}
-               
               </dd>
-              
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -107,96 +164,90 @@
                Example relation
                {% endif %}
               </dd>
-              
             </div>
-            </dl>
-            <h3 class="govuk-heading-s">Baby's details</h3>
-            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Baby's name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['baby-firstname'] %}
-               {{ data['baby-firstname'] }}
-              {% else %}
-              Example name
-              {% endif %}
-            </dd>
-            
+          </dl>
+
+          <h3 class="govuk-heading-s">Baby's details</h3>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Baby's name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['baby-firstname'] %}
+                 {{ data['baby-firstname'] }}
+                {% else %}
+                Example name
+                {% endif %}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Baby's sex
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['baby-gender'] %}
+                {{ data['baby-gender'] }}
+               {% else %}
+               Example sex
+               {% endif %}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of baby loss
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['dol-day'] %}
+                      {{ data['dol-day'] }} <span class="cya-month">{{ data['dol-month'] }}</span> {{ data['dol-year'] }}
+                      {% else %}
+                    Example date of loss
+                    {% endif %}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Place of baby loss
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['place'] %}
+                {{ data['place'] }}
+               {% else %}
+               Example place
+               {% endif %}
+              </dd>
+            </div>
+          </dl>
+
+        <form class="form" action="twincyacorrect" method="post">
+          <legend>
+            <h2 class="govuk-heading-m">Are these details correct?</h2>
+          </legend>
+        <div class="govuk-body">If the details are incorrect, the request for all certificates will be cancelled and<br> the main applicant will need to start a new request.</div>
+        <div class="govuk-form-group">
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="details-correct-yes" name="check" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="details-correct-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="details-correct-no" name="check" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="details-correct-no">
+                No
+              </label>
+            </div>
           </div>
-          
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Baby's sex
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['baby-gender'] %}
-              {{ data['baby-gender'] }}
-             {% else %}
-             Example sex
-             {% endif %}
-            </dd>
-            
           </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of baby loss
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['dol-day'] %}
-                    {{ data['dol-day'] }} <span class="cya-month">{{ data['dol-month'] }}</span> {{ data['dol-year'] }}
-                    {% else %}
-                  Example date of loss
-                  {% endif %}
-            </dd>
-            
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Place of baby loss
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {% if data['place'] %}
-              {{ data['place'] }}
-             {% else %}
-             Example place
-             {% endif %}
-            </dd>
-            
-          </div>
-          </div>
-          
-          
-          </div>
-        </dl>
-        <form class="form" action="cya-correct" method="post">
-        <h2 class="govuk-heading-m">Are these details correct?</h2>
-        <div class="govuk-body">If the details are incorrect, the request for a certificate will be cancelled and <br>the main applicant will need to start a new request.</div>
-        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="cya-correct" name="check" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="changedName">
-              Yes
-            </label>
-          </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="cya-correct" name="check" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="changedName-2">
-              No
-            </label>
-          </div>
-        </div>
-        </div>
-       
-        
           <button class="govuk-button" data-module="govuk-button" type="submit">
             Continue
           </button>
+
         </form>
-      </div>
+      </fieldset>
     </div>
-  </main>
+  </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -222,7 +273,7 @@
                 "6": "June",
                 "7": "July",
                 "8": "August",
-                "9": "September",   
+                "9": "September",
 
             };
 

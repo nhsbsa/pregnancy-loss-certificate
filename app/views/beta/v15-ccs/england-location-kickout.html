@@ -1,9 +1,12 @@
-{% extends "layouts/main-ccs.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
 Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {% include 'crm/v4/includes/header' %}
+{% endblock %}
 {% block beforeContent %}
 <div class="govuk-width-container app-width-container">
   <div class="govuk-phase-banner">

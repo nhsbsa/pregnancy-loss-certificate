@@ -1,12 +1,24 @@
-{% extends "layouts/main-ccs.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {% include 'crm/v4/includes/header' %}
+{% endblock %}
 {% block beforeContent %}
 <div class="govuk-width-container app-width-container">
- 
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -14,22 +26,19 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<div class="govuk-form-group">
+    <form class="form" action="parent-add" method="post">
+      <div class="govuk-form-group">
 
-  <fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-    Would you still like to receive the certificate if the other parent does not respond?  </h1>
-</legend>
+        <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Would you still like to receive the certificate if the other parent does not respond?  </h1>
+      </legend>
 
+        <div class="govuk-body">You can still receive a certificate that shows only your name as a parent of your baby, if the other parent does not confirm their details.</div>
 
-      <form class="form" action="parent-add" method="post">
-        
-        <div class="govuk-body">
-          You can still receive a certificate that shows only your name as a parent of your baby, if the other parent does not confirm their details.</div>
-       
         <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
@@ -39,9 +48,9 @@
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="contact-by-email">
+              <p>
                 The section for the other parent’s name will be blank on the certificate.
-              </label>
+              </p>
             </div>
           </div>
           <div class="govuk-radios__item">
@@ -52,14 +61,14 @@
           </div>
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
             <div class="govuk-form-group">
-              <label class="govuk-label" for="contact-by-phone">
+              <p>
                 If the other parent does not respond, your request for a certificate will be cancelled.
-              </label>
+              </p>
             </div>
           </div>
           </fieldset>
         </div>
-       
+
         {{ govukButton({
           text: "Continue",
           href: "parent-contact",
@@ -67,12 +76,11 @@
           }) }}
 
       </form>
-</div>
-</div>
     </div>
   </div>
+</div>
   <style>
-    
+
     .govuk-radios {
       margin-bottom: 20px;
     }

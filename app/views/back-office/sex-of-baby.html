@@ -8,6 +8,9 @@
 {% block pageTitle %}
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
+{% block header %}
+  {% include 'back-office/includes/header' %}
+{% endblock %}
 {% block beforeContent %}
 
   {{ govukBackLink({
@@ -17,7 +20,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
   <span class="govuk-caption-l">Details on the certificate</span>
 <div class="govuk-form-group">
@@ -25,7 +28,7 @@
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
     Would you like the sex of your baby on the certificate?
-    
+
   </h1>
 </legend>
 <p>You may not know the sex of your baby.</p>
@@ -33,8 +36,8 @@
 
 
       <form class="form" action="baby-gender-version1" method="post">
-        
-         
+
+
          <div class="govuk-radios" data-module="govuk-radios">
           <div class="govuk-radios__item">
             <input class="govuk-radios__input" id="baby-gender-version1" name="gender" type="radio" value="yes">
@@ -60,7 +63,7 @@
         </div>
             </div>
           </fieldset>
-       
+
 </div>
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
@@ -71,9 +74,6 @@
     </div>
   </div>
   <style>
-   
-    .govuk-button {
-      margin-left: 15px;
-    }
+
   </style>
 {% endblock %}

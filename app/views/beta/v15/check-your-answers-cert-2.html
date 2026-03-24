@@ -16,33 +16,33 @@
       </span>
     </p>
   </div>
- 
+
 {% endblock %}
 
 {% block content %}
 
- 
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
-       
+
         <h1 class="govuk-heading-l">Check your answers</h1>
-        
+
 
         <h2 class="govuk-heading-m">Details on certificate 2</h2>
         <h3 class="govuk-heading-s">Parent 1</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         
-     
+
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Your name
             </dt>
             <dd class="govuk-summary-list__value">
-             
+
              Example name
-           
+
             </dd>
-            
+
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -62,26 +62,28 @@
             </dd>
           </div>
           </dl>
-        
+
+          {% if data['parent'] == "yes" %}
+
           <h3 class="govuk-heading-s">Parent 2
-            
+
           </h3>
-         
-          
+
+
           <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            
-          
-            
+
+
+
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Their name
               </dt>
               <dd class="govuk-summary-list__value">
-             
+
                 To be added once the other parent confirms their details
-              
+
                </dd>
-              
+
             </div>
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
@@ -97,12 +99,14 @@
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="second-relation-to-baby">
                   Change<span class="govuk-visually-hidden"> name</span>
-                 
+
                 </a>
               </dd>
             </div>
             </dl>
-         
+
+            {% endif %}
+
             <h3 class="govuk-heading-s">Baby's details</h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
               <div class="govuk-summary-list__row">
@@ -156,8 +160,8 @@
               </a>
             </dd>
           </div>
-          
-         
+
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Baby's name
@@ -176,18 +180,18 @@
             </dd>
           </div>
           </div>
-          
-          
+
+
           </div>
         </dl>
-        
+
         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="nationality" name="nationality" type="checkbox" value="british" aria-describedby="nationality-item-hint">
             <label class="govuk-label govuk-checkboxes__label" for="nationality">
              I confirm these details are correct
             </label>
-          
+
           </div>
           <br>
         <form action="Beta/v12/declaration" method="post" novalidate>
@@ -198,7 +202,7 @@
             isStartButton: false
             }) }}
         </form>
-       
+
       </div>
     </div>
   </main>
@@ -227,7 +231,7 @@
                 "6": "June",
                 "7": "July",
                 "8": "August",
-                "9": "September",   
+                "9": "September",
 
             };
 

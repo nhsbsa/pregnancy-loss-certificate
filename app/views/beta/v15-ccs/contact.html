@@ -1,12 +1,24 @@
-{% extends "layouts/main-ccs.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
- 
+Contact us – Request a baby loss certificate – GOV.UK
 {% endblock %}
 
+{% block header %}
+  {% include 'crm/v4/includes/header' %}
+{% endblock %}
 {% block beforeContent %}
 <div class="govuk-width-container app-width-container">
- 
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
 
 {% endblock %}
 
@@ -18,7 +30,7 @@
 
       </div>
 
-      
+
 
 <div class="gem-c-title govuk-!-margin-top-8 govuk-!-margin-bottom-8">
 
@@ -27,23 +39,23 @@
   </h1>
 </div>
 
-      
+
 <div class="gem-c-govspeak govuk-govspeak " data-module="govspeak" data-govspeak-module-started="true">
   <h2 class="govuk-heading-m">Telephone</h2>
   <p>You can contact us Monday to Friday, 9am to 5pm:</p>
   <ul class="govuk-list">
     <li>Telephone: 0300 330 9445</li>
     <li>Outside UK: +44 191 267 0884</li>
- 
-       
-        <p><a href="">Find out about call charges</a></p>
-        <h3 class="govuk-heading-s">Email</h3>
-        <p>Email: <a href="">nhsbsa.babylosscertificate@nhsbsa.nhs.uk</a></p>
-        <p>We will reply to your email within 2 working days.</p>
+  </ul>
+  <p><a href="https://www.gov.uk/call-charges">Find out about call charges</a></p>
+
+  <h2 class="govuk-heading-m">Email</h2>
+  <p>Email: <a href="mailto:babylosscertificate@nhsbsa.nhs.uk">babylosscertificate@nhsbsa.nhs.uk</a></p>
+  <p>We will reply to your email within 2 working days.</p>
 
 </div>
 
-      
+
 </main>
 </div>
 {% endblock %}

@@ -8,6 +8,13 @@
     serviceUrl: "start-page"
   }) }}
 
+  {% block govukServiceNavigation %}
+    {{ govukServiceNavigation({
+      serviceName: "Request a baby loss certificate",
+      serviceUrl: "/index"})
+    }}
+  {% endblock %}
+
   {% if feedbackType %}
     {% if servicePhase === 'beta' %}
       {% include 'beta/v10/includes/phase-banner.html' %}

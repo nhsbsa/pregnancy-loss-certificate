@@ -1,38 +1,50 @@
-{% extends "layouts/main-ccs.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
   Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {% include 'crm/v4/includes/header' %}
+{% endblock %}
 {% block beforeContent %}
 <div class="govuk-width-container app-width-container">
- 
- 
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+
 {% endblock %}
 
 {% block content %}
 
- 
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds-from-desktop">
         <h1 class="govuk-heading-l">Check your answers</h1>
-  
+
 
         <h2 class="govuk-heading-m">Details on the certificate</h2>
         <h3 class="govuk-heading-s">Parent 1</h3>
         <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-         
-     
+
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Your name
             </dt>
             <dd class="govuk-summary-list__value">
-             
+
              Example name
-           
+
             </dd>
-            
+
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -47,52 +59,55 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="relation-to-baby">
-                Change<span class="govuk-visually-hidden"> name</span>
+                Change<span class="govuk-visually-hidden"> your relationship to your baby</span>
               </a>
             </dd>
           </div>
           </dl>
-        
-          <h3 class="govuk-heading-s">Parent 2
-            
-          </h3>
-         
-          
-          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-            
-          
-            
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Their name
-              </dt>
-              <dd class="govuk-summary-list__value">
-             
-                To be added once the other parent confirms their details
-              
-               </dd>
-              
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Their relationship to your baby
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {% if data['parent-2'] %}
-                {{ data['parent-2'] }}
-               {% else %}
-               Example relation
-               {% endif %}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="second-relation-to-baby">
-                  Change<span class="govuk-visually-hidden"> name</span>
-                 
-                </a>
-              </dd>
-            </div>
-            </dl>
-         
+
+          {% if data['parent'] == "yes" %}
+            <h3 class="govuk-heading-s">Parent 2
+
+            </h3>
+
+
+            <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Their name
+                </dt>
+                <dd class="govuk-summary-list__value">
+
+                  To be added once the other parent confirms their details
+
+                 </dd>
+
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Their relationship to your baby
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {% if data['parent-2'] %}
+                  {{ data['parent-2'] }}
+                 {% else %}
+                 Example relation
+                 {% endif %}
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="second-relation-to-baby">
+                    Change<span class="govuk-visually-hidden"> their relationship to your baby</span>
+
+                  </a>
+                </dd>
+              </div>
+              </dl>
+
+            {% endif %}
+
             <h3 class="govuk-heading-s">Baby's details</h3>
             <dl class="govuk-summary-list govuk-!-margin-bottom-9">
               <div class="govuk-summary-list__row">
@@ -108,7 +123,7 @@
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="date-of-loss">
-                    Change<span class="govuk-visually-hidden"> name</span>
+                    Change<span class="govuk-visually-hidden"> date of baby loss</span>
                   </a>
                 </dd>
               </div>
@@ -125,7 +140,7 @@
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="place-of-loss">
-                    Change<span class="govuk-visually-hidden"> name</span>
+                    Change<span class="govuk-visually-hidden"> place of baby loss</span>
                   </a>
                 </dd>
               </div>
@@ -142,12 +157,12 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="sex-of-baby">
-                Change<span class="govuk-visually-hidden"> name</span>
+                Change<span class="govuk-visually-hidden"> baby's sex</span>
               </a>
             </dd>
           </div>
-          
-         
+
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Baby's name
@@ -161,26 +176,26 @@
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="babys-name">
-                Change<span class="govuk-visually-hidden"> name</span>
+                Change<span class="govuk-visually-hidden"> baby's name</span>
               </a>
             </dd>
           </div>
           </div>
-          
-          
+
+
           </div>
         </dl>
-        
-       
+
+
         <form action="Beta/v12/declaration" method="post" novalidate>
           <input type="hidden" name="answers-checked" value="true">
           {{ govukButton({
             text: "Accept and continue",
-            href: "declaration-single",
+            href: "contact-email-single",
             isStartButton: false
             }) }}
         </form>
-       
+
       </div>
     </div>
   </main>
@@ -209,7 +224,7 @@
                 "6": "June",
                 "7": "July",
                 "8": "August",
-                "9": "September",   
+                "9": "September",
 
             };
 

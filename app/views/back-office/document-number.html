@@ -3,9 +3,13 @@
 {% extends "layouts/main-backoffice.html" %}
 
 {% set feedbackType = 'step' %}
-{% set section = '4' %}
+{% set section = '1' %}
 
 {% set heading = "What is the ID unique reference number?" %}
+
+{% block header %}
+  {% include 'back-office/includes/header' %}
+{% endblock %}
 
 {% block pageTitle %}
   {{ heading }} – {{ serviceName }} – NHSBSA
@@ -33,9 +37,6 @@
         name: "id-document-number",
         classes: "govuk-input--width-20",
         value: data['id-document-number'],
-        hint: {
-            text: 'For example, HARRI559146MJ93122'
-        },
         label: {
           text: "Enter document number"
         }
@@ -46,7 +47,7 @@
           Select country of origin
         </label>
         <select class="govuk-select" id="country-of-origin" name="country-of-origin">
-          <option value="Great Britain" {% if data['country-of-origin'] === "Great Britain" %} selected{% endif %}>Great Britain</option>
+          <option value="Great Britain" {% if data['country-of-origin'] === "Great Britain" %} selected{% endif %}>United Kingdom of Great Britain and Northern Ireland</option>
           <option value="East Midlands" {% if data['country-of-origin'] === "East Midlands" %} selected{% endif %}>East Midlands</option>
           <option value="East of England" {% if data['country-of-origin'] === "East of England" %} selected{% endif %}>East of England</option>
           <option value="london" {% if data['country-of-origin'] === "london" %} selected{% endif %}>London</option>

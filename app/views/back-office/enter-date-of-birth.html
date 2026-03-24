@@ -5,6 +5,10 @@
 
 {% set heading = "What is your reference number?" %}
 
+{% block header %}
+  {% include 'back-office/includes/header' %}
+{% endblock %}
+
 {% block pageTitle %}
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
@@ -18,7 +22,7 @@
 
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-form-group">
   <span class="govuk-caption-l">Your details</span>
@@ -34,7 +38,7 @@
         <div id="dob-enter" class="govuk-hint">
           For example, 27 3 2007
         </div>
-        
+
           <div class="govuk-date-input" id="backoffice-date-ofbirth">
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
@@ -62,7 +66,7 @@
           </div>
         </div>
       </fieldset>
-    
+
 
 
         <button class="govuk-button" data-module="govuk-button" type="submit">
@@ -76,14 +80,14 @@
 </div>
 
   <style>
-  
-   
+
+
     .govuk-button{
       margin-top: 30px;
     }
-   
-    
-    
+
+
+
   </style>
 
 {% endblock %}

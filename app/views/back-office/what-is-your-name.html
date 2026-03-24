@@ -2,7 +2,11 @@
 
 {% block pageTitle %}
   Question page template – {{ serviceName }} – GOV.UK Prototype Kit
-  
+
+{% endblock %}
+
+{% block header %}
+  {% include 'back-office/includes/header' %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,68 +19,60 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-<div class="govuk-form-group">
-  <span class="govuk-caption-l">Your details</span>
-  <fieldset class="govuk-fieldset">
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-  <h1 class="govuk-fieldset__heading">
-    What is your name?
-    
-  </h1>
-</legend>
+    <div class="govuk-form-group">
+      <span class="govuk-caption-l">Your details</span>
+      <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        What is your name?
 
+      </h1>
+    </legend>
+    <p class="govuk-body">You must enter the names you registered with your GP. If you&#39;ve changed your name, you will need to contact your GP.</p>
+    <p class="govuk-body">This is the name that will be printed on the certificate.</p>
 
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="first-name">
+          First name
+        </label>
 
-
-<div id="passport-issued-hint" class="govuk-hint">
-  This is the name that will be printed on the certificate.
-</div>
-
-      <form class="form" action="enter-date-of-birth" method="post">
-        
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="add-name">
-            First name
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="add-name" name="first-name" type="text">
-        </div>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="one-third">
-            Last name
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="add-name" name="last-name" type="text">
-        </div>
-        
+        <input class="govuk-input govuk-!-width-two-thirds" id="first-name" name="first-name" type="text" autocomplete="off">
       </div>
-      
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="last-name">
+          Last name
+        </label>
+
+
+        <input class="govuk-input govuk-!-width-two-thirds" id="last-name" name="last-name" type="text" autocomplete="off">
       </div>
+
+        <div class="govuk-inset-text">
+        The certificate will not go on your GP record.
       </div>
-     
-      
+
       <a href="enter-date-of-birth" class="govuk-button">
         Continue
       </a>
 
-      </form>
-</div>
+    </div>
     </div>
   </div>
+  </div>
   <style>
-    
-    
+
+
     .govuk-radios {
       margin-bottom: 30px;
     }
     .govuk-details {
       margin-top: 30px;
     }
-    .govuk-button {
-      margin-left: 15px;
-    }
-   
-    
+
+
   </style>
 
 {% endblock %}

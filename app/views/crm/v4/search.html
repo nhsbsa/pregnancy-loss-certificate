@@ -7,34 +7,7 @@
 {% endblock %}
 
 {% block header %}
-  {{ govukHeader({
-    homepageUrl: "/index",
-    serviceName: "BLC certificate manager",
-    serviceUrl: "start",
-    navigation: [
-    {
-      href: "start",
-      text: "Home"
-      },
-      {
-        href: "/beta/v11/ccs/start-page",
-        text: "Request (P1)"
-      },
-      {
-        href: "request2",
-        text: "Request (P2)"
-      },
-      {
-        href: "search",
-        text: "Search",
-        active: true
-      },
-      {
-        href: "start",
-        text: "Sign out"
-      }
-    ]
-  }) }}
+  {% include 'crm/v4/includes/header' %}
 {% endblock %}
 
 {% block content %}
@@ -47,7 +20,7 @@
       {% call govukFieldset({
         legend: {
           text: "Use at least 1 field to search",
-          classes: "govuk-fieldset__legend--m"
+          classes: "govuk-body"
         }
       }) %}
       {{ govukInput({
@@ -159,12 +132,12 @@
       classes: "govuk-button--secondary govuk-!-margin-top-0 govuk-!-margin-left-4",
       href: "search?clear=true"
     }) }}
-   
 
-   
+
+
     </form>
   </div>
 
 </div>
-        
+
 {% endblock %}

@@ -1,12 +1,27 @@
-{% extends "layouts/main-ccs.html" %}
+{% extends "layouts/main.html" %}
 
 {% block pageTitle %}
 Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {% include 'crm/v4/includes/header' %}
+{% endblock %}
+{% block header %}
+  {% include 'crm/v4/includes/header' %}
+{% endblock %}
 {% block beforeContent %}
 <div class="govuk-width-container app-width-container">
- 
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
   {{ govukBackLink({
   text: "Back",
   href: "javascript:window.history.back()"
@@ -27,12 +42,12 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
       <div class="govuk-body">You will need to give the other parent this access code so they can enter it to confirm their details</div>
 
         <form class="form" action="get-security-code" method="post">
-         
+
           <div class="govuk-inset-text">
             12345678
           </div>
           </div>
-         
+
          </div>
 <p>They will need to use this URL to confirm their details <a href="www.pregnancy-loss-certificate.herokuapp.com/Beta/v12/s-1/enter-access-code">www.pregnancy-loss-certificate.herokuapp.com/Beta/v12/s-1/enter-access-code</a>.</p>
          {{ govukButton({
@@ -56,6 +71,6 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
 
 
 <style>
- 
+
 </style>
 {% endblock %}

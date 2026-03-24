@@ -8,6 +8,9 @@
 {% block pageTitle %}
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
+{% block header %}
+  {% include 'back-office/includes/header' %}
+{% endblock %}
 {% block beforeContent %}
 
   {{ govukBackLink({
@@ -17,7 +20,7 @@
 {% endblock %}
 
   {% block content %}
-  <div class="govuk-form-group">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-form-group">
         <span class="govuk-caption-l">Your details</span>
@@ -25,7 +28,7 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Would you like to receive a confirmation email about your request for a certificate?
+              Would you like email updates about your request?
             </h1>
           </legend>
 
@@ -55,6 +58,18 @@
                   <input class="govuk-input govuk-!-width-one-half" id="contact-by-email" name="contactByEmail"
                     type="email" spellcheck="false" autocomplete="email">
                 </div>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="checkYourAnswersConfirmation" name="checkYourAnswersConfirmation" type="checkbox" value="agree">
+                    <label class="govuk-label govuk-checkboxes__label" for="checkYourAnswersConfirmation">
+                      I'd like to receive a link to a short survey so I can give feedback about this service.
+
+                    </label>
+
+                  </div>
+
+                </div>
               </div>
 
               <div class="govuk-radios__item">
@@ -83,7 +98,7 @@
 
       {{ govukButton({
       text: "Continue",
-      href: "check-your-answers",
+      href: "declaration",
       isStartButton: false
       }) }}
 

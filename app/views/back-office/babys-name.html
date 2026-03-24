@@ -8,6 +8,9 @@
 {% block pageTitle %}
   {{ heading }} – {{ serviceName }} – NHSBSA
 {% endblock %}
+{% block header %}
+  {% include 'back-office/includes/header' %}
+{% endblock %}
 {% block beforeContent %}
 
   {{ govukBackLink({
@@ -18,7 +21,7 @@
 
 
 {% block content %}
-<div class="govuk-form-group">
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
   <span class="govuk-caption-l">Details on the certificate</span>
 <div class="govuk-form-group">
@@ -26,7 +29,7 @@
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
     Would you like your baby’s name on the certificate?
-    
+
   </h1>
 </legend>
 <p>You may not have named your baby. </p>
@@ -48,7 +51,7 @@
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
             <div class="govuk-form-group">
               <label class="govuk-label">
-                Baby's name
+                Enter baby’s name or nickname
               </label>
               <input class="govuk-input" id="baby-name" name="baby-firstname" type="text">
             </div>
@@ -62,13 +65,13 @@
             </div>
           </div>
           </fieldset>
-       
+
        </div>
        </div>
-    
+
     {{ govukButton({
       text: "Continue",
-      href: "contact-email",
+      href: "check-your-answers-baby",
       isStartButton: false
       }) }}
 
@@ -77,9 +80,7 @@
     </div>
   </div>
   <style>
-    .govuk-button {
-      margin-left: 15px;
-    }
+
   </style>
 
 {% endblock %}

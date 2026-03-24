@@ -6,10 +6,10 @@
     "screenshot": "backstop reference"
   },
   "dependencies": {
-    "@govuk-prototype-kit/common-templates": "2.0.0",
+    "@govuk-prototype-kit/common-templates": "3.0.0",
     "@x-govuk/govuk-prototype-filters": "1.3.0",
-    "govuk-frontend": "5.13.0",
-    "govuk-prototype-kit": "13.18.1",
+    "govuk-frontend": "6.1.0",
+    "govuk-prototype-kit": "13.19.1",
     "notifications-node-client": "^7.0.6",
     "obfuscator-email": "^1.0.3"
   },
