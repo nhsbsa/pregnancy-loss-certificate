@@ -14,6 +14,39 @@
         html: "Your reference number<br><strong>J4R-8H5-2K9F1</strong>"
       }) }}
 
+      {% if data['twins'] == 'true' %}
+      <div class="govuk-heading-m">Certificate reference numbers</div>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Certificate 1
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ABC-DEF-2K9F1
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Certificate 2
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ZYC-DEF-2K9F1
+          </dd>
+        </div>
+      </dl>
+      {% else %}
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Certificate reference number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ABC-DEF-2K9F1
+          </dd>
+        </div>
+      </dl>
+      {% endif %}
+
 
       <h2 class="govuk-heading-m">Support organisations</h2>
       <p>The following organisations give support and advice:</p>
@@ -35,6 +68,17 @@
           What did you think of this service?
         </a> (takes 30 seconds)
       </p>
+
+      <h2 class="govuk-heading-s">Contact the Baby Loss Certificate Service</h2>
+  <div class="govuk-inset-text">
+  <ul class="govuk-list">
+    <li>Email: <a class="govuk-link" href="mailto:babylosscertificate@nhsbsa.nhs.uk">babylosscertificate@nhsbsa.nhs.uk</a></li>
+    <li>Telephone: 0300 330 9445</li>
+    <li>Monday to Friday, 9am to 5pm</li>
+  </ul>
+  <ul class="govuk-list">
+    <li><a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers" class="govuk-link" target="_blank">Find out about call charges</a></li>
+  </ul>
 
 
     </div>
