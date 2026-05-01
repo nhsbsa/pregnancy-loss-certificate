@@ -23,24 +23,15 @@
 
 {% block content %}
 
- 
+
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds-from-desktop">
-        <div class="govuk-width-container">
+      <div class="govuk-grid-column-two-thirds">
           <h1 class="govuk-heading-l">Declaration</h1>
-          
-          
-          <form action="/v14-1/confirmation-page" method="post" novalidate>
-            <div class="govuk-form-group">
-             
-             
-  
-          </div>
-        
+
           <p>I declare that the information I have provided is true and correct. </p>
           <p>I certify that I have read, understood and agree to the  <a href="">Terms of Use and Privacy Policy</a>.</p>
           <p>I consent to my personal information provided in this application to be used to verify my identity.</p>
-          <p>I consent for my name to be included as a parent of the baby on the ‘Certificate of Baby Loss' applied for through this application. 
+          <p>I consent for my name to be included as a parent of the baby on the ‘Certificate of Baby Loss' applied for through this application.
           </p>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
@@ -50,16 +41,15 @@
               </label>
             </div>
           </div>
-        </div>
-         
-          
+
+
+
       {{ govukButton({
         text: "Accept - send my request",
         href: "confirmation-page-pending",
         isStartButton: false
         }) }}
-        </form>
-  </main>
+      </div>
 </div>
 <style>
   .govuk-checkboxes {

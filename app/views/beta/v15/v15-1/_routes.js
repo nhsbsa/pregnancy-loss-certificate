@@ -24,6 +24,10 @@ router.post(/bobble/, (req, res) => {
 
 })
 
+router.post(/what-is-name/, (req, res) => {
+  return res.redirect('enter-date-of-birth')
+})
+
 
 router.post(/new-dob/, (req, res) => {
   console.log('✅ V15 DATE OF BIRTH ROUTE HIT')

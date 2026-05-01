@@ -25,7 +25,7 @@
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="date-of-birth" method="post">
+    <form class="form" action="other-dob" method="post">
       <span class="govuk-caption-l">Other parent's details</span>
       <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-heading">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -46,7 +46,7 @@
                 <label class="govuk-label govuk-date-input__label" for="date-of-birth-day">
                   Day
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-day" name="dob-day" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-day" name="other-dob-day" type="text" inputmode="numeric">
               </div>
             </div>
           <div class="govuk-date-input__item">
@@ -54,7 +54,7 @@
               <label class="govuk-label govuk-date-input__label" for="date-of-birth-month">
                 Month
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-month" name="dob-month" type="text" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-month" name="other-dob-month" type="text" inputmode="numeric">
             </div>
           </div>
           <div class="govuk-date-input__item">
@@ -62,7 +62,7 @@
               <label class="govuk-label govuk-date-input__label" for="date-of-birth-year">
                 Year
               </label>
-              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" name="dob-year" type="text" inputmode="numeric">
+              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" name="other-dob-year" type="text" inputmode="numeric">
             </div>
           </div>
         </div>
@@ -72,7 +72,6 @@
 
     {{ govukButton({
       text: "Continue",
-      href: "second-relation-to-baby",
       isStartButton: false
       }) }}
 

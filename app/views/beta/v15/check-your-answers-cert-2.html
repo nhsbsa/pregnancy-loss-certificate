@@ -112,8 +112,8 @@
                   Date of baby loss
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {% if data['dol-day'] %}
-                        {{ data['dol-day'] }} <span class="cya-month">{{ data['dol-month'] }}</span> {{ data['dol-year'] }}
+                  {% if data['dol-2-year'] %}
+                        {{ data['dol-2-day'] }} <span class="cya-month">{{ data['dol-2-month'] }}</span> {{ data['dol-2-year'] }}
                         {% else %}
                       Example date of loss
                       {% endif %}
@@ -129,8 +129,8 @@
                   Place of baby loss
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {% if data['place'] %}
-                  {{ data['place'] }}
+                  {% if data['place-2'] %}
+                  {{ data['place-2'] }}
                  {% else %}
                  Example place
                  {% endif %}
@@ -146,8 +146,8 @@
               Baby's sex
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['baby-gender'] %}
-              {{ data['baby-gender'] }}
+              {% if data['baby-gender-2'] %}
+              {{ data['baby-gender-2'] }}
              {% else %}
              Example sex
              {% endif %}
@@ -165,8 +165,8 @@
               Baby's name
             </dt>
             <dd class="govuk-summary-list__value">
-              {% if data['baby-firstname'] %}
-               {{ data['baby-firstname'] }}
+              {% if data['baby-firstname-2'] %}
+               {{ data['baby-firstname-2'] }}
               {% else %}
               Example name
               {% endif %}

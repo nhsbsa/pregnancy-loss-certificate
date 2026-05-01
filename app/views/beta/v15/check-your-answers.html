@@ -90,7 +90,11 @@
               Email address
             </dt>
             <dd class="govuk-summary-list__value">
-             Test@test.com
+              {% if data['other-email'] %}
+                {{ data['other-email'] }}
+              {% else %}
+                Test@test.com
+              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="parent-contact">
@@ -103,7 +107,11 @@
              Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-             1 January 1998
+              {% if data['other-dob-month'] %}
+								{{ data['other-dob-day'] }} <span class="cya-month">{{ data['other-dob-month'] }}</span> {{ data['other-dob-year'] }}
+							{% else %}
+								27 March 2008
+							{% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="enter-date-of-birth-parent">

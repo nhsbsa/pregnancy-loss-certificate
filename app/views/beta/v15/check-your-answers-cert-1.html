@@ -37,9 +37,7 @@
               Your name
             </dt>
             <dd class="govuk-summary-list__value">
-
              Example name
-
             </dd>
 
           </div>
@@ -51,7 +49,7 @@
               {% if data['relation-baby'] %}
               {{ data['relation-baby'] }}
              {% else %}
-             Example relation
+             Mother
              {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
@@ -76,9 +74,7 @@
                 Their name
               </dt>
               <dd class="govuk-summary-list__value">
-
                 To be added once the other parent confirms their details
-
                </dd>
 
             </div>
@@ -88,10 +84,10 @@
               </dt>
               <dd class="govuk-summary-list__value">
                 {% if data['parent-2'] %}
-                {{ data['parent-2'] }}
-               {% else %}
-               Example relation
-               {% endif %}
+                  {{ data['parent-2'] }}
+                {% else %}
+                  Father
+                {% endif %}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="second-relation-to-baby">
@@ -111,7 +107,7 @@
                   Date of baby loss
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {% if data['dol-day'] %}
+                  {% if data['dol-year'] %}
                         {{ data['dol-day'] }} <span class="cya-month">{{ data['dol-month'] }}</span> {{ data['dol-year'] }}
                         {% else %}
                       Example date of loss

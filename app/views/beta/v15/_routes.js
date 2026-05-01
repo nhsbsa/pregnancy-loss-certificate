@@ -182,6 +182,18 @@ router.post(/enter-parent-name/, (req, res) => {
 
 })
 
+router.post(/other-dob/, (req, res) => {
+
+  res.redirect('second-relation-to-baby')
+
+})
+
+router.post(/parent-contact/, (req, res) => {
+
+  res.redirect('enter-date-of-birth-parent')
+
+})
+
 
 router.post(/idv-other-email/, (req, res) => {
 

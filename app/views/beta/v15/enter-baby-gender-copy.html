@@ -23,46 +23,43 @@
 {% endblock %}
 
 {% block content %}
-<span class="govuk-caption-l">Details on certificate 2</span>
-<div class="govuk-form-group">
+<span class="govuk-caption-l">Details on certificate 1</span>
   <fieldset class="govuk-fieldset">
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
   <h1 class="govuk-fieldset__heading">
     Baby's sex
-    
+
   </h1>
 </legend>
 
-      <form class="form" action="/v12/babys-name" method="post">
-        
-         
+      <form class="form" action="babys-name-copy" method="post">
+
+        <div class="govuk-form-group">
+
         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender" name="baby-gender" type="radio" value="Male">
+            <input class="govuk-radios__input" id="baby-gender" name="baby-gender-2" type="radio" value="Male">
             <label class="govuk-label govuk-radios__label" for="yes">
               Male
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="baby-gender" name="baby-gender" type="radio" value="Female">
+            <input class="govuk-radios__input" id="baby-gender" name="baby-gender-2" type="radio" value="Female">
             <label class="govuk-label govuk-radios__label" for="no">
               Female
             </label>
           </div>
         </div>
-            </div>
-          </fieldset>
-        
+      </div>
+
 
           {{ govukButton({
             text: "Continue",
-            href: "babys-name-copy",
             isStartButton: false
             }) }}
 
       </form>
 
     </div>
-  </div>
 
 {% endblock %}

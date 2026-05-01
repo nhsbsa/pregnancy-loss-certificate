@@ -35,32 +35,31 @@ href: "javascript:window.history.back()"
       </h1>
 
 
-
+      <form action="parent-contact" class="form" method="post">
 
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="email-address">
+          <label class="govuk-label" for="other-email">
             Enter email address
           </label>
-          <input class="govuk-input" id="email-address" name="full-name" type="text" autocomplete="name" spellcheck="false">
+          <input class="govuk-input" id="other-email" name="other-email" type="text" autocomplete="email" spellcheck="false">
         </div>
 
         <div class="govuk-form-group">
-          <label class="govuk-label" for="email-address-confirm">
+          <label class="govuk-label" for="other-email-confirm">
             Confirm email address
           </label>
-          <input class="govuk-input" id="email-address-confirm" name="email-address-confirm" type="text" autocomplete="name" spellcheck="false">
+          <input class="govuk-input" id="other-email-confirm" name="other-email-confirm" type="text" autocomplete="email" spellcheck="false">
 
         </div>
 
 
         {{ govukButton({
           text: "Continue",
-          href: "enter-date-of-birth-parent",
           isStartButton: false
           }) }}
 
-
+        </form>
 
     </div>
   </div>
