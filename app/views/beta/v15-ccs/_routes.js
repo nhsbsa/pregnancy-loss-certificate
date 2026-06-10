@@ -155,7 +155,7 @@ router.post(/confirm-name/, (req, res) => {
 
 })
 
-router.post(/confirm-post-address/, (req, res) => {
+router.post(/jellyfish/, (req, res) => {
 
   // creating a variable named lossInEngland, assigning the variable the value of the input (location)
   // lossInEngland = location (value)
@@ -163,6 +163,8 @@ router.post(/confirm-post-address/, (req, res) => {
 
   if (parentcheckDetails == 'yes') {
     res.redirect('add-parent-conditional-radios');
+  } else if (parentcheckDetails == 'alternative') {
+    res.redirect('postcode-lookup');
   } else {
     res.redirect('check-your-details-kickout');
   }

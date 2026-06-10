@@ -46,10 +46,10 @@
               {% endif %}
             </dd>
             <dd class="govuk-summary-list__actions">
-              
+
             </dd>
           </div>
-          
+
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Address
@@ -58,15 +58,15 @@
               4 Albert Road<br>Newcastle<br>NE1 3JA
             </dd>
             <dd class="govuk-summary-list__actions">
-             
+
             </dd>
           </div>
-          
+
           </dl>
-        
-          
-          
-          
+
+
+
+
         </dl>
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
@@ -75,9 +75,9 @@
                 Are these details correct?
               </h2>
             </legend>
-           
-      
-            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+
+
+            <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="confirm-post-address" name="details" type="radio" value="yes">
                 <label class="govuk-label govuk-radios__label" for="check-details-yes">
@@ -90,10 +90,17 @@
                   No
                 </label>
               </div>
+              <div class="govuk-radios__divider">or</div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="confirm-post-address" name="details" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="check-details-no">
+                  Alternative
+                </label>
+              </div>
             </div>
           </fieldset>
         </div>
-        
+
         <button class="govuk-button" data-module="govuk-button" type="submit">
           Continue
         </button>
