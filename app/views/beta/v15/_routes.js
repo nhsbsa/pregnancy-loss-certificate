@@ -39,16 +39,16 @@ router.post(/location-v14-england/, (req, res) => {
 
 })
 
-router.post(/england-version14/, (req, res) => {
+router.post(/england-version15/, (req, res) => {
 
   // creating a variable named lossInEngland, assigning the variable the value of the input (location)
   // lossInEngland = location (value)
-  const lossIneng = req.session.data['england']
+  const lossIneng = req.session.data['whereDoYouLive']
 
-  if (lossIneng == 'yes') {
+  if (lossIneng == 'england') {
     res.redirect('relation-to-baby');
   } else {
-    res.redirect('location-kickout-uk');
+    res.redirect('location-kickout-uk-dynamic');
   }
 
 })
